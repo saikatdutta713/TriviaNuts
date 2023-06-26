@@ -24,7 +24,6 @@ return new class extends Migration
             $table->string('last_login_location');
             $table->string('last_login')->useCurrent();
             $table->integer('session_duration')->nullable();
-            $table->string('updated_on')->useCurrentOnUpdate();
 
             $table->timestamps();
         });
