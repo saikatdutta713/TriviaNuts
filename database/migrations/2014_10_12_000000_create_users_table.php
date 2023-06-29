@@ -24,11 +24,11 @@ return new class extends Migration
             $table->string('bio')->nullable();
             $table->string('dob')->nullable();
             $table->integer('contribution_no')->default(0);
-            $table->string('last_login');
-            $table->bigInteger('badge_id')->unsigned();
-            $table->bigInteger('newsletter_id')->unsigned();
+            $table->timestamp('last_login')->useCurrent();
+            $table->bigInteger('badge_id')->unsigned()->nullable();
+            $table->bigInteger('newsletter_id')->unsigned()->nullable();
             
-            $table->string('login_type');
+            $table->string('login_type')->default('Manual');
             $table->rememberToken();
             $table->timestamps();
         });
