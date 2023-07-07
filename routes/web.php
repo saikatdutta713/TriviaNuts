@@ -21,3 +21,6 @@ Route::get('/', function () {
 Route::get('login', [LoginController::class,'index'])->name('login');
 Route::post('login', [LoginController::class,'login'])->name('login');
 Route::get('registration', [RegistrationController::class,'index']);
+Route::get('/master', function () {
+    return view('layout.master');
+});
