@@ -49,7 +49,7 @@
             font-size: 35px;
             font-weight: 600;
             color: #3A5198;
-            text-align: left;
+            text-align: center;
         }
 
         .wrapper form {
@@ -196,83 +196,37 @@
 
 <body>
     <div class="wrapper">
-        <header>Login</header>
-        <form action="#">
+        <header><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEyOCAxMjgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Y2lyY2xlIGN4PSI2NCIgY3k9IjY0IiBmaWxsPSIjNEI1RjgzIiBpZD0iY2lyY2xlIiByPSI2NCIvPjxnIGlkPSJpY29uIj48cGF0aCBkPSJNNjQsOTloMzVjMC0xNi0xMC40LTI5LTI0LjYtMzMuNEM4MC4xLDYyLDg0LDU1LjcsODQsNDguNWMwLTExLTktMjAtMjAtMjAiIGZpbGw9IiNFNkU2RTYiIGlkPSJyaWdodCIvPjxwYXRoIGQ9Ik02NCwyOC41Yy0xMSwwLTIwLDktMjAsMjBjMCw3LjIsMy45LDEzLjYsOS42LDE3LjFDMzkuNCw3MCwyOSw4MywyOSw5OWgzNSIgZmlsbD0iI0ZGRkZGRiIgaWQ9ImxlZnQiLz48L2c+PC9zdmc+" alt="Avatar" height="150px" width="150px"></header>
+        <form action="login" method="POST">
+            @csrf
+            
             <div class="field email">
                 <div class="input-area">
-                    <input type="text" placeholder="Email Address">
+                    <input type="text" name="email" placeholder="Email Address">
                     <i class="icon fas fa-envelope"></i>
                     <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
-                <div class="error error-txt">Email can't be blank</div>
+                @error('email')
+                    <div class="error-txt">{{ $message }}</div>
+                @enderror
+                
             </div>
             <div class="field password">
                 <div class="input-area">
-                    <input type="password" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password">
                     <i class="icon fas fa-lock"></i>
                     <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
-                <div class="error error-txt">Password can't be blank</div>
+                @error('password')
+                    <div class="error-txt">{{ $message }}</div>
+                @enderror
             </div>
             <div class="pass-txt"><a href="#">Forgot password?</a></div>
             <input type="submit" value="Sign in">
         </form>
+
         <div class="sign-txt">Not yet member? <a href="#">Signup now</a></div>
     </div>
-
-    <script src="script.js"></script>
-    <script>
-        const form = document.querySelector("form");
-        eField = form.querySelector(".email"),
-        eInput = eField.querySelector("input"),
-        pField = form.querySelector(".password"),
-        pInput = pField.querySelector("input");
-        
-        form.onsubmit = (e)=>{
-        e.preventDefault(); //preventing from form submitting
-        //if email and password is blank then add shake class in it else call specified function
-        (eInput.value == "") ? eField.classList.add("shake", "error") : checkEmail();
-        (pInput.value == "") ? pField.classList.add("shake", "error") : checkPass();
-        
-        setTimeout(()=>{ //remove shake class after 500ms
-        eField.classList.remove("shake");
-        pField.classList.remove("shake");
-        }, 500);
-        
-        eInput.onkeyup = ()=>{checkEmail();} //calling checkEmail function on email input keyup
-        pInput.onkeyup = ()=>{checkPass();} //calling checkPassword function on pass input keyup
-        
-        function checkEmail(){ //checkEmail function
-        let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; //pattern for validate email
-        if(!eInput.value.match(pattern)){ //if pattern not matched then add error and remove valid class
-        eField.classList.add("error");
-        eField.classList.remove("valid");
-        let errorTxt = eField.querySelector(".error-txt");
-        //if email value is not empty then show please enter valid email else show Email can't be blank
-        (eInput.value != "") ? errorTxt.innerText = "Enter a valid email address" : errorTxt.innerText = "Email can't be blank";
-        }else{ //if pattern matched then remove error and add valid class
-        eField.classList.remove("error");
-        eField.classList.add("valid");
-        }
-        }
-        
-        function checkPass(){ //checkPass function
-        if(pInput.value == ""){ //if pass is empty then add error and remove valid class
-        pField.classList.add("error");
-        pField.classList.remove("valid");
-        }else{ //if pass is empty then remove error and add valid class
-        pField.classList.remove("error");
-        pField.classList.add("valid");
-        }
-        }
-        
-        //if eField and pField doesn't contains error class that mean user filled details properly
-        if(!eField.classList.contains("error") && !pField.classList.contains("error")){
-        window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action
-        attribute of form tag
-        }
-        }
-    </script>
 
 </body>
 

@@ -19,9 +19,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-// Route::get('/getuser/{id}',function ($id){
-//     return response()->json(User::find($id));
-// });
-
-Route::post('/getuser',[Controller::class, 'store']);
