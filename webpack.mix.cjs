@@ -1,7 +1,4 @@
-// webpack.mix.js
 
-let mix = require('laravel-mix');
-
-mix.js('resources/js/app.js', 'public/js/app.js').css('resources/css/app.css', 'public/css')
-// .css('resources/css/master.css', 'public/css')
-.setPublicPath('public');
+mix.js('resources/js/*', 'public/js/app.js')
+    .css('resources/css/app.css', 'public/css/app.css')
+    .setPublicPath('public');
