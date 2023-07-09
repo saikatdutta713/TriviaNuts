@@ -13,7 +13,9 @@ body{
     display: flex;
     background: #f0efef;
 }
-.header_div{
+
+
+.header{
     width: 100%;
     height: 7%;
     display: flex;
@@ -23,9 +25,9 @@ body{
     align-items: center;
     justify-content: center;        
 }
-.header_div .logo{
+.header .logo{
     height: 100%;
-    width: 10%;
+    width: 12%;
     float: left;
     color: white;
     display: flex;
@@ -33,74 +35,98 @@ body{
     justify-content: center;
     font-size: x-large;
 }
-.header_div .nav_bar{
+.header .navbar{
     height: 70%;
-    width: 26%;
+    width: auto;
     float: left;
     color: black;
-    margin:0 27% 0 29%;
+    margin:0 0 0 30.5%;
     color: white;
     font-size: large;
 }
-.header_div .nav_bar .home_page{
+.header .navbar .navbutton{
     height: 100%;
-    width: 21%;
+    width: max-content;
+    padding: 1rem;
     float: left;
     display: flex;
     align-items: center;
     justify-content: center; 
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 15px 15px 15px 15px;
 }
-.header_div .nav_bar .community_page{
-    height: 100%;
-    width: 30%;
-    float: left;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px 20px 20px 20px;
-}
-.header_div .nav_bar .trends_page{
-    height: 100%;
-    width: 23%;
-    float: left;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px 20px 20px 20px;
-}
-.header_div .nav_bar .category_page{
-    height: 100%;
-    width: 26%; 
-    float: left;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    border-radius: 20px 20px 20px 20px;
-}
-
-.header_div .nav_bar .home_page:hover{
+.header .navbar .navbutton:hover{
     background-color: red;
 }
-.header_div .nav_bar .community_page:hover{
-    background-color: red;
-}
-.header_div .nav_bar .trends_page:hover{
-    background-color: red;
-}
-.header_div .nav_bar .category_page:hover{
-    background-color: red;
-}
-
-
-.header_div .login{
+.header .login{
     height: 70%;
-    width: 6%;
-    background-color: white;
+    width: max-content;
+    white-space: nowrap;
+    padding: 1rem; 
     color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 15px 15px 15px 15px;
+    background-color: white;
+    margin: 0 2% 0 25%;
+}
+
+
+
+
+
+
+ 
+.footer{
+    height: 13%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #0d46c6;
+    color: white;
+}
+.footer .row1{
+    height: 40%;
+    width: 100%;
+}
+.footer .row1 .company_tab{
+    height: 100%;
+    width: auto;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.footer .row1 .company_tab .details{
+    height: 100%;
+    width: max-content;
+    padding: 1rem;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.footer .row1 .social_tab{
+    height: 100%;
+    width: auto;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.footer .row1 .social_tab .media{
+    height: 100%;
+    width: max-content;
+    padding: 1rem;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.footer .row2{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
 }
