@@ -23,12 +23,16 @@ return new class extends Migration
             $table->string('picture')->default('picture.jpg');
             $table->string('bio')->nullable();
             $table->string('dob')->nullable();
-            $table->integer('contribution_no')->default(0);
+            $table->integer('contribution_count')->default(0);
+            $table->string('user_status')->default(0);
+            $table->boolean('active')->default(1);
+            $table->string('last_login_location')->nullable();
             $table->timestamp('last_login')->useCurrent();
+            $table->integer('session_duration')->nullable();
             $table->bigInteger('badge_id')->unsigned()->nullable();
             $table->bigInteger('newsletter_id')->unsigned()->nullable();
-            
             $table->string('login_type')->default('Manual');
+            
             $table->rememberToken();
             $table->timestamps();
         });
