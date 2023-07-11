@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home Page</title>
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/kit.fontawesome.com_1cad59c07c.js') }}" crossorigin="anonymous"></script>
     
 </head>
 <body>
@@ -58,7 +59,8 @@
                 </div>
                 <div class="social_tab">
                     <div class="media">
-                        <i class="fa-brands fa-facebook"></i>                   </div>
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
                     <div class="media">
                         <i class="fa-brands fa-twitter"></i>
                     </div>
