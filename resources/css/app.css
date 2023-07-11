@@ -11,7 +11,7 @@ body{
     width: 100%;
     height: 100vh;
     display: flex;
-    background: #f0efef;
+    background: #edfffe;
 }
 
 
@@ -19,7 +19,7 @@ body{
     width: 100%;
     height: 7%;
     display: flex;
-    background: #0d46c6;
+    background: #149d9b;
     color: white;
     display: flex;
     align-items: center;
@@ -40,7 +40,7 @@ body{
     width: auto;
     float: left;
     color: black;
-    margin:0 0 0 30.5%;
+    margin:0 0 0 28.5%;
     color: white;
     font-size: large;
 }
@@ -60,7 +60,6 @@ body{
 .header .login{
     height: 70%;
     width: max-content;
-    white-space: nowrap;
     padding: 1rem; 
     color: black;
     display: flex;
@@ -68,7 +67,7 @@ body{
     justify-content: center;
     border-radius: 15px 15px 15px 15px;
     background-color: white;
-    margin: 0 2% 0 25%;
+    margin: 0 2% 0 27%;
 }
 
 
@@ -82,7 +81,7 @@ body{
     width: 100%;
     position: fixed;
     bottom: 0;
-    background: #0d46c6;
+    background: #303333;
     color: white;
 }
 .footer .row1{
@@ -117,7 +116,7 @@ body{
 .footer .row1 .social_tab .media{
     height: 100%;
     width: max-content;
-    padding: 1rem;
+    padding: .4rem;
     float: left;
     display: flex;
     align-items: center;

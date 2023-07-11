@@ -39,7 +39,7 @@
         @yield('content')
     </article> --}}
 
-
+        
 
         <div class="footer">
             <div class="row1">
