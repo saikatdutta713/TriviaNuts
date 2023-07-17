@@ -14,16 +14,104 @@
 </head>
 
 <body>
-    @extends('layouts.header')
+    {{-- @extends('layouts.footer')
+    @extends('layouts.header') --}}
+
+    <div class="header">
+        <div class="logo">
+            Logo
+        </div>
+        <div class="navbar">
+            <div class="navbutton">
+                Home
+            </div>
+            <div class="navbutton">
+                Community
+            </div>
+            <div class="navbutton">
+                Trends
+            </div>
+            <div class="navbutton">
+                Category
+            </div>
+        </div>
+        <div class="login">
+            Login
+        </div>
+    </div>
+    <header class="mobile_header">
+        <div class="logo">Logo</div>
+        <button class="toggle-menu">
+            <span class="menu-icon"></span>
+        </button>
+    </header>
+
+    <nav class="mobile_sidebar">
+        <ul class="menu">
+            <li><a href="{{ Route('home') }}">Home</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Trends</a></li>
+            <li><a href="#">Category</a></li>
+            <li><a href="{{ Route('login') }}">Login</a></li>
+        </ul>
+    </nav>
 
     {{--
     <article>
         @yield('content')
     </article> --}}
 
-    @extends('layouts.footer')
+    <div class="footer">
+        <div class="row1">
+            <div class="company_tab">
+                <a href="#" class="links">
+                    Contact Us
+                </a>
+                <a href="#" class="links">
+                    About Us
+                </a>
+                <a href="#" class="links">
+                    Privacy Policy
+                </a>
+                <a href="#" class="links">
+                    Terms and Conditions
+                </a>
+            </div>
+            <div class="social_tab">
+                <div class="media">
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+                <div class="media">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div class="media">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="media">
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row2">
+            <p class="copyright">
+                Copyright
+            </p>
+        </div>
+    </div>
 
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+                const toggleMenuBtn = document.querySelector('.toggle-menu');
+                const sidebar = document.querySelector('.mobile_sidebar');
+                
+                toggleMenuBtn.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                    toggleMenuBtn.classList.toggle('active');
+                });
+        
+                
+            });
+    </script>
 </body>
 
 </html>
