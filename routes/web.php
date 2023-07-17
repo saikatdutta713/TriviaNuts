@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
 
 Route::get('login', [LoginController::class,'index'])->name('login');
 Route::post('login', [LoginController::class,'login'])->name('login');
 Route::get('registration', [RegistrationController::class,'index']);
 Route::get('/master', function () {
-    return view('layout.master');
+    return view('layouts.master');
 });

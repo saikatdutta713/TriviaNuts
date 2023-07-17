@@ -1,3 +1,1 @@
-import './bootstrap.js';
-
-console.log('hello');
+import "./bootstrap.js";
