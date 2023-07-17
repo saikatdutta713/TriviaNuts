@@ -20,7 +20,7 @@ class LoginController extends Controller
         if (auth()->attempt($credentials)) {
             // Authentication successful
             // Redirect the user to the desired location
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/');
         }
 
         // Authentication failed
