@@ -1,5 +1,7 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
-mix.js('resources/js/app.js', 'public/js/app.js')
-    .css('resources/css/app.css', 'public/css/app.css')
-    .setPublicPath('public');
+mix.setPublicPath("public")
+    .browserSync("127.0.0.1:8000")
+    .js("resources/js/app.js", "public/js/app.js")
+    .sass("resources/scss/app.scss", "public/css/app.css")
+    .sass("resources/scss/home.scss", "public/css");
