@@ -24,3 +24,7 @@ Route::get('registration', [RegistrationController::class,'index']);
 Route::get('/master', function () {
     return view('layouts.master');
 });
+
+Route::get('/category', function () {
+    return view('category');
+});

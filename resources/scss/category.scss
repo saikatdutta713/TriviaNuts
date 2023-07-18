@@ -1,0 +1,75 @@
+$color_1: #149d9b;
+$color_2: #333;
+$color_3: #edfffe;
+$color_4: white;
+
+@mixin flexing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scategory {
+    height: 150vh;
+    width: 100%;
+
+    .punch_line {
+        @include flexing;
+        height: 5%;
+        width: max-content;
+        margin: 3% 0% 4.5% 8%;
+        border-radius: 10px;
+        font-size: 18px;
+        padding: 2rem;
+        letter-spacing: 1px;
+        background-color: $color_3;
+        border-bottom: 3px solid $color_1;
+        border-left: 5px solid $color_1;
+    }
+    .sdisplay {
+        @include flexing;
+        height: 40%;
+        width: 70%;
+        margin: 0% 0% 4.5% 15%;
+        background-color: $color_1;
+        border-radius: 15px;
+
+        .subject {
+            height: 90%;
+            width: 25%;
+            margin-right: 1%;
+
+            .subject1 {
+                @include flexing;
+                height: 15%;
+                width: 90%;
+                margin: 11% 0 0 5%;
+                font-size: 22px;
+                border-radius: 20px;
+                color: $color_4;
+                border: 2px dashed $color_4;
+            }
+        }
+        .metarial {
+            @include flexing;
+            height: 90%;
+            width: 72%;
+            background-color: $color_3;
+            border-radius: 8px;
+            box-shadow: 6px 12px 12px rgba(0, 0, 0, 0.2);
+        }
+    }
+    .fquestion {
+        @include flexing;
+        height: 15%;
+        width: 30%;
+        background-color: rgb(244, 207, 207);
+    }
+    .badge {
+        @include flexing;
+        height: 10%;
+        width: 60%;
+        background-color: rgb(244, 207, 207);
+        margin-left: 20%;
+    }
+}

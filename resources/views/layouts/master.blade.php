@@ -56,12 +56,12 @@
         </ul>
     </nav>
 
-    {{--
-    <article>
+    
+    <article class="content">
         @yield('content')
-    </article> --}}
+    </article> 
 
-    <div class="footer">
+    <footer >
         <div class="row1">
             <div class="company_tab">
                 <a href="#" class="links">
@@ -97,7 +97,7 @@
                 Copyright
             </p>
         </div>
-    </div>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
