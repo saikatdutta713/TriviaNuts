@@ -2,6 +2,7 @@ $color_1: #149d9b;
 $color_2: #333;
 $color_3: #edfffe;
 $color_4: white;
+$color_5: #00000033;
 
 @mixin flexing {
     display: flex;
@@ -37,13 +38,13 @@ $color_4: white;
         .subject {
             height: 90%;
             width: 25%;
-            margin-right: 1%;
+            margin: 0% 1% 0 0;
 
             .subject1 {
                 @include flexing;
                 height: 15%;
                 width: 90%;
-                margin: 11% 0 0 5%;
+                margin: 12% 0 0 5%;
                 font-size: 22px;
                 border-radius: 20px;
                 color: $color_4;
@@ -54,22 +55,96 @@ $color_4: white;
             @include flexing;
             height: 90%;
             width: 72%;
-            background-color: $color_3;
             border-radius: 8px;
-            box-shadow: 6px 12px 12px rgba(0, 0, 0, 0.2);
+            background-color: $color_3;
+            box-shadow: 6px 12px 12px $color_5;
         }
     }
-    .fquestion {
-        @include flexing;
-        height: 15%;
-        width: 30%;
-        background-color: rgb(244, 207, 207);
+    .fquestions {
+        height: 12%;
+        width: 80%;
+        border-radius: 30px;
+        margin-left: -1.5%;
+        background-color: $color_3;
+
+        .fquestion {
+            height: 40%;
+            width: max-content;
+            margin: 0 0 0 3%;
+            padding: 0.9rem;
+
+            i {
+                color: $color_1;
+            }
+
+            p {
+                float: right;
+                margin-left: 15px;
+                font-size: 25px;
+            }
+        }
+
+        .fanswer {
+            height: 50%;
+            width: 90%;
+            margin: 0 0 0 7%;
+            padding: 0.5rem;
+            font-size: 17px;
+            letter-spacing: 0.5px;
+            color: $color_1;
+        }
     }
+
     .badge {
         @include flexing;
-        height: 10%;
-        width: 60%;
-        background-color: rgb(244, 207, 207);
-        margin-left: 20%;
+        height: 15%;
+        width: 70%;
+        margin: 5% 0 0 30%;
+
+        .lbadge {
+            @include flexing;
+            height: 70%;
+            width: 32%;
+            font-size: 22px;
+            letter-spacing: 2px;
+
+            p {
+                color: $color_1;
+            }
+        }
+        .rbadge {
+            height: 100%;
+            width: 60%;
+
+            .badgefirst {
+                height: 50%;
+                width: 100%;
+
+                .badge1 {
+                    @include flexing;
+                    height: 100%;
+                    width: 16.6%;
+                    float: left;
+                    border-radius: 10px;
+                    border-left: 3px solid $color_1;
+                    border-bottom: 4px solid $color_1;
+                    background-color: $color_3;
+                }
+            }
+            .badgesecond {
+                height: 50%;
+                width: 100%;
+
+                .badge1 {
+                    @include flexing;
+                    height: 100%;
+                    width: 16.6%;
+                    float: left;
+                    border-radius: 10px;
+                    border-left: 3px solid $color_1;
+                    background-color: $color_3;
+                }
+            }
+        }
     }
 }
