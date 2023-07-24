@@ -281,20 +281,32 @@ footer .row2 {
   width: 100%;
 }
 .scategory .punch_line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 5%;
+  height: -moz-max-content;
+  height: max-content;
   width: -moz-max-content;
   width: max-content;
   margin: 3% 0% 4.5% 8%;
   border-radius: 10px;
   font-size: 18px;
-  padding: 2rem;
-  letter-spacing: 1px;
+  padding: 1rem;
   background-color: #edfffe;
   border-bottom: 3px solid #149d9b;
   border-left: 5px solid #149d9b;
+  color: #ce5983;
+}
+.scategory .punch_line p {
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0.15em;
+  animation: typing 5s steps(40, end);
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 .scategory .sdisplay {
   display: flex;
@@ -303,7 +315,7 @@ footer .row2 {
   height: 40%;
   width: 70%;
   margin: 0% 0% 4.5% 15%;
-  background-color: #149d9b;
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 15px;
 }
 .scategory .sdisplay .subject {
@@ -320,18 +332,200 @@ footer .row2 {
   margin: 12% 0 0 5%;
   font-size: 22px;
   border-radius: 20px;
-  color: white;
-  border: 2px dashed white;
+  color: #ffdf52;
+  background-color: #ce5983;
+  cursor: pointer;
 }
 .scategory .sdisplay .metarial {
+  height: 90%;
+  width: 72%;
+}
+.scategory .sdisplay .metarial .metarial1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90%;
-  width: 72%;
-  border-radius: 8px;
+  height: 100%;
+  width: 100%;
   background-color: #edfffe;
-  box-shadow: 6px 12px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: none;
+}
+.scategory .sdisplay .metarial .metarial1 p {
+  margin-left: 10px;
+  font-size: 17px;
+}
+.scategory .sdisplay .metarial .metarial2 {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+}
+.scategory .sdisplay .metarial .metarial2 .quizmessage {
+  height: auto;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.8rem;
+  margin: auto;
+  position: relative;
+  top: 4%;
+  font-size: 15px;
+  letter-spacing: 1px;
+  border-top: 3px solid #149d9b;
+  border-bottom: 3px solid #149d9b;
+  border-right: 1px solid #149d9b;
+  border-left: 1px solid #149d9b;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.scategory .sdisplay .metarial .metarial2 .quizno {
+  height: 45%;
+  width: 80%;
+  margin: 3% 0 0 10%;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 {
+  height: 42%;
+  width: 100%;
+  margin: 9% 0% 4% 0%;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 16%;
+  margin: 0 2% 0 2%;
+  border-radius: 50%/50%;
+  perspective: 1000px;
+  border-bottom: 3px solid #333;
+  border-right: 5px solid #333;
+  float: left;
+  color: #149d9b;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1 .bhover {
+  font-size: 18px;
+  display: block;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1 .ahover {
+  height: 100%;
+  width: 100%;
+  transform: rotateZ(180deg);
+  font-size: 15px;
+  display: none;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1 .ahover .starts {
+  height: 30%;
+  width: auto;
+  margin-left: 85%;
+  color: #ffdf52;
+  margin-bottom: 20%;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1 .ahover .startb {
+  height: auto;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #149d9b;
+  cursor: pointer;
+  margin: auto;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1:hover {
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease, background-color 0.8s ease;
+  transform: rotateZ(180deg);
+  background-color: #edfffe;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1:hover .bhover {
+  display: none;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1:hover .ahover {
+  display: block;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 {
+  height: 42%;
+  width: 100%;
+  margin: 4% 0% 4% 0%;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 16%;
+  margin: 0 2% 0 2%;
+  border-radius: 50%/50%;
+  perspective: 1000px;
+  border-bottom: 3px solid #333;
+  border-right: 5px solid #333;
+  float: left;
+  color: #149d9b;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1 .bhover {
+  font-size: 18px;
+  display: block;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1 .ahover {
+  height: 100%;
+  width: 100%;
+  transform: rotateZ(180deg);
+  font-size: 15px;
+  display: none;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1 .ahover .starts {
+  height: 30%;
+  width: auto;
+  margin-left: 85%;
+  color: #ffdf52;
+  margin-bottom: 20%;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1 .ahover .startb {
+  height: auto;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #149d9b;
+  cursor: pointer;
+  margin: auto;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1:hover {
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease, background-color 0.8s ease;
+  transform: rotateZ(180deg);
+  background-color: #edfffe;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1:hover .bhover {
+  display: none;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1:hover .ahover {
+  display: block;
+}
+.scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno2 {
+  height: auto;
+  width: -moz-max-content;
+  width: max-content;
+  float: right;
+  margin-top: 8%;
+  margin-right: -4%;
+  overflow-x: visible;
+}
+.scategory .sdisplay .metarial .metarial2 .quizstartb {
+  height: auto;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.8rem;
+  margin: auto;
+  margin-top: 5%;
+  font-size: 20px;
+  letter-spacing: 2px;
+  border-radius: 15px;
+  color: #edfffe;
+  background-color: #333;
+  cursor: pointer;
+}
+.scategory .sdisplay .metarial .metarial2 .quizstartb:hover {
+  background-color: #149d9b;
 }
 .scategory .fquestions {
   height: 12%;
@@ -403,6 +597,34 @@ footer .row2 {
   border-left: 3px solid #149d9b;
   border-bottom: 4px solid #149d9b;
   background-color: #edfffe;
+  color: #ce5983;
+}
+.scategory .badge .rbadge .badgefirst .badge1 p,
+.scategory .badge .rbadge .badgefirst .badge1 h1 {
+  display: none;
+}
+.scategory .badge .rbadge .badgefirst .badge1:hover {
+  flex-wrap: wrap;
+  color: #ffdf52;
+  background-color: #333;
+}
+.scategory .badge .rbadge .badgefirst .badge1:hover h1 {
+  display: block;
+  font-size: 17px;
+  margin-top: 27%;
+  margin-right: auto;
+  font-weight: bolder;
+}
+.scategory .badge .rbadge .badgefirst .badge1:hover p {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ce5983;
+}
+.scategory .badge .rbadge .badgefirst .badge1:hover #badgeicon {
+  font-size: 20px;
+  margin-top: -10%;
+  margin: auto;
 }
 .scategory .badge .rbadge .badgesecond {
   height: 50%;
@@ -417,5 +639,34 @@ footer .row2 {
   float: left;
   border-radius: 10px;
   border-left: 3px solid #149d9b;
+  border-bottom: 4px solid #149d9b;
   background-color: #edfffe;
+  color: #ce5983;
+}
+.scategory .badge .rbadge .badgesecond .badge1 p,
+.scategory .badge .rbadge .badgesecond .badge1 h1 {
+  display: none;
+}
+.scategory .badge .rbadge .badgesecond .badge1:hover {
+  flex-wrap: wrap;
+  color: #ffdf52;
+  background-color: #333;
+}
+.scategory .badge .rbadge .badgesecond .badge1:hover h1 {
+  display: block;
+  font-size: 17px;
+  margin-top: 27%;
+  margin-right: auto;
+  font-weight: bolder;
+}
+.scategory .badge .rbadge .badgesecond .badge1:hover p {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ce5983;
+}
+.scategory .badge .rbadge .badgesecond .badge1:hover #badgeicon {
+  font-size: 20px;
+  margin-top: -10%;
+  margin: auto;
 }

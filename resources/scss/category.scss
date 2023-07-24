@@ -1,92 +1,255 @@
 $color_1: #149d9b;
 $color_2: #333;
 $color_3: #edfffe;
-$color_4: white;
+$color_4: #ffff;
 $color_5: #00000033;
+$color_6: #ffdf52;
+$color_7: #ce5983;
+$color_8: #fc93b9;
+$color_9: #a1fa6e;
 
+@mixin hei-width($height, $width) {
+    height: $height;
+    width: $width;
+}
 @mixin flexing {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.scategory {
-    height: 150vh;
-    width: 100%;
-
-    .punch_line {
+@mixin quizno-display {
+    .quizno1 {
         @include flexing;
-        height: 5%;
-        width: max-content;
+        @include hei-width(100%, 16%);
+        margin: 0 2% 0 2%;
+        border-radius: 50%/50%;
+        perspective: 1000px;
+        border-bottom: 3px solid $color_2;
+        border-right: 5px solid $color_2;
+        float: left;
+        color: $color_1;
+        .bhover {
+            font-size: 18px;
+            display: block;
+        }
+        .ahover {
+            @include hei-width(100%, 100%);
+            // @include flexing;
+            transform: rotateZ(180deg);
+            font-size: 15px;
+            display: none;
+            .starts {
+                @include hei-width(30%, auto);
+                margin-left: 85%;
+                color: $color_6;
+                margin-bottom: 20%;
+            }
+            .startb {
+                @include hei-width(auto, max-content);
+                @include flexing;
+                color: $color_1;
+                cursor: pointer;
+                margin: auto;
+            }
+        }
+        &:hover {
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease, background-color 0.8s ease;
+            transform: rotateZ(180deg);
+
+            background-color: $color_3;
+            .bhover {
+                display: none;
+            }
+            .ahover {
+                display: block;
+            }
+        }
+    }
+}
+@mixin badge-display {
+    @include hei-width(50%, 100%);
+    .badge1 {
+        @include flexing;
+        @include hei-width(100%, 16.6%);
+        float: left;
+        border-radius: 10px;
+        border-left: 3px solid $color_1;
+        border-bottom: 4px solid $color_1;
+        background-color: $color_3;
+        color: $color_7;
+        p,
+        h1 {
+            display: none;
+        }
+
+        &:hover {
+            flex-wrap: wrap;
+            color: $color_6;
+            background-color: $color_2;
+
+            // line-height: inherit;
+            h1 {
+                display: block;
+                font-size: 17px;
+                margin-top: 27%;
+                margin-right: auto;
+                font-weight: bolder;
+            }
+            p {
+                display: block;
+                font-size: 14px;
+                font-weight: 600;
+                color: $color_7;
+            }
+            #badgeicon {
+                font-size: 20px;
+                margin-top: -10%;
+                margin: auto;
+            }
+        }
+    }
+}
+.scategory {
+    @include hei-width(150vh, 100%);
+    .punch_line {
+        // @include flexing;
+        @include hei-width(max-content, max-content);
         margin: 3% 0% 4.5% 8%;
         border-radius: 10px;
         font-size: 18px;
-        padding: 2rem;
-        letter-spacing: 1px;
+        padding: 1rem;
         background-color: $color_3;
         border-bottom: 3px solid $color_1;
         border-left: 5px solid $color_1;
+        color: $color_7;
+        p {
+            overflow: hidden;
+            white-space: nowrap;
+            letter-spacing: 0.15em;
+            animation: typing 5s steps(40, end);
+        }
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
     }
     .sdisplay {
         @include flexing;
-        height: 40%;
-        width: 70%;
+        @include hei-width(40%, 70%);
         margin: 0% 0% 4.5% 15%;
-        background-color: $color_1;
+        background-color: $color_5;
         border-radius: 15px;
-
         .subject {
-            height: 90%;
-            width: 25%;
+            @include hei-width(90%, 25%);
             margin: 0% 1% 0 0;
-
             .subject1 {
                 @include flexing;
-                height: 15%;
-                width: 90%;
+                @include hei-width(15%, 90%);
                 margin: 12% 0 0 5%;
                 font-size: 22px;
                 border-radius: 20px;
-                color: $color_4;
-                border: 2px dashed $color_4;
+                color: $color_6;
+                // border: 2px dashed $color_4;
+                background-color: $color_7;
+                cursor: pointer;
             }
         }
         .metarial {
-            @include flexing;
-            height: 90%;
-            width: 72%;
-            border-radius: 8px;
-            background-color: $color_3;
-            box-shadow: 6px 12px 12px $color_5;
+            @include hei-width(90%, 72%);
+            .metarial1 {
+                @include flexing;
+                @include hei-width(100%, 100%);
+                background-color: $color_3;
+                border-radius: 8px;
+                display: none;
+                p {
+                    margin-left: 10px;
+                    font-size: 17px;
+                }
+            }
+            .metarial2 {
+                @include hei-width(100%, 100%);
+                background-color: $color_4;
+                border-radius: 8px;
+                .quizmessage {
+                    @include hei-width(auto, max-content);
+                    padding: 0.8rem;
+                    margin: auto;
+                    position: relative;
+                    top: 4%;
+                    font-size: 15px;
+                    letter-spacing: 1px;
+                    border-top: 3px solid $color_1;
+                    border-bottom: 3px solid $color_1;
+                    border-right: 1px solid $color_1;
+                    border-left: 1px solid $color_1;
+                    background-color: $color_5;
+                }
+                .quizno {
+                    @include hei-width(45%, 80%);
+                    margin: 3% 0 0 10%;
+                    .quizrow1 {
+                        @include hei-width(42%, 100%);
+                        margin: 9% 0% 4% 0%;
+                        @include quizno-display;
+                    }
+                    .quizrow2 {
+                        @include hei-width(42%, 100%);
+                        margin: 4% 0% 4% 0%;
+                        @include quizno-display;
+                        .quizno2 {
+                            height: auto;
+                            width: max-content;
+                            float: right;
+                            margin-top: 8%;
+                            margin-right: -4%;
+                            overflow-x: visible;
+                        }
+                    }
+                }
+                .quizstartb {
+                    @include hei-width(auto, max-content);
+                    padding: 0.8rem;
+                    margin: auto;
+                    margin-top: 5%;
+                    font-size: 20px;
+                    letter-spacing: 2px;
+                    border-radius: 15px;
+                    color: $color_3;
+                    background-color: $color_2;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $color_1;
+                    }
+                }
+            }
         }
     }
     .fquestions {
-        height: 12%;
-        width: 80%;
+        @include hei-width(12%, 80%);
         border-radius: 30px;
         margin-left: -1.5%;
         background-color: $color_3;
-
         .fquestion {
-            height: 40%;
-            width: max-content;
+            @include hei-width(40%, max-content);
             margin: 0 0 0 3%;
             padding: 0.9rem;
-
             i {
                 color: $color_1;
             }
-
             p {
                 float: right;
                 margin-left: 15px;
                 font-size: 25px;
             }
         }
-
         .fanswer {
-            height: 50%;
-            width: 90%;
+            @include hei-width(50%, 90%);
             margin: 0 0 0 7%;
             padding: 0.5rem;
             font-size: 17px;
@@ -94,56 +257,26 @@ $color_5: #00000033;
             color: $color_1;
         }
     }
-
     .badge {
         @include flexing;
-        height: 15%;
-        width: 70%;
+        @include hei-width(15%, 70%);
         margin: 5% 0 0 30%;
-
         .lbadge {
             @include flexing;
-            height: 70%;
-            width: 32%;
+            @include hei-width(70%, 32%);
             font-size: 22px;
             letter-spacing: 2px;
-
             p {
                 color: $color_1;
             }
         }
         .rbadge {
-            height: 100%;
-            width: 60%;
-
+            @include hei-width(100%, 60%);
             .badgefirst {
-                height: 50%;
-                width: 100%;
-
-                .badge1 {
-                    @include flexing;
-                    height: 100%;
-                    width: 16.6%;
-                    float: left;
-                    border-radius: 10px;
-                    border-left: 3px solid $color_1;
-                    border-bottom: 4px solid $color_1;
-                    background-color: $color_3;
-                }
+                @include badge-display;
             }
             .badgesecond {
-                height: 50%;
-                width: 100%;
-
-                .badge1 {
-                    @include flexing;
-                    height: 100%;
-                    width: 16.6%;
-                    float: left;
-                    border-radius: 10px;
-                    border-left: 3px solid $color_1;
-                    background-color: $color_3;
-                }
+                @include badge-display;
             }
         }
     }
