@@ -4,7 +4,7 @@
         <div class="scategory">
             <div class="punch_line">
                 <p>
-                    Your limitations are just opportunities to push beyond what you thought was possible. 
+                    Keep going, you're on the right track!
                 </p>
             </div>    
             <div class="sdisplay">
@@ -13,7 +13,7 @@
                         Mathematics
                     </div>
                     <div class="subject1">
-                        Computer Knowladge
+                        Computer 
                     </div>
                     <div class="subject1">
                         Aptitude
@@ -166,7 +166,7 @@
                                     </div>
                                 </div>
                                 <div class="quizno2">
-                                    <i class="fa-solid fa-angles-right fa-lg"></i>
+                                    <i class="fa-solid fa-angles-right fa-lg" id="morearrow"></i>
                                 </div>
                             </div>
                         </div>
@@ -179,7 +179,7 @@
             </div>
             <div class="fquestions">
                 <div class="fquestion">
-                    <i class="fa-solid fa-tags fa-2xl"></i>
+                    <i class="fa-solid fa-tags fa-2xl" id="fqlogo"></i>
                    <p> Why did the computer go to the doctor?</p>
                 </div>
                 <div class="fanswer">
