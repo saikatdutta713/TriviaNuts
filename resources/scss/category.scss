@@ -20,8 +20,8 @@ $color_9: #a1fa6e;
 @mixin quizno-display {
     .quizno1 {
         @include flexing;
-        @include hei-width(100%, 16%);
-        margin: 0 2% 0 2%;
+        @include hei-width(80%, 16%);
+        margin: 5% 2% 0 2%;
         border-radius: 50%/50%;
         perspective: 1000px;
         border-bottom: 3px solid $color_2;
@@ -65,18 +65,19 @@ $color_9: #a1fa6e;
                 display: block;
             }
         }
-        @media (max-width: 769px) {
+        @media (max-width: 767px) {
             @include hei-width(44%, 29%);
             margin: 2% 2% 2% 2%;
             .bhover {
-                font-size: 20px;
+                font-size: 15px;
             }
         }
-        @media (min-width: 770px) and (max-width: 1024px) {
-            @include hei-width(44%, 26%);
-            margin: 2% 3.5% 2% 3.5%;
+        @media (min-width: 768px) and (max-width: 1023px) {
+            @include hei-width(70%, 16%);
+            @include flexing;
+            margin: 4% 2% 0% 2%;
             .bhover {
-                font-size: 30px;
+                font-size: 20px;
             }
         }
     }
@@ -123,7 +124,7 @@ $color_9: #a1fa6e;
             }
         }
     }
-    @media (max-width: 769px) {
+    @media (max-width: 767px) {
         .badge1 {
             @include flexing;
             @include hei-width(44%, 30%);
@@ -149,7 +150,7 @@ $color_9: #a1fa6e;
             }
         }
     }
-    @media (min-width: 770px) and (max-width: 1024px) {
+    @media (min-width: 768px) and (max-width: 1023px) {
         .badge1 {
             @include flexing;
             @include hei-width(44%, 30%);
@@ -178,21 +179,21 @@ $color_9: #a1fa6e;
 }
 
 .scategory {
-    @include hei-width(150vh, 100%);
+    @include hei-width(200vh, 100%);
     background-color: aquamarine;
-    @media (max-width: 769px) {
-        @include hei-width(220vh, 100%);
+    @media (max-width: 767px) {
+        @include hei-width(240vh, 100%);
     }
 
-    @media (min-width: 770px) and (max-width: 1024px) {
-        @include hei-width(170vh, 100%);
+    @media (min-width: 768px) and (max-width: 1023px) {
+        @include hei-width(260vh, 100%);
     }
     .punch_line {
         @include hei-width(max-content, max-content);
         margin: 0% 0% 7.5% 8%;
         border-radius: 10px;
         position: relative;
-        top: 4%;
+        top: 3%;
         font-size: 18px;
         padding: 1rem;
         background-color: $color_3;
@@ -214,20 +215,20 @@ $color_9: #a1fa6e;
             }
         }
 
-        @media (max-width: 769px) {
+        @media (max-width: 767px) {
             @include hei-width(max-content, max-content);
-            top: 4.5%;
-            font-size: small;
+            top: 5%;
+            font-size: 10px;
             margin: 0% 0% 0% 3%;
             padding: 0.5rem;
             border-radius: 6px;
         }
 
-        @media (min-width: 770px) and (max-width: 1024px) {
+        @media (min-width: 768px) and (max-width: 1023px) {
             @include hei-width(auto, max-content);
-            top: 1.5%;
+            top: 5%;
             font-size: large;
-            margin: 0% 0% 0.5% 4%;
+            margin: 0% 0% 0% 4%;
             padding: 1rem;
         }
     }
@@ -239,56 +240,58 @@ $color_9: #a1fa6e;
         background-color: $color_5;
         border-radius: 15px;
 
-        @media (max-width: 769px) {
+        @media (max-width: 767px) {
             @include hei-width(42%, 90%);
-            margin: 24% 0% 5.5% 5%;
+            margin: 25% 0% 5.5% 5%;
             display: block;
         }
-        @media (min-width: 770px) and (max-width: 1024px) {
-            @include hei-width(50%, 84%);
-            margin: 9% 0% 5.5% 8%;
+        @media (min-width: 768px) and (max-width: 1023px) {
+            @include hei-width(42%, 84%);
+            margin: 15% 0% 5.5% 8%;
             display: block;
         }
-
         .subject {
-            @include hei-width(90%, 25%);
+            @include hei-width(max-content, 25%);
             margin: 0% 1% 0 0;
             .subject1 {
                 @include flexing;
-                @include hei-width(15%, 90%);
-                margin: 12% 0 0 5%;
+                @include hei-width(20%, 90%);
+                margin: auto;
+                margin-block-end: 9%;
+                margin-block-start: 9%;
+                padding: 1rem;
                 font-size: 22px;
                 border-radius: 20px;
                 color: $color_6;
-                // border: 2px dashed $color_4;
                 background-color: $color_7;
                 cursor: pointer;
             }
 
-            @media (max-width: 769px) {
+            @media (max-width: 767px) {
                 @include hei-width(15%, 90%);
                 margin: auto;
+
                 .subject1 {
                     @include flexing;
                     @include hei-width(38%, 45%);
                     float: left;
                     margin: 3% 2% 2% 2.5%;
-                    font-size: medium;
-                    flex-wrap: wrap;
+                    font-size: 14px;
+                    // flex-wrap: wrap;
                     border-radius: 15px;
                 }
             }
 
-            @media (min-width: 770px) and (max-width: 1024px) {
-                @include hei-width(16%, 75%);
+            @media (min-width: 768px) and (max-width: 1023px) {
+                @include hei-width(15%, 75%);
                 margin: auto;
                 .subject1 {
                     @include flexing;
                     @include hei-width(38%, 45%);
                     float: left;
                     margin: 3.5% 2% 2% 2.5%;
-                    font-size: 27px;
-                    flex-wrap: wrap;
+                    font-size: 20px;
+                    // flex-wrap: wrap;
                     border-radius: 30px;
                 }
             }
@@ -296,15 +299,15 @@ $color_9: #a1fa6e;
 
         .metarial {
             @include hei-width(90%, 72%);
-            @media (max-width: 769px) {
-                @include hei-width(82.5%, 93%);
+            @media (max-width: 767px) {
+                @include hei-width(80.5%, 93%);
                 margin: auto;
-                margin-top: 2.5%;
+                margin-block-start: 4%;
             }
-            @media (min-width: 770px) and (max-width: 1024px) {
-                @include hei-width(79.5%, 93%);
+            @media (min-width: 768px) and (max-width: 1023px) {
+                @include hei-width(77.5%, 93%);
                 margin: auto;
-                margin-top: 4.5%;
+                margin-top: 6%;
             }
             .metarial1 {
                 @include flexing;
@@ -337,8 +340,8 @@ $color_9: #a1fa6e;
                     background-color: $color_5;
                 }
                 .quizno {
-                    @include hei-width(45%, 80%);
-                    margin: 3% 0 0 10%;
+                    @include hei-width(60%, 80%);
+                    margin: 3% 0 1% 10%;
                     .quizrow1 {
                         @include hei-width(42%, 100%);
                         margin: 9% 0% 4% 0%;
@@ -364,7 +367,6 @@ $color_9: #a1fa6e;
                     @include hei-width(auto, max-content);
                     padding: 0.8rem;
                     margin: auto;
-                    margin-top: 5%;
                     font-size: 20px;
                     letter-spacing: 2px;
                     border-radius: 15px;
@@ -376,7 +378,7 @@ $color_9: #a1fa6e;
                     }
                 }
 
-                @media (max-width: 769px) {
+                @media (max-width: 767px) {
                     border-radius: 15px;
                     .quizmessage {
                         @include hei-width(auto, max-content);
@@ -385,8 +387,8 @@ $color_9: #a1fa6e;
                         padding: 0.5rem;
                     }
                     .quizno {
-                        @include hei-width(80%, 96%);
-                        margin: 2% 0 0 2%;
+                        @include hei-width(70%, 96%);
+                        margin: 5% 0 0 2%;
                         .quizrow1 {
                             @include hei-width(44%, 100%);
                         }
@@ -405,23 +407,24 @@ $color_9: #a1fa6e;
                         }
                     }
                     .quizstartb {
-                        margin-top: -4%;
+                        margin-top: 5%;
                         font-size: 15px;
                     }
                 }
-                @media (min-width: 770px) and (max-width: 1024px) {
+                @media (min-width: 768px) and (max-width: 1023px) {
                     border-radius: 12px;
                     .quizmessage {
                         @include hei-width(auto, max-content);
                         font-size: 15px;
                         top: 3%;
+                        margin-bottom: none;
                     }
                     .quizno {
-                        @include hei-width(75%, 94%);
-                        margin: -2% 0 0 3%;
+                        @include hei-width(60%, 94%);
+                        margin: -3% 0 0 3%;
                         .quizrow1 {
-                            @include hei-width(48%, 100%);
-                            margin-bottom: 4%;
+                            @include hei-width(44%, 100%);
+                            // margin-bottom: 4%;
                         }
                         .quizrow2 {
                             @include hei-width(48%, 100%);
@@ -481,22 +484,23 @@ $color_9: #a1fa6e;
                 #fqlogo {
                     font-size: 20px;
                     float: left;
+                    margin-left: -10px;
                 }
                 p {
                     font-size: 16px;
                     float: left;
-                    margin-top: 0%;
+                    padding: 0.5rem;
                 }
             }
             .fanswer {
                 @include hei-width(auto, 90%);
-                margin: 0% 0 0 8%;
+                margin: 0 0 0 10%;
                 padding: 1rem;
                 font-size: 13px;
             }
         }
 
-        @media (min-width: 768px) and (max-width: 1024px) {
+        @media (min-width: 768px) and (max-width: 1023px) {
             @include hei-width(auto, 90%);
             margin-left: -2.5%;
             .fquestion {
@@ -545,28 +549,30 @@ $color_9: #a1fa6e;
         }
 
         @media (max-width: 767px) {
-            @include hei-width(34%, 90%);
+            @include hei-width(30%, 80%);
             display: block;
-            margin: 7% 0 0 5%;
+            margin: 12% 0 0 10%;
             .lbadge {
                 @include hei-width(10%, auto);
                 font-size: 20px;
+                margin: 5% 0 5% 0;
             }
             .rbadge {
-                @include hei-width(90%, 100%);
+                @include hei-width(80%, 100%);
             }
         }
-        @media (min-width: 768px) and (max-width: 1024px) {
-            @include hei-width(31%, 90%);
+        @media (min-width: 768px) and (max-width: 1023px) {
+            @include hei-width(29%, 70%);
             margin: auto;
             display: block;
-            margin-top: 3%;
+            margin-top: 4%;
             .lbadge {
                 @include hei-width(10%, auto);
-                font-size: 35px;
+                font-size: 25px;
+                margin: 5% 0 5% 0;
             }
             .rbadge {
-                @include hei-width(90%, 100%);
+                @include hei-width(80%, 100%);
             }
         }
     }
