@@ -10,14 +10,11 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/kit.fontawesome.com_1cad59c07c.js') }}" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
 </head>
 
 <body>
-    {{-- @extends('layouts.footer')
-    @extends('layouts.header') --}}
 
-    <div class="header">
+    <header class="header">
         <div class="logo">
             Logo
         </div>
@@ -38,7 +35,7 @@
         <div class="login">
             Login
         </div>
-    </div>
+    </header>
     <header class="mobile_header">
         <div class="logo">Logo</div>
         <button class="toggle-menu">
@@ -62,6 +59,12 @@
     </article> 
 
     <footer >
+    <article>
+        @yield('content')
+        <h1>djsjdsfkjf</h1>
+    </article>
+
+    <footer class="footer">
         <div class="row1">
             <div class="company_tab">
                 <a href="#" class="links">
