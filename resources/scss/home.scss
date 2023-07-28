@@ -1,8 +1,4 @@
-:root {
-    --primary_color: #149d9b;
-    --secondary_color: #edfffe;
-    --black: #edfffe;
-}
+@import "./variables.scss";
 
 * {
     padding: 0;
@@ -16,9 +12,211 @@ body {
     width: 100%;
 }
 
-section.first {
+.header {
+    width: 100%;
+    height: 7%;
+    background: transparent;
+    color: $color_1;
+    border-bottom: 1px solid #53c5cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+
+    * {
+        cursor: pointer;
+    }
+    .logo {
+        height: 100%;
+        width: 12%;
+        float: left;
+        color: $color_1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: x-large;
+    }
+    .navbar {
+        height: 70%;
+        width: auto;
+        float: left;
+        color: $color_2;
+        margin: 0 auto;
+        color: $color_1;
+        font-size: large;
+
+        .navbutton {
+            height: 100%;
+            width: max-content;
+            padding: 0 1vw;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                background-color: $background-color_1;
+            }
+        }
+    }
+
+    .login {
+        height: 50%;
+        width: max-content;
+        padding: 1rem;
+        color: $color_5;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        background-color: $color_1;
+        margin: 0 2% 0 2%;
+    }
+}
+
+.header.navbar.navbutton {
+    &:active {
+        background-color: $background-color_1;
+    }
+}
+
+section.greeting {
     width: inherit;
-    height: 100vh;
-    background-color: var(--primary_color);
-    clip-path: polygon(100% 0, 30.6% 91.3%, 0 58.8%, 0 0);
+    height: 795px;
+    background-color: $color_6;
+    position: relative;
+
+    .polygon {
+        width: inherit;
+        height: inherit;
+        background-color: $color_5;
+        clip-path: polygon(100% 0, 100% 10%, 22% 91.3%, 0 58.8%, 0 0);
+    }
+
+    .content {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: row;
+        color: white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 99;
+
+        .left {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            padding: 5% 10%;
+
+            h3 {
+                float: right;
+                margin-right: 2vw;
+                margin-top: 15px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    width: 30px;
+                    height: 2px;
+                    position: absolute;
+                    top: 12px;
+                    left: -35px;
+                    background-color: white;
+                }
+            }
+
+            .tagline-container {
+                overflow: hidden;
+            }
+
+            .tagline {
+                font-size: 24px;
+                font-weight: bold;
+                font-size: 3vw;
+                color: $color_1;
+                white-space: wrap;
+                -webkit-animation: text-focus-in 1s
+                    cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+                animation: text-focus-in 1s
+                    cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+            }
+
+            @-webkit-keyframes text-focus-in {
+                0% {
+                    -webkit-filter: blur(12px);
+                    filter: blur(12px);
+                    opacity: 0;
+                }
+                100% {
+                    -webkit-filter: blur(0px);
+                    filter: blur(0px);
+                    opacity: 1;
+                }
+            }
+            @keyframes text-focus-in {
+                0% {
+                    -webkit-filter: blur(12px);
+                    filter: blur(12px);
+                    opacity: 0;
+                }
+                100% {
+                    -webkit-filter: blur(0px);
+                    filter: blur(0px);
+                    opacity: 1;
+                }
+            }
+
+            .button {
+                height: 30px;
+                margin-top: 10%;
+
+                a {
+                    background-color: $color_1;
+                    border-radius: 50px;
+                    padding: 8px 12px;
+                    text-decoration: none;
+                    color: $color_5;
+                    font-weight: bold;
+                }
+
+                i {
+                    color: $color_5;
+                    margin: 0 3px;
+                }
+            }
+        }
+
+        .right {
+            padding-bottom: 1%;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+section.quote {
+    width: 100%;
+    height: 699px;
+
+    background-color: rgba($color: #c9f5cb, $alpha: 0.1);
+    border-top: 2px solid $color_5;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    
 }

@@ -1,9 +1,4 @@
-:root {
-  --primary_color: #149d9b;
-  --secondary_color: #edfffe;
-  --black: #edfffe;
-}
-
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap);
 * {
   padding: 0;
   margin: 0;
@@ -16,10 +11,175 @@ body {
   width: 100%;
 }
 
-section.first {
+.header {
+  width: 100%;
+  height: 7%;
+  background: transparent;
+  color: white;
+  border-bottom: 1px solid #53c5cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+}
+@media (max-width: 768px) {
+  .header {
+    display: none;
+  }
+}
+.header * {
+  cursor: pointer;
+}
+.header .logo {
+  height: 100%;
+  width: 12%;
+  float: left;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+}
+.header .navbar {
+  height: 70%;
+  width: auto;
+  float: left;
+  color: black;
+  margin: 0 auto;
+  color: white;
+  font-size: large;
+}
+.header .navbar .navbutton {
+  height: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0 1vw;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .navbar .navbutton:hover {
+  background-color: rgba(23, 97, 110, 0.354);
+}
+.header .login {
+  height: 50%;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 1rem;
+  color: #149d9b;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background-color: white;
+  margin: 0 2% 0 2%;
+}
+
+.header.navbar.navbutton:active {
+  background-color: rgba(23, 97, 110, 0.354);
+}
+
+section.greeting {
   width: inherit;
-  height: 100vh;
-  background-color: var(--primary_color);
-  -webkit-clip-path: polygon(100% 0, 30.6% 91.3%, 0 58.8%, 0 0);
-          clip-path: polygon(100% 0, 30.6% 91.3%, 0 58.8%, 0 0);
+  height: 795px;
+  background-color: #ecfeff;
+  position: relative;
+}
+section.greeting .polygon {
+  width: inherit;
+  height: inherit;
+  background-color: #149d9b;
+  -webkit-clip-path: polygon(100% 0, 100% 10%, 22% 91.3%, 0 58.8%, 0 0);
+          clip-path: polygon(100% 0, 100% 10%, 22% 91.3%, 0 58.8%, 0 0);
+}
+section.greeting .content {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+}
+section.greeting .content .left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 5% 10%;
+}
+section.greeting .content .left h3 {
+  float: right;
+  margin-right: 2vw;
+  margin-top: 15px;
+  position: relative;
+}
+section.greeting .content .left h3::before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  top: 12px;
+  left: -35px;
+  background-color: white;
+}
+section.greeting .content .left .tagline-container {
+  overflow: hidden;
+}
+section.greeting .content .left .tagline {
+  font-size: 24px;
+  font-weight: bold;
+  font-size: 3vw;
+  color: white;
+  white-space: wrap;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+section.greeting .content .left .button {
+  height: 30px;
+  margin-top: 10%;
+}
+section.greeting .content .left .button a {
+  background-color: white;
+  border-radius: 50px;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #149d9b;
+  font-weight: bold;
+}
+section.greeting .content .left .button i {
+  color: #149d9b;
+  margin: 0 3px;
+}
+section.greeting .content .right {
+  padding-bottom: 1%;
+}
+section.greeting .content .right img {
+  height: 100%;
+  width: 100%;
+}
+
+section.quote {
+  width: 100%;
+  height: 699px;
+  background-color: rgba(201, 245, 203, 0.1);
+  border-top: 2px solid #149d9b;
+}
+section.quote img {
+  width: 100%;
+  height: 100%;
 }
