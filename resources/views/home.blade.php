@@ -55,8 +55,11 @@
     <section class="quote">
         <img src="{{ asset('images/flower.jpg') }}" alt="quotes background">
         <div class="quote_container">
-            <h2>“ The best way to take care of the future is to take care of the present moment. ”</h2>
-            <h3>Steve Jobs</h3>
+            <div class="the_quote">
+
+                <h2>{{ ($quote[0]['q']) }}</h2>
+                <h3>{{ $quote[0]['a'] }}</h3>
+            </div>
         </div>
     </section>
 </body>

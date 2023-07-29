@@ -113,21 +113,6 @@ section.greeting .content .left {
   flex-direction: column;
   padding: 5% 10%;
 }
-section.greeting .content .left h3 {
-  float: right;
-  margin-right: 2vw;
-  margin-top: 15px;
-  position: relative;
-}
-section.greeting .content .left h3::before {
-  content: "";
-  width: 30px;
-  height: 2px;
-  position: absolute;
-  top: 12px;
-  left: -35px;
-  background-color: white;
-}
 section.greeting .content .left .tagline-container {
   overflow: hidden;
 }
@@ -176,10 +161,39 @@ section.greeting .content .right img {
 section.quote {
   width: 100%;
   height: 699px;
+  position: relative;
   background-color: rgba(201, 245, 203, 0.1);
   border-top: 2px solid #149d9b;
 }
 section.quote img {
   width: 100%;
   height: 100%;
+  position: absolute;
+  z-index: -99;
+}
+section.quote .quote_container {
+  width: 50%;
+  height: inherit;
+  float: right;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+section.quote .quote_container .the_quote {
+  padding: 2%;
+}
+section.quote .quote_container .the_quote h3 {
+  float: right;
+  margin-right: 2vw;
+  margin-top: 15px;
+  position: relative;
+}
+section.quote .quote_container .the_quote h3::before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  top: 12px;
+  left: -35px;
+  background-color: white;
 }
