@@ -6370,8 +6370,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0,
-/******/ 			"css/question": 0,
-/******/ 			"css/home": 0
+/******/ 			"css/home": 0,
+/******/ 			"css/question": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -6421,11 +6421,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/question","css/home"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/question","css/home"], () => (__webpack_require__("./resources/scss/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/question","css/home"], () => (__webpack_require__("./resources/scss/home.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/question","css/home"], () => (__webpack_require__("./resources/scss/category.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/question","css/home"], () => (__webpack_require__("./resources/scss/question.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/home","css/question"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/home","css/question"], () => (__webpack_require__("./resources/scss/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/home","css/question"], () => (__webpack_require__("./resources/scss/home.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/home","css/question"], () => (__webpack_require__("./resources/scss/category.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/home","css/question"], () => (__webpack_require__("./resources/scss/question.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
