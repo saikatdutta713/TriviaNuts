@@ -2111,10 +2111,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/scss/question.scss":
-/*!**************************************!*\
-  !*** ./resources/scss/question.scss ***!
-  \**************************************/
+/***/ "./resources/scss/quiz.scss":
+/*!**********************************!*\
+  !*** ./resources/scss/quiz.scss ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6256,6 +6256,56 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     enabledTransports: ['ws', 'wss'],
 // });
 
+/***/ }),
+
+/***/ "./resources/js/quiz.js":
+/*!******************************!*\
+  !*** ./resources/js/quiz.js ***!
+  \******************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// resources/js/quiz.js
+
+// Function to check and hide/show the "nextButton" based on the content of "quizQuestionNo"
+function checkAndHideNextDiv() {
+  var firstDiv = document.getElementById("quizQuestionNo");
+  var nextDiv = document.getElementById("nextButton");
+  var previousDiv = document.getElementById("previousButton");
+  if (parseInt(firstDiv.textContent) >= 10) {
+    nextDiv.textContent = "Submit";
+    nextDiv.style.backgroundColor = "green";
+  }
+  if (parseInt(firstDiv.textContent) === 1) {
+    previousDiv.style.display = "none";
+  } else {
+    previousDiv.style.display = "block";
+  }
+}
+
+// Function to change the background color of clicked element and remove "selected" class from other elements
+function changeBackgroundColor(clickedDiv) {
+  var childDivs = document.querySelectorAll(".options");
+  childDivs.forEach(function (div) {
+    return div.classList.remove("selected");
+  });
+  clickedDiv.classList.add("selected");
+}
+
+// Event listener for DOMContentLoaded to initialize the functionality
+document.addEventListener("DOMContentLoaded", function () {
+  checkAndHideNextDiv();
+
+  // Add click event listeners to elements with class "options"
+  var childDivs = document.querySelectorAll(".options");
+  childDivs.forEach(function (div) {
+    div.addEventListener("click", function () {
+      changeBackgroundColor(this);
+    });
+  });
+});
+
 /***/ })
 
 /******/ 	});
@@ -6370,7 +6420,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0,
-/******/ 			"css/question": 0,
+/******/ 			"css/quiz": 0,
 /******/ 			"css/home": 0
 /******/ 		};
 /******/ 		
@@ -6421,11 +6471,12 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/question","css/home"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/question","css/home"], () => (__webpack_require__("./resources/scss/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/question","css/home"], () => (__webpack_require__("./resources/scss/home.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/question","css/home"], () => (__webpack_require__("./resources/scss/category.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/question","css/home"], () => (__webpack_require__("./resources/scss/question.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/js/quiz.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/scss/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/scss/home.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/scss/category.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/scss/quiz.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

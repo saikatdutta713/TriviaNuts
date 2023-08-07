@@ -560,6 +560,7 @@ footer .row2 {
     height: 44%;
     width: 29%;
     margin: 2% 2% 2% 2%;
+    float: left;
   }
   .scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1 .bhover {
     font-size: 15px;
@@ -581,6 +582,7 @@ footer .row2 {
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 {
   height: 42%;
   width: 100%;
+  margin: 4% 0% 4% 0%;
 }
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1 {
   display: flex;
@@ -642,6 +644,7 @@ footer .row2 {
     height: 44%;
     width: 29%;
     margin: 2% 2% 2% 2%;
+    float: left;
   }
   .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1 .bhover {
     font-size: 15px;

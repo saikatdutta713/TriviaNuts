@@ -1,0 +1,364 @@
+@import "./variables.scss";
+
+// #140e18#130d17#120c16#130d19#140f16
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family_1;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: $color_6;
+}
+.leftcolumn {
+    height: 100%;
+    width: 13%;
+    float: left;
+    border-right: 1px solid $color_5;
+    background-color: $color_4;
+
+    .logo {
+        @include flexing;
+        height: 7%;
+        width: auto;
+        // float: left;
+        padding: 1rem;
+        color: $color_1;
+        font-size: 25px;
+        background-color: $color_5;
+        .closeoption {
+            display: none;
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            font-size: 20px;
+        }
+    }
+    .userprofile {
+        display: flex;
+        flex-direction: column;
+        height: 30%;
+        width: 100%;
+        margin-top: 20%;
+        .userdp {
+            @include flexing;
+            height: 65%;
+            width: 100%;
+            // padding: 0.5rem;
+            #userdp {
+                font-size: 100px;
+                color: $color_7;
+            }
+        }
+        .username {
+            @include flexing;
+            height: 25%;
+            width: 90%;
+            font-size: 25px;
+            color: $color_1;
+            margin: 0 0 0 5%;
+            border-bottom: 1px solid $color_1;
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            height: 25%;
+            .userdp {
+                height: 55%;
+                #userdp {
+                    font-size: 70px;
+                }
+            }
+            .username {
+                height: 30%;
+                font-size: 15px;
+            }
+        }
+    }
+    .questiontab {
+        height: 25%;
+        width: 90%;
+        display: flex;
+        margin: auto;
+        flex-direction: column;
+        .qrow1 {
+            @include flexing;
+            height: 20%;
+            width: 90%;
+            margin: auto;
+            .question_no {
+                @include flexing;
+                height: 80%;
+                width: 23%;
+                margin: auto;
+                color: $color_3;
+                border-radius: 5px;
+                font-size: 14px;
+                background-color: #ffdf52;
+                box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            height: 20%;
+            .qrow1 {
+                .question_no {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        display: none;
+        width: 50%;
+        .logo {
+            font-size: 20px;
+            margin: auto;
+            .closeoption {
+                margin-left: 30%;
+                display: block;
+                height: auto;
+                width: max-content;
+                padding: 0.3rem;
+                border-radius: 5px;
+                background-color: $color_1;
+                color: $color_5;
+                font-size: 15px;
+                .closeb {
+                }
+            }
+        }
+    }
+}
+.rightcolumn {
+    height: 100%;
+    width: 87%;
+    float: left;
+    .uppertab {
+        height: 7%;
+        width: 100%;
+        // margin: auto;
+        background-color: $color_5;
+        color: $color_1;
+        border-bottom: 1px solid black;
+        .luppertab {
+            @include flexing;
+            height: 100%;
+            width: 40%;
+            float: left;
+            .logo {
+                @include flexing;
+                display: none;
+                margin: auto;
+                height: auto;
+                width: max-content;
+            }
+            .quizname {
+                @include flexing;
+                height: auto;
+                width: max-content;
+                padding: 1rem;
+                font-size: 18px;
+            }
+            @media (max-width: 767px) {
+                width: 55%;
+                .logo {
+                    display: block;
+                }
+                .quizname {
+                    width: 60%;
+                    font-size: 10px;
+                    padding: 0.5rem;
+                }
+            }
+            @media (min-width: 768px) and (max-width: 1023px) {
+                .quizname {
+                    font-size: 14px;
+                }
+            }
+        }
+        .ruppertab {
+            height: 100%;
+            width: max-content;
+            float: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1%;
+            .timeoption {
+                height: auto;
+                width: max-content;
+                padding: 1rem;
+            }
+            .closeoption {
+                height: auto;
+                width: max-content;
+                padding: 0.5rem;
+                border-radius: 10px;
+                background-color: $color_1;
+                color: $color_5;
+            }
+            @media (max-width: 767px) {
+                font-size: 10px;
+                .timeoption {
+                    padding: 0.5rem;
+                }
+            }
+            @media (min-width: 768px) and (max-width: 1023px) {
+                font-size: 14px;
+            }
+        }
+    }
+    .content {
+        height: 77%;
+        width: 90%;
+        margin: auto;
+
+        .question {
+            @include flexing;
+            height: 25%;
+            width: 90%;
+            white-space: wrap;
+            font-size: 30px;
+            margin: auto;
+            color: $color_5;
+            .questionno {
+                float: left;
+                padding: 2rem;
+                font-family: "Roboto Mono", monospace;
+                #quizQuestion {
+                    display: none;
+                }
+            }
+            .questiontext {
+                float: left;
+                padding-top: 2rem;
+                font-family: "Roboto Mono", monospace;
+            }
+            @media (max-width: 767px) {
+                width: 96%;
+                font-size: 20px;
+                .questionno {
+                    padding: 1rem;
+                    #quizQuestion {
+                        display: block;
+                        font-size: 20px;
+                        margin-top: -20%;
+                    }
+                }
+                .questiontext {
+                    padding-top: 3rem;
+                }
+            }
+            @media (min-width: 768px) and (max-width: 1023px) {
+                width: 96%;
+                font-size: 24px;
+                .questionno {
+                    padding: 0.5rem;
+                }
+            }
+        }
+        .answer {
+            @include flexing;
+            height: 75%;
+            width: 100%;
+            .imoge {
+                margin: auto;
+                height: 100%;
+                width: 40%;
+                background-image: url("../../public/images/quiz.svg");
+                background-size: 100% 90%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                float: left;
+                @media (max-width: 767px) {
+                    background-size: 110% 100%;
+                }
+            }
+            .option {
+                @include flexing;
+                height: 100%;
+                width: 50%;
+                margin: auto;
+
+                float: left;
+                .boxoption {
+                    height: 80%;
+                    width: 80%;
+                    display: flex;
+                    flex-direction: column;
+                    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+                    .options {
+                        @include flexing;
+                        margin: auto;
+                        width: 80%;
+                        padding: 1rem;
+                        font-size: 18px;
+                        font-family: "Open Sans", sans-serif;
+                        color: $color_1;
+                        background-color: $color_7;
+                        cursor: pointer;
+
+                        @media (min-width: 768px) and (max-width: 1023px) {
+                            font-size: 14px;
+                        }
+                    }
+                    .selected {
+                        background-color: #007bff;
+                    }
+                }
+                @media (max-width: 767px) {
+                    height: 80%;
+                    .boxoption {
+                        width: 90%;
+                        .options {
+                            font-size: 12px;
+                            padding: 0.7rem;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 767px) {
+            height: 86%;
+            width: 100%;
+            .answer {
+                margin-top: 3%;
+                height: 69%;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            width: 100%;
+        }
+    }
+    .lowertab {
+        @include flexing;
+        height: 16%;
+        width: 100%;
+        .tabbutton {
+            height: auto;
+            width: max-content;
+            padding: 0.6rem;
+            color: $color_1;
+            font-size: 16px;
+            border-radius: 10px;
+            background-color: $color_5;
+            margin-right: 2%;
+
+            @media (min-width: 768px) and (max-width: 1023px) {
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 767px) {
+            height: 5%;
+            .tabbutton {
+                font-size: 9px;
+                padding: 0.3rem;
+                border-radius: 8px;
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        width: 100%;
+    }
+}

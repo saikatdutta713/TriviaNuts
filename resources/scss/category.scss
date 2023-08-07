@@ -68,6 +68,7 @@ $color_9: #a1fa6e;
         @media (max-width: 767px) {
             @include hei-width(44%, 29%);
             margin: 2% 2% 2% 2%;
+            float: left;
             .bhover {
                 font-size: 15px;
             }
@@ -350,7 +351,7 @@ $color_9: #a1fa6e;
                     }
                     .quizrow2 {
                         @include hei-width(42%, 100%);
-                        // margin: 4% 0% 4% 0%;
+                        margin: 4% 0% 4% 0%;
                         @include quizno-display;
                         .quizno2 {
                             height: auto;
@@ -395,7 +396,6 @@ $color_9: #a1fa6e;
                         }
                         .quizrow2 {
                             @include hei-width(44%, 100%);
-
                             .quizno2 {
                                 height: auto;
                                 width: max-content;
