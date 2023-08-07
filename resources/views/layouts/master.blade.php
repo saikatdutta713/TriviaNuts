@@ -53,15 +53,9 @@
         </ul>
     </nav>
 
-    
+
     <article class="content">
         @yield('content')
-    </article> 
-
-    <footer >
-    <article>
-        @yield('content')
-        <h1>djsjdsfkjf</h1>
     </article>
 
     <footer class="footer">
