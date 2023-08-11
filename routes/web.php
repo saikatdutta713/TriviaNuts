@@ -30,3 +30,7 @@ Route::get('/category', function () {
 Route::get('/question', function () {
     return view('question');
 });
+
+Route::get('admin', function(){
+    return view('admin.home');
+});
