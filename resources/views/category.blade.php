@@ -9,25 +9,25 @@
             </div>    
             <div class="sdisplay">
                 <div class="subject">
-                    <div class="subject1">
+                    <div class="subject1" id="subject1">
                         Mathematics
                     </div>
-                    <div class="subject1">
+                    <div class="subject1" id="subject1">
                         Computer 
                     </div>
-                    <div class="subject1">
+                    <div class="subject1" id="subject1">
                         Aptitude
                     </div>
-                    <div class="subject1">
+                    <div class="subject1" id="subject1">
                         Current Affair
                     </div>
                 </div>
                 <div class="metarial">
-                    <div class="metarial1">
+                    <div class="metarial1" id="metarial1">
                         <i class="fa-solid fa-diamond-turn-right fa-flip-horizontal fa-3x"></i>
                         <p>Choose any one subject from left to start your Quiz</p>
                     </div>
-                    <div class="metarial2">
+                    <div class="metarial2" id="metarial2">
                         <div class="quizmessage">
                             <p>Welcome @user play now!!</p>
                         </div>
@@ -35,66 +35,66 @@
                             <div class="quizrow1">
                                 <div class="quizno1">
                                     <div class="bhover">
-                                        No. 1
+                                        Level 1
                                     </div>
                                     <div class="ahover">
                                         <div class="starts">
                                             <i class="fa-solid fa-lock fa-lg"></i>
                                         </div>
                                         <div class="startb">
-                                            <i class="fa-solid fa-circle-play fa-2xl"></i>
+                                            <i class="fa-solid fa-circle-play fa-2xl" id="startB"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quizno1">
                                     <div class="bhover">
-                                        No. 2
+                                        Level 2
                                     </div>
                                     <div class="ahover">
                                         <div class="starts">
                                             <i class="fa-solid fa-lock fa-lg"></i>
                                         </div>
                                         <div class="startb">
-                                            <i class="fa-solid fa-circle-play fa-2xl"></i>
+                                            <i class="fa-solid fa-circle-play fa-2xl" id="startB"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quizno1">
                                     <div class="bhover">
-                                        No. 3
+                                        Level 3
                                     </div>
                                     <div class="ahover">
                                         <div class="starts">
                                             <i class="fa-solid fa-lock fa-lg"></i>
                                         </div>
                                         <div class="startb">
-                                            <i class="fa-solid fa-circle-play fa-2xl"></i>
+                                            <i class="fa-solid fa-circle-play fa-2xl" id="startB"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quizno1">
                                     <div class="bhover">
-                                        No. 4
+                                        Level 4
                                     </div>
                                     <div class="ahover">
                                         <div class="starts">
                                             <i class="fa-solid fa-lock fa-lg"></i>
                                         </div>
                                         <div class="startb">
-                                            <i class="fa-solid fa-circle-play fa-2xl"></i>
+                                            <i class="fa-solid fa-circle-play fa-2xl" id="startB"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quizno1">
                                     <div class="bhover">
-                                        No. 5
+                                        Level 5
                                     </div>
                                     <div class="ahover">
                                         <div class="starts">
                                             <i class="fa-solid fa-lock fa-lg"></i>
                                         </div>
                                         <div class="startb">
-                                            <i class="fa-solid fa-circle-play fa-2xl"></i>
+                                            <i class="fa-solid fa-circle-play fa-2xl" id="startB"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -102,66 +102,66 @@
                             <div class="quizrow2">
                                 <div class="quizno1">
                                     <div class="bhover">
-                                        No. 6
+                                        Level 6
                                     </div>
                                     <div class="ahover">
                                         <div class="starts">
                                             <i class="fa-solid fa-lock fa-lg"></i>
                                         </div>
                                         <div class="startb">
-                                            <i class="fa-solid fa-circle-play fa-2xl"></i>
+                                            <i class="fa-solid fa-circle-play fa-2xl" id="startB"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quizno1">
                                     <div class="bhover">
-                                        No. 7
+                                        Level 7
                                     </div>
                                     <div class="ahover">
                                         <div class="starts">
                                             <i class="fa-solid fa-lock fa-lg"></i>
                                         </div>
                                         <div class="startb">
-                                            <i class="fa-solid fa-circle-play fa-2xl"></i>
+                                            <i class="fa-solid fa-circle-play fa-2xl" id="startB"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quizno1">
                                     <div class="bhover">
-                                        No. 8
+                                        Level 8
                                     </div>
                                     <div class="ahover">
                                         <div class="starts">
                                             <i class="fa-solid fa-lock fa-lg"></i>
                                         </div>
                                         <div class="startb">
-                                            <i class="fa-solid fa-circle-play fa-2xl"></i>
+                                            <i class="fa-solid fa-circle-play fa-2xl" id="startB"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quizno1">
                                     <div class="bhover">
-                                        No. 9
+                                        Level 9
                                     </div>
                                     <div class="ahover">
                                         <div class="starts">
                                             <i class="fa-solid fa-lock fa-lg"></i>
                                         </div>
                                         <div class="startb">
-                                            <i class="fa-solid fa-circle-play fa-2xl"></i>
+                                            <i class="fa-solid fa-circle-play fa-2xl" id="startB"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quizno1">
                                     <div class="bhover">
-                                        No. 10
+                                        Level 10
                                     </div>
                                     <div class="ahover">
                                         <div class="starts">
                                             <i class="fa-solid fa-lock fa-lg"></i>
                                         </div>
                                         <div class="startb">
-                                            <i class="fa-solid fa-circle-play fa-2xl"></i>
+                                            <i class="fa-solid fa-circle-play fa-2xl" id="startB"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -170,9 +170,34 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="quizstartb">
+                        <div class="quizstartb" id="quizstartb">
                             <i class="fa-solid fa-circle-play fa-xl"></i>
                             Start
+                        </div>
+                    </div>
+                    <div class="metarial3" id="metarial3">
+                        <div class="quizName">
+                            <div class="subjectName" id="subjectName">
+                                {{-- Subject --}}
+                            </div>
+                            <div class="level">
+                                <p>Quiz:</p>
+                                 <p id="levelText"> </p>
+                                {{-- Quiz level 1 --}}
+                            </div>
+                            <div class="back">
+                                Back
+                            </div>
+                        </div>
+                        <div class="rule">
+                            <div class="ruleContent">
+                                <i class="fa-solid fa-handshake" id="handshake"></i>
+                                <p>You have 10 minutes to solve 10 question. You can only choose 1 option out of 4 for each question. On the time of playing quiz if you click on back button your quiz will automatically submitted.  </p>
+                            </div>
+                        </div>
+                        <div class="startButton">
+                            
+                            <p><i class="fa-solid fa-circle-play fa-xl" id="startQuizB"></i>Start</p>
                         </div>
                     </div>
                 </div>
@@ -261,5 +286,21 @@
         </div>
 
 
+        <script>
+//        function toggleDisplay() {
+//     var contentDiv = document.getElementById("metarial2");
+//     var contentDiv1 = document.getElementById("metarial1");
+    
+//     if (contentDiv.style.display === "" || contentDiv.style.display === "none") {
+//         contentDiv.style.display = "block";
+//         contentDiv1.style.display = "none";
+//     } 
+//     else {
+//         contentDiv.style.display = "block";
+//         contentDiv1.style.display = "none";
+//     }
+// }
 
+        
+    </script>
     @endsection

@@ -96,7 +96,7 @@ body {
                 border-radius: 5px;
                 font-size: 14px;
                 background-color: #ffdf52;
-                box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+                // box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
             }
         }
         @media (min-width: 768px) and (max-width: 1023px) {
@@ -124,8 +124,8 @@ body {
                 background-color: $color_1;
                 color: $color_5;
                 font-size: 15px;
-                .closeb {
-                }
+                // .closeb {
+                // }
             }
         }
     }

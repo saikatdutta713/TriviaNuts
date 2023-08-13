@@ -96,7 +96,7 @@
                 
                 <div class="question">
                     <div class="questionno" id="quizQuestionNo" >
-                        6.
+                        1.
                         <i class="fa-solid fa-caret-down" onclick="toggleDisplay()" id="quizQuestion"></i>
                     </div>
                     <div class="questiontext">

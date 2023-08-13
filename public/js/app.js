@@ -2115,9 +2115,12 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************!*\
   !*** ./resources/scss/quiz.scss ***!
   \**********************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Undefined mixin.\n   ╷\n24 │         @include flexing;\n   │         ^^^^^^^^^^^^^^^^\n   ╵\n  resources\\scss\\quiz.scss 24:9  root stylesheet\n    at processResult (D:\\Project\\TriviaNuts\\node_modules\\webpack\\lib\\NormalModule.js:764:19)\n    at D:\\Project\\TriviaNuts\\node_modules\\webpack\\lib\\NormalModule.js:866:5\n    at D:\\Project\\TriviaNuts\\node_modules\\loader-runner\\lib\\LoaderRunner.js:400:11\n    at D:\\Project\\TriviaNuts\\node_modules\\loader-runner\\lib\\LoaderRunner.js:252:18\n    at context.callback (D:\\Project\\TriviaNuts\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at D:\\Project\\TriviaNuts\\node_modules\\sass-loader\\dist\\index.js:54:7\n    at Function.call$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:104488:16)\n    at render_closure1.call$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:89072:12)\n    at _RootZone.runBinary$3$3 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:30945:18)\n    at _FutureListener.handleError$1 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29475:21)\n    at _Future__propagateToListeners_handleError.call$0 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29782:49)\n    at Object._Future__propagateToListeners (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:4079:77)\n    at _Future._completeError$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29628:9)\n    at _AsyncAwaitCompleter.completeError$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29276:12)\n    at Object._asyncRethrow (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:3882:17)\n    at D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:20722:20\n    at _wrapJsFunctionForAsync_closure.$protected (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:3907:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29295:12)\n    at _awaitOnObject_closure0.call$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29289:25)\n    at _RootZone.runBinary$3$3 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:30945:18)\n    at _FutureListener.handleError$1 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29475:21)\n    at _Future__propagateToListeners_handleError.call$0 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29782:49)\n    at Object._Future__propagateToListeners (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:4079:77)\n    at _Future._completeError$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29628:9)\n    at _AsyncAwaitCompleter.completeError$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29276:12)\n    at Object._asyncRethrow (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:3882:17)\n    at D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:16069:20\n    at _wrapJsFunctionForAsync_closure.$protected (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:3907:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29295:12)\n    at _awaitOnObject_closure0.call$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29289:25)\n    at _RootZone.runBinary$3$3 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:30945:18)\n    at _FutureListener.handleError$1 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29475:21)\n    at _Future__propagateToListeners_handleError.call$0 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29782:49)\n    at Object._Future__propagateToListeners (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:4079:77)\n    at _Future._completeError$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29628:9)\n    at _AsyncAwaitCompleter.completeError$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29276:12)\n    at Object._asyncRethrow (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:3882:17)\n    at D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:16105:20\n    at _wrapJsFunctionForAsync_closure.$protected (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:3907:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29295:12)\n    at _awaitOnObject_closure0.call$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29289:25)\n    at _RootZone.runBinary$3$3 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:30945:18)\n    at _FutureListener.handleError$1 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29475:21)\n    at _Future__propagateToListeners_handleError.call$0 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29782:49)\n    at Object._Future__propagateToListeners (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:4079:77)\n    at _Future._completeError$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29628:9)\n    at _AsyncAwaitCompleter.completeError$2 (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:29276:12)\n    at Object._asyncRethrow (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:3882:17)\n    at D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:71560:24\n    at _wrapJsFunctionForAsync_closure.$protected (D:\\Project\\TriviaNuts\\node_modules\\sass\\sass.dart.js:3907:15)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -6209,6 +6212,84 @@ const isThenable = (thing) =>
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap.js */ "./resources/js/bootstrap.js");
 
+document.addEventListener("DOMContentLoaded", function () {
+  var prevContent = null;
+  function toggleDisplay(event) {
+    var contentDiv = document.getElementById("metarial2");
+    var contentDiv1 = document.getElementById("metarial1");
+    var subjectDiv = document.getElementById("subjectName");
+    if (contentDiv.style.display === "" || contentDiv.style.display === "none" || contentDiv.style.display === "block") {
+      contentDiv.style.display = "block";
+      contentDiv1.style.display = "none";
+    }
+    contentDiv.style.transition = "background-color 0.1s ease-in-out";
+    contentDiv.style.backgroundColor = "#a1fa6e"; // Set the desired color
+    var clickedContent = event.target.textContent;
+    if (prevContent !== clickedContent) {
+      setTimeout(function () {
+        contentDiv.style.backgroundColor = ""; // Revert back to previous background color
+      }, 500);
+    } else {
+      contentDiv.style.backgroundColor = "";
+    }
+    prevContent = clickedContent;
+    subjectDiv.textContent = clickedContent;
+  }
+  var toggleButtons = document.querySelectorAll(".subject1");
+  toggleButtons.forEach(function (toggleButton) {
+    toggleButton.addEventListener("click", toggleDisplay);
+  });
+  function changeBackgroundColor(clickedDiv) {
+    var subjectDivs = document.querySelectorAll(".subject1");
+    subjectDivs.forEach(function (div) {
+      return div.classList.remove("selected");
+    });
+    clickedDiv.classList.add("selected");
+  }
+  var subjectDivs = document.querySelectorAll(".subject1");
+  subjectDivs.forEach(function (div) {
+    div.addEventListener("click", function () {
+      changeBackgroundColor(this);
+    });
+  });
+  var contentDiv1 = document.getElementById("metarial1");
+  var contentDiv2 = document.getElementById("metarial2");
+  var contentDiv3 = document.getElementById("metarial3");
+  var toggleStartB = document.querySelector("#quizstartb");
+  // Displaying rule window by clicking stat button
+  toggleStartB.addEventListener("click", function () {
+    contentDiv1.style.display = "none";
+    contentDiv2.style.display = "none";
+    contentDiv3.style.display = "block";
+  });
+  var toggleStartSmallB = document.querySelectorAll("#startB");
+  toggleStartSmallB.forEach(function (toggleButton) {
+    toggleButton.addEventListener("click", function () {
+      var bhoverText = toggleButton.closest(".quizno1").querySelector(".bhover").textContent;
+      var levelNameDiv = document.querySelector("#levelText");
+      levelNameDiv.textContent = bhoverText;
+      contentDiv1.style.display = "none";
+      contentDiv2.style.display = "none";
+      contentDiv3.style.display = "block";
+    });
+  });
+
+  // Displaying quiz levels by clicking back button of rule window
+  var toggleButtonBack = document.querySelector(".back");
+  toggleButtonBack.addEventListener("click", function () {
+    contentDiv1.style.display = "none";
+    contentDiv2.style.display = "block";
+    contentDiv3.style.display = "none";
+  });
+  var toggleButtonMetarial2 = document.querySelectorAll(".subject1");
+  toggleButtonMetarial2.forEach(function (toggleButton) {
+    toggleButton.addEventListener("click", function () {
+      contentDiv1.style.display = "none";
+      contentDiv2.style.display = "block";
+      contentDiv3.style.display = "none";
+    });
+  });
+});
 
 /***/ }),
 
@@ -6417,6 +6498,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0,
+/******/ 			"css/quiz": 0,
 /******/ 			"css/home": 0
 /******/ 		};
 /******/ 		
@@ -6467,12 +6549,12 @@ document.addEventListener("DOMContentLoaded", function () {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/home"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/home"], () => (__webpack_require__("./resources/js/quiz.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/home"], () => (__webpack_require__("./resources/scss/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/home"], () => (__webpack_require__("./resources/scss/home.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/home"], () => (__webpack_require__("./resources/scss/category.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/home"], () => (__webpack_require__("./resources/scss/quiz.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/js/quiz.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/scss/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/scss/home.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/scss/category.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/scss/quiz.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

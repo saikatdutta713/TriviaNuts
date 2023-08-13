@@ -14,3 +14,9 @@ $background-color_1: rgba(23, 97, 110, 0.354);
 $sidebar-background-color: #444;
 $font-family_1: "Montserrat", sans-serif;
 $header-height: 60px;
+
+@mixin flexing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
