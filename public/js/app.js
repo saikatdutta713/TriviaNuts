@@ -2111,6 +2111,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/scss/community.scss":
+/*!***************************************!*\
+  !*** ./resources/scss/community.scss ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/scss/quiz.scss":
 /*!**********************************!*\
   !*** ./resources/scss/quiz.scss ***!
@@ -6554,6 +6567,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/scss/app.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/scss/home.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/scss/category.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/scss/community.scss")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/quiz","css/home"], () => (__webpack_require__("./resources/scss/quiz.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	

@@ -27,6 +27,9 @@ Route::get('/master', function () {
 Route::get('/category', function () {
     return view('category');
 });
+Route::get('/community', function () {
+    return view('community');
+});
 Route::get('/quiz', function () {
     return view('quiz');
 });
