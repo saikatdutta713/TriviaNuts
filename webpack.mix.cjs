@@ -7,4 +7,5 @@ mix.setPublicPath("public")
     .sass("resources/scss/app.scss", "public/css/app.css")
     .sass("resources/scss/home.scss", "public/css")
     .sass("resources/scss/category.scss", "public/css/app.css")
+    .sass("resources/scss/community.scss", "public/css/app.css")
     .sass("resources/scss/quiz.scss", "public/css");
