@@ -28,13 +28,13 @@
 .main__greeting {
     > h1 {
         font-size: 24px;
-        color: $colorr_2;
+        color: $color_8;
         margin-bottom: 5px;
     }
     > p {
         font-size: 14px;
         font-weight: 700;
-        color: $colorr_1;
+        color: $color_7;
     }
 }
 .main__cards {
@@ -83,17 +83,17 @@
             > div {
                 > h1 {
                     font-size: 24px;
-                    color: $colorr_2;
+                    color: $color_8;
                     margin-bottom: 5px;
                 }
                 > p {
                     font-size: 14px;
                     font-weight: 700;
-                    color: $colorr_1;
+                    color: $color_7;
                 }
             }
             > i {
-                color: $colorr_8;
+                color: $color_14;
                 font-size: 20px;
                 background: #ffc100;
                 border-radius: 200px 0px 200px 200px;
@@ -118,17 +118,17 @@
             > div {
                 > h1 {
                     font-size: 24px;
-                    color: $colorr_2;
+                    color: $color_8;
                     margin-bottom: 5px;
                 }
                 > p {
                     font-size: 14px;
                     font-weight: 700;
-                    color: $colorr_1;
+                    color: $color_7;
                 }
             }
             > i {
-                color: $colorr_8;
+                color: $color_14;
                 font-size: 20px;
                 background: #39447a;
                 border-radius: 200px 0px 200px 200px;
@@ -146,7 +146,7 @@
         }
         .card1 {
             background: #d1ecf1;
-            color: $colorr_9;
+            color: $color_15;
             text-align: center;
             padding: 25px;
             border-radius: 5px;
@@ -154,7 +154,7 @@
         }
         .card2 {
             background: #d2f9ee;
-            color: $colorr_10;
+            color: $color_16;
             text-align: center;
             padding: 25px;
             border-radius: 5px;
@@ -162,7 +162,7 @@
         }
         .card3 {
             background: #d6d8d9;
-            color: $colorr_11;
+            color: $color_17;
             text-align: center;
             padding: 25px;
             border-radius: 5px;
@@ -170,7 +170,7 @@
         }
         .card4 {
             background: #fddcdf;
-            color: $colorr_12;
+            color: $color_18;
             text-align: center;
             padding: 25px;
             border-radius: 5px;

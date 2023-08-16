@@ -27,7 +27,7 @@ body {
     font-family: $font-family_1;
 }
 .text-primary-p {
-    color: $colorr_1;
+    color: $color_7;
     font-size: 14px;
     font-weight: 700;
 }
@@ -35,16 +35,16 @@ body {
     font-weight: 700;
 }
 .text-title {
-    color: $colorr_2;
+    color: $color_8;
 }
 .text-lightblue {
-    color: $colorr_3;
+    color: $color_9;
 }
 .text-red {
-    color: $colorr_4;
+    color: $color_10;
 }
 .text-yellow {
-    color: $colorr_5;
+    color: $color_11;
 }
 .text-green {
     color: $color_5;
@@ -83,7 +83,7 @@ body {
                 font-weight: 700;
             }
             .active_link {
-                color: $colorr_7;
+                color: $color_13;
                 border-bottom: 3px solid #265acc;
                 padding-bottom: 12px;
             }
@@ -96,7 +96,7 @@ body {
                 margin-left: 20px;
                 text-decoration: none;
                 > i {
-                    color: $colorr_1;
+                    color: $color_7;
                     font-size: 16px;
                     border-radius: 50px;
                     background: #ffffff;
@@ -125,7 +125,7 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: $colorr_13;
+            color: $color_19;
             margin-bottom: 30px;
             > div {
                 > img {
@@ -148,7 +148,7 @@ body {
         }
         .sidebar__menu {
             > h2 {
-                color: $colorr_14;
+                color: $color_20;
                 font-size: 16px;
                 margin-top: 15px;
                 margin-bottom: 5px;
@@ -157,12 +157,12 @@ body {
             }
         }
         .sidebar__link {
-            color: $colorr_13;
+            color: $color_19;
             padding: 10px;
             border-radius: 3px;
             > a {
                 text-decoration: none;
-                color: $colorr_1;
+                color: $color_7;
                 font-weight: 700;
             }
             > i {
@@ -227,10 +227,10 @@ body {
         .sidebar__logout {
             margin-top: 20px;
             padding: 10px;
-            color: $colorr_15;
+            color: $color_21;
             > a {
                 text-decoration: none;
-                color: $colorr_15;
+                color: $color_21;
                 font-weight: 700;
                 text-transform: uppercase;
             }
