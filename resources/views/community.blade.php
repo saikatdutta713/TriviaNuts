@@ -40,11 +40,64 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="ContentHelp">
+                    <div class="askHelp">
+                        <p><i class="fa-regular fa-circle-question" id="questionLogo"></i>
+                        Ask Question</p>
+                        
+                    </div>
+                    <div class="helpLeader">
+                        <div class="people">
+                        Helps last 10 days
+                        </div>
+                        <div class="people">
+                            <div class="author">
+                                Uday
+                            </div>
+                            <div class="number">
+                                20 
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
+                        </div>
+
+                        <div class="people">
+                            <div class="author">
+                                Saikat
+                            </div>
+                            <div class="number">
+                                17
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
+                        </div>
+
+                        <div class="people">
+                            <div class="author">
+                                Pol
+                            </div>
+                            <div class="number">
+                                10 
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
+                        </div>
+
+                        <div class="people">
+                            <div class="author">
+                                Robin
+                            </div>
+                            <div class="number">
+                                8
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="postContent">
                     <div class="filterNav">
                         <div class="displayButton">
                             <div class="displayTabs">
-                                Subject
+                                Community Posts
                             </div>
                             <div class="displayTabs">
                                 <i class="fa-solid fa-check-double"></i>
@@ -88,17 +141,17 @@
                             </div>
                         </div>
                         <div class="postSocial">
+                            
                             <div class="social">
-                                <i class="fa-regular fa-heart"></i>
-                                Love
+                                <i class="fa-regular fa-bookmark" id="socialIcon1"></i>
                             </div>
                             <div class="social">
-                                <i class="fa-regular fa-bookmark"></i>
-                                Bookmark
+                                <i class="fa-regular fa-heart" id="socialIcon1"></i>
+                                210
                             </div>
                             <div class="social">
-                                <i class="fa-regular fa-eye"></i>
-                                View
+                                <i class="fa-regular fa-eye" id="socialIcon"></i>
+                                1395
                             </div>
                         </div>
                     </div>
@@ -125,17 +178,17 @@
                             </div>
                         </div>
                         <div class="postSocial">
+                            
                             <div class="social">
-                                <i class="fa-regular fa-heart"></i>
-                                Love
+                                <i class="fa-regular fa-bookmark" id="socialIcon1"></i>
                             </div>
                             <div class="social">
-                                <i class="fa-regular fa-bookmark"></i>
-                                Bookmark
+                                <i class="fa-regular fa-heart" id="socialIcon1"></i>
+                                10
                             </div>
                             <div class="social">
-                                <i class="fa-regular fa-eye"></i>
-                                View
+                                <i class="fa-regular fa-eye" id="socialIcon"></i>
+                                55
                             </div>
                         </div>
                     </div>
@@ -162,17 +215,17 @@
                             </div>
                         </div>
                         <div class="postSocial">
+                            
                             <div class="social">
-                                <i class="fa-regular fa-heart"></i>
-                                Love
+                                <i class="fa-regular fa-bookmark" id="socialIcon1"></i>
                             </div>
                             <div class="social">
-                                <i class="fa-regular fa-bookmark"></i>
-                                Bookmark
+                                <i class="fa-regular fa-heart" id="socialIcon1"></i>
+                                55
                             </div>
                             <div class="social">
-                                <i class="fa-regular fa-eye"></i>
-                                View
+                                <i class="fa-regular fa-eye" id="socialIcon"></i>
+                                216
                             </div>
                         </div>
                     </div>
@@ -181,54 +234,7 @@
                         <p>Next</p>
                     </div>
                 </div>
-                <div class="ContentHelp">
-                    <div class="askHelp">
-                        <p>Ask Question</p>
-                        
-                    </div>
-                    <div class="people">
-                       Helps last 10 days
-                    </div>
-                    <div class="people">
-                        <div class="author">
-                            Uday
-                        </div>
-                        <div class="number">
-                            20 
-                            <i class="fa-regular fa-circle-check"></i>
-                        </div>
-                    </div>
-
-                    <div class="people">
-                        <div class="author">
-                            Saikat
-                        </div>
-                        <div class="number">
-                            17
-                            <i class="fa-regular fa-circle-check"></i>
-                        </div>
-                    </div>
-
-                    <div class="people">
-                        <div class="author">
-                            Pol
-                        </div>
-                        <div class="number">
-                            10 
-                            <i class="fa-regular fa-circle-check"></i>
-                        </div>
-                    </div>
-
-                    <div class="people">
-                        <div class="author">
-                            Robin
-                        </div>
-                        <div class="number">
-                            8
-                            <i class="fa-regular fa-circle-check"></i>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     @endsection
