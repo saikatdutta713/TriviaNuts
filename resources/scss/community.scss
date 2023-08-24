@@ -10,16 +10,20 @@
         height: 160vh;
         width: 100%;
     }
-    .upperContent {
-        height: 43%;
-        width: 100%;
-        @include flexing;
-        flex-direction: column;
-        padding: 2rem;
+    @mixin searchWindow(
+        $hsearchBox,
+        $wsearchBox,
+        $htopics,
+        $wtopics,
+        $himageCommunity,
+        $wimageCommunity
+    ) {
         .searchBox {
             @include flexing;
-            height: 16%;
-            width: 40%;
+            // height: 16%;
+            // width: 40%;
+            height: $hsearchBox;
+            width: $wsearchBox;
             border-radius: 15px;
             border: 1px solid $color_3;
             #searchLogo {
@@ -38,8 +42,10 @@
             }
         }
         .topics {
-            height: 15%;
-            width: max-content;
+            // height: 15%;
+            height: $htopics;
+            width: $wtopics;
+            // width: max-content;
             @include flexing;
             p {
                 font-size: 12px;
@@ -55,561 +61,836 @@
             }
         }
         .imageCommunity {
-            height: 75%;
-            width: 100%;
+            // height: 75%;
+            height: $himageCommunity;
+            width: $wimageCommunity;
+            // width: 100%;
             background-image: url("../../public/images/community.svg");
             background-size: 100% 150%;
             background-repeat: no-repeat;
             background-position: center center;
         }
-        @media (max-width: 767px) {
-            height: 20%;
-            width: 100%;
-            margin-top: 15%;
-            padding: 1rem;
-            .searchBox {
-                height: 20%;
-                width: 60%;
-                #searchLogo {
-                    width: 15%;
-                    font-size: 10px;
-                }
-                #searchInput {
-                    width: 85%;
-                    font-size: 10px;
-                }
-            }
-            .topics {
-                height: 26%;
-                p {
-                    font-size: 9px;
-                    padding: 0.3rem;
-                }
-                .topicsSubject {
-                    font-size: 9px;
-                    padding: 0.3rem;
-                }
-            }
-            .imageCommunity {
-                height: 55%;
-                width: 100%;
+    }
+    @mixin filterNav($height, $font_size) {
+        background-color: $color_11;
+        height: $height;
+        width: 96%;
+        .displayButton {
+            height: 100%;
+            width: 40%;
+            @include flexing;
+            float: left;
+            .displayTabs {
+                font-size: $font_size;
+                padding: 0.5rem;
+                margin-left: 0.8rem;
+                margin: auto;
             }
         }
-        @media (min-width: 768px) and (max-width: 1023px) {
-            height: 20%;
-            width: 100%;
-            margin-top: 8%;
-            padding: 1rem;
-            .searchBox {
-                height: 20%;
-                width: 50%;
-                #searchLogo {
-                    width: 10%;
-                    font-size: 12px;
-                }
-                #searchInput {
-                    width: 90%;
-                    font-size: 12px;
-                }
-            }
-            .topics {
-                height: 20%;
-                p {
-                    font-size: 10px;
-                    padding: 0.3rem;
-                }
-                .topicsSubject {
-                    font-size: 10px;
-                    padding: 0.3rem;
-                }
-            }
-            .imageCommunity {
-                height: 60%;
-                width: 100%;
+        .filterButton {
+            height: 100%;
+            width: 40%;
+            @include flexing;
+            float: right;
+            .filterTabs {
+                font-size: $font_size;
+                cursor: pointer;
+                padding: 0.5rem;
+                margin-right: 0.8rem;
             }
         }
     }
-    .lowerContent {
-        height: 50%;
-        width: 100%;
-        @include flexing;
-        @media (max-width: 767px) {
-            height: 75%;
-            display: block;
-            margin-top: 1rem;
-        }
-        @media (min-width: 768px) and (max-width: 1023px) {
-            height: 75%;
-            display: block;
-            margin-top: 1rem;
-        }
-        .postTab {
-            order: 1;
-            height: 100%;
-            width: 15%;
-            @include flexing;
-            flex-direction: column;
-            gap: 1.5rem;
-            .createPost {
+    @mixin membersPost(
+        $height,
+        $display,
+        $hpostOwner,
+        $wpostOwner,
+        $hpostSocial,
+        $wpostSocial,
+        $wprofile,
+        $wdetails,
+        $font-size,
+        $profilePic,
+        $tittleTypeSize,
+        $socialSize,
+        $color
+    ) {
+        // height: 22%;
+        height: $height;
+        width: 96%;
+        background-color: $color;
+        border-bottom: 1px solid $color_11;
+        display: $display;
+        align-items: center;
+        justify-content: center;
+
+        .postOwner {
+            height: $hpostOwner;
+            width: $wpostOwner;
+            .profile {
                 @include flexing;
-                background-color: $color_9;
-                width: 80%;
-                height: max-content;
-                // background: linear-gradient(45deg, #ff6b6b, #ff9f9f);
-                border-radius: 30px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-                transform: perspective(600px) rotateX(15deg);
-                transition: transform 0.3s, box-shadow 0.3s;
-                cursor: pointer;
-                p {
-                    font-size: 15px;
-                    padding: 1rem;
-                }
-                &:hover {
-                    transform: perspective(600px) rotateX(0deg) translateY(-5px);
-                    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
+                height: 100%;
+                width: $wprofile;
+                float: left;
+                #profilePic {
+                    // font-size: 45px;
+                    font-size: $profilePic;
+                    color: $color_7;
+                    cursor: pointer;
                 }
             }
-            .postNav {
-                background-color: $color_6;
-                height: 50%;
-                width: 75%;
-                box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-                p {
-                    font-size: 13px;
-                    @include flexing;
-                    background-color: $color_11;
-                    height: 20%;
-                }
-                .posts {
-                    font-size: 13px;
-                    cursor: pointer;
+            .details {
+                height: 90%;
+                width: $wdetails;
+                float: left;
+                .tittle {
                     display: flex;
                     align-items: center;
-                    padding-left: 1rem;
+                    height: 80%;
+                    // font-size: 17px;
+                    font-size: $font-size;
+                    padding: 0.5rem;
+                    color: $color_5;
+                    p {
+                        cursor: pointer;
+                    }
+                }
+                .aboutTittle {
                     height: 20%;
-                    width: 100%;
-                    border-bottom: 1px solid $color_11;
-                    &:hover {
-                        background-color: $color_10;
+                    width: 90%;
+                    // padding: 0.2rem;
+                    .tittleType {
+                        float: left;
+                        font-size: $tittleTypeSize;
+                        width: max-content;
+                        margin-left: 2rem;
                     }
                 }
             }
-            @media (max-width: 767px) {
-                height: 30%;
-                width: 50%;
+        }
+        .postSocial {
+            // height: 100%;
+            // width: 20%;
+            margin-left: auto;
+            height: $hpostSocial;
+            width: $wpostSocial;
+            display: flex;
+            align-items: center;
+            .social {
+                width: 33%;
                 float: left;
-                gap: 0.5rem;
-                margin-left: 6%;
-                .createPost {
+                font-size: $socialSize;
+                margin-left: auto;
+
+                #socialIcon {
+                    font-size: $socialSize;
+                }
+                #socialIcon1 {
+                    font-size: $socialSize;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    @mixin more {
+        height: 10%;
+        width: max-content;
+        margin-left: auto;
+        padding: 0.5rem;
+        p {
+            padding: 0.2rem;
+            // background-color: $color_5;
+            border-radius: 5px;
+            margin-right: 2rem;
+            font-size: 14px;
+            float: left;
+            &:hover {
+                background-color: $color_11;
+                cursor: pointer;
+            }
+        }
+    }
+    @mixin ContentHelp($hContentHelp, $wContentHelp, $hhelpLeader) {
+        // height: 90%;
+        // width: 13%;
+        height: $hContentHelp;
+        width: $wContentHelp;
+        @include flexing;
+        flex-direction: column;
+        gap: 1rem;
+        .askHelp {
+            height: 15%;
+            width: 90%;
+            border-radius: 1rem;
+            @include flexing;
+            background-color: $color_5;
+            #questionLogo {
+                color: $color_1;
+            }
+            p {
+                font-size: 14px;
+                color: $color_1;
+                padding: 0.5rem;
+            }
+        }
+        .helpLeader {
+            // height: 45%;
+            height: $hhelpLeader;
+            width: 90%;
+            @include flexing;
+            flex-direction: column;
+            .people {
+                height: 20%;
+                width: 90%;
+                @include flexing;
+                font-size: 13px;
+                background-color: $color_6;
+                .author {
+                    font-size: 12px;
+                    margin-right: auto;
+                    padding-left: 1rem;
+                }
+                .number {
+                    font-size: 11px;
+                    margin-left: auto;
+                    padding-right: 1rem;
+                }
+            }
+        }
+    }
+    @mixin postTab($hpostTab, $wpostTab, $hpostNav) {
+        // height: 100%;
+        // width: 15%;
+        height: $hpostTab;
+        width: $wpostTab;
+        @include flexing;
+        flex-direction: column;
+        gap: 1rem;
+        .createPost {
+            @include flexing;
+            background-color: $color_9;
+            width: 80%;
+            height: 15%;
+            // background: linear-gradient(45deg, #ff6b6b, #ff9f9f);
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            transform: perspective(600px) rotateX(15deg);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            p {
+                font-size: 15px;
+                padding: 1rem;
+            }
+            &:hover {
+                transform: perspective(600px) rotateX(0deg) translateY(-5px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
+            }
+        }
+        .postNav {
+            background-color: $color_6;
+            // height: 45%;
+            height: $hpostNav;
+            width: 75%;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+            p {
+                font-size: 13px;
+                @include flexing;
+                background-color: $color_11;
+                height: 20%;
+            }
+            .posts {
+                font-size: 13px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding-left: 1rem;
+                height: 20%;
+                width: 100%;
+                border-bottom: 1px solid $color_11;
+                &:hover {
+                    background-color: $color_10;
+                }
+            }
+        }
+    }
+    .communityContent1 {
+        height: 100%;
+        width: 100%;
+        display: none;
+        .upperContent {
+            height: 43%;
+            width: 100%;
+            @include flexing;
+            flex-direction: column;
+            padding: 2rem;
+            @include searchWindow(16%, 40%, 15%, max-content, 75%, 100%);
+
+            @media (max-width: 767px) {
+                height: 20%;
+                width: 100%;
+                margin-top: 15%;
+                padding: 1rem;
+                .searchBox {
                     height: 20%;
                     width: 60%;
-                    p {
-                        font-size: 13px;
-                        padding: none;
-                        padding: 0.1rem;
+                    #searchLogo {
+                        width: 15%;
+                        font-size: 10px;
+                    }
+                    #searchInput {
+                        width: 85%;
+                        font-size: 10px;
                     }
                 }
-                .postNav {
-                    height: 70%;
-                    width: 95%;
-                    box-sizing: border-box;
+                .topics {
+                    height: 26%;
                     p {
-                        font-size: 11px;
-                        height: 26%;
+                        font-size: 9px;
+                        padding: 0.3rem;
                     }
-                    .posts {
-                        font-size: 10px;
-                        @include flexing;
-                        border: 1px solid black;
-                        float: left;
-                        border-radius: 8px;
-                        padding-right: 1rem;
-                        height: 25%;
-                        width: 46%;
-                        margin: 5% 2% 0% 2%;
+                    .topicsSubject {
+                        font-size: 9px;
+                        padding: 0.3rem;
                     }
+                }
+                .imageCommunity {
+                    height: 55%;
+                    width: 100%;
                 }
             }
             @media (min-width: 768px) and (max-width: 1023px) {
-                height: 30%;
-                width: 30%;
-                float: left;
-                gap: 0.5rem;
-                margin-left: 25%;
-                .createPost {
+                height: 20%;
+                width: 100%;
+                margin-top: 8%;
+                padding: 1rem;
+                .searchBox {
                     height: 20%;
-                    width: 60%;
-                    p {
-                        font-size: 13px;
-                        padding: none;
-                        padding: 0.1rem;
+                    width: 50%;
+                    #searchLogo {
+                        width: 10%;
+                        font-size: 12px;
+                    }
+                    #searchInput {
+                        width: 90%;
+                        font-size: 12px;
                     }
                 }
-                .postNav {
-                    height: 70%;
-                    width: 95%;
-                    box-sizing: border-box;
+                .topics {
+                    height: 20%;
                     p {
-                        font-size: 11px;
-                        height: 26%;
-                    }
-                    .posts {
                         font-size: 10px;
-                        @include flexing;
-                        border: 1px solid black;
-                        float: left;
-                        border-radius: 8px;
-                        padding-right: 1rem;
-                        height: 25%;
-                        width: 46%;
-                        margin: 4% 2% 0% 2%;
+                        padding: 0.3rem;
                     }
+                    .topicsSubject {
+                        font-size: 10px;
+                        padding: 0.3rem;
+                    }
+                }
+                .imageCommunity {
+                    height: 60%;
+                    width: 100%;
                 }
             }
         }
-        .postContent {
-            order: 2;
-            height: 100%;
-            width: 65%;
+        .lowerContent {
+            height: 50%;
+            width: 100%;
             @include flexing;
-            flex-direction: column;
-            .filterNav {
-                background-color: $color_11;
-                height: 15%;
-                width: 96%;
-                .displayButton {
-                    height: 100%;
-                    width: max-content;
-                    @include flexing;
-                    float: left;
-                    .displayTabs {
-                        font-size: 15px;
-                        padding: 0.5rem;
-                        margin-left: 0.8rem;
-                    }
-                }
-                .filterButton {
-                    height: 100%;
-                    width: max-content;
-                    @include flexing;
-                    float: right;
-                    .filterTabs {
-                        font-size: 15px;
-                        cursor: pointer;
-                        padding: 0.5rem;
-                        margin-right: 0.8rem;
-                    }
-                }
-            }
-            .membersPost {
-                height: 22%;
-                width: 96%;
-                background-color: $color_6;
-                border-bottom: 1px solid $color_11;
-                @include flexing;
-                .postOwner {
-                    height: 100%;
-                    width: 80%;
-                    .profile {
-                        @include flexing;
-                        height: 100%;
-                        width: 10%;
-                        float: left;
-                        #profilePic {
-                            font-size: 45px;
-                            color: $color_7;
-                            cursor: pointer;
-                        }
-                    }
-                    .details {
-                        height: 90%;
-                        width: 90%;
-                        float: left;
-                        .tittle {
-                            display: flex;
-                            align-items: center;
-                            height: 80%;
-                            font-size: 17px;
-                            padding: 0.5rem;
-                            color: $color_5;
-                            p {
-                                cursor: pointer;
-                            }
-                        }
-                        .aboutTittle {
-                            height: 20%;
-                            width: 90%;
-                            // padding: 0.2rem;
-                            .tittleType {
-                                float: left;
-                                font-size: 11px;
-                                width: max-content;
-                                margin-left: 2rem;
-                            }
-                        }
-                    }
-                }
-                .postSocial {
-                    height: 100%;
-                    width: 20%;
-                    display: flex;
-                    align-items: center;
-                    .social {
-                        width: 33%;
-                        float: left;
-                        font-size: 12px;
-                        margin-left: auto;
-
-                        #socialIcon {
-                            font-size: 12px;
-                        }
-                        #socialIcon1 {
-                            font-size: 12px;
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
-            .more {
-                height: 10%;
-                width: max-content;
-                margin-left: auto;
-                padding: 0.5rem;
-                p {
-                    padding: 0.2rem;
-                    // background-color: $color_5;
-                    border-radius: 5px;
-                    margin-right: 2rem;
-                    font-size: 14px;
-                    float: left;
-                    &:hover {
-                        background-color: $color_11;
-                        cursor: pointer;
-                    }
-                }
-            }
             @media (max-width: 767px) {
-                width: 100%;
-                height: 80%;
+                height: 75%;
+                display: block;
+                margin-top: 1rem;
+            }
+            @media (min-width: 768px) and (max-width: 1023px) {
+                height: 75%;
+                display: block;
+                margin-top: 1rem;
+            }
+            .postTab {
+                order: 1;
+                @include postTab(100%, 15%, 45%);
+                @media (max-width: 767px) {
+                    height: 30%;
+                    width: 50%;
+                    float: left;
+                    gap: 0.5rem;
+                    margin-left: 6%;
+                    .createPost {
+                        height: 20%;
+                        width: 60%;
+                        p {
+                            font-size: 13px;
+                            padding: none;
+                            padding: 0.1rem;
+                        }
+                    }
+                    .postNav {
+                        height: 70%;
+                        width: 95%;
+                        box-sizing: border-box;
+                        p {
+                            font-size: 11px;
+                            height: 26%;
+                        }
+                        .posts {
+                            font-size: 10px;
+                            @include flexing;
+                            border: 1px solid black;
+                            float: left;
+                            border-radius: 8px;
+                            padding-right: 1rem;
+                            height: 25%;
+                            width: 46%;
+                            margin: 5% 2% 0% 2%;
+                        }
+                    }
+                }
+                @media (min-width: 768px) and (max-width: 1023px) {
+                    height: 30%;
+                    width: 30%;
+                    float: left;
+                    gap: 0.5rem;
+                    margin-left: 25%;
+                    .createPost {
+                        height: 20%;
+                        width: 60%;
+                        p {
+                            font-size: 13px;
+                            padding: none;
+                            padding: 0.1rem;
+                        }
+                    }
+                    .postNav {
+                        height: 70%;
+                        width: 95%;
+                        box-sizing: border-box;
+                        p {
+                            font-size: 11px;
+                            height: 26%;
+                        }
+                        .posts {
+                            font-size: 10px;
+                            @include flexing;
+                            border: 1px solid black;
+                            float: left;
+                            border-radius: 8px;
+                            padding-right: 1rem;
+                            height: 25%;
+                            width: 46%;
+                            margin: 4% 2% 0% 2%;
+                        }
+                    }
+                }
+            }
+            .postContent {
+                order: 2;
+                height: 100%;
+                width: 65%;
+                @include flexing;
+                flex-direction: column;
                 .filterNav {
-                    width: 100%;
-                    height: 10%;
-
-                    .displayButton {
-                        width: 45%;
-                        .displayTabs {
-                            padding: 0.1rem;
-                            font-size: 10px;
-                        }
-                    }
-                    .filterButton {
-                        width: 50%;
-                        .filterTabs {
-                            font-size: 10px;
-                            padding: 0.1rem;
-                            margin-right: 0.6rem;
-                        }
-                    }
+                    @include filterNav(15%, 15px);
                 }
                 .membersPost {
-                    height: 20%;
+                    @include membersPost(
+                        22%,
+                        flex,
+                        100%,
+                        80%,
+                        100%,
+                        20%,
+                        10%,
+                        90%,
+                        17px,
+                        45px,
+                        11px,
+                        12px,
+                        $color_6
+                    );
+                }
+                .more {
+                    @include more;
+                }
+                @media (max-width: 767px) {
                     width: 100%;
-                    display: block;
-                    .postOwner {
+                    height: 80%;
+                    .filterNav {
                         width: 100%;
-                        height: 80%;
-                        .profile {
-                            width: 15%;
-                            #profilePic {
-                                font-size: 40px;
+                        height: 10%;
+
+                        .displayButton {
+                            width: 45%;
+                            .displayTabs {
+                                padding: 0.1rem;
+                                font-size: 10px;
                             }
                         }
-                        .details {
-                            width: 85%;
-                            .tittle {
-                                font-size: 13px;
+                        .filterButton {
+                            width: 50%;
+                            .filterTabs {
+                                font-size: 10px;
+                                padding: 0.1rem;
+                                margin-right: 0.6rem;
                             }
-                            .aboutTittle {
-                                .tittleType {
+                        }
+                    }
+                    .membersPost {
+                        height: 20%;
+                        width: 100%;
+                        display: block;
+                        .postOwner {
+                            width: 100%;
+                            height: 80%;
+                            .profile {
+                                width: 15%;
+                                #profilePic {
+                                    font-size: 40px;
+                                }
+                            }
+                            .details {
+                                width: 85%;
+                                .tittle {
+                                    font-size: 13px;
+                                }
+                                .aboutTittle {
+                                    .tittleType {
+                                        font-size: 9px;
+                                    }
+                                }
+                            }
+                        }
+                        .postSocial {
+                            width: 35%;
+                            height: 20%;
+                            margin-left: 60%;
+                            .social {
+                                font-size: 9px;
+                                #socialIcon {
+                                    font-size: 9px;
+                                }
+                                #socialIcon1 {
                                     font-size: 9px;
                                 }
                             }
                         }
                     }
-                    .postSocial {
-                        width: 35%;
-                        height: 20%;
-                        margin-left: 60%;
-                        .social {
-                            font-size: 9px;
-                            #socialIcon {
-                                font-size: 9px;
-                            }
-                            #socialIcon1 {
-                                font-size: 9px;
-                            }
+                    .more {
+                        p {
+                            font-size: 10px;
+                            padding: 0.3rem;
                         }
                     }
                 }
-                .more {
-                    p {
-                        font-size: 10px;
-                        padding: 0.3rem;
+                @media (min-width: 768px) and (max-width: 1023px) {
+                    width: 100%;
+                    height: 80%;
+                    .filterNav {
+                        width: 90%;
+                        height: 10%;
+
+                        .displayButton {
+                            width: 50%;
+                            .displayTabs {
+                                padding: 0.1rem;
+                                font-size: 12px;
+                                // float:left ;
+                            }
+                        }
+                        .filterButton {
+                            width: 50%;
+                            .filterTabs {
+                                font-size: 12px;
+                                padding: 0.1rem;
+                                margin-right: 0.6rem;
+                            }
+                        }
+                    }
+                    .membersPost {
+                        height: 20%;
+                        width: 90%;
+                    }
+                    .more {
+                        p {
+                            font-size: 10px;
+                            padding: 0.3rem;
+                        }
                     }
                 }
             }
-            @media (min-width: 768px) and (max-width: 1023px) {
-                width: 100%;
-                height: 80%;
-                .filterNav {
-                    width: 90%;
-                    height: 10%;
+            .ContentHelp {
+                order: 3;
+                @include ContentHelp(90%, 13%, 45%);
 
-                    .displayButton {
-                        width: 50%;
-                        .displayTabs {
-                            padding: 0.1rem;
+                @media (max-width: 767px) {
+                    height: 30%;
+                    width: 40%;
+                    float: left;
+                    gap: 0.5rem;
+                    border-radius: 0.5rem;
+                    .askHelp {
+                        height: 20%;
+                        width: 80%;
+                        text-align: center;
+                        #questionLogo {
                             font-size: 12px;
-                            // float:left ;
+                            padding: 0.2rem;
+                        }
+                        p {
+                            font-size: 12px;
+                            padding: 0.1rem;
                         }
                     }
-                    .filterButton {
-                        width: 50%;
-                        .filterTabs {
-                            font-size: 12px;
-                            padding: 0.1rem;
-                            margin-right: 0.6rem;
+                    .helpLeader {
+                        height: 70%;
+                        width: 90%;
+                        .people {
+                            font-size: 10px;
+                            .author {
+                                font-size: 9px;
+                                padding-left: 0.5rem;
+                            }
+                            .number {
+                                font-size: 9px;
+                                padding-right: 0.5rem;
+                            }
                         }
                     }
                 }
-                .membersPost {
-                    height: 20%;
-                    width: 90%;
-                }
-                .more {
-                    p {
-                        font-size: 10px;
-                        padding: 0.3rem;
+                @media (min-width: 768px) and (max-width: 1023px) {
+                    height: 30%;
+                    width: 25%;
+                    float: left;
+                    gap: 0.5rem;
+                    border-radius: 0.5rem;
+                    .askHelp {
+                        height: 20%;
+                        width: 80%;
+                        text-align: center;
+                        #questionLogo {
+                            font-size: 12px;
+                            padding: 0.2rem;
+                        }
+                        p {
+                            font-size: 12px;
+                            padding: 0.1rem;
+                        }
+                    }
+                    .helpLeader {
+                        height: 70%;
+                        width: 90%;
+                        .people {
+                            font-size: 10px;
+                            .author {
+                                font-size: 9px;
+                                padding-left: 0.5rem;
+                            }
+                            .number {
+                                font-size: 9px;
+                                padding-right: 0.5rem;
+                            }
+                        }
                     }
                 }
             }
         }
-        .ContentHelp {
-            order: 3;
-            height: 90%;
-            width: 13%;
-            @include flexing;
-            flex-direction: column;
-            gap: 1rem;
-            .askHelp {
-                height: 15%;
-                width: 90%;
-                border-radius: 1rem;
-                @include flexing;
-                background-color: $color_5;
-                #questionLogo {
-                    color: $color_1;
-                }
-                p {
-                    font-size: 14px;
-                    color: $color_1;
-                    padding: 0.5rem;
-                }
-            }
-            .helpLeader {
-                height: 45%;
-                width: 90%;
-                @include flexing;
-                flex-direction: column;
-                .people {
-                    height: 20%;
-                    width: 90%;
-                    @include flexing;
-                    font-size: 13px;
-                    background-color: $color_6;
-                    .author {
-                        font-size: 12px;
-                        margin-right: auto;
-                        padding-left: 1rem;
-                    }
-                    .number {
-                        font-size: 11px;
-                        margin-left: auto;
-                        padding-right: 1rem;
-                    }
-                }
-            }
+    }
 
-            @media (max-width: 767px) {
-                height: 30%;
-                width: 40%;
-                float: left;
-                gap: 0.5rem;
-                border-radius: 0.5rem;
-                .askHelp {
-                    height: 20%;
-                    width: 80%;
-                    text-align: center;
-                    #questionLogo {
-                        font-size: 12px;
-                        padding: 0.2rem;
+    .communityContent2 {
+        height: 100%;
+        width: 100%;
+        .leftContent {
+            height: 100%;
+            width: 80%;
+            float: left;
+            @include flexing;
+            .contentTab {
+                height: 100%;
+                width: 35%;
+                padding: 1rem;
+                .searchTab {
+                    height: 30%;
+                    width: 100%;
+                    @include flexing;
+                    flex-direction: column;
+                    @include searchWindow(16%, 90%, 15%, max-content, 50%, 90%);
+                }
+                .searchContent {
+                    height: 70%;
+                    width: 100%;
+                    .filterNav {
+                        margin: auto;
+                        @include filterNav(10%, 12px);
                     }
-                    p {
-                        font-size: 12px;
-                        padding: 0.1rem;
+                    .membersPost {
+                        margin: auto;
+                        // display: block;
+                        @include membersPost(
+                            18%,
+                            block,
+                            80%,
+                            100%,
+                            20%,
+                            50%,
+                            15%,
+                            85%,
+                            15px,
+                            40px,
+                            11px,
+                            12px,
+                            $color_1
+                        );
+                    }
+                    .more {
+                        @include more;
                     }
                 }
-                .helpLeader {
+            }
+            .contentDisplay {
+                height: 100%;
+                width: 65%;
+                // background-color: rgb(245, 159, 159);
+                .postDisplay {
                     height: 70%;
-                    width: 90%;
-                    .people {
-                        font-size: 10px;
-                        .author {
-                            font-size: 9px;
-                            padding-left: 0.5rem;
+                    width: 100%;
+                    padding: 1rem;
+                    .postDetails {
+                        margin: auto;
+                        @include membersPost(
+                            20%,
+                            block,
+                            80%,
+                            100%,
+                            20%,
+                            30%,
+                            15%,
+                            85%,
+                            20px,
+                            60px,
+                            13px,
+                            14px,
+                            $color_1
+                        );
+                    }
+                    .writtenPost {
+                        height: 80%;
+                        width: 90%;
+                        margin: auto;
+                        padding: 1rem;
+                        @include flexing;
+                        flex-direction: column;
+                        p {
+                            padding: 0.5rem;
+                            font-size: 15px;
+                            font-family: "Kalam", cursive;
+                            color: $color_3;
                         }
-                        .number {
-                            font-size: 9px;
-                            padding-right: 0.5rem;
+                    }
+                }
+                .postComment {
+                    height: 30%;
+                    width: 100%;
+                    // background-color: $color_7;
+                    padding: 1rem;
+                    .inputComment {
+                        background-color: $color_6;
+                        height: 20%;
+                        width: 65%;
+                        margin: auto;
+                        @include flexing;
+                        border-bottom: 1px solid black;
+                        #commentInput {
+                            background-color: $color_6;
+                            height: 100%;
+                            width: 95%;
+                            outline: none;
+                            border: none;
+                            font-size: 17px;
+                            padding: 0.5rem;
+                        }
+                        #postButton {
+                            font-size: 20px;
+                            padding: 0.5rem;
+                        }
+                    }
+                    .otherComment {
+                        height: 65%;
+                        width: 100%;
+                        margin-top: 2rem;
+                        .row1 {
+                            height: 45%;
+                            width: 90%;
+                            margin: auto;
+                            padding: 0.5rem;
+                            @include flexing;
+                            .ownerImoge {
+                                height: 100%;
+                                width: 10%;
+                                @include flexing;
+                                #commentUser {
+                                    font-size: 40px;
+                                    color: $color_7;
+                                }
+                            }
+                            .commentContent {
+                                height: 100%;
+                                width: 85%;
+                                .comment {
+                                    height: 60%;
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    font-size: 15px;
+                                }
+                                .likes {
+                                    height: 30%;
+                                    width: max-content;
+                                    @include flexing;
+                                    #commentLike {
+                                        font-size: 20px;
+                                        padding-left: 0.8rem;
+                                        padding-right: 0.8rem;
+                                    }
+                                }
+                            }
+                        }
+                        .row2 {
+                            height: 10%;
+                            width: max-content;
+                            font-size: 15px;
+                            margin-left: 70%;
+                            @include flexing;
+                            cursor: pointer;
+                            p {
+                                // padding: 0.2rem;
+                                border-radius: 5px;
+                                &:hover {
+                                    background-color: $color_8;
+                                }
+                            }
                         }
                     }
                 }
             }
-            @media (min-width: 768px) and (max-width: 1023px) {
-                height: 30%;
-                width: 25%;
-                float: left;
-                gap: 0.5rem;
-                border-radius: 0.5rem;
-                .askHelp {
-                    height: 20%;
-                    width: 80%;
-                    text-align: center;
-                    #questionLogo {
-                        font-size: 12px;
-                        padding: 0.2rem;
-                    }
-                    p {
-                        font-size: 12px;
-                        padding: 0.1rem;
-                    }
-                }
-                .helpLeader {
-                    height: 70%;
-                    width: 90%;
-                    .people {
-                        font-size: 10px;
-                        .author {
-                            font-size: 9px;
-                            padding-left: 0.5rem;
-                        }
-                        .number {
-                            font-size: 9px;
-                            padding-right: 0.5rem;
-                        }
-                    }
-                }
+        }
+        .rightContent {
+            height: 100%;
+            width: 20%;
+            float: left;
+            .imogeTab {
+                height: 40%;
+                width: 100%;
+                background-image: url("../../public/images/community_reading.svg");
+                background-size: 100% 150%;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            .postTab {
+                margin: auto;
+                @include postTab(30%, 65%, 75%);
+            }
+            .ContentHelp {
+                margin: auto;
+                @include ContentHelp(30%, 60%, 65%);
             }
         }
     }
