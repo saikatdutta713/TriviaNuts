@@ -27,8 +27,11 @@ Route::get('/master', function () {
 Route::get('/category', function () {
     return view('category');
 });
-Route::get('/question', function () {
-    return view('question');
+Route::get('/community', function () {
+    return view('community');
+});
+Route::get('/quiz', function () {
+    return view('quiz');
 });
 
 Route::get('admin', function(){

@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap);
 /* Footer section */
 * {
   margin: 0;
@@ -277,9 +278,9 @@ footer .row2 {
   }
 }
 .scategory {
-  height: 200vh;
+  height: 160vh;
   width: 100%;
-  background-color: aquamarine;
+  background-color: #edfffe;
 }
 @media (max-width: 767px) {
   .scategory {
@@ -298,16 +299,13 @@ footer .row2 {
   height: max-content;
   width: -moz-max-content;
   width: max-content;
-  margin: 0% 0% 7.5% 8%;
-  border-radius: 10px;
+  margin: 0% 0% 5% 8%;
   position: relative;
-  top: 3%;
+  top: 2%;
   font-size: 18px;
   padding: 1rem;
-  background-color: #edfffe;
-  border-bottom: 3px solid #149d9b;
-  border-left: 5px solid #149d9b;
-  color: #ce5983;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+  color: #149d9b;
   letter-spacing: 0.15em;
 }
 .scategory .punch_line p {
@@ -341,8 +339,7 @@ footer .row2 {
     height: auto;
     width: -moz-max-content;
     width: max-content;
-    top: 5%;
-    font-size: large;
+    font-size: 15px;
     margin: 0% 0% 0% 4%;
     padding: 1rem;
   }
@@ -354,14 +351,14 @@ footer .row2 {
   height: 40%;
   width: 70%;
   margin: 0% 0% 5.5% 15%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #333;
   border-radius: 15px;
 }
 @media (max-width: 767px) {
   .scategory .sdisplay {
     height: 42%;
-    width: 90%;
-    margin: 25% 0% 5.5% 5%;
+    width: 80%;
+    margin: 25% 0% 5.5% 10%;
     display: block;
   }
 }
@@ -374,6 +371,11 @@ footer .row2 {
   }
 }
 .scategory .sdisplay .subject {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
   height: -moz-max-content;
   height: max-content;
   width: 25%;
@@ -383,25 +385,27 @@ footer .row2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20%;
-  width: 90%;
+  height: -moz-max-content;
+  height: max-content;
+  width: 95%;
   margin: auto;
-  -webkit-margin-after: 9%;
-          margin-block-end: 9%;
-  -webkit-margin-before: 9%;
-          margin-block-start: 9%;
   padding: 1rem;
-  font-size: 22px;
+  font-size: 20px;
   border-radius: 20px;
   color: #ffdf52;
-  background-color: #ce5983;
+  border: 1px dashed #ef5c5c;
   cursor: pointer;
+}
+.scategory .sdisplay .subject .selected {
+  background-color: #a1fa6e;
+  color: #333;
 }
 @media (max-width: 767px) {
   .scategory .sdisplay .subject {
     height: 15%;
     width: 90%;
     margin: auto;
+    display: block;
   }
   .scategory .sdisplay .subject .subject1 {
     display: flex;
@@ -419,6 +423,7 @@ footer .row2 {
   .scategory .sdisplay .subject {
     height: 15%;
     width: 75%;
+    display: block;
     margin: auto;
   }
   .scategory .sdisplay .subject .subject1 {
@@ -462,13 +467,13 @@ footer .row2 {
   width: 100%;
   background-color: #edfffe;
   border-radius: 8px;
-  display: none;
 }
 .scategory .sdisplay .metarial .metarial1 p {
   margin-left: 10px;
   font-size: 17px;
 }
 .scategory .sdisplay .metarial .metarial2 {
+  display: none;
   height: 100%;
   width: 100%;
   background-color: white;
@@ -484,11 +489,8 @@ footer .row2 {
   top: 4%;
   font-size: 15px;
   letter-spacing: 1px;
-  border-top: 3px solid #149d9b;
-  border-bottom: 3px solid #149d9b;
-  border-right: 1px solid #149d9b;
-  border-left: 1px solid #149d9b;
-  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  background-color: #ef5c5c;
 }
 .scategory .sdisplay .metarial .metarial2 .quizno {
   height: 60%;
@@ -498,7 +500,7 @@ footer .row2 {
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 {
   height: 42%;
   width: 100%;
-  margin: 9% 0% 0% 0%;
+  margin: 3% 0% 0% 0%;
 }
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1 {
   display: flex;
@@ -509,13 +511,13 @@ footer .row2 {
   margin: 5% 2% 0 2%;
   border-radius: 50%/50%;
   perspective: 1000px;
-  border-bottom: 3px solid #333;
-  border-right: 5px solid #333;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   float: left;
-  color: #149d9b;
+  background-color: #ef5c5c;
+  color: white;
 }
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1 .bhover {
-  font-size: 18px;
+  font-size: 15px;
   display: block;
 }
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1 .ahover {
@@ -528,8 +530,8 @@ footer .row2 {
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1 .ahover .starts {
   height: 30%;
   width: auto;
-  margin-left: 85%;
-  color: #ffdf52;
+  margin-left: 70%;
+  color: #333;
   margin-bottom: 20%;
 }
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1 .ahover .startb {
@@ -539,7 +541,7 @@ footer .row2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #149d9b;
+  color: #333;
   cursor: pointer;
   margin: auto;
 }
@@ -547,7 +549,8 @@ footer .row2 {
   transform-style: preserve-3d;
   transition: transform 0.8s ease, background-color 0.8s ease;
   transform: rotateZ(180deg);
-  background-color: #edfffe;
+  box-shadow: none;
+  background-color: #a1fa6e;
 }
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1:hover .bhover {
   display: none;
@@ -560,9 +563,8 @@ footer .row2 {
     height: 44%;
     width: 29%;
     margin: 2% 2% 2% 2%;
-  }
-  .scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1 .bhover {
-    font-size: 15px;
+    float: left;
+    border: none;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -573,9 +575,6 @@ footer .row2 {
     align-items: center;
     justify-content: center;
     margin: 4% 2% 0% 2%;
-  }
-  .scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 .quizno1 .bhover {
-    font-size: 20px;
   }
 }
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 {
@@ -591,13 +590,13 @@ footer .row2 {
   margin: 5% 2% 0 2%;
   border-radius: 50%/50%;
   perspective: 1000px;
-  border-bottom: 3px solid #333;
-  border-right: 5px solid #333;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   float: left;
-  color: #149d9b;
+  background-color: #ef5c5c;
+  color: white;
 }
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1 .bhover {
-  font-size: 18px;
+  font-size: 15px;
   display: block;
 }
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1 .ahover {
@@ -610,8 +609,8 @@ footer .row2 {
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1 .ahover .starts {
   height: 30%;
   width: auto;
-  margin-left: 85%;
-  color: #ffdf52;
+  margin-left: 70%;
+  color: #333;
   margin-bottom: 20%;
 }
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1 .ahover .startb {
@@ -621,7 +620,7 @@ footer .row2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #149d9b;
+  color: #333;
   cursor: pointer;
   margin: auto;
 }
@@ -629,7 +628,8 @@ footer .row2 {
   transform-style: preserve-3d;
   transition: transform 0.8s ease, background-color 0.8s ease;
   transform: rotateZ(180deg);
-  background-color: #edfffe;
+  box-shadow: none;
+  background-color: #a1fa6e;
 }
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1:hover .bhover {
   display: none;
@@ -642,9 +642,8 @@ footer .row2 {
     height: 44%;
     width: 29%;
     margin: 2% 2% 2% 2%;
-  }
-  .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1 .bhover {
-    font-size: 15px;
+    float: left;
+    border: none;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -656,9 +655,6 @@ footer .row2 {
     justify-content: center;
     margin: 4% 2% 0% 2%;
   }
-  .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno1 .bhover {
-    font-size: 20px;
-  }
 }
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno2 {
   height: auto;
@@ -669,7 +665,7 @@ footer .row2 {
   overflow-x: visible;
 }
 .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno2 #morearrow {
-  font-size: 35px;
+  font-size: 25px;
 }
 .scategory .sdisplay .metarial .metarial2 .quizstartb {
   height: auto;
@@ -677,15 +673,16 @@ footer .row2 {
   width: max-content;
   padding: 0.8rem;
   margin: auto;
-  font-size: 20px;
-  letter-spacing: 2px;
+  margin-top: 2%;
+  font-size: 17px;
   border-radius: 15px;
   color: #edfffe;
-  background-color: #333;
+  background-color: #149d9b;
   cursor: pointer;
 }
 .scategory .sdisplay .metarial .metarial2 .quizstartb:hover {
-  background-color: #149d9b;
+  background-color: #a1fa6e;
+  color: #333;
 }
 @media (max-width: 767px) {
   .scategory .sdisplay .metarial .metarial2 {
@@ -702,15 +699,17 @@ footer .row2 {
   .scategory .sdisplay .metarial .metarial2 .quizno {
     height: 70%;
     width: 96%;
-    margin: 5% 0 0 2%;
+    margin: 12% 0 0 2%;
   }
   .scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 {
     height: 44%;
     width: 100%;
+    margin: 9% 0% 0% 0%;
   }
   .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 {
     height: 44%;
     width: 100%;
+    margin: 4% 0% 0% 0%;
   }
   .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 .quizno2 {
     height: auto;
@@ -742,11 +741,12 @@ footer .row2 {
   .scategory .sdisplay .metarial .metarial2 .quizno {
     height: 60%;
     width: 94%;
-    margin: -3% 0 0 3%;
+    margin: 0% 0 0 3%;
   }
   .scategory .sdisplay .metarial .metarial2 .quizno .quizrow1 {
     height: 44%;
     width: 100%;
+    margin: 9% 0% 0% 0%;
   }
   .scategory .sdisplay .metarial .metarial2 .quizno .quizrow2 {
     height: 48%;
@@ -763,108 +763,226 @@ footer .row2 {
     font-size: 20px;
   }
   .scategory .sdisplay .metarial .metarial2 .quizstartb {
-    margin-top: 7%;
+    margin-top: 4%;
     font-size: 25px;
   }
 }
-.scategory .fquestions {
-  height: 12%;
-  width: 80%;
+.scategory .sdisplay .metarial .metarial3 {
+  height: 100%;
+  width: 100%;
+  background-color: #edfffe;
+  border-radius: 8px;
+  display: none;
+}
+.scategory .sdisplay .metarial .metarial3 .quizName {
+  height: 20%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  margin: auto;
+}
+.scategory .sdisplay .metarial .metarial3 .quizName .subjectName {
+  float: left;
+  padding: 0.5rem;
+}
+.scategory .sdisplay .metarial .metarial3 .quizName .level {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  padding: 0.5rem;
+}
+.scategory .sdisplay .metarial .metarial3 .quizName .level #levelText {
+  padding: 0.4rem;
+}
+.scategory .sdisplay .metarial .metarial3 .quizName .back {
+  float: right;
+  padding: 0.5rem;
+  background-color: #a1fa6e;
+  color: #333;
+  border-radius: 10px;
+  margin-left: auto;
+  cursor: pointer;
+}
+.scategory .sdisplay .metarial .metarial3 .rule {
+  height: 60%;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #333;
+  margin: auto;
+}
+.scategory .sdisplay .metarial .metarial3 .rule .ruleContent {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+.scategory .sdisplay .metarial .metarial3 .rule .ruleContent #handshake {
+  font-size: 50px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scategory .sdisplay .metarial .metarial3 .rule .ruleContent p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin-left: 2%;
+}
+.scategory .sdisplay .metarial .metarial3 .startButton {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scategory .sdisplay .metarial .metarial3 .startButton p {
+  padding: 0.8rem;
+  margin: auto;
+  background-color: #149d9b;
+  font-size: 17px;
+  color: #edfffe;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.scategory .sdisplay .metarial .metarial3 .startButton p #startQuizB {
+  margin-right: 5px;
+}
+@media (max-width: 767px) {
+  .scategory .sdisplay .metarial .metarial3 .quizName {
+    font-size: 12px;
+  }
+  .scategory .sdisplay .metarial .metarial3 .rule {
+    height: 60%;
+    width: 90%;
+    font-size: 12px;
+  }
+  .scategory .sdisplay .metarial .metarial3 .rule .ruleContent #handshake {
+    font-size: 30px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .scategory .sdisplay .metarial .quizName {
+    font-size: 15px;
+  }
+  .scategory .sdisplay .metarial .rule {
+    font-size: 15px;
+  }
+  .scategory .sdisplay .metarial .rule .ruleContent #handshake {
+    font-size: 40px;
+  }
+}
+
+.fquestions {
+  height: 9%;
+  width: 90%;
   border-radius: 30px;
   margin-left: -1.5%;
-  background-color: #edfffe;
+  background-color: rgba(0, 0, 0, 0.2);
 }
-.scategory .fquestions .fquestion {
-  height: 40%;
+.fquestions .fquestion {
+  height: 50%;
   width: -moz-max-content;
   width: max-content;
   margin: 0 0 0 3%;
-  padding: 0.9rem;
+  padding: 1rem;
 }
-.scategory .fquestions .fquestion #fqlogo {
-  color: #149d9b;
+.fquestions .fquestion #fqlogo {
+  color: #333;
 }
-.scategory .fquestions .fquestion p {
+.fquestions .fquestion p {
   float: right;
   margin-left: 15px;
-  font-size: 25px;
+  font-size: 22px;
+  color: #333;
 }
-.scategory .fquestions .fanswer {
+.fquestions .fanswer {
   height: 50%;
   width: 90%;
-  margin: 0 0 0 7%;
-  padding: 0.5rem;
-  font-size: 17px;
+  margin: 0 0 0 8%;
+  font-size: 16px;
   letter-spacing: 0.5px;
   color: #149d9b;
 }
 @media (max-width: 767px) {
-  .scategory .fquestions {
+  .fquestions {
     height: auto;
     width: 95%;
     border-radius: 20px;
     margin: 9% 0 0 -2.5%;
   }
-  .scategory .fquestions .fquestion {
+  .fquestions .fquestion {
     height: auto;
     width: auto;
   }
-  .scategory .fquestions .fquestion #fqlogo {
+  .fquestions .fquestion #fqlogo {
     font-size: 20px;
     float: left;
     margin-left: -10px;
   }
-  .scategory .fquestions .fquestion p {
+  .fquestions .fquestion p {
     font-size: 16px;
     float: left;
-    padding: 0.5rem;
   }
-  .scategory .fquestions .fanswer {
+  .fquestions .fanswer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: auto;
     width: 90%;
     margin: 0 0 0 10%;
-    padding: 1rem;
-    font-size: 13px;
+    padding: 0.5rem;
+    font-size: 12px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .scategory .fquestions {
+  .fquestions {
     height: auto;
     width: 90%;
     margin-left: -2.5%;
   }
-  .scategory .fquestions .fquestion {
+  .fquestions .fquestion {
     height: auto;
     width: auto;
     margin: 0 0 0 3%;
   }
-  .scategory .fquestions .fquestion #fqlogo {
+  .fquestions .fquestion #fqlogo {
     font-size: 30px;
     float: left;
     margin-top: 1%;
   }
-  .scategory .fquestions .fquestion p {
-    font-size: 25px;
+  .fquestions .fquestion p {
+    font-size: 20px;
     float: left;
     margin-left: 2%;
   }
-  .scategory .fquestions .fanswer {
+  .fquestions .fanswer {
     height: auto;
-    width: 90%;
-    margin: 2% 0 0 8%;
-    padding: 1rem;
-    font-size: 18px;
+    width: 85%;
+    margin: 1% 0 0 10%;
+    padding: 0.5rem;
+    font-size: 15px;
   }
 }
-.scategory .badge {
+
+.badge {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 15%;
   width: 70%;
-  margin: 5% 0 0 30%;
+  margin: 4.5% 0 0 30%;
 }
-.scategory .badge .lbadge {
+.badge .lbadge {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -873,18 +991,18 @@ footer .row2 {
   font-size: 22px;
   letter-spacing: 2px;
 }
-.scategory .badge .lbadge p {
+.badge .lbadge p {
   color: #149d9b;
 }
-.scategory .badge .rbadge {
+.badge .rbadge {
   height: 100%;
   width: 60%;
 }
-.scategory .badge .rbadge .badgefirst {
+.badge .rbadge .badgefirst {
   height: 50%;
   width: 100%;
 }
-.scategory .badge .rbadge .badgefirst .badge1 {
+.badge .rbadge .badgefirst .badge1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -892,103 +1010,113 @@ footer .row2 {
   width: 16.6%;
   float: left;
   border-radius: 10px;
-  border-left: 3px solid #149d9b;
-  border-bottom: 4px solid #149d9b;
-  background-color: #edfffe;
-  color: #ce5983;
+  border: 1px solid #ef5c5c;
+  background-color: white;
 }
-.scategory .badge .rbadge .badgefirst .badge1 p {
+.badge .rbadge .badgefirst .badge1 p {
   display: none;
   font-size: 14px;
   font-weight: 600;
-  color: #ce5983;
+  color: #333;
 }
-.scategory .badge .rbadge .badgefirst .badge1 h1 {
+.badge .rbadge .badgefirst .badge1 h1 {
   display: none;
   font-size: 17px;
   margin-top: 27%;
   margin-right: auto;
   font-weight: bolder;
 }
-.scategory .badge .rbadge .badgefirst .badge1:hover {
+.badge .rbadge .badgefirst .badge1 #badgeicon {
+  color: #ef5c5c;
+}
+.badge .rbadge .badgefirst .badge1:hover {
+  border: none;
   flex-wrap: wrap;
-  color: #ffdf52;
-  background-color: #333;
+  color: #333;
+  background-color: #a1fa6e;
 }
-.scategory .badge .rbadge .badgefirst .badge1:hover h1 {
+.badge .rbadge .badgefirst .badge1:hover h1 {
   display: block;
 }
-.scategory .badge .rbadge .badgefirst .badge1:hover p {
+.badge .rbadge .badgefirst .badge1:hover p {
   display: block;
+  color: #ef5c5c;
 }
-.scategory .badge .rbadge .badgefirst .badge1:hover #badgeicon {
+.badge .rbadge .badgefirst .badge1:hover #badgeicon {
   font-size: 20px;
   margin-top: -10%;
   margin: auto;
+  color: #ef5c5c;
 }
 @media (max-width: 767px) {
-  .scategory .badge .rbadge .badgefirst .badge1 {
+  .badge .rbadge .badgefirst .badge1 {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 44%;
     width: 30%;
     margin: 3% 1% 0 2%;
+    border: none;
+    border-bottom: 1px solid #149d9b;
+    border-right: 1px solid #149d9b;
   }
-  .scategory .badge .rbadge .badgefirst .badge1 p {
+  .badge .rbadge .badgefirst .badge1 p {
     font-size: 12px;
   }
-  .scategory .badge .rbadge .badgefirst .badge1 h1 {
+  .badge .rbadge .badgefirst .badge1 h1 {
     font-size: 15px;
     margin-top: 0%;
   }
-  .scategory .badge .rbadge .badgefirst .badge1 #badgeicon {
+  .badge .rbadge .badgefirst .badge1 #badgeicon {
     font-size: 25px;
   }
-  .scategory .badge .rbadge .badgefirst .badge1:hover {
+  .badge .rbadge .badgefirst .badge1:hover {
     display: block;
     text-align: center;
     line-height: 1.3;
     padding-top: 5%;
   }
-  .scategory .badge .rbadge .badgefirst .badge1:hover #badgeicon {
+  .badge .rbadge .badgefirst .badge1:hover #badgeicon {
     font-size: 20px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .scategory .badge .rbadge .badgefirst .badge1 {
+  .badge .rbadge .badgefirst .badge1 {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 44%;
     width: 30%;
     margin: 1.5% 1% 0 2%;
+    border: none;
+    border-bottom: 1px solid #149d9b;
+    border-right: 1px solid #149d9b;
   }
-  .scategory .badge .rbadge .badgefirst .badge1 p {
+  .badge .rbadge .badgefirst .badge1 p {
     font-size: 16px;
   }
-  .scategory .badge .rbadge .badgefirst .badge1 h1 {
+  .badge .rbadge .badgefirst .badge1 h1 {
     font-size: 25px;
     margin-top: 0%;
   }
-  .scategory .badge .rbadge .badgefirst .badge1 #badgeicon {
+  .badge .rbadge .badgefirst .badge1 #badgeicon {
     font-size: 25px;
   }
-  .scategory .badge .rbadge .badgefirst .badge1:hover {
+  .badge .rbadge .badgefirst .badge1:hover {
     display: block;
     text-align: center;
     line-height: 1.2;
     padding-top: 1%;
   }
-  .scategory .badge .rbadge .badgefirst .badge1:hover #badgeicon {
+  .badge .rbadge .badgefirst .badge1:hover #badgeicon {
     font-size: 25px;
   }
 }
-.scategory .badge .rbadge .badgesecond {
+.badge .rbadge .badgesecond {
   height: 50%;
   width: 100%;
 }
-.scategory .badge .rbadge .badgesecond .badge1 {
+.badge .rbadge .badgesecond .badge1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -996,132 +1124,1341 @@ footer .row2 {
   width: 16.6%;
   float: left;
   border-radius: 10px;
-  border-left: 3px solid #149d9b;
-  border-bottom: 4px solid #149d9b;
-  background-color: #edfffe;
-  color: #ce5983;
+  border: 1px solid #ef5c5c;
+  background-color: white;
 }
-.scategory .badge .rbadge .badgesecond .badge1 p {
+.badge .rbadge .badgesecond .badge1 p {
   display: none;
   font-size: 14px;
   font-weight: 600;
-  color: #ce5983;
+  color: #333;
 }
-.scategory .badge .rbadge .badgesecond .badge1 h1 {
+.badge .rbadge .badgesecond .badge1 h1 {
   display: none;
   font-size: 17px;
   margin-top: 27%;
   margin-right: auto;
   font-weight: bolder;
 }
-.scategory .badge .rbadge .badgesecond .badge1:hover {
+.badge .rbadge .badgesecond .badge1 #badgeicon {
+  color: #ef5c5c;
+}
+.badge .rbadge .badgesecond .badge1:hover {
+  border: none;
   flex-wrap: wrap;
-  color: #ffdf52;
-  background-color: #333;
+  color: #333;
+  background-color: #a1fa6e;
 }
-.scategory .badge .rbadge .badgesecond .badge1:hover h1 {
+.badge .rbadge .badgesecond .badge1:hover h1 {
   display: block;
 }
-.scategory .badge .rbadge .badgesecond .badge1:hover p {
+.badge .rbadge .badgesecond .badge1:hover p {
   display: block;
+  color: #ef5c5c;
 }
-.scategory .badge .rbadge .badgesecond .badge1:hover #badgeicon {
+.badge .rbadge .badgesecond .badge1:hover #badgeicon {
   font-size: 20px;
   margin-top: -10%;
   margin: auto;
+  color: #ef5c5c;
 }
 @media (max-width: 767px) {
-  .scategory .badge .rbadge .badgesecond .badge1 {
+  .badge .rbadge .badgesecond .badge1 {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 44%;
     width: 30%;
     margin: 3% 1% 0 2%;
+    border: none;
+    border-bottom: 1px solid #149d9b;
+    border-right: 1px solid #149d9b;
   }
-  .scategory .badge .rbadge .badgesecond .badge1 p {
+  .badge .rbadge .badgesecond .badge1 p {
     font-size: 12px;
   }
-  .scategory .badge .rbadge .badgesecond .badge1 h1 {
+  .badge .rbadge .badgesecond .badge1 h1 {
     font-size: 15px;
     margin-top: 0%;
   }
-  .scategory .badge .rbadge .badgesecond .badge1 #badgeicon {
+  .badge .rbadge .badgesecond .badge1 #badgeicon {
     font-size: 25px;
   }
-  .scategory .badge .rbadge .badgesecond .badge1:hover {
+  .badge .rbadge .badgesecond .badge1:hover {
     display: block;
     text-align: center;
     line-height: 1.3;
     padding-top: 5%;
   }
-  .scategory .badge .rbadge .badgesecond .badge1:hover #badgeicon {
+  .badge .rbadge .badgesecond .badge1:hover #badgeicon {
     font-size: 20px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .scategory .badge .rbadge .badgesecond .badge1 {
+  .badge .rbadge .badgesecond .badge1 {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 44%;
     width: 30%;
     margin: 1.5% 1% 0 2%;
+    border: none;
+    border-bottom: 1px solid #149d9b;
+    border-right: 1px solid #149d9b;
   }
-  .scategory .badge .rbadge .badgesecond .badge1 p {
+  .badge .rbadge .badgesecond .badge1 p {
     font-size: 16px;
   }
-  .scategory .badge .rbadge .badgesecond .badge1 h1 {
+  .badge .rbadge .badgesecond .badge1 h1 {
     font-size: 25px;
     margin-top: 0%;
   }
-  .scategory .badge .rbadge .badgesecond .badge1 #badgeicon {
+  .badge .rbadge .badgesecond .badge1 #badgeicon {
     font-size: 25px;
   }
-  .scategory .badge .rbadge .badgesecond .badge1:hover {
+  .badge .rbadge .badgesecond .badge1:hover {
     display: block;
     text-align: center;
     line-height: 1.2;
     padding-top: 1%;
   }
-  .scategory .badge .rbadge .badgesecond .badge1:hover #badgeicon {
+  .badge .rbadge .badgesecond .badge1:hover #badgeicon {
     font-size: 25px;
   }
 }
 @media (max-width: 767px) {
-  .scategory .badge {
+  .badge {
     height: 30%;
     width: 80%;
     display: block;
     margin: 12% 0 0 10%;
   }
-  .scategory .badge .lbadge {
+  .badge .lbadge {
     height: 10%;
     width: auto;
     font-size: 20px;
     margin: 5% 0 5% 0;
   }
-  .scategory .badge .rbadge {
+  .badge .rbadge {
     height: 80%;
     width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .scategory .badge {
+  .badge {
     height: 29%;
     width: 70%;
     margin: auto;
     display: block;
     margin-top: 4%;
   }
-  .scategory .badge .lbadge {
+  .badge .lbadge {
     height: 10%;
     width: auto;
     font-size: 25px;
     margin: 5% 0 5% 0;
   }
-  .scategory .badge .rbadge {
+  .badge .rbadge {
     height: 80%;
     width: 100%;
   }
+}
+.communityContent {
+  height: 120vh;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .communityContent {
+    height: 180vh;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .communityContent {
+    height: 160vh;
+    width: 100%;
+  }
+}
+.communityContent .communityContent1 {
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.communityContent .communityContent1 .upperContent {
+  height: 43%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+.communityContent .communityContent1 .upperContent .searchBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16%;
+  width: 40%;
+  border-radius: 15px;
+  border: 1px solid #333;
+}
+.communityContent .communityContent1 .upperContent .searchBox #searchLogo {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8%;
+}
+.communityContent .communityContent1 .upperContent .searchBox #searchInput {
+  font-size: 14px;
+  height: 100%;
+  width: 88%;
+  border-radius: 15px;
+  margin-right: auto;
+  outline: none;
+  border: none;
+}
+.communityContent .communityContent1 .upperContent .topics {
+  height: 15%;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.communityContent .communityContent1 .upperContent .topics p {
+  font-size: 12px;
+  padding: 0.5rem;
+}
+.communityContent .communityContent1 .upperContent .topics .topicsSubject {
+  font-size: 12px;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.communityContent .communityContent1 .upperContent .topics .topicsSubject:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.communityContent .communityContent1 .upperContent .imageCommunity {
+  height: 75%;
+  width: 100%;
+  background-image: url(/images/community.svg?4e765755771fc418370454c957029739);
+  background-size: 100% 150%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media (max-width: 767px) {
+  .communityContent .communityContent1 .upperContent {
+    height: 20%;
+    width: 100%;
+    margin-top: 15%;
+    padding: 1rem;
+  }
+  .communityContent .communityContent1 .upperContent .searchBox {
+    height: 20%;
+    width: 60%;
+  }
+  .communityContent .communityContent1 .upperContent .searchBox #searchLogo {
+    width: 15%;
+    font-size: 10px;
+  }
+  .communityContent .communityContent1 .upperContent .searchBox #searchInput {
+    width: 85%;
+    font-size: 10px;
+  }
+  .communityContent .communityContent1 .upperContent .topics {
+    height: 26%;
+  }
+  .communityContent .communityContent1 .upperContent .topics p {
+    font-size: 9px;
+    padding: 0.3rem;
+  }
+  .communityContent .communityContent1 .upperContent .topics .topicsSubject {
+    font-size: 9px;
+    padding: 0.3rem;
+  }
+  .communityContent .communityContent1 .upperContent .imageCommunity {
+    height: 55%;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .communityContent .communityContent1 .upperContent {
+    height: 20%;
+    width: 100%;
+    margin-top: 8%;
+    padding: 1rem;
+  }
+  .communityContent .communityContent1 .upperContent .searchBox {
+    height: 20%;
+    width: 50%;
+  }
+  .communityContent .communityContent1 .upperContent .searchBox #searchLogo {
+    width: 10%;
+    font-size: 12px;
+  }
+  .communityContent .communityContent1 .upperContent .searchBox #searchInput {
+    width: 90%;
+    font-size: 12px;
+  }
+  .communityContent .communityContent1 .upperContent .topics {
+    height: 20%;
+  }
+  .communityContent .communityContent1 .upperContent .topics p {
+    font-size: 10px;
+    padding: 0.3rem;
+  }
+  .communityContent .communityContent1 .upperContent .topics .topicsSubject {
+    font-size: 10px;
+    padding: 0.3rem;
+  }
+  .communityContent .communityContent1 .upperContent .imageCommunity {
+    height: 60%;
+    width: 100%;
+  }
+}
+.communityContent .communityContent1 .lowerContent {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .communityContent .communityContent1 .lowerContent {
+    height: 75%;
+    display: block;
+    margin-top: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .communityContent .communityContent1 .lowerContent {
+    height: 75%;
+    display: block;
+    margin-top: 1rem;
+  }
+}
+.communityContent .communityContent1 .lowerContent .postTab {
+  order: 1;
+  height: 100%;
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.communityContent .communityContent1 .lowerContent .postTab .createPost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a1fa6e;
+  width: 80%;
+  height: 15%;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transform: perspective(600px) rotateX(15deg);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.communityContent .communityContent1 .lowerContent .postTab .createPost p {
+  font-size: 15px;
+  padding: 1rem;
+}
+.communityContent .communityContent1 .lowerContent .postTab .createPost:hover {
+  transform: perspective(600px) rotateX(0deg) translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
+}
+.communityContent .communityContent1 .lowerContent .postTab .postNav {
+  background-color: #ecfeff;
+  height: 45%;
+  width: 75%;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+.communityContent .communityContent1 .lowerContent .postTab .postNav p {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 20%;
+}
+.communityContent .communityContent1 .lowerContent .postTab .postNav .posts {
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  height: 20%;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.communityContent .communityContent1 .lowerContent .postTab .postNav .posts:hover {
+  background-color: #ffdf52;
+}
+@media (max-width: 767px) {
+  .communityContent .communityContent1 .lowerContent .postTab {
+    height: 30%;
+    width: 50%;
+    float: left;
+    gap: 0.5rem;
+    margin-left: 6%;
+  }
+  .communityContent .communityContent1 .lowerContent .postTab .createPost {
+    height: 20%;
+    width: 60%;
+  }
+  .communityContent .communityContent1 .lowerContent .postTab .createPost p {
+    font-size: 13px;
+    padding: none;
+    padding: 0.1rem;
+  }
+  .communityContent .communityContent1 .lowerContent .postTab .postNav {
+    height: 70%;
+    width: 95%;
+    box-sizing: border-box;
+  }
+  .communityContent .communityContent1 .lowerContent .postTab .postNav p {
+    font-size: 11px;
+    height: 26%;
+  }
+  .communityContent .communityContent1 .lowerContent .postTab .postNav .posts {
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    float: left;
+    border-radius: 8px;
+    padding-right: 1rem;
+    height: 25%;
+    width: 46%;
+    margin: 5% 2% 0% 2%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .communityContent .communityContent1 .lowerContent .postTab {
+    height: 30%;
+    width: 30%;
+    float: left;
+    gap: 0.5rem;
+    margin-left: 25%;
+  }
+  .communityContent .communityContent1 .lowerContent .postTab .createPost {
+    height: 20%;
+    width: 60%;
+  }
+  .communityContent .communityContent1 .lowerContent .postTab .createPost p {
+    font-size: 13px;
+    padding: none;
+    padding: 0.1rem;
+  }
+  .communityContent .communityContent1 .lowerContent .postTab .postNav {
+    height: 70%;
+    width: 95%;
+    box-sizing: border-box;
+  }
+  .communityContent .communityContent1 .lowerContent .postTab .postNav p {
+    font-size: 11px;
+    height: 26%;
+  }
+  .communityContent .communityContent1 .lowerContent .postTab .postNav .posts {
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    float: left;
+    border-radius: 8px;
+    padding-right: 1rem;
+    height: 25%;
+    width: 46%;
+    margin: 4% 2% 0% 2%;
+  }
+}
+.communityContent .communityContent1 .lowerContent .postContent {
+  order: 2;
+  height: 100%;
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.communityContent .communityContent1 .lowerContent .postContent .filterNav {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 15%;
+  width: 96%;
+}
+.communityContent .communityContent1 .lowerContent .postContent .filterNav .displayButton {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+}
+.communityContent .communityContent1 .lowerContent .postContent .filterNav .displayButton .displayTabs {
+  font-size: 15px;
+  padding: 0.5rem;
+  margin-left: 0.8rem;
+  margin: auto;
+}
+.communityContent .communityContent1 .lowerContent .postContent .filterNav .filterButton {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+}
+.communityContent .communityContent1 .lowerContent .postContent .filterNav .filterButton .filterTabs {
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-right: 0.8rem;
+}
+.communityContent .communityContent1 .lowerContent .postContent .membersPost {
+  height: 22%;
+  width: 96%;
+  background-color: #ecfeff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner {
+  height: 100%;
+  width: 80%;
+}
+.communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 10%;
+  float: left;
+}
+.communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .profile #profilePic {
+  font-size: 45px;
+  color: #ef5c5c;
+  cursor: pointer;
+}
+.communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .details {
+  height: 90%;
+  width: 90%;
+  float: left;
+}
+.communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .details .tittle {
+  display: flex;
+  align-items: center;
+  height: 80%;
+  font-size: 17px;
+  padding: 0.5rem;
+  color: #149d9b;
+}
+.communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .details .tittle p {
+  cursor: pointer;
+}
+.communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .details .aboutTittle {
+  height: 20%;
+  width: 90%;
+}
+.communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .details .aboutTittle .tittleType {
+  float: left;
+  font-size: 11px;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: 2rem;
+}
+.communityContent .communityContent1 .lowerContent .postContent .membersPost .postSocial {
+  margin-left: auto;
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.communityContent .communityContent1 .lowerContent .postContent .membersPost .postSocial .social {
+  width: 33%;
+  float: left;
+  font-size: 12px;
+  margin-left: auto;
+}
+.communityContent .communityContent1 .lowerContent .postContent .membersPost .postSocial .social #socialIcon {
+  font-size: 12px;
+}
+.communityContent .communityContent1 .lowerContent .postContent .membersPost .postSocial .social #socialIcon1 {
+  font-size: 12px;
+  cursor: pointer;
+}
+.communityContent .communityContent1 .lowerContent .postContent .more {
+  height: 10%;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: auto;
+  padding: 0.5rem;
+}
+.communityContent .communityContent1 .lowerContent .postContent .more p {
+  padding: 0.2rem;
+  border-radius: 5px;
+  margin-right: 2rem;
+  font-size: 14px;
+  float: left;
+}
+.communityContent .communityContent1 .lowerContent .postContent .more p:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .communityContent .communityContent1 .lowerContent .postContent {
+    width: 100%;
+    height: 80%;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .filterNav {
+    width: 100%;
+    height: 10%;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .filterNav .displayButton {
+    width: 45%;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .filterNav .displayButton .displayTabs {
+    padding: 0.1rem;
+    font-size: 10px;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .filterNav .filterButton {
+    width: 50%;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .filterNav .filterButton .filterTabs {
+    font-size: 10px;
+    padding: 0.1rem;
+    margin-right: 0.6rem;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .membersPost {
+    height: 20%;
+    width: 100%;
+    display: block;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner {
+    width: 100%;
+    height: 80%;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .profile {
+    width: 15%;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .profile #profilePic {
+    font-size: 40px;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .details {
+    width: 85%;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .details .tittle {
+    font-size: 13px;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .details .aboutTittle .tittleType {
+    font-size: 9px;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .membersPost .postSocial {
+    width: 35%;
+    height: 20%;
+    margin-left: 60%;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .membersPost .postSocial .social {
+    font-size: 9px;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .membersPost .postSocial .social #socialIcon {
+    font-size: 9px;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .membersPost .postSocial .social #socialIcon1 {
+    font-size: 9px;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .more p {
+    font-size: 10px;
+    padding: 0.3rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .communityContent .communityContent1 .lowerContent .postContent {
+    width: 100%;
+    height: 80%;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .filterNav {
+    width: 90%;
+    height: 10%;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .filterNav .displayButton {
+    width: 50%;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .filterNav .displayButton .displayTabs {
+    padding: 0.1rem;
+    font-size: 12px;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .filterNav .filterButton {
+    width: 50%;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .filterNav .filterButton .filterTabs {
+    font-size: 12px;
+    padding: 0.1rem;
+    margin-right: 0.6rem;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .membersPost {
+    height: 20%;
+    width: 90%;
+  }
+  .communityContent .communityContent1 .lowerContent .postContent .more p {
+    font-size: 10px;
+    padding: 0.3rem;
+  }
+}
+.communityContent .communityContent1 .lowerContent .ContentHelp {
+  order: 3;
+  height: 90%;
+  width: 13%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.communityContent .communityContent1 .lowerContent .ContentHelp .askHelp {
+  height: 15%;
+  width: 90%;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #149d9b;
+}
+.communityContent .communityContent1 .lowerContent .ContentHelp .askHelp #questionLogo {
+  color: white;
+}
+.communityContent .communityContent1 .lowerContent .ContentHelp .askHelp p {
+  font-size: 14px;
+  color: white;
+  padding: 0.5rem;
+}
+.communityContent .communityContent1 .lowerContent .ContentHelp .helpLeader {
+  height: 45%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.communityContent .communityContent1 .lowerContent .ContentHelp .helpLeader .people {
+  height: 20%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  background-color: #ecfeff;
+}
+.communityContent .communityContent1 .lowerContent .ContentHelp .helpLeader .people .author {
+  font-size: 12px;
+  margin-right: auto;
+  padding-left: 1rem;
+}
+.communityContent .communityContent1 .lowerContent .ContentHelp .helpLeader .people .number {
+  font-size: 11px;
+  margin-left: auto;
+  padding-right: 1rem;
+}
+@media (max-width: 767px) {
+  .communityContent .communityContent1 .lowerContent .ContentHelp {
+    height: 30%;
+    width: 40%;
+    float: left;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .askHelp {
+    height: 20%;
+    width: 80%;
+    text-align: center;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .askHelp #questionLogo {
+    font-size: 12px;
+    padding: 0.2rem;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .askHelp p {
+    font-size: 12px;
+    padding: 0.1rem;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .helpLeader {
+    height: 70%;
+    width: 90%;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .helpLeader .people {
+    font-size: 10px;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .helpLeader .people .author {
+    font-size: 9px;
+    padding-left: 0.5rem;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .helpLeader .people .number {
+    font-size: 9px;
+    padding-right: 0.5rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .communityContent .communityContent1 .lowerContent .ContentHelp {
+    height: 30%;
+    width: 25%;
+    float: left;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .askHelp {
+    height: 20%;
+    width: 80%;
+    text-align: center;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .askHelp #questionLogo {
+    font-size: 12px;
+    padding: 0.2rem;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .askHelp p {
+    font-size: 12px;
+    padding: 0.1rem;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .helpLeader {
+    height: 70%;
+    width: 90%;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .helpLeader .people {
+    font-size: 10px;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .helpLeader .people .author {
+    font-size: 9px;
+    padding-left: 0.5rem;
+  }
+  .communityContent .communityContent1 .lowerContent .ContentHelp .helpLeader .people .number {
+    font-size: 9px;
+    padding-right: 0.5rem;
+  }
+}
+.communityContent .communityContent2 {
+  height: 100%;
+  width: 100%;
+}
+.communityContent .communityContent2 .leftContent {
+  height: 100%;
+  width: 80%;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.communityContent .communityContent2 .leftContent .contentTab {
+  height: 100%;
+  width: 35%;
+  padding: 1rem;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchTab {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchTab .searchBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16%;
+  width: 90%;
+  border-radius: 15px;
+  border: 1px solid #333;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchTab .searchBox #searchLogo {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8%;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchTab .searchBox #searchInput {
+  font-size: 14px;
+  height: 100%;
+  width: 88%;
+  border-radius: 15px;
+  margin-right: auto;
+  outline: none;
+  border: none;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchTab .topics {
+  height: 15%;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchTab .topics p {
+  font-size: 12px;
+  padding: 0.5rem;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchTab .topics .topicsSubject {
+  font-size: 12px;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchTab .topics .topicsSubject:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchTab .imageCommunity {
+  height: 50%;
+  width: 90%;
+  background-image: url(/images/community.svg?4e765755771fc418370454c957029739);
+  background-size: 100% 150%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent {
+  height: 70%;
+  width: 100%;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .filterNav {
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 10%;
+  width: 96%;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .filterNav .displayButton {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .filterNav .displayButton .displayTabs {
+  font-size: 12px;
+  padding: 0.5rem;
+  margin-left: 0.8rem;
+  margin: auto;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .filterNav .filterButton {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .filterNav .filterButton .filterTabs {
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-right: 0.8rem;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost {
+  margin: auto;
+  height: 18%;
+  width: 96%;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postOwner {
+  height: 80%;
+  width: 100%;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postOwner .profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 15%;
+  float: left;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postOwner .profile #profilePic {
+  font-size: 40px;
+  color: #ef5c5c;
+  cursor: pointer;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postOwner .details {
+  height: 90%;
+  width: 85%;
+  float: left;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postOwner .details .tittle {
+  display: flex;
+  align-items: center;
+  height: 80%;
+  font-size: 15px;
+  padding: 0.5rem;
+  color: #149d9b;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postOwner .details .tittle p {
+  cursor: pointer;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postOwner .details .aboutTittle {
+  height: 20%;
+  width: 90%;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postOwner .details .aboutTittle .tittleType {
+  float: left;
+  font-size: 11px;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: 2rem;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postSocial {
+  margin-left: auto;
+  height: 20%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postSocial .social {
+  width: 33%;
+  float: left;
+  font-size: 12px;
+  margin-left: auto;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postSocial .social #socialIcon {
+  font-size: 12px;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postSocial .social #socialIcon1 {
+  font-size: 12px;
+  cursor: pointer;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .more {
+  height: 10%;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: auto;
+  padding: 0.5rem;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .more p {
+  padding: 0.2rem;
+  border-radius: 5px;
+  margin-right: 2rem;
+  font-size: 14px;
+  float: left;
+}
+.communityContent .communityContent2 .leftContent .contentTab .searchContent .more p:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay {
+  height: 100%;
+  width: 65%;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay {
+  height: 70%;
+  width: 100%;
+  padding: 1rem;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails {
+  margin: auto;
+  height: 20%;
+  width: 96%;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postOwner {
+  height: 80%;
+  width: 100%;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postOwner .profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 15%;
+  float: left;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postOwner .profile #profilePic {
+  font-size: 60px;
+  color: #ef5c5c;
+  cursor: pointer;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postOwner .details {
+  height: 90%;
+  width: 85%;
+  float: left;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postOwner .details .tittle {
+  display: flex;
+  align-items: center;
+  height: 80%;
+  font-size: 20px;
+  padding: 0.5rem;
+  color: #149d9b;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postOwner .details .tittle p {
+  cursor: pointer;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postOwner .details .aboutTittle {
+  height: 20%;
+  width: 90%;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postOwner .details .aboutTittle .tittleType {
+  float: left;
+  font-size: 13px;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: 2rem;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postSocial {
+  margin-left: auto;
+  height: 20%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postSocial .social {
+  width: 33%;
+  float: left;
+  font-size: 14px;
+  margin-left: auto;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postSocial .social #socialIcon {
+  font-size: 14px;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postSocial .social #socialIcon1 {
+  font-size: 14px;
+  cursor: pointer;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .writtenPost {
+  height: 80%;
+  width: 90%;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .writtenPost p {
+  padding: 0.5rem;
+  font-size: 15px;
+  font-family: "Kalam", cursive;
+  color: #333;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment {
+  height: 30%;
+  width: 100%;
+  padding: 1rem;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .inputComment {
+  background-color: #ecfeff;
+  height: 20%;
+  width: 65%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid black;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .inputComment #commentInput {
+  background-color: #ecfeff;
+  height: 100%;
+  width: 95%;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  padding: 0.5rem;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .inputComment #postButton {
+  font-size: 20px;
+  padding: 0.5rem;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment {
+  height: 65%;
+  width: 100%;
+  margin-top: 2rem;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row1 {
+  height: 45%;
+  width: 90%;
+  margin: auto;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row1 .ownerImoge {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row1 .ownerImoge #commentUser {
+  font-size: 40px;
+  color: #ef5c5c;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row1 .commentContent {
+  height: 100%;
+  width: 85%;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row1 .commentContent .comment {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row1 .commentContent .likes {
+  height: 30%;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row1 .commentContent .likes #commentLike {
+  font-size: 20px;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row2 {
+  height: 10%;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 15px;
+  margin-left: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row2 p {
+  border-radius: 5px;
+}
+.communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row2 p:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.communityContent .communityContent2 .rightContent {
+  height: 100%;
+  width: 20%;
+  float: left;
+}
+.communityContent .communityContent2 .rightContent .imogeTab {
+  height: 40%;
+  width: 100%;
+  background-image: url(/images/community_reading.svg?5dc7517fbe62df5332e2e0777d98f7f5);
+  background-size: 100% 150%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.communityContent .communityContent2 .rightContent .postTab {
+  margin: auto;
+  height: 30%;
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.communityContent .communityContent2 .rightContent .postTab .createPost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a1fa6e;
+  width: 80%;
+  height: 15%;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transform: perspective(600px) rotateX(15deg);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.communityContent .communityContent2 .rightContent .postTab .createPost p {
+  font-size: 15px;
+  padding: 1rem;
+}
+.communityContent .communityContent2 .rightContent .postTab .createPost:hover {
+  transform: perspective(600px) rotateX(0deg) translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
+}
+.communityContent .communityContent2 .rightContent .postTab .postNav {
+  background-color: #ecfeff;
+  height: 75%;
+  width: 75%;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+.communityContent .communityContent2 .rightContent .postTab .postNav p {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 20%;
+}
+.communityContent .communityContent2 .rightContent .postTab .postNav .posts {
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  height: 20%;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.communityContent .communityContent2 .rightContent .postTab .postNav .posts:hover {
+  background-color: #ffdf52;
+}
+.communityContent .communityContent2 .rightContent .ContentHelp {
+  margin: auto;
+  height: 30%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.communityContent .communityContent2 .rightContent .ContentHelp .askHelp {
+  height: 15%;
+  width: 90%;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #149d9b;
+}
+.communityContent .communityContent2 .rightContent .ContentHelp .askHelp #questionLogo {
+  color: white;
+}
+.communityContent .communityContent2 .rightContent .ContentHelp .askHelp p {
+  font-size: 14px;
+  color: white;
+  padding: 0.5rem;
+}
+.communityContent .communityContent2 .rightContent .ContentHelp .helpLeader {
+  height: 65%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.communityContent .communityContent2 .rightContent .ContentHelp .helpLeader .people {
+  height: 20%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  background-color: #ecfeff;
+}
+.communityContent .communityContent2 .rightContent .ContentHelp .helpLeader .people .author {
+  font-size: 12px;
+  margin-right: auto;
+  padding-left: 1rem;
+}
+.communityContent .communityContent2 .rightContent .ContentHelp .helpLeader .people .number {
+  font-size: 11px;
+  margin-left: auto;
+  padding-right: 1rem;
 }

@@ -9,14 +9,9 @@ class QuoteController extends Controller
 {
     function index()
     {
-
-        // API Endpoint URL
-        $apiUrl = 'https://zenquotes.io/api/today';
-
-        $quote = Http::get($apiUrl);
+        $quote = Http::get(env('QUOTE_API_URL'));
         $quote = $quote->json();
-
-
+        
         return view('home', ['quote' => $quote]);
     }
 }

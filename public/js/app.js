@@ -6191,6 +6191,56 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     enabledTransports: ['ws', 'wss'],
 // });
 
+/***/ }),
+
+/***/ "./resources/js/quiz.js":
+/*!******************************!*\
+  !*** ./resources/js/quiz.js ***!
+  \******************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// resources/js/quiz.js
+
+// Function to check and hide/show the "nextButton" based on the content of "quizQuestionNo"
+function checkAndHideNextDiv() {
+  var firstDiv = document.getElementById("quizQuestionNo");
+  var nextDiv = document.getElementById("nextButton");
+  var previousDiv = document.getElementById("previousButton");
+  if (parseInt(firstDiv.textContent) >= 10) {
+    nextDiv.textContent = "Submit";
+    nextDiv.style.backgroundColor = "green";
+  }
+  if (parseInt(firstDiv.textContent) === 1) {
+    previousDiv.style.display = "none";
+  } else {
+    previousDiv.style.display = "block";
+  }
+}
+
+// Function to change the background color of clicked element and remove "selected" class from other elements
+function changeBackgroundColor(clickedDiv) {
+  var childDivs = document.querySelectorAll(".options");
+  childDivs.forEach(function (div) {
+    return div.classList.remove("selected");
+  });
+  clickedDiv.classList.add("selected");
+}
+
+// Event listener for DOMContentLoaded to initialize the functionality
+document.addEventListener("DOMContentLoaded", function () {
+  checkAndHideNextDiv();
+
+  // Add click event listeners to elements with class "options"
+  var childDivs = document.querySelectorAll(".options");
+  childDivs.forEach(function (div) {
+    div.addEventListener("click", function () {
+      changeBackgroundColor(this);
+    });
+  });
+});
+
 /***/ })
 
 /******/ 	});
