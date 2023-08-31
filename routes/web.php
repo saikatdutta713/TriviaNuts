@@ -34,6 +34,12 @@ Route::get('/quiz', function () {
     return view('quiz');
 });
 
-Route::get('admin', function(){
-    return view('admin.home');
+Route::prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.home');
+    })->name('admin.home');
+
+    Route::get('allquizzes', function () {
+        return view('admin.manage_quizzes');
+    })->name('admin.allquizzes');
 });
