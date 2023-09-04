@@ -35,6 +35,8 @@
             height: 60%;
             width: 30%;
             margin: auto;
+            background-image: url('{{ asset('images/welcome.svg') }}');
+
         }
         .wrapper {
             height: 90%;
@@ -251,7 +253,7 @@
 
 <body>
     <div class="welcome">
-        <img src="{{asset('images/welcome.svg')}}" alt="Photo" >
+        {{-- <img src="{{asset('images/welcome.svg')}}" alt="Photo" > --}}
     </div>
     <div class="wrapper">
         <header>
