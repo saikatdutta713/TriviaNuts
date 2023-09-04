@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\QuoteController;
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +40,7 @@ Route::prefix('admin')->group(function () {
         return view('admin.home');
     })->name('admin.home');
 
-    Route::get('allquizzes', function () {
+    Route::get('/allquizzes', function () {
         return view('admin.manage_quizzes');
     })->name('admin.allquizzes');
 });
