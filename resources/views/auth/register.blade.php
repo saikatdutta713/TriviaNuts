@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration </title>
     <link rel="stylesheet" href="style.css">
-    {{-- <link rel="stylesheet" href="{{asset('css/auth.css')}}" /> --}}
+    <link rel="stylesheet" href="{{asset('css/auth/register.css')}}" />
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
@@ -230,6 +230,23 @@
         #submit{
             width: 20%;
             margin:3% 40% 0 40%;
+        }
+        .policies{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 10%;
+            width: 100%;
+        }
+        .policies .checkbox{
+            /* height: 100%; */
+            width: 6%; 
+        }
+        #policieText{
+            height: 100%;
+            width: 90%;
+            display: flex;
+            align-items: center;
         }
     </style>
 </head>
