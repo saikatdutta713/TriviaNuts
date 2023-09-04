@@ -1,22 +1,45 @@
-@import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap";
-
 $color_1: white;
 $color_2: black;
 $color_3: #333;
 $color_4: #3b3b3b;
 $color_5: #149d9b;
-// $color_5: #416867;
 $color_6: #ecfeff;
-$color_7: #ef5c5c;
-$color_8: #00000033;
-$color_9: #a1fa6e;
-$color_10: #ffdf52;
-$color_11: #00000033;
 $header-color: #149d9b;
 $background-color_1: rgba(23, 97, 110, 0.354);
 $sidebar-background-color: #444;
 $font-family_1: "Montserrat", sans-serif;
 $header-height: 60px;
+
+// Admin variabless
+$color_7: #a5aaad;
+$color_8: #2e4a66;
+$color_9: #469cac;
+$color_10: #cc3d38;
+$color_11: #a98921;
+$color_12: #3b9668;
+$color_13: #265acc;
+$color_14: #ffffff;
+$color_15: #35a4ba;
+$color_16: #38e1b0;
+$color_17: #3a3e41;
+$color_18: #f65a6f;
+$color_19: #f3f4f6;
+$color_20: #3ea175;
+$color_21: #e65061;
+$color_22: #f7f7f6;
+$color_24: #566787;
+$color_25: #fff;
+$color_23: #10c469;
+$color_26: #62c9e8;
+$color_27: #ffc107;
+$color_28: #ff5b5b;
+$color_29: #999;
+$color_30: #666;
+$color_31: #299be4;
+$background-color_24: #fcfcfc;
+$background-color_2: #f5f5f5;
+$font-family_1: "Lato", sans-serif;
+$font-family_1: "Roboto", sans-serif;
 
 @mixin flexing {
     display: flex;

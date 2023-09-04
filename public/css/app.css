@@ -1,12 +1,10 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap);
 /* Footer section */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .header {
@@ -1337,7 +1335,7 @@ footer .row2 {
   border-radius: 10px;
 }
 .communityContent .communityContent1 .upperContent .topics .topicsSubject:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #a98921;
 }
 .communityContent .communityContent1 .upperContent .imageCommunity {
   height: 75%;
@@ -1452,7 +1450,7 @@ footer .row2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #a1fa6e;
+  background-color: #469cac;
   width: 80%;
   height: 15%;
   border-radius: 30px;
@@ -1480,7 +1478,7 @@ footer .row2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #a98921;
   height: 20%;
 }
 .communityContent .communityContent1 .lowerContent .postTab .postNav .posts {
@@ -1491,10 +1489,10 @@ footer .row2 {
   padding-left: 1rem;
   height: 20%;
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #a98921;
 }
 .communityContent .communityContent1 .lowerContent .postTab .postNav .posts:hover {
-  background-color: #ffdf52;
+  background-color: #cc3d38;
 }
 @media (max-width: 767px) {
   .communityContent .communityContent1 .lowerContent .postTab {
@@ -1586,7 +1584,7 @@ footer .row2 {
   flex-direction: column;
 }
 .communityContent .communityContent1 .lowerContent .postContent .filterNav {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #a98921;
   height: 15%;
   width: 96%;
 }
@@ -1622,7 +1620,7 @@ footer .row2 {
   height: 22%;
   width: 96%;
   background-color: #ecfeff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #a98921;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1641,7 +1639,7 @@ footer .row2 {
 }
 .communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .profile #profilePic {
   font-size: 45px;
-  color: #ef5c5c;
+  color: #a5aaad;
   cursor: pointer;
 }
 .communityContent .communityContent1 .lowerContent .postContent .membersPost .postOwner .details {
@@ -1706,7 +1704,7 @@ footer .row2 {
   float: left;
 }
 .communityContent .communityContent1 .lowerContent .postContent .more p:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #a98921;
   cursor: pointer;
 }
 @media (max-width: 767px) {
@@ -2005,7 +2003,7 @@ footer .row2 {
   border-radius: 10px;
 }
 .communityContent .communityContent2 .leftContent .contentTab .searchTab .topics .topicsSubject:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #a98921;
 }
 .communityContent .communityContent2 .leftContent .contentTab .searchTab .imageCommunity {
   height: 50%;
@@ -2021,7 +2019,7 @@ footer .row2 {
 }
 .communityContent .communityContent2 .leftContent .contentTab .searchContent .filterNav {
   margin: auto;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #a98921;
   height: 10%;
   width: 96%;
 }
@@ -2058,7 +2056,7 @@ footer .row2 {
   height: 18%;
   width: 96%;
   background-color: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #a98921;
   display: block;
   align-items: center;
   justify-content: center;
@@ -2077,7 +2075,7 @@ footer .row2 {
 }
 .communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postOwner .profile #profilePic {
   font-size: 40px;
-  color: #ef5c5c;
+  color: #a5aaad;
   cursor: pointer;
 }
 .communityContent .communityContent2 .leftContent .contentTab .searchContent .membersPost .postOwner .details {
@@ -2142,7 +2140,7 @@ footer .row2 {
   float: left;
 }
 .communityContent .communityContent2 .leftContent .contentTab .searchContent .more p:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #a98921;
   cursor: pointer;
 }
 .communityContent .communityContent2 .leftContent .contentDisplay {
@@ -2159,7 +2157,7 @@ footer .row2 {
   height: 20%;
   width: 96%;
   background-color: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #a98921;
   display: block;
   align-items: center;
   justify-content: center;
@@ -2178,7 +2176,7 @@ footer .row2 {
 }
 .communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postOwner .profile #profilePic {
   font-size: 60px;
-  color: #ef5c5c;
+  color: #a5aaad;
   cursor: pointer;
 }
 .communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .postDetails .postOwner .details {
@@ -2295,7 +2293,7 @@ footer .row2 {
 }
 .communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row1 .ownerImoge #commentUser {
   font-size: 40px;
-  color: #ef5c5c;
+  color: #a5aaad;
 }
 .communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row1 .commentContent {
   height: 100%;
@@ -2336,7 +2334,7 @@ footer .row2 {
   border-radius: 5px;
 }
 .communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row2 p:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #2e4a66;
 }
 .communityContent .communityContent2 .rightContent {
   height: 100%;
@@ -2365,7 +2363,7 @@ footer .row2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #a1fa6e;
+  background-color: #469cac;
   width: 80%;
   height: 15%;
   border-radius: 30px;
@@ -2393,7 +2391,7 @@ footer .row2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #a98921;
   height: 20%;
 }
 .communityContent .communityContent2 .rightContent .postTab .postNav .posts {
@@ -2404,10 +2402,10 @@ footer .row2 {
   padding-left: 1rem;
   height: 20%;
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #a98921;
 }
 .communityContent .communityContent2 .rightContent .postTab .postNav .posts:hover {
-  background-color: #ffdf52;
+  background-color: #cc3d38;
 }
 .communityContent .communityContent2 .rightContent .ContentHelp {
   margin: auto;
