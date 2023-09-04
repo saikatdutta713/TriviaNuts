@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-body {
-  width: 100%;
-}
-
 .header {
   width: 100%;
   height: 7%;
@@ -87,6 +83,7 @@ section.greeting {
   height: 795px;
   background-color: #ecfeff;
   position: relative;
+  border-bottom: 2px solid #149d9b;
 }
 section.greeting .polygon {
   width: inherit;
@@ -158,25 +155,25 @@ section.greeting .content .right img {
 }
 
 section.quote {
-  width: 100%;
-  height: 699px;
-  position: relative;
-  background-color: rgba(201, 245, 203, 0.1);
-  border-top: 2px solid #149d9b;
+  width: 40%;
+  height: 80vh;
 }
-section.quote img {
+section.quote .quote_image {
   width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -99;
+  height: 75%;
+  background-image: url(/images/motivation.svg?a1811dc7108360a15dd4cf5e7f26af3b);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 section.quote .quote_container {
-  width: 50%;
-  height: inherit;
-  float: right;
+  width: 80%;
+  height: 25%;
+  color: rgb(16, 14, 14);
   display: flex;
+  justify-content: center;
   align-items: center;
-  color: white;
+  margin: auto;
 }
 section.quote .quote_container .the_quote {
   padding: 2%;
@@ -194,5 +191,83 @@ section.quote .quote_container .the_quote h3::before {
   position: absolute;
   top: 12px;
   left: -35px;
-  background-color: white;
+  background-color: rgb(16, 14, 14);
+}
+
+footer {
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
+  color: white;
+  background-color: #3b3b3b;
+}
+footer .row1 {
+  height: 40%;
+  width: 100%;
+  padding-top: 1vh;
+}
+footer .row1 .company_tab {
+  height: 100%;
+  width: auto;
+  float: left;
+  padding-left: 10px;
+}
+footer .row1 .company_tab .links {
+  height: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px 10px;
+  font-size: medium;
+  text-decoration: none;
+  color: white;
+  float: left;
+}
+footer .row1 .social_tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: auto;
+  float: right;
+  padding: 6px 10px;
+}
+footer .row1 .social_tab .media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.4rem;
+  float: left;
+  cursor: pointer;
+}
+footer .row2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
+  padding: 15px;
+  background-color: #333;
+  font-size: medium;
+}
+@media (max-width: 768px) {
+  footer .row1 {
+    height: 70%;
+  }
+  footer .row1 .company_tab {
+    height: 70%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+  }
+  footer .row1 .company_tab .links {
+    font-size: small;
+  }
+  footer .row2 {
+    font-size: medium;
+  }
 }
