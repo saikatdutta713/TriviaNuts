@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
 {
-    function index(): void
+    //
+}
+
+    public function registration(Request $request)
     {
-        view('auth.register');
+        // Handle form submission, validation, and user registration
     }
 }

@@ -2072,19 +2072,6 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 
-/***/ "./resources/scss/admin/manage_quizzes.scss":
-/*!**************************************************!*\
-  !*** ./resources/scss/admin/manage_quizzes.scss ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./resources/scss/community.scss":
 /*!***************************************!*\
   !*** ./resources/scss/community.scss ***!
@@ -2137,6 +2124,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/scss/auth/register.scss":
+/*!*******************************************!*\
+  !*** ./resources/scss/auth/register.scss ***!
+  \*******************************************/
+/***/ (() => {
+
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/css-loader/dist/cjs.js):\nError: Can't resolve '../../public/images/welcome.svg' in 'D:\\Project\\TriviaNuts\\resources\\scss\\auth'\n    at finishWithoutResolve (D:\\Project\\TriviaNuts\\node_modules\\enhanced-resolve\\lib\\Resolver.js:369:18)\n    at D:\\Project\\TriviaNuts\\node_modules\\enhanced-resolve\\lib\\Resolver.js:461:15\n    at D:\\Project\\TriviaNuts\\node_modules\\enhanced-resolve\\lib\\Resolver.js:519:5\n    at eval (eval at create (D:\\Project\\TriviaNuts\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at D:\\Project\\TriviaNuts\\node_modules\\enhanced-resolve\\lib\\Resolver.js:519:5\n    at eval (eval at create (D:\\Project\\TriviaNuts\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:27:1)\n    at D:\\Project\\TriviaNuts\\node_modules\\enhanced-resolve\\lib\\DescriptionFilePlugin.js:89:43\n    at D:\\Project\\TriviaNuts\\node_modules\\enhanced-resolve\\lib\\Resolver.js:519:5\n    at eval (eval at create (D:\\Project\\TriviaNuts\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at D:\\Project\\TriviaNuts\\node_modules\\enhanced-resolve\\lib\\Resolver.js:519:5\n    at processResult (D:\\Project\\TriviaNuts\\node_modules\\webpack\\lib\\NormalModule.js:764:19)\n    at D:\\Project\\TriviaNuts\\node_modules\\webpack\\lib\\NormalModule.js:866:5\n    at D:\\Project\\TriviaNuts\\node_modules\\loader-runner\\lib\\LoaderRunner.js:400:11\n    at D:\\Project\\TriviaNuts\\node_modules\\loader-runner\\lib\\LoaderRunner.js:252:18\n    at context.callback (D:\\Project\\TriviaNuts\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at Object.loader (D:\\Project\\TriviaNuts\\node_modules\\css-loader\\dist\\index.js:155:5)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)");
+
+/***/ }),
+
 /***/ "./resources/scss/category.scss":
 /*!**************************************!*\
   !*** ./resources/scss/category.scss ***!
@@ -2163,10 +2160,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/scss/admin/home.scss":
-/*!****************************************!*\
-  !*** ./resources/scss/admin/home.scss ***!
-  \****************************************/
+/***/ "./resources/scss/quiz.scss":
+/*!**********************************!*\
+  !*** ./resources/scss/quiz.scss ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6550,9 +6547,8 @@ document.addEventListener("DOMContentLoaded", function () {
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0,
-/******/ 			"css/admin": 0,
-/******/ 			"css/home": 0,
-/******/ 			"css/quiz": 0
+/******/ 			"css/quiz": 0,
+/******/ 			"css/home": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -6609,7 +6605,6 @@ document.addEventListener("DOMContentLoaded", function () {
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/category.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/admin/admin.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/admin/home.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/admin/manage_quizzes.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/community.scss")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/quiz.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
