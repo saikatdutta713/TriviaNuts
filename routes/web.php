@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +20,8 @@ Route::get('/', [QuoteController::class, 'index'])->name('home');
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'login'])->name('login');
-Route::get('registration', [RegistrationController::class, 'index']);
+Route::get('registration', [RegistrationController::class, 'index'])->name('registration');
+Route::post('registration', [RegistrationController::class, 'registration'])->name('registration');
 Route::get('/master', function () {
     return view('layouts.master');
 });

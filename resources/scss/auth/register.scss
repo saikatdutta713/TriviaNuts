@@ -1,0 +1,224 @@
+$color_1: #fff;
+$color_2: #3a5198;
+$color_3: #bfbfbf;
+$color_4: #dc3545;
+$color_5: #5372f0;
+$font-family_1: "Montserrat", sans-serif;
+$background-color_1: orange;
+$background-color_2: pink;
+$border-color_1: #5372f0;
+$border-color_2: #dc3545;
+
+@keyframes shake {
+    0%,
+    100% {
+        margin-left: 0px;
+    }
+    20%,
+    80% {
+        margin-left: -12px;
+    }
+    40%,
+    60% {
+        margin-left: 12px;
+    }
+}
+/* form .pass-txt {
+            text-align: left;
+            margin-top: -10px;
+        } */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family_1;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0efef;
+}
+::selection {
+    color: $color_1;
+    background: #5372f0;
+}
+.welcome {
+    height: 60%;
+    width: 30%;
+    background-image: url(../../public/images/welcome.svg);
+    background-size: 100% 90%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: $background-color_1;
+}
+.wrapper {
+    height: 90%;
+    width: 50%;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    header {
+        color: $color_2;
+        height: 20%;
+        width: 100%;
+        .logo {
+            margin-right: auto;
+            width: 20%;
+            height: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $background-color_2;
+            font-size: 20px;
+        }
+        .registration {
+            margin: auto;
+            width: 40%;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+    }
+    form {
+        height: 80%;
+        width: 100%;
+    }
+    a {
+        color: $color_5;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+form {
+    .field {
+        width: 100%;
+        margin-bottom: 20px;
+        .input-area {
+            height: 50px;
+            width: 45%;
+            position: relative;
+            float: left;
+            margin: 1% 2.5% 1.5% 2.5%;
+        }
+        input {
+            &:focus {
+                border-color: $border-color_1;
+            }
+        }
+        .error-txt {
+            color: $color_4;
+            text-align: left;
+            margin-top: 5px;
+        }
+        .error {
+            display: none;
+        }
+    }
+    .field.shake {
+        animation: shake 0.3s ease-in-out;
+        input {
+            border-color: $border-color_2;
+            &:focus ~ .icon {
+                color: $color_3;
+            }
+        }
+        .error {
+            display: block;
+        }
+    }
+    input {
+        width: 100%;
+        height: 100%;
+        outline: none;
+        padding: 0 45px;
+        font-size: 18px;
+        background: none;
+        caret-color: #5372f0;
+        border-radius: 5px;
+        border: 1px solid #bfbfbf;
+        border-bottom-width: 2px;
+        transition: all 0.2s ease;
+        &:focus ~ .icon {
+            color: $color_5;
+        }
+        &::placeholder {
+            color: $color_3;
+            font-size: 17px;
+        }
+    }
+    .field.valid {
+        input {
+            border-color: $border-color_1;
+        }
+        .icon {
+            color: $color_5;
+        }
+    }
+    .field.error {
+        input {
+            border-color: $border-color_2;
+            &:focus ~ .icon {
+                color: $color_3;
+            }
+        }
+        .error {
+            display: block;
+        }
+    }
+    input[type="submit"] {
+        height: 50px;
+        margin-top: 30px;
+        color: $color_1;
+        padding: 0;
+        border: none;
+        background: #3a5198;
+        cursor: pointer;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        &:hover {
+            background: #2c52ed;
+        }
+    }
+}
+.field {
+    .input-area {
+        i {
+            position: absolute;
+            top: 50%;
+            font-size: 18px;
+            pointer-events: none;
+            transform: translateY(-50%);
+        }
+    }
+}
+.input-area {
+    .icon {
+        left: 15px;
+        color: $color_3;
+        transition: color 0.2s ease;
+    }
+    .error-icon {
+        right: 15px;
+        color: $color_4;
+    }
+}
+#emailField {
+    width: 95%;
+}
+.checkbox {
+    height: 25px;
+    margin-top: 5px;
+}
+#submit {
+    width: 20%;
+    margin: 3% 40% 0 40%;
+}
