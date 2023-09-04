@@ -2072,6 +2072,19 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 
+/***/ "./resources/scss/admin/home.scss":
+/*!****************************************!*\
+  !*** ./resources/scss/admin/home.scss ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/scss/community.scss":
 /*!***************************************!*\
   !*** ./resources/scss/community.scss ***!
@@ -2151,19 +2164,6 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************!*\
   !*** ./resources/scss/admin/admin.scss ***!
   \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/scss/quiz.scss":
-/*!**********************************!*\
-  !*** ./resources/scss/quiz.scss ***!
-  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6547,8 +6547,9 @@ document.addEventListener("DOMContentLoaded", function () {
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0,
-/******/ 			"css/quiz": 0,
-/******/ 			"css/home": 0
+/******/ 			"css/admin": 0,
+/******/ 			"css/home": 0,
+/******/ 			"css/quiz": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -6602,6 +6603,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/js/quiz.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/app.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/home.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/auth/register.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/category.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/admin/admin.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/admin/home.scss")))
