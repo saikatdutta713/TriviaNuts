@@ -53,15 +53,56 @@
         </div>
     </section>
     <section class="quote">
-        <img src="{{ asset('images/flower.jpg') }}" alt="quotes background">
         <div class="quote_container">
             <div class="the_quote">
-
                 <h2>{{ ($quote[0]['q']) }}</h2>
                 <h3>{{ $quote[0]['a'] }}</h3>
             </div>
         </div>
+        <div class="quote_image">
+
+        </div>
+        
     </section>
+    <footer class="footer">
+        <div class="row1">
+            <div class="company_tab">
+                <a href="#" class="links">
+                    Contact Us
+                </a>
+                <a href="#" class="links">
+                    About Us
+                </a>
+                <a href="#" class="links">
+                    Privacy Policy
+                </a>
+                <a href="#" class="links">
+                    Terms and Conditions
+                </a>
+            </div>
+            <div class="social_tab">
+                <div class="media">
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+                <div class="media">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div class="media">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="media">
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row2">
+            <p class="copyright">
+                Copyright
+            </p>
+        </div>
+    </footer>
+    {{-- @extends('layouts.master') --}}
+    {{-- @include('layouts.master.footer') --}}
 </body>
 
 </html>

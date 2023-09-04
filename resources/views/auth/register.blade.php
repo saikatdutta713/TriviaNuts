@@ -1,29 +1,15 @@
 <!DOCTYPE html>
-<!-- Coding by CodingLab | www.codinglabweb.com-->
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--<title>Email and Password Validation</title>-->
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Boxicons CSS -->
-    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration </title>
+    <link rel="stylesheet" href="style.css">
+    {{-- <link rel="stylesheet" href="{{asset('css/auth.css')}}" /> --}}
 
     <style>
-        /* Google Fonts - Poppins */
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
         * {
             margin: 0;
@@ -33,308 +19,315 @@
         }
 
         body {
-            min-height: 100vh;
+            width: 100%;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f0efef;
+            /* background: #f0efef; */
         }
 
-        .chatnmeet-logo {
-            height: inherit;
-            width: 100%;
+        ::selection {
+            color: #fff;
+            background: #5372F0;
+        }
+        .welcome{
+            height: 60%;
+            width: 30%;
+            margin: auto;
+            background-image: url('{{ asset('images/welcome.svg') }}');
+
+        }
+        .wrapper {
+            height: 90%;
+            width: 50%;
+            padding: 1rem;
             background: #fff;
-            top: 0px;
-            position: fixed;
-            justify-content: center;
-            font-size: 16pt;
+            border-radius: 5px;
+            text-align: center;
+            margin: auto;
+            /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
         }
 
-
-        .container {
-            position: relative;
-            max-width: 370px;
-            width: 100%;
-            padding: 25px;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-        }
-
-        .container header {
-            font-size: 22px;
-            font-weight: 600;
+        .wrapper header {
             color: #3A5198;
+            height: 20%;
+            width: 100%;
+            
         }
-
-        .container form {
-            margin-top: 30px;
+        .wrapper header .logo{
+            margin-right: auto;
+            width: 20%;
+            height: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: pink;
+            font-size: 20px;
+        }
+        .wrapper header .registration{
+            margin: auto;
+            width: 40%;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+        .wrapper form {
+            /* margin: 40px 0; */
+            height: 80%;
+            width: 100%;
         }
 
         form .field {
+            width: 100%;
             margin-bottom: 20px;
         }
 
-        form .input-field {
-            position: relative;
-            height: 55px;
-            width: 100%;
-            border-radius: 8px;
-            border: 2px solid #d1d1d1;
-
+        form .field.shake {
+            animation: shake 0.3s ease-in-out;
         }
 
+        @keyframes shake {
 
+            0%,
+            100% {
+                margin-left: 0px;
+            }
 
-        .input-icon {
+            20%,
+            80% {
+                margin-left: -12px;
+            }
+
+            40%,
+            60% {
+                margin-left: 12px;
+            }
+        }
+
+        form .field .input-area {
+            height: 50px;
+            width: 45%;
+            position: relative;
+            float: left;
+            margin: 1% 2.5% 1.5% 2.5%;
+        }
+
+        form input {
+            width: 100%;
+            height: 100%;
+            outline: none;
+            padding: 0 45px;
+            font-size: 18px;
+            background: none;
+            caret-color: #5372F0;
+            border-radius: 5px;
+            border: 1px solid #bfbfbf;
+            border-bottom-width: 2px;
+            transition: all 0.2s ease;
+        }
+
+        form .field input:focus,
+        form .field.valid input {
+            border-color: #5372F0;
+        }
+
+        form .field.shake input,
+        form .field.error input {
+            border-color: #dc3545;
+        }
+
+        .field .input-area i {
             position: absolute;
             top: 50%;
             font-size: 18px;
             pointer-events: none;
             transform: translateY(-50%);
+        }
+
+        .input-area .icon {
             left: 15px;
-            color: #979696;
+            color: #bfbfbf;
+            transition: color 0.2s ease;
         }
 
-
-        .input-field input {
-            height: 100%;
-            width: 100%;
-            outline: none;
-            border: none;
-            border-radius: 8px;
-            padding: 0 45px;
-            outline: none;
-            float: right;
-            box-sizing: border-box;
-
+        .input-area .error-icon {
+            right: 15px;
+            color: #dc3545;
         }
 
-        form .input-field input:focus,
-        form .input-field.valid input {
-            border-color: #5372F0;
+        form input:focus~.icon,
+        form .field.valid .icon {
+            color: #5372F0;
         }
 
-
-        .field name-field :hover {
-            border-color: red;
+        form .field.shake input:focus~.icon,
+        form .field.error input:focus~.icon {
+            color: #bfbfbf;
         }
 
-
-        .invalid input {
-            border-color: #d93025;
+        form input::placeholder {
+            color: #bfbfbf;
+            font-size: 17px;
         }
 
-        .input-field .show-hide {
-            position: absolute;
-            right: 13px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 18px;
-            color: #919191;
-            cursor: pointer;
-            padding: 3px;
+        form .field .error-txt {
+            color: #dc3545;
+            text-align: left;
+            margin-top: 5px;
         }
 
-        .field .error {
-            display: flex;
-            align-items: center;
-            margin-top: 6px;
-            color: #d93025;
-            font-size: 13px;
+        form .field .error {
             display: none;
         }
 
-        .invalid .error {
-            display: flex;
+        form .field.shake .error,
+        form .field.error .error {
+            display: block;
         }
 
-        .error .error-icon {
-            margin-right: 6px;
-            font-size: 15px;
+        /* form .pass-txt {
+            text-align: left;
+            margin-top: -10px;
+        } */
+
+        .wrapper a {
+            color: #5372F0;
+            text-decoration: none;
         }
 
-        .create-password .error {
-            align-items: flex-start;
+        .wrapper a:hover {
+            text-decoration: underline;
         }
 
-        .create-password .error-icon {
-            margin-top: 4px;
-        }
-
-        .button {
-            margin: 25px 0 6px;
-        }
-
-        .button input {
+        form input[type="submit"] {
+            height: 50px;
+            margin-top: 30px;
             color: #fff;
-            font-size: 16px;
-            font-weight: 400;
-            background-color: #3A5198;
+            padding: 0;
+            border: none;
+            background: #3A5198;
             cursor: pointer;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
 
-        .button input:hover {
-            background-color: #0e4bf1;
+        form input[type="submit"]:hover {
+            background: #2c52ed;
+        }
+
+
+        #emailField{
+            width: 95%;
+        }
+        .checkbox{
+            height: 25px;
+            margin-top: 5px;
+        }
+
+        #submit{
+            width: 20%;
+            margin:3% 40% 0 40%;
         }
     </style>
 </head>
 
 <body>
-    <div class="chatnmeet-logo">Chat_N_Meet</div>
-    <div class="container">
-        <header>Sign up</header>
-        <form action="https://www.codinglabweb.com/">
+    <div class="welcome">
+        {{-- <img src="{{asset('images/welcome.svg')}}" alt="Photo" > --}}
+    </div>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                Logo
+            </div>
+            <div class="registration">
+                Registration
+            </div>
+        </header>
+        <form action="registration" method="POST">
+            @csrf
+            <div class="field password">
+                <div class="input-area">
+                    <input type="firstName" name="firstName" placeholder="First Name">
+                    {{-- <i class="icon fas fa-lock"></i> --}}
+                    <i class="icon fas fa-user"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                {{-- @error('password')
+                    <div class="error-txt">{{ $message }}</div>
+                @enderror --}}
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="lastName" name="lastName" placeholder="Last Name">
+                    <i class="icon fas fa-user-circle"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="Country" name="country" placeholder="Country">
+                    <i class="icon fas fa-globe"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="City" name="city" placeholder="City">
+                    <i class="icon fas fa-city"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="Gender" name="Gender" placeholder="Gender">
+                    <i class="icon fas fa-mars"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="date" name="dob" >
+                    <i class="icon fas fa-calendar-alt"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="password" name="Create password" placeholder="Create Password">
+                    <i class="icon fas fa-unlock"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                
+            </div>
 
-            <div class="field name-field">
-                <div class="input-field">
-                    <div class="input-icon">
-                        <i class='fa-solid fa-user'></i>
-                    </div>
-                    <input type="name" placeholder="Enter your name" class="email" onclick="myFunction()" />
+            <div class="field password">
+                <div class="input-area">
+                    <input type="password" name="password" placeholder="Confirm Password">
+                    <i class="icon fas fa-lock"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
-                <span class="error name-error">
-                    <i class="bx bx-error-circle error-icon"></i>
-                    <p class="error-text">Please enter a valid name</p>
-                </span>
+                
             </div>
-
-            <div class="field email-field">
-                <div class="input-field">
-                    <div class="input-icon">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-                    <input type="email" placeholder="Enter your email" class="email" />
+            <div class="field email">
+                <div class="input-area" id="emailField">
+                    <input type="text" name="email" placeholder="Email Address">
+                    <i class="icon fas fa-envelope"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
                 </div>
-                <span class="error email-error">
-                    <i class="bx bx-error-circle error-icon"></i>
-                    <p class="error-text">Please enter a valid email</p>
-                </span>
+                
+                
             </div>
-            <div class="field create-password">
-                <div class="input-field">
-                    <div class="input-icon">
-                        <i class="fa-solid fa-unlock-keyhole"></i>
-                    </div>
-                    <input type="password" placeholder="Create password" class="password" />
-                    <i class="bx bx-hide show-hide"></i>
-                </div>
-                <span class="error password-error">
-                    <i class="bx bx-error-circle error-icon"></i>
-                    <p class="error-text">
-                        Please enter atleast 8 charatcer with number, symbol, small and
-                        capital letter.
-                    </p>
-                </span>
-            </div>
-            <div class="field confirm-password">
-                <div class="input-field">
-                    <div class="input-icon">
-                        <i class="fa-solid fa-lock"></i>
-                    </div>
-                    <input type="password" placeholder="Confirm password" class="cPassword" />
-                    <i class="bx bx-hide show-hide"></i>
-                </div>
-                <span class="error cPassword-error">
-                    <i class="bx bx-error-circle error-icon"></i>
-                    <p class="error-text">Password don't match</p>
-                </span>
-            </div>
-            <div class="input-field button">
-                <input type="submit" value="Submit Now" />
-            </div>
+            <div class="policies"><input type="checkbox" class="checkbox"><p id="policieText">The above details given by me are correct. I accept all Terms & Conditions and privacy policy. </p></div>
+            <input type="submit" value="Sign up" id="submit">
         </form>
     </div>
 
-    <!-- JavaScript -->
-    <!--<script src="js/script.js"></script>-->
-    <script>
-        const form = document.querySelector("form"),
-        emailField = form.querySelector(".email-field"),
-        emailInput = emailField.querySelector(".email"),
-        passField = form.querySelector(".create-password"),
-        passInput = passField.querySelector(".password"),
-        cPassField = form.querySelector(".confirm-password"),
-        cPassInput = cPassField.querySelector(".cPassword");
-        
-        // Email Validtion
-        function checkEmail() {
-        const emaiPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-        if (!emailInput.value.match(emaiPattern)) {
-        return emailField.classList.add("invalid"); //adding invalid class if email value do not mathced with email pattern
-        }
-        emailField.classList.remove("invalid"); //removing invalid class if email value matched with emaiPattern
-        }
-        
-        // Hide and show password
-        const eyeIcons = document.querySelectorAll(".show-hide");
-        
-        eyeIcons.forEach((eyeIcon) => {
-        eyeIcon.addEventListener("click", () => {
-        const pInput = eyeIcon.parentElement.querySelector("input"); //getting parent element of eye icon and selecting the
-        password input
-        if (pInput.type === "password") {
-        eyeIcon.classList.replace("bx-hide", "bx-show");
-        return (pInput.type = "text");
-        }
-        eyeIcon.classList.replace("bx-show", "bx-hide");
-        pInput.type = "password";
-        });
-        });
-        
-        // Password Validation
-        function createPass() {
-        const passPattern =
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-        
-        if (!passInput.value.match(passPattern)) {
-        return passField.classList.add("invalid"); //adding invalid class if password input value do not match with passPattern
-        }
-        passField.classList.remove("invalid"); //removing invalid class if password input value matched with passPattern
-        }
-        
-        // Confirm Password Validtion
-        function confirmPass() {
-        if (passInput.value !== cPassInput.value || cPassInput.value === "") {
-        return cPassField.classList.add("invalid");
-        }
-        cPassField.classList.remove("invalid");
-        }
-        
-        // Calling Funtion on Form Sumbit
-        form.addEventListener("submit", (e) => {
-        e.preventDefault(); //preventing form submitting
-        checkEmail();
-        createPass();
-        confirmPass();
-        
-        //calling function on key up
-        emailInput.addEventListener("keyup", checkEmail);
-        passInput.addEventListener("keyup", createPass);
-        cPassInput.addEventListener("keyup", confirmPass);
-        
-        if (
-        !emailField.classList.contains("invalid") &&
-        !passField.classList.contains("invalid") &&
-        !cPassField.classList.contains("invalid")
-        ) {
-        location.href = form.getAttribute("action");
-        }
-        });
-
-        $('.input-field').on('click',function(e){
-            console.log('ok');
-        });
-
-        console.log('ok');
-
-
-
-
-
-        
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="{{asset('js/kit.fontawesome.com_1cad59c07c.js')}}"></script>
 </body>
-
 </html>
