@@ -154,19 +154,16 @@ section.greeting .content .right img {
   width: 100%;
 }
 
-section.quote {
-  width: 40%;
+section.quote_motivation {
+  width: 100%;
   height: 80vh;
 }
-section.quote .quote_image {
-  width: 100%;
-  height: 75%;
-  background-image: url(/images/motivation.svg?25984a9dafc8de56a41750218f63a260);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
+section.quote_motivation .quote {
+  width: 40%;
+  height: 100%;
+  float: left;
 }
-section.quote .quote_container {
+section.quote_motivation .quote .quote_container {
   width: 80%;
   height: 25%;
   color: rgb(16, 14, 14);
@@ -175,16 +172,16 @@ section.quote .quote_container {
   align-items: center;
   margin: auto;
 }
-section.quote .quote_container .the_quote {
+section.quote_motivation .quote .quote_container .the_quote {
   padding: 2%;
 }
-section.quote .quote_container .the_quote h3 {
+section.quote_motivation .quote .quote_container .the_quote h3 {
   float: right;
   margin-right: 2vw;
   margin-top: 15px;
   position: relative;
 }
-section.quote .quote_container .the_quote h3::before {
+section.quote_motivation .quote .quote_container .the_quote h3::before {
   content: "";
   width: 30px;
   height: 2px;
@@ -192,6 +189,109 @@ section.quote .quote_container .the_quote h3::before {
   top: 12px;
   left: -35px;
   background-color: rgb(16, 14, 14);
+}
+section.quote_motivation .quote .quote_image {
+  width: 100%;
+  height: 75%;
+  background-image: url(/images/motivation.svg?25984a9dafc8de56a41750218f63a260);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+section.quote_motivation .leaderboard {
+  width: 60%;
+  height: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  background-image: url(/images/leaderboard.svg?84a4bad02bda2670f0cf3606c3d58016);
+  background-size: 100% 110%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+section.quote_motivation .leaderboard .leaderview {
+  width: 80%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+section.quote_motivation .leaderboard .leaderview p {
+  font-size: 30px;
+  color: white;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+section.quote_motivation .leaderboard .leaderview .leader1 {
+  height: 10%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.quote_motivation .leaderboard .leaderview .leader1 .dp {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18%;
+  margin: auto;
+}
+section.quote_motivation .leaderboard .leaderview .leader1 .dp #noId {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: white;
+}
+section.quote_motivation .leaderboard .leaderview .leader1 .dp #medel {
+  font-size: 40px;
+}
+section.quote_motivation .leaderboard .leaderview .leader1 .dp #leaderDp {
+  font-size: 40px;
+  margin-left: auto;
+  color: #ecfeff;
+}
+section.quote_motivation .leaderboard .leaderview .leader1 .leaderDetails {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: auto;
+  background-color: rgb(227, 61, 89);
+  border-radius: 10px;
+  font-size: 20px;
+}
+section.quote_motivation .leaderboard .leaderview .leader1 .leaderDetails #name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+  margin: auto;
+  border-radius: 10px;
+  background-color: rgb(227, 61, 89);
+}
+section.quote_motivation .leaderboard .leaderview .leader1 .leaderDetails #badgeDp {
+  font-size: 25px;
+  margin: auto;
+}
+section.quote_motivation .leaderboard .leaderview .leader1 .leaderDetails #points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+  border-radius: 10px;
+  background-color: rgb(227, 61, 89);
 }
 
 footer {
