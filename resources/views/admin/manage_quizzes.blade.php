@@ -5,10 +5,11 @@
     <div class="table__container">
         <div class="table__header">
             <div class="table__title">
-                <h2>Quiz Management</h2>
+                <h2>User Management</h2>
             </div>
             <div class="table__buttons">
-                <button class="add_new" id="openModalBtn"><i class="fa-solid fa-circle-plus"></i> Add New User</button>
+                <button class="add_new" id="openAddNewModalBtn"><i class="fa-solid fa-circle-plus"></i> Add New
+                    User</button>
             </div>
         </div>
         <div class="table__sub__header">
@@ -27,7 +28,7 @@
             <div id="tables_filter" class="tables__filter">
                 <label>
                     Search:
-                    <input type="search" class="table__search" placeholder="" aria-controls="basic-datatables">
+                    <input type="search" class="table__search" aria-controls="datatables">
                 </label>
             </div>
         </div>
@@ -59,8 +60,8 @@
                     <td>India</td>
                     <td>04/10/2013</td>
                     <td>
-                        <a href="#" title="Edit"><i class="fa fa-pen"></i></a>
-                        <a href="#" title="Delete"><i class="fa fa-trash"></i></a>
+                        <button title="Edit" class="editButton" data-id="1"><i class="fa fa-pen"></i></button>
+                        <button title="Delete"><i class="fa fa-trash"></i></button>
                     </td>
                 </tr>
                 <tr>
@@ -77,8 +78,8 @@
                     <td>India</td>
                     <td>04/10/2013</td>
                     <td>
-                        <a href="#" title="Edit"><i class="fa fa-pen"></i></a>
-                        <a href="#" title="Delete"><i class="fa fa-trash"></i></a>
+                        <button title="Edit" class="editButton" data-id="2"><i class="fa fa-pen"></i></button>
+                        <button title="Delete"><i class="fa fa-trash"></i></button>
                     </td>
                 </tr>
                 <!-- Other table rows go here -->
@@ -97,82 +98,66 @@
             </ul>
         </div>
     </div>
-
 </div>
-<!-- The Modal -->
-<div id="myModal" class="modal">
+
+<!-- The Add New Modal -->
+<div id="addNewModal" class="addNew__modal">
     <!-- Modal content -->
     <div class="modal-content">
-        <h2 class="modal-title">User Registration</h2>
-        <span class="close">&times;</span>
-        <form>
-            @csrf
-            <div class="form-group">
-                <label for="fullName">Full Name:</label>
-                <input type="text" id="fullName" name="fullName" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="gender">Gender:</label>
-                <select id="gender" name="gender" required>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob" required>
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-
-            <div class="form-group">
-                <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required>
-            </div>
-
-            <!-- Modal Footer with Submit and Cancel Buttons -->
-            <div class="modal-footer">
-                <button type="submit" class="btn-submit">Submit</button>
-                <button type="button" class="btn-cancel">Cancel</button>
-            </div>
-        </form>
+        <div class="modal-header">
+            <h2>Add New User</h2>
+        </div>
+        <div class="modal-body">
+            <form class="register">
+                <label for="name-register">Full Name:</label>
+                <input type="text" id="name-register">
+                <label for="email-register">Email:</label>
+                <input type="text" id="email-register">
+                <label for="gender-register">Gender:</label>
+                <input type="text" id="gender-register">
+                <label for="dob-register">Date Of Birth:</label>
+                <input type="text" id="dob-register">
+                <label for="password-register">Password:</label>
+                <input type="password" id="password-register">
+                <label for="password-confirmation">Confirm Password:</label>
+                <input type="password-confirmation" id="password-confirmation">
+                <p class="check-mark">
+                    <input type="checkbox" id="accept-terms">
+                    <label for="accept-terms">I agree to the <a href="#">Terms</a></label>
+                </p>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="submitAddNewModalBtn">Add User</button>
+            <button id="closeAddNewModalBtn">Cancel</button>
+        </div>
     </div>
 </div>
-<script>
-    // Get the modal element
-        var modal = document.getElementById("myModal");
-        
-        // Get the button that opens the modal
-        var btn = document.getElementById("openModalBtn");
-        
-        // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-        
-            // When the user clicks the button, open the modal
-            btn.onclick = function() {
-            modal.style.display = "block";
-            }
-        
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-        
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                modal.style.display = "none";
-                }
-                }
-</script>
+
+<!-- The Edit Modal -->
+<div id="editModal" class="edit__modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Update User</h2>
+        </div>
+        <div class="modal-body">
+            <label for="userRole">User Role:</label>
+            <select id="userRole">
+                <option value="Admin">Admin</option>
+                <option value="user">User</option>
+                <option value="Editor">Editor</option>
+            </select>
+
+            <label for="userStatus">Status:</label>
+            <select id="userStatus">
+                <option value="Active">Active</option>
+                <option value="Deactive">Deactive</option>
+            </select>
+        </div>
+        <div class="modal-footer">
+            <button id="submitEditModalBtn">Update</button>
+            <button id="closeEditModalBtn">Cancel</button>
+        </div>
+    </div>
+</div>
 @endsection

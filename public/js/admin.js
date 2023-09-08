@@ -96,5 +96,50 @@ function closeSidebar() {
     sidebarOpen = false;
   }
 }
+
+// Add New Modal
+var addNewModal = document.getElementById("addNewModal");
+var openAddNewModalBtn = document.getElementById("openAddNewModalBtn");
+var closeAddNewModalBtn = document.getElementById("closeAddNewModalBtn");
+
+// When the user clicks the button, open the modal
+openAddNewModalBtn.onclick = function () {
+  addNewModal.style.display = "block";
+};
+
+// When the user clicks on <span> (x), close the modal
+closeAddNewModalBtn.onclick = function () {
+  addNewModal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == addNewModal) {
+    addNewModal.style.display = "none";
+  }
+};
+
+// Edit Modal
+var openModalBtn = document.querySelectorAll(".editButton");
+var closeEditModalBtn = document.getElementById("closeEditModalBtn");
+var editModal = document.getElementById("editModal");
+
+// openModalBtn.addEventListener("click", () => {
+//     editModal.style.display = "block";
+// });
+
+openModalBtn.forEach(function (button) {
+  button.addEventListener("click", function () {
+    editModal.style.display = "block";
+  });
+});
+closeEditModalBtn.addEventListener("click", function () {
+  editModal.style.display = "none";
+});
+window.addEventListener("click", function (event) {
+  if (event.target === editModal) {
+    editModal.style.display = "none";
+  }
+});
 /******/ })()
 ;
