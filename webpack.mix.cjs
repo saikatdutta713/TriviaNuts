@@ -11,6 +11,6 @@ mix.setPublicPath("public")
     .sass("resources/scss/category.scss", "public/css/app.css")
     .sass("resources/scss/admin/admin.scss", "public/css/admin.css")
     .sass("resources/scss/admin/home.scss", "public/css/admin.css")
-    .sass("resources/scss/admin/manage_quizzes.scss", "public/css/admin.css")
+    .sass("resources/scss/admin/manage_users.scss", "public/css/admin.css")
     .sass("resources/scss/community.scss", "public/css/app.css")
     .sass("resources/scss/quiz.scss", "public/css");

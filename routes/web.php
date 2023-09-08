@@ -43,7 +43,7 @@ Route::prefix('admin')->group(function () {
         return view('admin.home');
     })->name('admin.home');
 
-    Route::get('/allquizzes', function () {
-        return view('admin.manage_quizzes');
-    })->name('admin.allquizzes');
+    Route::get('/manageusers', function () {
+        return view('admin.manage_users');
+    })->name('admin.user');
 });
