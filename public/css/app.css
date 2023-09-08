@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 7%;
+  height: 55px;
   background: #149d9b;
   color: white;
 }
@@ -50,22 +50,23 @@
   height: 100%;
   width: -moz-max-content;
   width: max-content;
-  padding: 1vw;
+  padding: 0 1vw;
   float: left;
 }
 .header .navbar .navbutton:hover {
   background-color: rgba(23, 97, 110, 0.354);
 }
 .header .login {
+  height: 50%;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 5px 15px;
+  color: #149d9b;
+  font-weight: bolder;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70%;
-  width: -moz-max-content;
-  width: max-content;
-  padding: 0.7rem;
-  color: black;
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 15px;
   background-color: white;
   margin: 0 2% 0 2%;
 }
