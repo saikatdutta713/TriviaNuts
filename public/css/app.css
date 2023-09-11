@@ -277,6 +277,205 @@ footer .row2 {
     font-size: medium;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.registrationPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110vh;
+  width: 100%;
+  background-color: #ecfeff;
+}
+.registrationPage .register {
+  height: 80%;
+  width: 45%;
+  background-color: white;
+}
+.registrationPage .register .registerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 15%;
+  width: 100%;
+  padding: 1rem;
+}
+.registrationPage .register .registerHeader h1 {
+  color: #149d9b;
+}
+.registrationPage .register .registerHeader a {
+  text-decoration: none;
+}
+.registrationPage .register .registerSection {
+  height: 75%;
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+}
+.registrationPage .register .registerSection form {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.registrationPage .register .registerSection form label,
+.registrationPage .register .registerSection form input {
+  display: block;
+  margin-bottom: 0.1rem;
+  font-size: 15px;
+}
+.registrationPage .register .registerSection form .form-row1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15%;
+  width: 90%;
+  margin: auto;
+}
+.registrationPage .register .registerSection form .form-row1 .nameDiv {
+  height: 100%;
+  width: 45%;
+  margin: auto;
+}
+.registrationPage .register .registerSection form .form-row1 .nameDiv .inputForm {
+  height: 50%;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+.registrationPage .register .registerSection form .form-row2 {
+  height: 15%;
+  width: 86%;
+  margin: auto;
+}
+.registrationPage .register .registerSection form .form-row2 .inputForm {
+  height: 50%;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+.registrationPage .register .registerSection form .form-row3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15%;
+  width: 86%;
+  margin: auto;
+}
+.registrationPage .register .registerSection form .form-row3 .detailsDiv {
+  height: 100%;
+  width: 33%;
+  margin: auto;
+}
+.registrationPage .register .registerSection form .form-row3 .detailsDiv .inputForm {
+  height: 50%;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+.registrationPage .register .registerSection form .form-row3 .detailsDiv .inputForm1 {
+  height: 50%;
+  width: 70%;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+.registrationPage .register .registerSection form .form-row4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 25%;
+  width: 86%;
+  margin: auto;
+}
+.registrationPage .register .registerSection form .form-row4 .agreement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40%;
+  width: 100%;
+}
+.registrationPage .register .registerSection form .form-row4 .agreement a {
+  text-decoration: none;
+}
+.registrationPage .register .registerSection form .form-row4 .agreement .agreeBox {
+  height: 50%;
+  width: 10%;
+}
+.registrationPage .register .registerSection form .form-row4 .regsterution {
+  height: 30%;
+  width: 20%;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background-color: #149d9b;
+  border: none;
+}
+.registrationPage .register .registerFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  width: 100%;
+}
+.registrationPage .register .registerFooter a {
+  text-decoration: none;
+}
+.registrationPage .newUser {
+  height: 80%;
+  width: 35%;
+  background-color: #149d9b;
+}
+.registrationPage .newUser .joinGifts {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.registrationPage .newUser .joinGifts p {
+  font-size: 22px;
+  color: #ecfeff;
+}
+.registrationPage .newUser .joinBenifits {
+  height: 70%;
+  width: 100%;
+}
+.registrationPage .newUser .joinBenifits .benifits1 {
+  height: 14.5%;
+  width: 90%;
+  display: flex;
+  font-size: 18px;
+  margin-left: 5%;
+  color: #f3f4f6;
+}
+.registrationPage .newUser .joinBenifits .benifits1 #benifitsIcon {
+  font-size: 30px;
+  margin-right: 1rem;
+  color: white;
+}
 .scategory {
   height: 160vh;
   width: 100%;
