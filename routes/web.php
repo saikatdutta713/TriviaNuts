@@ -37,6 +37,9 @@ Route::get('/community', function () {
 Route::get('/quiz', function () {
     return view('quiz');
 });
+Route::get('/profile', function () {
+    return view('profile');
+});
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
