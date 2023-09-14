@@ -1,0 +1,168 @@
+@import "./variables";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family_1;
+}
+.profilePage {
+    @include flexing;
+    height: 90vh;
+    width: 100%;
+    background-color: $color_6;
+}
+
+.profilePicture {
+    height: 100%;
+    width: 15%;
+    padding-top: 4rem;
+    text-align: center;
+    margin: auto;
+    color: $color_5;
+    #userBadge {
+        font-size: 30px;
+        margin-left: 50%;
+        color: $color_28;
+    }
+    #userPic {
+        font-size: 120px;
+        margin: auto;
+        color: $color_7;
+    }
+    .profileName {
+        @include flexing;
+        height: 10%;
+        width: 100%;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .profilePoints {
+        @include flexing;
+        height: auto;
+        width: 100%;
+        font-size: 18px;
+    }
+}
+.profileDetails {
+    height: 100%;
+    width: 55%;
+    margin: auto;
+    @include flexing;
+    flex-direction: column;
+    border-left: 1px solid $color_5;
+    border-right: 1px solid $color_5;
+    .personalDetails {
+        @include flexing;
+        height: 20%;
+        width: 90%;
+        padding: 1rem;
+        margin: auto;
+        .personDetails {
+            height: 100%;
+            width: 50%;
+            h4 {
+                padding: 0.3rem;
+            }
+            p {
+                padding: 0.3rem;
+                font-size: 17px;
+            }
+        }
+        .education {
+            height: 100%;
+            width: 50%;
+            h4 {
+                padding: 0.3rem;
+            }
+            p {
+                padding: 0.5rem;
+                font-size: 17px;
+            }
+        }
+    }
+    .bio {
+        height: 40%;
+        width: 90%;
+        padding: 1rem;
+        background-color: $color_22;
+        margin: auto;
+        h4 {
+            padding: 0.3rem;
+        }
+        p {
+            letter-spacing: 1px;
+            font-size: 17px;
+            padding: 1rem;
+        }
+    }
+    .contactDetails {
+        height: 20%;
+        width: 90%;
+        padding: 1rem;
+        margin: auto;
+        h4 {
+            padding: 0.3rem;
+        }
+        p {
+            letter-spacing: 1px;
+            font-size: 17px;
+            padding: 0.3rem;
+            #userSocial{
+                font-size: 20px;
+                color: $color_5;
+            }
+        }
+    }
+}
+.profileEdit {
+    height: 100%;
+    width: 13%;
+    margin: auto;
+    padding-top: 3rem;
+
+    .edit {
+        height: 50%;
+        width: 100%;
+        box-shadow: 2px 2px 3px $color_32;
+        background-color: $color_22;
+        padding-left: 1rem; 
+        h4 {
+            padding: 0.5rem;
+            padding-bottom: 1rem;
+        }
+        p {
+            // width: 60%;
+            letter-spacing: 1px;
+            font-size: 17px;
+            padding: 0.5rem;
+            
+            cursor: pointer;
+            &:hover {
+                background-color: $color_16;
+            }
+        }
+    }
+    .logout {
+        height: 30%;
+        width: 100%;
+        padding: 1rem;
+        form {
+            @include flexing;
+            height: 100%;
+            width: 100%;
+        }
+        #logoutButton {
+            height: 30%;
+            width: 45%;
+            font-size: 18px;
+            cursor: pointer;
+            color: $color_1;
+            background-color: $color_5;
+            border: none;
+            &:hover {
+                background-color: $color_16;
+                color: $color_2;
+            }
+        }
+    }
+}
