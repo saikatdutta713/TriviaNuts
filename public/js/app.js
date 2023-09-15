@@ -6290,6 +6290,8 @@ const isThenable = (thing) =>
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap.js */ "./resources/js/bootstrap.js");
 
+
+//category.blade.php
 document.addEventListener("DOMContentLoaded", function () {
   var prevContent = null;
   function toggleDisplay(event) {
@@ -6366,6 +6368,89 @@ document.addEventListener("DOMContentLoaded", function () {
       contentDiv2.style.display = "block";
       contentDiv3.style.display = "none";
     });
+  });
+});
+
+//profile.blade.php
+document.addEventListener("DOMContentLoaded", function () {
+  // Code for handling the Profile modal
+  var editProfileButton = document.getElementById("editProfileButton");
+  var editModal = document.getElementById("ProfileModal");
+  editProfileButton.addEventListener("click", function () {
+    editModal.style.display = "block";
+  });
+  var closeEditModalBtn = document.getElementById("closeEditModalBtn");
+  closeEditModalBtn.addEventListener("click", function () {
+    editModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === editModal) {
+      editModal.style.display = "none";
+    }
+  });
+
+  // Code for handling the Password modal
+  var editPasswordButton = document.getElementById("editPasswordButton");
+  var editPasswordModal = document.getElementById("PasswordModal");
+  editPasswordButton.addEventListener("click", function () {
+    editPasswordModal.style.display = "block";
+  });
+  var closePasswordBtn = document.getElementById("closePasswordBtn");
+  closePasswordBtn.addEventListener("click", function () {
+    editPasswordModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === editPasswordModal) {
+      editPasswordModal.style.display = "none";
+    }
+  });
+
+  // Code for handling the Education modal
+  var editEducationButton = document.getElementById("editEducationButton");
+  var editEducationModal = document.getElementById("EducationModal");
+  editEducationButton.addEventListener("click", function () {
+    editEducationModal.style.display = "block";
+  });
+  var closeEducationBtn = document.getElementById("closeEducationModalBtn");
+  closeEducationBtn.addEventListener("click", function () {
+    editEducationModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === editEducationModal) {
+      editEducationModal.style.display = "none";
+    }
+  });
+
+  // Code for handling the Bio modal
+  var editBioButton = document.getElementById("editBioButton");
+  var bioModal = document.getElementById("BioModal");
+  editBioButton.addEventListener("click", function () {
+    bioModal.style.display = "block";
+  });
+  var closeBioBtn = document.getElementById("closeBioModalBtn");
+  closeBioBtn.addEventListener("click", function () {
+    bioModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === bioModal) {
+      bioModal.style.display = "none";
+    }
+  });
+
+  // Code for handling the Social Media modal
+  var addSocialButton = document.getElementById("editSocialButton");
+  var socialModal = document.getElementById("SocialModal");
+  addSocialButton.addEventListener("click", function () {
+    socialModal.style.display = "block";
+  });
+  var closeSocialBtn = document.getElementById("closeSocialModalBtn");
+  closeSocialBtn.addEventListener("click", function () {
+    socialModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === socialModal) {
+      socialModal.style.display = "none";
+    }
   });
 });
 
