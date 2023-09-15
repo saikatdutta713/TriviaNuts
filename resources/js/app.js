@@ -87,10 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             contentDiv3.style.display = "none";
         });
     });
-
 });
-
-
 
 //profile.blade.php
 document.addEventListener("DOMContentLoaded", function () {
@@ -174,4 +171,52 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+//login.blade.php
+document.addEventListener("DOMContentLoaded", function () {
+    // Code for handling the OTP modal
+    const openOtpModalBtn = document.getElementById("openOtpModalBtn");
+    const otpModal = document.getElementById("OtpModal");
+
+    openOtpModalBtn.addEventListener("click", () => {
+        otpModal.style.display = "block";
+    });
+
+    const closeOtpModalBtn = document.getElementById("closeOtpModalBtn");
+    closeOtpModalBtn.addEventListener("click", () => {
+        otpModal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+        if (event.target === otpModal) {
+            otpModal.style.display = "none";
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Code for handling the Forgot Password modal
+    const openForgotPasswordModalBtn = document.getElementById(
+        "openForgotPasswordModalBtn"
+    );
+    const forgotPasswordModal = document.getElementById("ForgotPasswordModal");
+
+    openForgotPasswordModalBtn.addEventListener("click", () => {
+        forgotPasswordModal.style.display = "block";
+    });
+
+    const closeForgotPasswordModalBtn = document.getElementById(
+        "cancelForgotPasswordBtn"
+    );
+    closeForgotPasswordModalBtn.addEventListener("click", () => {
+        forgotPasswordModal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+        if (event.target === forgotPasswordModal) {
+            forgotPasswordModal.style.display = "none";
+        }
+    });
+});
+
 

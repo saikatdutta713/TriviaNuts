@@ -292,12 +292,13 @@ footer .row2 {
   width: 100%;
   background-color: #ecfeff;
 }
-.registrationPage .register {
+
+.register {
   height: 80%;
   width: 45%;
   background-color: white;
 }
-.registrationPage .register .registerHeader {
+.register .registerHeader {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -307,19 +308,19 @@ footer .row2 {
   width: 100%;
   padding: 1rem;
 }
-.registrationPage .register .registerHeader h1 {
+.register .registerHeader h1 {
   color: #149d9b;
 }
-.registrationPage .register .registerHeader a {
+.register .registerHeader a {
   text-decoration: none;
 }
-.registrationPage .register .registerSection {
+.register .registerSection {
   height: 75%;
   width: 100%;
   margin: auto;
   padding: 1rem;
 }
-.registrationPage .register .registerSection form {
+.register .registerSection form {
   height: 100%;
   width: 100%;
   margin: auto;
@@ -328,13 +329,13 @@ footer .row2 {
   justify-content: center;
   flex-direction: column;
 }
-.registrationPage .register .registerSection form label,
-.registrationPage .register .registerSection form input {
+.register .registerSection form label,
+.register .registerSection form input {
   display: block;
   margin-bottom: 0.1rem;
   font-size: 15px;
 }
-.registrationPage .register .registerSection form .form-row1 {
+.register .registerSection form .form-row1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -342,12 +343,12 @@ footer .row2 {
   width: 90%;
   margin: auto;
 }
-.registrationPage .register .registerSection form .form-row1 .nameDiv {
+.register .registerSection form .form-row1 .nameDiv {
   height: 100%;
   width: 45%;
   margin: auto;
 }
-.registrationPage .register .registerSection form .form-row1 .nameDiv .inputForm {
+.register .registerSection form .form-row1 .nameDiv .inputForm {
   height: 50%;
   width: 100%;
   border-radius: 0.5rem;
@@ -356,12 +357,12 @@ footer .row2 {
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
-.registrationPage .register .registerSection form .form-row2 {
+.register .registerSection form .form-row2 {
   height: 15%;
   width: 86%;
   margin: auto;
 }
-.registrationPage .register .registerSection form .form-row2 .inputForm {
+.register .registerSection form .form-row2 .inputForm {
   height: 50%;
   width: 100%;
   border-radius: 0.5rem;
@@ -370,7 +371,7 @@ footer .row2 {
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
-.registrationPage .register .registerSection form .form-row3 {
+.register .registerSection form .form-row3 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -378,12 +379,12 @@ footer .row2 {
   width: 86%;
   margin: auto;
 }
-.registrationPage .register .registerSection form .form-row3 .detailsDiv {
+.register .registerSection form .form-row3 .detailsDiv {
   height: 100%;
   width: 33%;
   margin: auto;
 }
-.registrationPage .register .registerSection form .form-row3 .detailsDiv .inputForm {
+.register .registerSection form .form-row3 .detailsDiv .inputForm {
   height: 50%;
   width: 100%;
   border-radius: 0.5rem;
@@ -392,7 +393,7 @@ footer .row2 {
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
-.registrationPage .register .registerSection form .form-row3 .detailsDiv .inputForm1 {
+.register .registerSection form .form-row3 .detailsDiv .inputForm1 {
   height: 50%;
   width: 70%;
   border-radius: 0.5rem;
@@ -401,7 +402,7 @@ footer .row2 {
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
-.registrationPage .register .registerSection form .form-row4 {
+.register .registerSection form .form-row4 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -410,21 +411,21 @@ footer .row2 {
   width: 86%;
   margin: auto;
 }
-.registrationPage .register .registerSection form .form-row4 .agreement {
+.register .registerSection form .form-row4 .agreement {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 40%;
   width: 100%;
 }
-.registrationPage .register .registerSection form .form-row4 .agreement a {
+.register .registerSection form .form-row4 .agreement a {
   text-decoration: none;
 }
-.registrationPage .register .registerSection form .form-row4 .agreement .agreeBox {
+.register .registerSection form .form-row4 .agreement .agreeBox {
   height: 50%;
   width: 10%;
 }
-.registrationPage .register .registerSection form .form-row4 .regsterution {
+.register .registerSection form .form-row4 .regsterution {
   height: 30%;
   width: 20%;
   font-size: 15px;
@@ -433,37 +434,38 @@ footer .row2 {
   background-color: #149d9b;
   border: none;
 }
-.registrationPage .register .registerFooter {
+.register .registerFooter {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 10%;
   width: 100%;
 }
-.registrationPage .register .registerFooter a {
+.register .registerFooter a {
   text-decoration: none;
 }
-.registrationPage .newUser {
+
+.newUser {
   height: 80%;
   width: 35%;
   background-color: #149d9b;
 }
-.registrationPage .newUser .joinGifts {
+.newUser .joinGifts {
   height: 30%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.registrationPage .newUser .joinGifts p {
+.newUser .joinGifts p {
   font-size: 22px;
   color: #ecfeff;
 }
-.registrationPage .newUser .joinBenifits {
+.newUser .joinBenifits {
   height: 70%;
   width: 100%;
 }
-.registrationPage .newUser .joinBenifits .benifits1 {
+.newUser .joinBenifits .benifits1 {
   height: 14.5%;
   width: 90%;
   display: flex;
@@ -471,10 +473,332 @@ footer .row2 {
   margin-left: 5%;
   color: #f3f4f6;
 }
-.registrationPage .newUser .joinBenifits .benifits1 #benifitsIcon {
+.newUser .joinBenifits .benifits1 #benifitsIcon {
   font-size: 30px;
   margin-right: 1rem;
   color: white;
+}
+.profilePage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  width: 100%;
+  background-color: #ecfeff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.loginPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110vh;
+  width: 100%;
+  background-color: #ecfeff;
+}
+
+.login {
+  padding: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  height: 80%;
+  width: 35%;
+  background-color: white;
+}
+.login .loginHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 30%;
+  width: 100%;
+  padding: 1rem;
+}
+.login .loginHeader #loginlogo {
+  font-size: 7rem;
+  color: #149d9b;
+}
+.login .loginSection {
+  height: 60%;
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+}
+@keyframes shake {
+  0%, 100% {
+    margin-left: 0px;
+  }
+  20%, 80% {
+    margin-left: -12px;
+  }
+  40%, 60% {
+    margin-left: 12px;
+  }
+}
+.login .loginSection ::-moz-selection {
+  color: #fff;
+  background: #5372f0;
+}
+.login .loginSection ::selection {
+  color: #fff;
+  background: #5372f0;
+}
+.login .loginSection form {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.login .loginSection form .field {
+  width: 90%;
+  height: 20%;
+  margin-bottom: 1.5rem;
+}
+.login .loginSection form .field.shake {
+  animation: shake 0.3s ease-in-out;
+}
+.login .loginSection form .field .input-area {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.login .loginSection form .field .input-area input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 45px;
+  font-size: 18px;
+  background: none;
+  caret-color: #5372f0;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  border-bottom-width: 2px;
+  transition: all 0.2s ease;
+}
+.login .loginSection form .field .input-area input:focus, .login .loginSection form .field .input-area input.valid {
+  border-color: #5372f0;
+}
+.login .loginSection form .field .input-area input.shake, .login .loginSection form .field .input-area input.error {
+  border-color: #dc3545;
+}
+.login .loginSection form .field .input-area input::-moz-placeholder {
+  color: #bfbfbf;
+  font-size: 17px;
+}
+.login .loginSection form .field .input-area input::placeholder {
+  color: #bfbfbf;
+  font-size: 17px;
+}
+.login .loginSection form .field .input-area i {
+  position: absolute;
+  top: 50%;
+  font-size: 18px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.login .loginSection form .field .input-area i.icon {
+  left: 15px;
+  color: #bfbfbf;
+  transition: color 0.2s ease;
+}
+.login .loginSection form .field .input-area i.error-icon {
+  right: 15px;
+  color: #dc3545;
+}
+input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid .login .loginSection form .field .input-area i.icon {
+  color: #5372f0;
+}
+.field.shake input:focus ~ .login .loginSection form .field .input-area i.icon, .field.error input:focus ~ .login .loginSection form .field .input-area i.icon {
+  color: #bfbfbf;
+}
+.login .loginSection form .field .error-txt {
+  color: #dc3545;
+  text-align: left;
+  margin-top: 5px;
+}
+.login .loginSection form .field.shake .error, .login .loginSection form .field.error .error {
+  display: block;
+}
+.login .loginSection form .pass-txt {
+  width: 90%;
+  height: 10%;
+}
+.login .loginSection form a {
+  color: #5372f0;
+  text-decoration: none;
+}
+.login .loginSection form a:hover {
+  text-decoration: underline;
+}
+.login .loginSection form input[type=submit] {
+  height: 15%;
+  color: #fff;
+  width: 20%;
+  border: none;
+  background: #149d9b;
+  cursor: pointer;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-size: 18px;
+  margin-top: 1rem;
+}
+.login .loginSection form input[type=submit]:hover {
+  background: #2c52ed;
+}
+.login .loginFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  width: 100%;
+}
+.login .loginFooter a {
+  text-decoration: none;
+}
+
+.otpModal {
+  display: none; /* Hide the modal by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  z-index: 999;
+}
+.otpModal .modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 50%;
+  max-height: 90%;
+  overflow-y: auto;
+  margin: 2rem auto;
+}
+.otpModal .modal-content .modal-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #007bff;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.otpModal .modal-content .modal-body {
+  padding: 1rem;
+}
+.otpModal .modal-content .modal-body p {
+  margin-bottom: 1rem;
+}
+.otpModal .modal-content .modal-body label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.otpModal .modal-content .modal-body input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+.otpModal .modal-content .modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.otpModal .modal-content .modal-footer button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.otpModal .modal-content .modal-footer button:hover {
+  background-color: #c82333;
+}
+.otpModal .modal-content .modal-footer #cancelOTPBtn {
+  background-color: #dc3545;
+  margin-left: 10px;
+}
+
+.forgotPasswordModal {
+  display: none; /* Hide the modal by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  z-index: 999;
+}
+.forgotPasswordModal .modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 50%;
+  max-height: 90%;
+  overflow-y: auto;
+  margin: 2rem auto;
+}
+.forgotPasswordModal .modal-content .modal-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #007bff;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.forgotPasswordModal .modal-content .modal-body {
+  padding: 1rem;
+}
+.forgotPasswordModal .modal-content .modal-body p {
+  margin-bottom: 1rem;
+}
+.forgotPasswordModal .modal-content .modal-body label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.forgotPasswordModal .modal-content .modal-body input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+.forgotPasswordModal .modal-content .modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.forgotPasswordModal .modal-content .modal-footer button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.forgotPasswordModal .modal-content .modal-footer button:hover {
+  background-color: #c82333;
+}
+.forgotPasswordModal .modal-content .modal-footer #cancelForgotPasswordBtn {
+  background-color: #dc3545;
+  margin-left: 10px;
 }
 .scategory {
   height: 160vh;

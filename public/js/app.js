@@ -2072,6 +2072,19 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 
+/***/ "./resources/scss/admin/admin.scss":
+/*!*****************************************!*\
+  !*** ./resources/scss/admin/admin.scss ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/scss/admin/home.scss":
 /*!****************************************!*\
   !*** ./resources/scss/admin/home.scss ***!
@@ -2176,10 +2189,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/scss/category.scss":
-/*!**************************************!*\
-  !*** ./resources/scss/category.scss ***!
-  \**************************************/
+/***/ "./resources/scss/auth/login.scss":
+/*!****************************************!*\
+  !*** ./resources/scss/auth/login.scss ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2189,10 +2202,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/scss/admin/admin.scss":
-/*!*****************************************!*\
-  !*** ./resources/scss/admin/admin.scss ***!
-  \*****************************************/
+/***/ "./resources/scss/category.scss":
+/*!**************************************!*\
+  !*** ./resources/scss/category.scss ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6454,6 +6467,42 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//login.blade.php
+document.addEventListener("DOMContentLoaded", function () {
+  // Code for handling the OTP modal
+  var openOtpModalBtn = document.getElementById("openOtpModalBtn");
+  var otpModal = document.getElementById("OtpModal");
+  openOtpModalBtn.addEventListener("click", function () {
+    otpModal.style.display = "block";
+  });
+  var closeOtpModalBtn = document.getElementById("closeOtpModalBtn");
+  closeOtpModalBtn.addEventListener("click", function () {
+    otpModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === otpModal) {
+      otpModal.style.display = "none";
+    }
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  // Code for handling the Forgot Password modal
+  var openForgotPasswordModalBtn = document.getElementById("openForgotPasswordModalBtn");
+  var forgotPasswordModal = document.getElementById("ForgotPasswordModal");
+  openForgotPasswordModalBtn.addEventListener("click", function () {
+    forgotPasswordModal.style.display = "block";
+  });
+  var closeForgotPasswordModalBtn = document.getElementById("cancelForgotPasswordBtn");
+  closeForgotPasswordModalBtn.addEventListener("click", function () {
+    forgotPasswordModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === forgotPasswordModal) {
+      forgotPasswordModal.style.display = "none";
+    }
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -6718,6 +6767,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/app.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/home.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/auth/register.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/auth/login.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/category.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/admin/admin.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/admin/home.scss")))
