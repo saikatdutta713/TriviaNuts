@@ -12,11 +12,11 @@
                     <div class="form-row1">
                         <div class="nameDiv">
                             <label for="fname">First Name:</label>
-                            <input type="text" id="fname" class="inputForm" name="firstname" placeholder="First Name" required>
+                            <input type="text" id="fname" class="inputForm" name="firstname"  required>
                         </div>
                         <div class="nameDiv">
                             <label for="lname">Last Name:</label>
-                            <input type="text" id="lname" class="inputForm" name="lastname" placeholder="Last Name" required>
+                            <input type="text" id="lname" class="inputForm" name="lastname"  required>
                         </div>
                     </div>
 
@@ -37,23 +37,23 @@
 
                         <div class="detailsDiv">
                             <label for="country">Country:</label>
-                            <input type="text" id="country" class="inputForm" name="Country" placeholder="country" required>
+                            <input type="text" id="country" class="inputForm" name="Country"  required>
                         </div>
                     </div>
 
                     <div class="form-row2">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" class="inputForm" name="email" placeholder="Email" required>
+                        <input type="email" id="email" class="inputForm" name="email"  required>
                     </div>
                     
                     <div class="form-row2">
                         <label for="password">Password:</label>
-                        <input type="password" id="password" class="inputForm" name="password"placeholder="Password" required>
+                        <input type="password" id="password" class="inputForm" name="password" required>
                     </div>
                     
                     <div class="form-row2">
                         <label for="confirm_password">Confirm Password:</label>
-                        <input type="password" id="confirm_password" class="inputForm" name="confirm_password" placeholder="Confirm Password" required>
+                        <input type="password" id="confirm_password" class="inputForm" name="confirm_password" required>
                     </div>
 
                     <div class="form-row4">
