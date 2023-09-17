@@ -1,9 +1,11 @@
 <?php
 
 // use App\Http\Controllers\RegistrationController;
+
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\QuoteController;
-use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +23,8 @@ Route::get('/', [QuoteController::class, 'index'])->name('home');
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'login'])->name('login');
-// Route::get('registration', [RegistrationController::class, 'index'])->name('registration');
-// Route::post('registration', [RegistrationController::class, 'registration'])->name('registration');
-Route::match(['get', 'post'], 'registration', [RegistrationController::class, 'registration'])->name('registration');
+Route::get('register', [RegisterController::class, 'index'])->name('viewRegister');
+Route::post('register', [RegisterController::class, 'register'])->name('register');
 Route::get('/master', function () {
     return view('layouts.master');
 });
@@ -40,6 +41,8 @@ Route::get('/quiz', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+
+Route::get('/sendmail', [EmailController::class, 'sendEmail']);
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
