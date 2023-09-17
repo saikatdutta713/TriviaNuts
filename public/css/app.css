@@ -2754,14 +2754,11 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   height: 80%;
   width: 90%;
   margin: auto;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: auto;
 }
 .communityContent .communityContent2 .leftContent .contentDisplay .postDisplay .writtenPost p {
-  padding: 0.5rem;
   font-size: 15px;
   font-family: "Kalam", cursive;
   color: #333;
@@ -2798,6 +2795,8 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   height: 65%;
   width: 100%;
   margin-top: 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row1 {
   height: 45%;
@@ -2826,8 +2825,6 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
 .communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row1 .commentContent .comment {
   height: 60%;
   width: 100%;
-  display: flex;
-  align-items: center;
   font-size: 15px;
 }
 .communityContent .communityContent2 .leftContent .contentDisplay .postComment .otherComment .row1 .commentContent .likes {
