@@ -349,13 +349,6 @@ footer .row2 {
     font-size: medium;
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-}
-
 .registrationPage {
   display: flex;
   align-items: center;
@@ -467,7 +460,7 @@ footer .row2 {
 }
 .register .registerSection form .form-row3 .detailsDiv .inputForm1 {
   height: 60%;
-  width: 70%;
+  width: 80%;
   border-radius: 0.5rem;
   padding: 0.5rem;
   outline: none;
@@ -1479,10 +1472,9 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
 
 .fquestions {
   height: 9%;
-  width: 90%;
+  width: 80%;
   border-radius: 30px;
   margin-left: -1.5%;
-  background-color: rgba(0, 0, 0, 0.2);
 }
 .fquestions .fquestion {
   height: 50%;

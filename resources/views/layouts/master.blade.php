@@ -19,18 +19,24 @@
             Logo
         </div>
         <div class="navbar">
-            <div class="navbutton">
-                Home
-            </div>
-            <div class="navbutton">
-                Community
-            </div>
+            <a href="{{ route('home') }}">
+                <div class="navbutton">
+                    Home
+                </div>
+            </a>
+            <a href="{{ route('community') }}">
+                <div class="navbutton">
+                    Community
+                </div>
+            </a>
             <div class="navbutton">
                 Trends
             </div>
-            <div class="navbutton">
-                Category
-            </div>
+            <a href="{{ route('category') }}">
+                <div class="navbutton">
+                    Category
+                </div>
+            </a>
         </div>
         <div class="login__container">
             @auth

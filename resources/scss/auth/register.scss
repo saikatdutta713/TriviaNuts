@@ -10,13 +10,6 @@
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: $font-family_1;
-}
-
 .registrationPage {
     @include flexing;
     height: 110vh;
@@ -95,7 +88,7 @@
                             @include inputDesign(100%);
                         }
                         .inputForm1 {
-                            @include inputDesign(70%);
+                            @include inputDesign(80%);
                         }
                     }
                 }
