@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
         otpModal.style.display = "block";
     });
 
-    const closeOtpModalBtn = document.getElementById("closeOtpModalBtn");
+    const closeOtpModalBtn = document.getElementById("cancelOTPBtn");
     closeOtpModalBtn.addEventListener("click", () => {
         otpModal.style.display = "none";
     });
