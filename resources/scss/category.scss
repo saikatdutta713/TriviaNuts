@@ -570,11 +570,9 @@ $color_11: #ffdf52;
     }
 }
 .fquestions {
-    @include hei-width(9%, 90%);
+    @include hei-width(9%, 80%);
     border-radius: 30px;
     margin-left: -1.5%;
-    background-color: $color_5;
-    // box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
 
     .fquestion {
         @include hei-width(50%, max-content);

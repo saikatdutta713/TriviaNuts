@@ -285,22 +285,4 @@
             </div>
         </div>
 
-
-        <script>
-//        function toggleDisplay() {
-//     var contentDiv = document.getElementById("metarial2");
-//     var contentDiv1 = document.getElementById("metarial1");
-    
-//     if (contentDiv.style.display === "" || contentDiv.style.display === "none") {
-//         contentDiv.style.display = "block";
-//         contentDiv1.style.display = "none";
-//     } 
-//     else {
-//         contentDiv.style.display = "block";
-//         contentDiv1.style.display = "none";
-//     }
-// }
-
-        
-    </script>
     @endsection

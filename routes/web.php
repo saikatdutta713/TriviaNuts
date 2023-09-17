@@ -27,10 +27,12 @@ Route::get('/master', function () {
 
 Route::get('/category', function () {
     return view('category');
-});
+})->name('category');
+
 Route::get('/community', function () {
     return view('community');
-});
+})->name('community');
+
 Route::get('/quiz', function () {
     return view('quiz');
 });
