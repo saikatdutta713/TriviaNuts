@@ -36,7 +36,7 @@
                 </form>
             </div>
             <div class="loginFooter">
-                <label for="newsletter">Not yet member? <a href="{{ route('registration') }}">Register now</a></label>
+                <label for="newsletter">Not yet member? <a href="#">Register now</a></label>
             </div>
         </div>
 
