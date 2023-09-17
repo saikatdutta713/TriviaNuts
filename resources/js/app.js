@@ -1,5 +1,6 @@
 import "./bootstrap.js";
 
+//category.blade.php
 document.addEventListener("DOMContentLoaded", function () {
     let prevContent = null;
     function toggleDisplay(event) {
@@ -87,3 +88,135 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+//profile.blade.php
+document.addEventListener("DOMContentLoaded", function () {
+    // Code for handling the Profile modal
+    const editProfileButton = document.getElementById("editProfileButton");
+    const editModal = document.getElementById("ProfileModal");
+    editProfileButton.addEventListener("click", () => {
+        editModal.style.display = "block";
+    });
+    const closeEditModalBtn = document.getElementById("closeEditModalBtn");
+    closeEditModalBtn.addEventListener("click", () => {
+        editModal.style.display = "none";
+    });
+    window.addEventListener("click", (event) => {
+        if (event.target === editModal) {
+            editModal.style.display = "none";
+        }
+    });
+
+    // Code for handling the Password modal
+    const editPasswordButton = document.getElementById("editPasswordButton");
+    const editPasswordModal = document.getElementById("PasswordModal");
+    editPasswordButton.addEventListener("click", () => {
+        editPasswordModal.style.display = "block";
+    });
+    const closePasswordBtn = document.getElementById("closePasswordBtn");
+    closePasswordBtn.addEventListener("click", () => {
+        editPasswordModal.style.display = "none";
+    });
+    window.addEventListener("click", (event) => {
+        if (event.target === editPasswordModal) {
+            editPasswordModal.style.display = "none";
+        }
+    });
+
+    // Code for handling the Education modal
+    const editEducationButton = document.getElementById("editEducationButton");
+    const editEducationModal = document.getElementById("EducationModal");
+    editEducationButton.addEventListener("click", () => {
+        editEducationModal.style.display = "block";
+    });
+    const closeEducationBtn = document.getElementById("closeEducationModalBtn");
+    closeEducationBtn.addEventListener("click", () => {
+        editEducationModal.style.display = "none";
+    });
+    window.addEventListener("click", (event) => {
+        if (event.target === editEducationModal) {
+            editEducationModal.style.display = "none";
+        }
+    });
+
+    // Code for handling the Bio modal
+    const editBioButton = document.getElementById("editBioButton");
+    const bioModal = document.getElementById("BioModal");
+    editBioButton.addEventListener("click", () => {
+        bioModal.style.display = "block";
+    });
+    const closeBioBtn = document.getElementById("closeBioModalBtn");
+    closeBioBtn.addEventListener("click", () => {
+        bioModal.style.display = "none";
+    });
+    window.addEventListener("click", (event) => {
+        if (event.target === bioModal) {
+            bioModal.style.display = "none";
+        }
+    });
+
+    // Code for handling the Social Media modal
+    const addSocialButton = document.getElementById("editSocialButton");
+    const socialModal = document.getElementById("SocialModal");
+    addSocialButton.addEventListener("click", () => {
+        socialModal.style.display = "block";
+    });
+    const closeSocialBtn = document.getElementById("closeSocialModalBtn");
+    closeSocialBtn.addEventListener("click", () => {
+        socialModal.style.display = "none";
+    });
+    window.addEventListener("click", (event) => {
+        if (event.target === socialModal) {
+            socialModal.style.display = "none";
+        }
+    });
+});
+
+//login.blade.php
+document.addEventListener("DOMContentLoaded", function () {
+    // Code for handling the OTP modal
+    const openOtpModalBtn = document.getElementById("openOtpModalBtn");
+    const otpModal = document.getElementById("OtpModal");
+
+    openOtpModalBtn.addEventListener("click", () => {
+        otpModal.style.display = "block";
+    });
+
+    const closeOtpModalBtn = document.getElementById("closeOtpModalBtn");
+    closeOtpModalBtn.addEventListener("click", () => {
+        otpModal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+        if (event.target === otpModal) {
+            otpModal.style.display = "none";
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Code for handling the Forgot Password modal
+    const openForgotPasswordModalBtn = document.getElementById(
+        "openForgotPasswordModalBtn"
+    );
+    const forgotPasswordModal = document.getElementById("ForgotPasswordModal");
+
+    openForgotPasswordModalBtn.addEventListener("click", () => {
+        forgotPasswordModal.style.display = "block";
+    });
+
+    const closeForgotPasswordModalBtn = document.getElementById(
+        "cancelForgotPasswordBtn"
+    );
+    closeForgotPasswordModalBtn.addEventListener("click", () => {
+        forgotPasswordModal.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+        if (event.target === forgotPasswordModal) {
+            forgotPasswordModal.style.display = "none";
+        }
+    });
+});
+
+

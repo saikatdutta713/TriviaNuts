@@ -2072,6 +2072,19 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 
+/***/ "./resources/scss/admin/admin.scss":
+/*!*****************************************!*\
+  !*** ./resources/scss/admin/admin.scss ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/scss/admin/home.scss":
 /*!****************************************!*\
   !*** ./resources/scss/admin/home.scss ***!
@@ -2176,10 +2189,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/scss/category.scss":
-/*!**************************************!*\
-  !*** ./resources/scss/category.scss ***!
-  \**************************************/
+/***/ "./resources/scss/auth/login.scss":
+/*!****************************************!*\
+  !*** ./resources/scss/auth/login.scss ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2189,10 +2202,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/scss/admin/admin.scss":
-/*!*****************************************!*\
-  !*** ./resources/scss/admin/admin.scss ***!
-  \*****************************************/
+/***/ "./resources/scss/category.scss":
+/*!**************************************!*\
+  !*** ./resources/scss/category.scss ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6290,6 +6303,8 @@ const isThenable = (thing) =>
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap.js */ "./resources/js/bootstrap.js");
 
+
+//category.blade.php
 document.addEventListener("DOMContentLoaded", function () {
   var prevContent = null;
   function toggleDisplay(event) {
@@ -6366,6 +6381,125 @@ document.addEventListener("DOMContentLoaded", function () {
       contentDiv2.style.display = "block";
       contentDiv3.style.display = "none";
     });
+  });
+});
+
+//profile.blade.php
+document.addEventListener("DOMContentLoaded", function () {
+  // Code for handling the Profile modal
+  var editProfileButton = document.getElementById("editProfileButton");
+  var editModal = document.getElementById("ProfileModal");
+  editProfileButton.addEventListener("click", function () {
+    editModal.style.display = "block";
+  });
+  var closeEditModalBtn = document.getElementById("closeEditModalBtn");
+  closeEditModalBtn.addEventListener("click", function () {
+    editModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === editModal) {
+      editModal.style.display = "none";
+    }
+  });
+
+  // Code for handling the Password modal
+  var editPasswordButton = document.getElementById("editPasswordButton");
+  var editPasswordModal = document.getElementById("PasswordModal");
+  editPasswordButton.addEventListener("click", function () {
+    editPasswordModal.style.display = "block";
+  });
+  var closePasswordBtn = document.getElementById("closePasswordBtn");
+  closePasswordBtn.addEventListener("click", function () {
+    editPasswordModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === editPasswordModal) {
+      editPasswordModal.style.display = "none";
+    }
+  });
+
+  // Code for handling the Education modal
+  var editEducationButton = document.getElementById("editEducationButton");
+  var editEducationModal = document.getElementById("EducationModal");
+  editEducationButton.addEventListener("click", function () {
+    editEducationModal.style.display = "block";
+  });
+  var closeEducationBtn = document.getElementById("closeEducationModalBtn");
+  closeEducationBtn.addEventListener("click", function () {
+    editEducationModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === editEducationModal) {
+      editEducationModal.style.display = "none";
+    }
+  });
+
+  // Code for handling the Bio modal
+  var editBioButton = document.getElementById("editBioButton");
+  var bioModal = document.getElementById("BioModal");
+  editBioButton.addEventListener("click", function () {
+    bioModal.style.display = "block";
+  });
+  var closeBioBtn = document.getElementById("closeBioModalBtn");
+  closeBioBtn.addEventListener("click", function () {
+    bioModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === bioModal) {
+      bioModal.style.display = "none";
+    }
+  });
+
+  // Code for handling the Social Media modal
+  var addSocialButton = document.getElementById("editSocialButton");
+  var socialModal = document.getElementById("SocialModal");
+  addSocialButton.addEventListener("click", function () {
+    socialModal.style.display = "block";
+  });
+  var closeSocialBtn = document.getElementById("closeSocialModalBtn");
+  closeSocialBtn.addEventListener("click", function () {
+    socialModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === socialModal) {
+      socialModal.style.display = "none";
+    }
+  });
+});
+
+//login.blade.php
+document.addEventListener("DOMContentLoaded", function () {
+  // Code for handling the OTP modal
+  var openOtpModalBtn = document.getElementById("openOtpModalBtn");
+  var otpModal = document.getElementById("OtpModal");
+  openOtpModalBtn.addEventListener("click", function () {
+    otpModal.style.display = "block";
+  });
+  var closeOtpModalBtn = document.getElementById("closeOtpModalBtn");
+  closeOtpModalBtn.addEventListener("click", function () {
+    otpModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === otpModal) {
+      otpModal.style.display = "none";
+    }
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  // Code for handling the Forgot Password modal
+  var openForgotPasswordModalBtn = document.getElementById("openForgotPasswordModalBtn");
+  var forgotPasswordModal = document.getElementById("ForgotPasswordModal");
+  openForgotPasswordModalBtn.addEventListener("click", function () {
+    forgotPasswordModal.style.display = "block";
+  });
+  var closeForgotPasswordModalBtn = document.getElementById("cancelForgotPasswordBtn");
+  closeForgotPasswordModalBtn.addEventListener("click", function () {
+    forgotPasswordModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === forgotPasswordModal) {
+      forgotPasswordModal.style.display = "none";
+    }
   });
 });
 
@@ -6633,6 +6767,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/app.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/home.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/auth/register.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/auth/login.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/category.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/admin/admin.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/admin/home.scss")))
