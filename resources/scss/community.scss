@@ -775,11 +775,11 @@
                         height: 80%;
                         width: 90%;
                         margin: auto;
-                        padding: 1rem;
-                        @include flexing;
-                        flex-direction: column;
+                        padding: 2rem;
+                        box-sizing: border-box;
+                        overflow: auto;
                         p {
-                            padding: 0.5rem;
+                            // padding: 0.5rem;
                             font-size: 15px;
                             font-family: "Kalam", cursive;
                             color: $color_3;
@@ -816,6 +816,8 @@
                         height: 65%;
                         width: 100%;
                         margin-top: 2rem;
+                        box-sizing: border-box;
+                        overflow: hidden;
                         .row1 {
                             height: 45%;
                             width: 90%;
@@ -837,8 +839,8 @@
                                 .comment {
                                     height: 60%;
                                     width: 100%;
-                                    display: flex;
-                                    align-items: center;
+                                    // display: flex;
+                                    // align-items: center;
                                     font-size: 15px;
                                 }
                                 .likes {
