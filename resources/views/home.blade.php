@@ -29,8 +29,25 @@
                 Category
             </div>
         </div>
-        <div class="login">
-            Login
+        <div class="login__container">
+            @auth
+            <div class="profile-container">
+                <div class="profile-dropdown">
+                    <div class="avatar-container">
+                        <img src="{{ asset('images/avatar-blue.png') }}" alt="User Avatar" class="avatar">
+                    </div>
+                    <i class="fa-solid fa-caret-down dropdown-icon"></i>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            @else
+            <div class="login">
+                <a href="#">Login</a>
+            </div>
+            @endauth
         </div>
     </header>
     <section class="greeting">
@@ -64,7 +81,6 @@
             </div>
         </div>
         <div class="leaderboard">
-            {{-- <p>LeaderBoard</p> --}}
             <div class="leaderview">
                 <p>LeaderBoard</p>
                 <div class="leader1">
@@ -173,8 +189,6 @@
             </p>
         </div>
     </footer>
-    {{-- @extends('layouts.master') --}}
-    {{-- @include('layouts.master.footer') --}}
 </body>
 
 </html>
