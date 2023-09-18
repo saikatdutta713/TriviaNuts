@@ -58,4 +58,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/managequiz', function () {
         return view('admin.manage_quiz');
     })->name('admin.quiz');
+    
+    Route::get('/managequestion', function () {
+        return view('admin.manage_question');
+    })->name('admin.question');
 });

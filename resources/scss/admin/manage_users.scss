@@ -280,11 +280,41 @@ main {
                     margin-left: 23px;
                 }
 
+
+                //question management
+                label[for="question"], label[for="category"] {
+                    display: block;
+                }
+                #question {
+                    width: 90%;
+                    padding: 10px;
+                    font-size: 1.5em;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    resize: vertical;
+                    margin: 5px 5% 15px 5%;
+                }
+                #category {
+                    width: 50%;
+                    margin: 5px 0 15px 5%;
+                    padding: 10px;
+                    font-size: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+                #category:hover {
+                    border-color: #555;
+                }
+                #category:focus {
+                    border-color: #ccc;
+                    outline: none;
+                }
+
+                //quiz management
                 .form-row {
                     display: flex;
                     justify-content: space-between;
                 }
-
                 .form-column {
                     flex: 1;
                     label {
@@ -370,14 +400,13 @@ main {
     .edit__modal {
         display: none;
         position: fixed;
-        top: 0;
+        z-index: 1;
         left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $modal-background-color;
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
 
         .modal-content {
             background-color: $modal-content-background-color;
@@ -415,6 +444,15 @@ main {
                 font-size: 1em;
                 border: 1px solid #ccc;
             }
+            #question {
+                    width: 90%;
+                    padding: 10px;
+                    font-size: 1.5em;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    resize: vertical;
+                    margin: 5px 5% 15px 5%;
+                }
             #publishing-date {
                 width: 55%;
             }
