@@ -12,12 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            
+
             $table->bigInteger('user_id')->unsigned()->autoIncrement();
             $table->string('name');
             $table->string('gender');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('verification_token')->nullable();
             $table->string('password');
             $table->bigInteger('mobile')->nullable();
             $table->string('picture')->default('picture.jpg');
@@ -32,7 +33,7 @@ return new class extends Migration
             $table->bigInteger('badge_id')->unsigned()->nullable();
             $table->bigInteger('newsletter_id')->unsigned()->nullable();
             $table->string('login_type')->default('Manual');
-            
+
             $table->rememberToken();
             $table->timestamps();
         });
