@@ -49,7 +49,7 @@ Route::get('/profile', function () {
 });
 
 Route::get('/sendmail', [EmailController::class, 'sendEmail']);
-Route::get('logout', [LogoutController::class, 'logout']);
+Route::get('logout', [LogoutController::class, 'logout'])->name('logout');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
