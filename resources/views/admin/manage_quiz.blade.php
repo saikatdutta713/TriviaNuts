@@ -5,11 +5,11 @@
     <div class="table__container">
         <div class="table__header">
             <div class="table__title">
-                <h2>User Management</h2>
+                <h2>Quiz Management</h2>
             </div>
             <div class="table__buttons">
                 <button class="add_new" id="openAddNewModalBtn"><i class="fa-solid fa-circle-plus"></i> Add New
-                    User</button>
+                    Quiz</button>
             </div>
         </div>
         <div class="table__sub__header">
@@ -36,12 +36,12 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
+                    <th>Quiz Id</th>
+                    <th>Category</th>
+                    <th>Tittle</th>
                     <th>Status</th>
-                    <th>Last Login Location</th>
-                    <th>Last Login Date</th>
+                    <th>Question Ids</th>
+                    <th>Schedule Date</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -50,15 +50,16 @@
                     <td>1</td>
                     <td>
                         <div class="avatar-container">
-                            <img src="{{ asset('images/avatar.png') }}" alt="" />
-                            <p class="avatar-name">John Doe</p>
+                            <p class="avatar-name">#052aa</p>
                         </div>
                     </td>
-                    <td>abd@gmail.com</td>
-                    <td>Admin</td>
-                    <td>Active</td>
-                    <td>India</td>
-                    <td>04/10/2013</td>
+                    <td>Mathematics</td>
+                    <td>Set Theory, Probability</td>
+                    <td>Complete</td>
+                    <td>Q39.Q29,Q35,
+                        Q40,Q53,Q15,
+                        Q21,Q19,Q69,Q90</td>
+                    <td>01/11/2023</td>
                     <td>
                         <span>
                             <button title="Edit" class="editButton" data-id="1"><i class="fa fa-pen"></i></button>
@@ -70,18 +71,39 @@
                     <td>2</td>
                     <td>
                         <div class="avatar-container">
-                            <img src="{{ asset('images/avatar.png') }}" alt="" />
-                            <p class="avatar-name">John Doe</p>
+                            <p class="avatar-name">#052ab</p>
                         </div>
                     </td>
-                    <td>abd@gmail.com</td>
-                    <td>Admin</td>
-                    <td>Active</td>
-                    <td>India</td>
-                    <td>04/10/2013</td>
+                    <td>Computer</td>
+                    <td>DSA & Algorithm</td>
+                    <td>Draft</td>
+                    <td>Q39.Q29,Q35,
+                        Q40,Q53,Q15</td>
+                    <td>04/11/2023</td>
                     <td>
                         <span>
                             <button title="Edit" class="editButton" data-id="2"><i class="fa fa-pen"></i></button>
+                            <button title="Delete"><i class="fa fa-trash"></i></button>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <div class="avatar-container">
+                            <p class="avatar-name">#051ab</p>
+                        </div>
+                    </td>
+                    <td>Computer</td>
+                    <td>DSA & Algorithm, OS</td>
+                    <td>Published</td>
+                    <td>Q39.Q29,Q35,
+                        Q40,Q53,Q15,
+                        Q21,Q19,Q69,Q90</td>
+                    <td>04/9/2023</td>
+                    <td>
+                        <span>
+                            {{-- <button title="Edit" class="editButton" data-id="2"><i class="fa fa-pen"></i></button> --}}
                             <button title="Delete"><i class="fa fa-trash"></i></button>
                         </span>
                     </td>
@@ -109,26 +131,40 @@
     <!-- Modal content -->
     <div class="modal-content">
         <div class="modal-header">
-            <h2>Add New User</h2>
+            <h2>Add New Quiz</h2>
         </div>
         <div class="modal-body">
             <form class="register">
-                <label for="name-register">Full Name:</label>
-                <input type="text" id="name-register">
-                <label for="email-register">Email:</label>
-                <input type="text" id="email-register">
-                <label for="gender-register">Gender:</label>
-                <input type="text" id="gender-register">
-                <label for="dob-register">Date Of Birth:</label>
-                <input type="text" id="dob-register">
-                <label for="password-register">Password:</label>
-                <input type="password" id="password-register">
-                <label for="password-confirmation">Confirm Password:</label>
-                <input type="password-confirmation" id="password-confirmation">
-                <p class="check-mark">
-                    <input type="checkbox" id="accept-terms">
-                    <label for="accept-terms">I agree to the <a href="#">Terms</a></label>
-                </p>
+
+                <div class="form-row">
+                    <div class="form-column">
+                        <label for="category">Category:</label>
+                        <select id="category" name="category">
+                            <option value="mathematics">Mathematics</option>
+                            <option value="computer">Computer</option>
+                            <option value="aptitude">Aptitude</option>
+                            <option value="current_affair">Current Affair</option>
+                        </select>
+                    </div>
+                    <div class="form-column">
+                        <label for="status">Status:</label>
+                        <select id="status" name="status">
+                            <option value="complete">Complete</option>
+                            <option value="draft">Draft</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="tittle-register">Tittle:</label>
+                <input type="text" id="tittle-register">
+
+
+                <label for="questionIds-register">Question Ids:</label>
+                <input type="text" id="questionIds-register">
+
+                <label for="publishing-date">Schedule Date:</label>
+                <input type="date" id="publishing-date" name="publishing_date">
+                
             </form>
         </div>
         <div class="modal-footer">
@@ -142,20 +178,19 @@
 <div id="editModal" class="edit__modal">
     <div class="modal-content">
         <div class="modal-header">
-            <h2>Update User</h2>
+            <h2>Update Quiz</h2>
         </div>
         <div class="modal-body">
-            <label for="userRole">User Role:</label>
-            <select id="userRole">
-                <option value="Admin">Admin</option>
-                <option value="user">User</option>
-                <option value="Editor">Editor</option>
-            </select>
+            <label for="questionIds-register">Question Ids:</label>
+            <input type="text" id="questionIds-register">
+
+            <label for="publishing-date">Schedule Date:</label>
+            <input type="date" id="publishing-date" name="publishing_date">
 
             <label for="userStatus">Status:</label>
-            <select id="userStatus">
-                <option value="Active">Active</option>
-                <option value="Deactive">Deactive</option>
+            <select id="status" name="status">
+                <option value="complete">Complete</option>
+                <option value="draft">Draft</option>
             </select>
         </div>
         <div class="modal-footer">
