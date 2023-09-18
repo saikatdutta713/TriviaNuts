@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+<x-notification type="success" :message="'You have registered Successfully'" />
     <div class="profilePage">
         <div class="profilePicture">
             <i class="fa-solid fa-gem" id="userBadge"></i>  
