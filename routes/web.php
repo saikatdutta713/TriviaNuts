@@ -3,8 +3,11 @@
 // use App\Http\Controllers\RegistrationController;
 
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Mail\VerificationController;
 use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +28,7 @@ Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'login'])->name('login');
 Route::get('register', [RegisterController::class, 'index'])->name('viewRegister');
 Route::post('register', [RegisterController::class, 'register'])->name('register');
+Route::get('verify/{token}', [VerificationController::class, 'verify'])->name('verify.mail');
 Route::get('/master', function () {
     return view('layouts.master');
 });
@@ -43,6 +47,7 @@ Route::get('/profile', function () {
 });
 
 Route::get('/sendmail', [EmailController::class, 'sendEmail']);
+Route::get('logout', [LogoutController::class, 'logout']);
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
@@ -53,3 +58,5 @@ Route::prefix('admin')->group(function () {
         return view('admin.manage_users');
     })->name('admin.user');
 });
+
+Route::get('/test', [Controller::class, 'test']);
