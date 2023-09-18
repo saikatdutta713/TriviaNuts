@@ -16,6 +16,15 @@
     font-family: $font-family_1;
 }
 
+.is-invalid {
+    border: 1px solid #f3789e !important ;
+}
+
+.invalid-feedback {
+    color: #f3789e !important;
+    margin: 5px;
+}
+
 .header {
     @include flexing;
     width: 100%;
@@ -301,14 +310,7 @@
         }
     }
 }
-// article {
-//     @include flexing;
-//     height: max-content;
-//     width: 100%;
-//     position: relative;
-//     top: 7%;
-//     background-color: EDFFFE;
-// }
+
 footer {
     height: max-content;
     width: 100%;

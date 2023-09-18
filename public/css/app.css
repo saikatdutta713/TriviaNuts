@@ -7,6 +7,15 @@
   font-family: "Roboto", sans-serif;
 }
 
+.is-invalid {
+  border: 1px solid #f3789e !important;
+}
+
+.invalid-feedback {
+  color: #f3789e !important;
+  margin: 5px;
+}
+
 .header {
   display: flex;
   align-items: center;
