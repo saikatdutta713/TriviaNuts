@@ -22,6 +22,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'email_verified_at',
+        'verification_token',
         'password',
         'gender',
         'mobile',
@@ -30,6 +32,7 @@ class User extends Authenticatable
         'dob',
         'contribution_no',
         'last_login',
+        'last_login_location',
         'badge_id',
         'newsletter_id',
         'login_type',
