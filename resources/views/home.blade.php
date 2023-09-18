@@ -16,18 +16,18 @@
             Logo
         </div>
         <div class="navbar">
-            <div class="navbutton">
+            <a href="{{ Route('home') }}" class="navbutton">
                 Home
-            </div>
-            <div class="navbutton">
+            </a>
+            <a href="{{ Route('community') }}" class="navbutton">
                 Community
-            </div>
-            <div class="navbutton">
+            </a>
+            <a class="navbutton">
                 Trends
-            </div>
-            <div class="navbutton">
+            </a>
+            <a href="{{ Route('category') }}" class="navbutton">
                 Category
-            </div>
+            </a>
         </div>
         <div class="login__container">
             @auth
@@ -39,7 +39,7 @@
                     <i class="fa-solid fa-caret-down dropdown-icon"></i>
                     <ul class="dropdown-menu">
                         <li><a href="#">Profile</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="{{ Route('logout') }}">Logout</a></li>
                     </ul>
                 </div>
             </div>
