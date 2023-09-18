@@ -6,7 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\LogoutUserController;
 use App\Http\Controllers\Mail\VerificationController;
 use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
@@ -46,10 +46,10 @@ Route::get('/quiz', function () {
 });
 Route::get('/profile', function () {
     return view('profile');
-});
+})->name('profile');
 
 Route::get('/sendmail', [EmailController::class, 'sendEmail']);
-Route::get('logout', [LogoutController::class, 'logout'])->name('logout');
+Route::get('logout', [LogoutUserController::class, 'logout'])->name('logout');
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
@@ -59,11 +59,11 @@ Route::prefix('admin')->group(function () {
     Route::get('/manageusers', function () {
         return view('admin.manage_users');
     })->name('admin.user');
-    
+
     Route::get('/managequiz', function () {
         return view('admin.manage_quiz');
     })->name('admin.quiz');
-    
+
     Route::get('/managequestion', function () {
         return view('admin.manage_question');
     })->name('admin.question');
