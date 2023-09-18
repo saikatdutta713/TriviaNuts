@@ -5,7 +5,7 @@
         <div class="register">
             <div class="registerHeader">
                 <h1>Registration</h1>
-                <p><a href="#">Sign in</a> if you already have an <a href="#">account</a></p>
+                <p><a href="#">Sign in</a> if you already have an account</p>
             </div>
             <div class="registerSection">
                 <form action="" method="">

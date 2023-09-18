@@ -5,11 +5,11 @@
     <div class="table__container">
         <div class="table__header">
             <div class="table__title">
-                <h2>User Management</h2>
+                <h2>Question Management</h2>
             </div>
             <div class="table__buttons">
                 <button class="add_new" id="openAddNewModalBtn"><i class="fa-solid fa-circle-plus"></i> Add New
-                    User</button>
+                    Question</button>
             </div>
         </div>
         <div class="table__sub__header">
@@ -36,12 +36,12 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Status</th>
-                    <th>Last Login Location</th>
-                    <th>Last Login Date</th>
+                    <th>Question Id</th>
+                    <th>Category</th>
+                    <th>Question</th>
+                    <th>Answer</th>
+                    <th>Other 3 options</th>
+                    <th>Quiz Id</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -50,15 +50,14 @@
                     <td>1</td>
                     <td>
                         <div class="avatar-container">
-                            <img src="{{ asset('images/avatar.png') }}" alt="" />
-                            <p class="avatar-name">John Doe</p>
+                            <p class="avatar-name">#M052</p>
                         </div>
                     </td>
-                    <td>abd@gmail.com</td>
-                    <td>Admin</td>
-                    <td>Active</td>
-                    <td>India</td>
-                    <td>04/10/2013</td>
+                    <td>Mathematics</td>
+                    <td>What is the solution to the equation 2x + 3 = 11?</td>
+                    <td> x = 4</td>
+                    <td>x = 5, x = 6, x = 7</td>
+                    <td>#052ab</td>
                     <td>
                         <span>
                             <button title="Edit" class="editButton" data-id="1"><i class="fa fa-pen"></i></button>
@@ -70,15 +69,14 @@
                     <td>2</td>
                     <td>
                         <div class="avatar-container">
-                            <img src="{{ asset('images/avatar.png') }}" alt="" />
-                            <p class="avatar-name">John Doe</p>
+                            <p class="avatar-name">#C0123</p>
                         </div>
                     </td>
-                    <td>abd@gmail.com</td>
-                    <td>Admin</td>
-                    <td>Active</td>
-                    <td>India</td>
-                    <td>04/10/2013</td>
+                    <td>Computer</td>
+                    <td> In computer science, what does the acronym "CPU" stand for?</td>
+                    <td>Central Processing Unit</td>
+                    <td> Computer Peripheral Unit, Control Program Utility, Central Power Unit</td>
+                    <td>-</td>
                     <td>
                         <span>
                             <button title="Edit" class="editButton" data-id="2"><i class="fa fa-pen"></i></button>
@@ -86,6 +84,7 @@
                         </span>
                     </td>
                 </tr>
+                
                 <!-- Other table rows go here -->
             </tbody>
         </table>
@@ -109,26 +108,34 @@
     <!-- Modal content -->
     <div class="modal-content">
         <div class="modal-header">
-            <h2>Add New User</h2>
+            <h2>Add New Question</h2>
         </div>
         <div class="modal-body">
             <form class="register">
-                <label for="name-register">Full Name:</label>
-                <input type="text" id="name-register">
-                <label for="email-register">Email:</label>
-                <input type="text" id="email-register">
-                <label for="gender-register">Gender:</label>
-                <input type="text" id="gender-register">
-                <label for="dob-register">Date Of Birth:</label>
-                <input type="text" id="dob-register">
-                <label for="password-register">Password:</label>
-                <input type="password" id="password-register">
-                <label for="password-confirmation">Confirm Password:</label>
-                <input type="password-confirmation" id="password-confirmation">
-                <p class="check-mark">
-                    <input type="checkbox" id="accept-terms">
-                    <label for="accept-terms">I agree to the <a href="#">Terms</a></label>
-                </p>
+
+                <label for="category" class="category-label">Category:</label>
+                <select id="category" name="category" class="category-select">
+                    <option value="mathematics">Mathematics</option>
+                    <option value="computer">Computer</option>
+                    <option value="aptitude">Aptitude</option>
+                    <option value="current_affair">Current Affair</option>
+                </select>
+
+                <label for="question">Question:</label>
+                <textarea id="question" name="question" rows="4" cols="50"></textarea>
+
+                <label for="answer">Correct Answer:</label>
+                <input type="text" id="answer" name="answer">
+
+                <label for="other-answer-1">Other Answer 1:</label>
+                <input type="text" id="other-answer-1" name="other_answer_1">
+
+                <label for="other-answer-2">Other Answer 2:</label>
+                <input type="text" id="other-answer-2" name="other_answer_2">
+
+                <label for="other-answer-3">Other Answer 3:</label>
+                <input type="text" id="other-answer-3" name="other_answer_3">
+                
             </form>
         </div>
         <div class="modal-footer">
@@ -142,21 +149,23 @@
 <div id="editModal" class="edit__modal">
     <div class="modal-content">
         <div class="modal-header">
-            <h2>Update User</h2>
+            <h2>Update Question</h2>
         </div>
         <div class="modal-body">
-            <label for="userRole">User Role:</label>
-            <select id="userRole">
-                <option value="Admin">Admin</option>
-                <option value="user">User</option>
-                <option value="Editor">Editor</option>
-            </select>
+            <label for="question">Question:</label>
+            <textarea id="question" name="question" rows="4" cols="50"></textarea>
 
-            <label for="userStatus">Status:</label>
-            <select id="userStatus">
-                <option value="Active">Active</option>
-                <option value="Deactive">Deactive</option>
-            </select>
+            <label for="answer">Correct Answer:</label>
+            <input type="text" id="answer" name="answer">
+
+            <label for="other-answer-1">Other Answer 1:</label>
+            <input type="text" id="other-answer-1" name="other_answer_1">
+
+            <label for="other-answer-2">Other Answer 2:</label>
+            <input type="text" id="other-answer-2" name="other_answer_2">
+
+            <label for="other-answer-3">Other Answer 3:</label>
+            <input type="text" id="other-answer-3" name="other_answer_3">
         </div>
         <div class="modal-footer">
             <button id="submitEditModalBtn">Update</button>

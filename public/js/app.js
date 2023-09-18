@@ -6475,7 +6475,7 @@ document.addEventListener("DOMContentLoaded", function () {
   openOtpModalBtn.addEventListener("click", function () {
     otpModal.style.display = "block";
   });
-  var closeOtpModalBtn = document.getElementById("closeOtpModalBtn");
+  var closeOtpModalBtn = document.getElementById("cancelOTPBtn");
   closeOtpModalBtn.addEventListener("click", function () {
     otpModal.style.display = "none";
   });

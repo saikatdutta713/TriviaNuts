@@ -35,10 +35,12 @@ Route::get('/master', function () {
 
 Route::get('/category', function () {
     return view('category');
-});
+})->name('category');
+
 Route::get('/community', function () {
     return view('community');
-});
+})->name('community');
+
 Route::get('/quiz', function () {
     return view('quiz');
 });
@@ -57,6 +59,14 @@ Route::prefix('admin')->group(function () {
     Route::get('/manageusers', function () {
         return view('admin.manage_users');
     })->name('admin.user');
+    
+    Route::get('/managequiz', function () {
+        return view('admin.manage_quiz');
+    })->name('admin.quiz');
+    
+    Route::get('/managequestion', function () {
+        return view('admin.manage_question');
+    })->name('admin.question');
 });
 
 Route::get('/test', [Controller::class, 'test']);
