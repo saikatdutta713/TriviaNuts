@@ -685,6 +685,10 @@ footer .row2 {
   background-color: #ecfeff;
 }
 
+.error-txt {
+  color: #e65061;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -872,6 +876,7 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
   z-index: 999;
+  display: block !important;
 }
 .otpModal .modal-content {
   background-color: #fff;

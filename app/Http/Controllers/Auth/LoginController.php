@@ -3,13 +3,24 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\VerifyOtp;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class LoginController extends Controller
 {
     function index()
     {
         return view('auth.login');
+    }
+
+    function processOTP($user)
+    {
+        $otp = rand(111111, 999999);
+        Mail::to($user->email)->send(new VerifyOtp($user->name, $otp));
+        session()->put(['otp' => ['code' => $otp, 'time' => now()]]);
     }
 
     function login(Request $request)
@@ -21,9 +32,9 @@ class LoginController extends Controller
         ]);
 
         if (auth()->attempt($credentials)) {
-            // Authentication successful
-            // Redirect the user to the desired location
-            return redirect()->intended('/');
+
+            $this->processOTP(Auth::user());
+            return view('auth.login')->with('verify_otp', true);
         }
 
         // Authentication failed

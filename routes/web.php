@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutUserController;
+use App\Http\Controllers\Auth\VerifyOtpController;
 use App\Http\Controllers\Mail\VerificationController;
 use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,8 @@ Route::get('/', [Controller::class, 'index'])->name('home');
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'login'])->name('login');
+Route::get('login/otp', [VerifyOtpController::class, 'index'])->name('verify.otp');
+Route::post('login/otp', [VerifyOtpController::class, 'verifyOtp'])->name('verify.otp');
 Route::get('register', [RegisterController::class, 'index'])->name('viewRegister');
 Route::post('register', [RegisterController::class, 'register'])->name('register');
 Route::get('verify/{token}', [VerificationController::class, 'verify'])->name('verify.mail');

@@ -51,6 +51,10 @@
     width: 100%;
     background-color: $color_6;
 }
+
+.error-txt {
+    color: $color_21;
+}
 * {
     margin: 0;
     padding: 0;
@@ -191,7 +195,6 @@
                         .field.error input:focus ~ &.icon {
                             color: #bfbfbf;
                         }
-                        
                     }
                 }
 
@@ -200,7 +203,7 @@
                     text-align: left;
                     margin-top: 5px;
                 }
-                
+
                 &.shake .error,
                 &.error .error {
                     display: block;
@@ -250,11 +253,12 @@
 
 .otpModal {
     @include modal;
+    display: block !important;
     .modal-content {
         @include modal-content-header;
         .modal-body {
             padding: 1rem;
-            p{
+            p {
                 margin-bottom: 1rem;
             }
             label {
@@ -286,7 +290,7 @@
         @include modal-content-header;
         .modal-body {
             padding: 1rem;
-            p{
+            p {
                 margin-bottom: 1rem;
             }
             label {
