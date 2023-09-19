@@ -38,14 +38,14 @@
                     </div>
                     <i class="fa-solid fa-caret-down dropdown-icon"></i>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Profile</a></li>
+                        <li><a href="{{ route('profile') }}">Profile</a></li>
                         <li><a href="{{ Route('logout') }}">Logout</a></li>
                     </ul>
                 </div>
             </div>
             @else
             <div class="login">
-                <a href="#">Login</a>
+                <a href="{{ route('login') }}">Login</a>
             </div>
             @endauth
         </div>
