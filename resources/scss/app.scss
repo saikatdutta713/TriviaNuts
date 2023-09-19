@@ -17,8 +17,8 @@
     bottom: 80px;
     right: 50px;
     min-width: 150px;
-    padding:.5rem 1rem;
-    border-radius: .5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,6 +42,91 @@
 }
 .error {
     background-color: #cc3d38 !important;
+}
+
+/* Message Modal styles */
+.message-modal {
+    display: block; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    overflow: auto; /* Enable scrolling if the content overflows */
+
+    .modal-content {
+        background-color: #fff;
+        margin: 15% auto;
+        border: 1px solid #888;
+        width: 50%;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+
+        .modal-header {
+            color: white;
+            padding: 4%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .icon {
+                font-size: 50px;
+                margin-right: 10px;
+
+                .success {
+                    background-color: #4caf50 !important; /* Green for success */
+                }
+
+                .warning {
+                    background-color: #ffc107 !important; /* Yellow for warning */
+                }
+
+                .error {
+                    background-color: #ff5733 !important; /* Red for error */
+                }
+            }
+
+            h2 {
+                margin-top: 1%;
+            }
+        }
+
+        .modal-body {
+            padding: 20px;
+            color: #454d61;
+        }
+
+        /* Modal button styles */
+        .modal-buttons {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+
+            .close-button {
+                background-color: $color_21;
+                color: #fff;
+                font-weight: 400;
+                border: none;
+                padding: 10px 20px;
+                margin-right: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .redirect-button {
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                text-decoration: none;
+            }
+        }
+    }
 }
 
 @keyframes fadeIn {
@@ -100,7 +185,7 @@
         margin: 0 auto;
         color: $color_1;
         font-size: large;
-        a{
+        a {
             color: $color_1;
         }
         .navbutton {
