@@ -5,7 +5,7 @@
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\EmailController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutUserController;
 use App\Http\Controllers\Mail\VerificationController;
 use App\Http\Controllers\QuoteController;

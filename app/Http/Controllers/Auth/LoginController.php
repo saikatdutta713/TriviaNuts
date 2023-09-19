@@ -1,16 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    function index(){
+    function index()
+    {
         return view('auth.login');
     }
 
-    function login(Request $request){
+    function login(Request $request)
+    {
 
         $credentials = $request->validate([
             'email' => 'required|email',
