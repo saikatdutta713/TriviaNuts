@@ -41,7 +41,7 @@ class DynamicMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.demo',
+            view: 'mails.demo',
         );
     }
 
