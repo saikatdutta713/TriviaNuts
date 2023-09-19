@@ -73,8 +73,9 @@
         <div class="quote">
             <div class="quote_container">
                 <div class="the_quote">
-                    <h2>{{ ($quote[0]['q']) }}</h2>
-                    <h3>{{ $quote[0]['a'] }}</h3>
+                    <h2>{{ "The greatest glory in living lies not in never falling, but in rising every time we fall" }}
+                    </h2>
+                    <h3>{{ "Nelson Mandela" }}</h3>
                 </div>
             </div>
             <div class="quote_image">
@@ -189,6 +190,9 @@
             </p>
         </div>
     </footer>
+    @isset($status_mailid_verify)
+    <x-notification type="{{ $status_mailid_verify }}" message="{{ $message_mailid_verify }}" />
+    @endisset
 </body>
 
 </html>
