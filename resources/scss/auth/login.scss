@@ -276,10 +276,7 @@
         }
         .modal-footer {
             @include modal-footer;
-            #cancelOTPBtn {
-                background-color: #dc3545;
-                margin-left: 10px;
-            }
+            justify-content: center !important;
         }
     }
 }

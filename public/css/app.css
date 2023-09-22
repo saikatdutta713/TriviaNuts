@@ -919,6 +919,7 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   display: flex;
   justify-content: flex-end;
   padding: 10px;
+  justify-content: center !important;
 }
 .otpModal .modal-content .modal-footer button {
   padding: 10px 20px;
@@ -930,10 +931,6 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
 }
 .otpModal .modal-content .modal-footer button:hover {
   background-color: #c82333;
-}
-.otpModal .modal-content .modal-footer #cancelOTPBtn {
-  background-color: #dc3545;
-  margin-left: 10px;
 }
 
 .forgotPasswordModal {

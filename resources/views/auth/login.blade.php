@@ -103,7 +103,6 @@
             </div>
             <div class="modal-footer">
                 <button type="submit" id="submitOTPBtn">Submit</button>
-                <button id="cancelOTPBtn" class="cancel">Cancel</button>
             </div>
         </div>
     </form>
