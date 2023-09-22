@@ -941,10 +941,6 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   background-color: #10c469;
   color: white;
 }
-.otpModal .modal-content .modal-footer #cancelOTPBtn {
-  background-color: #dc3545;
-  margin-left: 10px;
-}
 
 .forgotPasswordModal {
   display: none; /* Hide the modal by default */

@@ -277,6 +277,7 @@
         }
         .modal-footer {
             @include modal-footer;
+            justify-content: center !important;
             #resendOTPBtn{
                 background-color: transparent;
                 color: #10c469;
@@ -286,10 +287,6 @@
                     background-color: #10c469;
                     color: $color_1;
                 }
-            }
-            #cancelOTPBtn {
-                background-color: #dc3545;
-                margin-left: 10px;
             }
         }
     }
