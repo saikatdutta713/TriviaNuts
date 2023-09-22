@@ -1013,6 +1013,181 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   background-color: #dc3545;
   margin-left: 10px;
 }
+.setNewPasswordPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110vh;
+  width: 100%;
+  background-color: #ecfeff;
+}
+
+.setNewPassword {
+  padding: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  height: 80%;
+  width: 35%;
+  background-color: white;
+}
+.setNewPassword .setNewPasswordHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 30%;
+  width: 100%;
+  padding: 1rem;
+  color: #149d9b;
+}
+.setNewPassword .setNewPasswordHeader #loginlogo {
+  font-size: 4rem;
+}
+.setNewPassword .setNewPasswordHeader p {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+.setNewPassword .setNewPasswordSection {
+  height: 60%;
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+}
+@keyframes shake {
+  0%, 100% {
+    margin-left: 0px;
+  }
+  20%, 80% {
+    margin-left: -12px;
+  }
+  40%, 60% {
+    margin-left: 12px;
+  }
+}
+.setNewPassword .setNewPasswordSection ::-moz-selection {
+  color: #fff;
+  background: #5372f0;
+}
+.setNewPassword .setNewPasswordSection ::selection {
+  color: #fff;
+  background: #5372f0;
+}
+.setNewPassword .setNewPasswordSection form {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.setNewPassword .setNewPasswordSection form .field {
+  width: 90%;
+  height: 20%;
+  margin-bottom: 1.5rem;
+}
+.setNewPassword .setNewPasswordSection form .field.shake {
+  animation: shake 0.3s ease-in-out;
+}
+.setNewPassword .setNewPasswordSection form .field .input-area {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.setNewPassword .setNewPasswordSection form .field .input-area input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 45px;
+  font-size: 18px;
+  background: none;
+  caret-color: #5372f0;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  border-bottom-width: 2px;
+  transition: all 0.2s ease;
+}
+.setNewPassword .setNewPasswordSection form .field .input-area input:focus, .setNewPassword .setNewPasswordSection form .field .input-area input.valid {
+  border-color: #5372f0;
+}
+.setNewPassword .setNewPasswordSection form .field .input-area input.shake, .setNewPassword .setNewPasswordSection form .field .input-area input.error {
+  border-color: #dc3545;
+}
+.setNewPassword .setNewPasswordSection form .field .input-area input::-moz-placeholder {
+  color: #bfbfbf;
+  font-size: 17px;
+}
+.setNewPassword .setNewPasswordSection form .field .input-area input::placeholder {
+  color: #bfbfbf;
+  font-size: 17px;
+}
+.setNewPassword .setNewPasswordSection form .field .input-area i {
+  position: absolute;
+  top: 50%;
+  font-size: 18px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.setNewPassword .setNewPasswordSection form .field .input-area i.icon {
+  left: 15px;
+  color: #bfbfbf;
+  transition: color 0.2s ease;
+}
+.setNewPassword .setNewPasswordSection form .field .input-area i.error-icon {
+  right: 15px;
+  color: #dc3545;
+}
+input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.icon, .field.valid .setNewPassword .setNewPasswordSection form .field .input-area i.icon {
+  color: #5372f0;
+}
+.field.shake input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.icon, .field.error input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.icon {
+  color: #bfbfbf;
+}
+.setNewPassword .setNewPasswordSection form .field .error-txt {
+  color: #dc3545;
+  text-align: left;
+  margin-top: 5px;
+}
+.setNewPassword .setNewPasswordSection form .field.shake .error, .setNewPassword .setNewPasswordSection form .field.error .error {
+  display: block;
+}
+.setNewPassword .setNewPasswordSection form .pass-txt {
+  width: 90%;
+  height: 10%;
+}
+.setNewPassword .setNewPasswordSection form a {
+  color: #5372f0;
+  text-decoration: none;
+}
+.setNewPassword .setNewPasswordSection form a:hover {
+  text-decoration: underline;
+}
+.setNewPassword .setNewPasswordSection form input[type=submit] {
+  color: #fff;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.6rem 1rem;
+  border: none;
+  background: #149d9b;
+  cursor: pointer;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-size: 18px;
+  margin-top: 1rem;
+}
+.setNewPassword .setNewPasswordSection form input[type=submit]:hover {
+  background: #2c52ed;
+}
+.setNewPassword .setNewPasswordFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  width: 100%;
+}
+.setNewPassword .setNewPasswordFooter a {
+  text-decoration: none;
+}
 .scategory {
   height: 160vh;
   width: 100%;

@@ -2,6 +2,7 @@
 
 // use App\Http\Controllers\RegistrationController;
 
+use App\Http\Controllers\Auth\SetNewPasswordController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\EmailController;
@@ -35,6 +36,9 @@ Route::get('verify/{token}', [VerificationController::class, 'verify'])->name('v
 Route::get('/master', function () {
     return view('layouts.master');
 });
+
+Route::get('/setNewPassword', [SetNewPasswordController::class, 'index'])->name('setNewPassword');
+Route::post('/setNewPassword', [SetNewPasswordController::class, 'updatePassword'])->name('updatePassword');
 
 Route::get('/category', function () {
     return view('category');
