@@ -277,6 +277,16 @@
         .modal-footer {
             @include modal-footer;
             justify-content: center !important;
+            #resendOTPBtn{
+                background-color: transparent;
+                color: #10c469;
+                margin-right: 80px;
+                letter-spacing: 1px;
+                &:hover{
+                    background-color: #10c469;
+                    color: $color_1;
+                }
+            }
         }
     }
 }

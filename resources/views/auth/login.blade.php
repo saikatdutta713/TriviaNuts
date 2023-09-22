@@ -102,6 +102,7 @@
                 @enderror
             </div>
             <div class="modal-footer">
+                <button type="resend" id="resendOTPBtn">Resend OTP</button>
                 <button type="submit" id="submitOTPBtn">Submit</button>
             </div>
         </div>
