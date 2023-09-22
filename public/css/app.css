@@ -931,6 +931,16 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
 .otpModal .modal-content .modal-footer button:hover {
   background-color: #c82333;
 }
+.otpModal .modal-content .modal-footer #resendOTPBtn {
+  background-color: transparent;
+  color: #10c469;
+  margin-right: 80px;
+  letter-spacing: 1px;
+}
+.otpModal .modal-content .modal-footer #resendOTPBtn:hover {
+  background-color: #10c469;
+  color: white;
+}
 .otpModal .modal-content .modal-footer #cancelOTPBtn {
   background-color: #dc3545;
   margin-left: 10px;
