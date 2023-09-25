@@ -71,26 +71,24 @@
 
 .login {
     padding: 2rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     height: 80%;
     width: 35%;
     background-color: $color_1;
 
     .loginHeader {
         @include flexing;
-        gap: 0.5rem;
-        height: 30%;
+        height: max-content;
         width: 100%;
         padding: 1rem;
         #loginlogo {
             font-size: 7rem;
             color: $color_5;
         }
-        
     }
     .loginSection {
-        height: 60%;
+        height: 50%;
         width: 100%;
         margin: auto;
         padding: 1rem;
@@ -244,8 +242,30 @@
     }
     .loginFooter {
         @include flexing;
-        height: 10%;
+        flex-direction: column;
+        gap: 2rem;
+        height: 20%;
         width: 100%;
+        .googleLogin {
+            @include flexing;
+            padding: 0.7rem 1rem;
+            color: $color_5;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            #googleLogo {
+                margin-left: 1rem;
+                font-size: 1.3rem;
+                background: linear-gradient(
+                    to right,
+                    #4285f4,
+                    #db4437,
+                    #f4b400,
+                    #0f9d58
+                );
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+        }
         a {
             text-decoration: none;
         }
@@ -278,12 +298,12 @@
         .modal-footer {
             @include modal-footer;
             justify-content: center !important;
-            #resendOTPBtn{
+            #resendOTPBtn {
                 background-color: transparent;
                 color: #10c469;
                 margin-right: 80px;
                 letter-spacing: 1px;
-                &:hover{
+                &:hover {
                     background-color: #10c469;
                     color: $color_1;
                 }

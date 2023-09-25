@@ -707,8 +707,8 @@ footer .row2 {
 
 .login {
   padding: 2rem;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   height: 80%;
   width: 35%;
   background-color: white;
@@ -717,8 +717,8 @@ footer .row2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  height: 30%;
+  height: -moz-max-content;
+  height: max-content;
   width: 100%;
   padding: 1rem;
 }
@@ -727,7 +727,7 @@ footer .row2 {
   color: #149d9b;
 }
 .login .loginSection {
-  height: 60%;
+  height: 50%;
   width: 100%;
   margin: auto;
   padding: 1rem;
@@ -860,8 +860,26 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 10%;
+  flex-direction: column;
+  gap: 2rem;
+  height: 20%;
   width: 100%;
+}
+.login .loginFooter .googleLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  color: #149d9b;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+.login .loginFooter .googleLogin #googleLogo {
+  margin-left: 1rem;
+  font-size: 1.3rem;
+  background: linear-gradient(to right, #4285f4, #db4437, #f4b400, #0f9d58);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .login .loginFooter a {
   text-decoration: none;
@@ -919,6 +937,7 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   display: flex;
   justify-content: flex-end;
   padding: 10px;
+  justify-content: center !important;
 }
 .otpModal .modal-content .modal-footer button {
   padding: 10px 20px;
