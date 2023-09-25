@@ -919,6 +919,7 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   display: flex;
   justify-content: flex-end;
   padding: 10px;
+  justify-content: center !important;
 }
 .otpModal .modal-content .modal-footer button {
   padding: 10px 20px;
@@ -3285,7 +3286,6 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   font-size: 17px;
 }
 .profileDetails .bio {
-  height: 40%;
   width: 90%;
   padding: 1rem;
   background-color: #f7f7f6;

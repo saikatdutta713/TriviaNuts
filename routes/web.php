@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutUserController;
 use App\Http\Controllers\Auth\VerifyOtpController;
 use App\Http\Controllers\Mail\VerificationController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,16 @@ Route::post('login/otp', [VerifyOtpController::class, 'verifyOtp'])->name('verif
 Route::get('register', [RegisterController::class, 'index'])->name('viewRegister');
 Route::post('register', [RegisterController::class, 'register'])->name('register');
 Route::get('verify/{token}', [VerificationController::class, 'verify'])->name('verify.mail');
+Route::get('/profile', [ProfileController::class, 'showProfile'])->middleware('auth.check')->name('profile');
+
+Route::prefix('/update')->group(function () {
+    Route::post('/profile', [ProfileController::class, 'updateProfile'])->name('update.profile');
+    Route::post('/education', [ProfileController::class, 'updateEducation'])->name('update.education');
+    Route::post('/bio', [ProfileController::class, 'updateBio'])->name('update.bio');
+    Route::post('/socialMedia', [ProfileController::class, 'updateSocial'])->name('update.social');
+    Route::post('/password', [ProfileController::class, 'updatePassword'])->name('update.password');
+    Route::get('/password', [ProfileController::class, 'updatePassword'])->name('view.update.password');
+})->middleware('web');
 Route::get('/master', function () {
     return view('layouts.master');
 });
@@ -47,9 +58,6 @@ Route::get('/community', function () {
 Route::get('/quiz', function () {
     return view('quiz');
 });
-Route::get('/profile', function () {
-    return view('profile');
-})->name('profile');
 
 Route::get('/sendmail', [EmailController::class, 'sendEmail']);
 Route::get('logout', [LogoutUserController::class, 'logout'])->name('logout');

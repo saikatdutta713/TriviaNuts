@@ -21,10 +21,14 @@ return new class extends Migration
             $table->string('verification_token')->nullable();
             $table->string('password');
             $table->bigInteger('mobile')->nullable();
-            $table->string('picture')->default('picture.jpg');
+            $table->string('picture')->nullable();
+            $table->string('course_name')->nullable();
+            $table->string('institution_name')->nullable();
             $table->string('bio')->nullable();
             $table->string('dob')->nullable();
             $table->integer('contribution_count')->default(0);
+            $table->string('facebook')->nullable();
+            $table->string('linkedin')->nullable();
             $table->string('user_status')->default(0);
             $table->boolean('active')->default(1);
             $table->string('last_login_location')->nullable();
