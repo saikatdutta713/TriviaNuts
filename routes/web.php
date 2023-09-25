@@ -2,6 +2,7 @@
 
 // use App\Http\Controllers\RegistrationController;
 
+use App\Http\Controllers\Auth\SetNewPasswordController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\EmailController;
@@ -47,6 +48,9 @@ Route::get('/master', function () {
     return view('layouts.master');
 });
 
+Route::get('/setNewPassword', [SetNewPasswordController::class, 'index'])->name('setNewPassword');
+Route::post('/setNewPassword', [SetNewPasswordController::class, 'updatePassword'])->name('updatePassword');
+
 Route::get('/category', function () {
     return view('category');
 })->name('category');
@@ -78,6 +82,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/managequestion', function () {
         return view('admin.manage_question');
     })->name('admin.question');
+    
+    Route::get('/announcement', function () {
+        return view('admin.announcement');
+    })->name('admin.announcement');
 });
 
 Route::get('/test', [Controller::class, 'test']);

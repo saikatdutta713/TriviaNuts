@@ -34,6 +34,12 @@
             </form>
         </div>
         <div class="loginFooter">
+            <a href="#">
+                <div class="googleLogin">
+                    Sign in with google
+                    <i class="fa-brands fa-google" id="googleLogo"></i>
+                </div>
+            </a>
             <label for="newsletter">Not yet member? <a href="#">Register now</a></label>
         </div>
     </div>
