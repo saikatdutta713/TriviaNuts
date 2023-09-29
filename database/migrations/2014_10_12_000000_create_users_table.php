@@ -37,6 +37,7 @@ return new class extends Migration
             $table->bigInteger('badge_id')->unsigned()->nullable();
             $table->bigInteger('newsletter_id')->unsigned()->nullable();
             $table->string('login_type')->default('Manual');
+            $table->string('reset_token')->nullable();
 
             $table->rememberToken();
             $table->timestamps();
