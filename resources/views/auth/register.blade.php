@@ -143,6 +143,6 @@
 </div>
 @if (isset($verificationMail) && $verificationMail)
 <x-message-modal type="success" message="Your account has been created successfully." buttonText="Okay"
-    buttonLink="{{ Route('home') }}" />
+    buttonLink="{{ Route('login') }}" />
 @endif
 @endsection

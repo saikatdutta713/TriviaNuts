@@ -63,7 +63,6 @@ class RegisterController extends Controller
 
         if ($user) {
             $this->sendEmail($user);
-            Auth::login($user);
             return view('auth.register')->with('verificationMail', true);
         }
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VerificationController extends Controller
 {
@@ -19,6 +20,8 @@ class VerificationController extends Controller
                     'email_verified_at' => now(),
                     'verification_token' => null,
                 ]);
+
+                Auth::login($user);
 
                 return view('home')
                     ->with('message_mailid_verify', 'Your email has been verified. You can now log in.')
