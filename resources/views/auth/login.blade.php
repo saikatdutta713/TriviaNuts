@@ -117,19 +117,41 @@
 @endisset
 
 <div id="ForgotPasswordModal" class="forgotPasswordModal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2>Forgot Password</h2>
+    <form action="{{ route('reset.link') }}" method="POST">
+        @csrf
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Forgot Password</h2>
+            </div>
+            <div class="modal-body">
+                <p>Enter your registered email address to reset your password.</p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <div class="modal-footer">
+                <button id="submitForgotPasswordBtn">Submit</button>
+                <button id="cancelForgotPasswordBtn" class="cancel">Cancel</button>
+            </div>
         </div>
-        <div class="modal-body">
-            <p>Enter your registered email address to reset your password.</p>
-            <label for="emailInput">Email:</label>
-            <input type="email" id="emailInput" name="emailInput" placeholder="Enter your email">
-        </div>
-        <div class="modal-footer">
-            <button id="submitForgotPasswordBtn">Submit</button>
-            <button id="cancelForgotPasswordBtn" class="cancel">Cancel</button>
-        </div>
-    </div>
+    </form>
 </div>
+
+@isset ($success)
+<x-message-modal type="success" message="{{ $success }}" showCloseButton="true" />
+@endisset
+
+@isset ($error)
+<x-message-modal type="error" message="{{ $error }}" showCloseButton="true" />
+@endisset
+
+@isset($success_notification)
+<x-notification type="success" message="{{ $success_notification }}" />
+@endisset
+
+@if(session()->has('success_notification'))
+<x-notification type="success" message="{{ session()->get('success_notification') }}" />
+@endif
+@if(session()->has('error_notification'))
+<x-notification type="error" message="{{ session()->get('error_notification') }}" />
+@endif
 @endsection

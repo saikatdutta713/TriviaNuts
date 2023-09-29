@@ -8,7 +8,7 @@
                  <p>Reset Password</p>
             </div>
             <div class="setNewPasswordSection">
-                <form action="{{ route('updatePassword') }}" method="POST">
+                <form action="{{ route('reset.password') }}" method="POST">
                     @csrf
 
                     <!-- Fields for resetting the password -->
@@ -42,7 +42,7 @@
 
             </div>
             <div class="setNewPasswordFooter">
-                <label for="newsletter">Not yet member? <a href="#">Register now</a></label>
+                <label for="newsletter">Remembered Password? <a href="{{ route('login') }}">Login</a></label>
             </div>
         </div>
 
@@ -91,4 +91,5 @@
 
         </div>
     </div>
+    
 @endsection

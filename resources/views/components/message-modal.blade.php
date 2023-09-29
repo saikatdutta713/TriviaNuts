@@ -19,7 +19,7 @@
             <a href="{{ $buttonLink }}" class="redirect-button {{ $type }}">{{ $buttonText }}</a>
             @elseif($buttonText && !$buttonLink)
             <button class="close-button {{ $type }}" id="close-button">{{ $buttonText }}</button>
-            @elseif(!$showCloseButton)
+            @elseif($showCloseButton)
             <button class="close-button" id="close-button">Close</button>
             @endif
         </div>

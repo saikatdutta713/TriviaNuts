@@ -15,7 +15,7 @@ class MessageModal extends Component
     public $buttonText;
     public $buttonLink;
 
-    public function __construct($type, $message, $showCloseButton = false, $buttonText = null, $buttonLink = null)
+    public function __construct($type, $message, $showCloseButton = null, $buttonText = null, $buttonLink = null)
     {
         $this->type = $type;
         $this->message = $message;

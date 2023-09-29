@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\VerifyOtpController;
 use App\Http\Controllers\Mail\VerificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuoteController;
+use App\Http\Controllers\ResetPasswordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,7 +35,10 @@ Route::post('login/otp', [VerifyOtpController::class, 'verifyOtp'])->name('verif
 Route::get('register', [RegisterController::class, 'index'])->name('viewRegister');
 Route::post('register', [RegisterController::class, 'register'])->name('register');
 Route::get('verify/{token}', [VerificationController::class, 'verify'])->name('verify.mail');
-Route::get('/profile', [ProfileController::class, 'showProfile'])->middleware('auth.check')->name('profile');
+
+Route::middleware('auth.check')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
+});
 
 Route::prefix('/update')->group(function () {
     Route::post('/profile', [ProfileController::class, 'updateProfile'])->name('update.profile');
@@ -43,13 +47,16 @@ Route::prefix('/update')->group(function () {
     Route::post('/socialMedia', [ProfileController::class, 'updateSocial'])->name('update.social');
     Route::post('/password', [ProfileController::class, 'updatePassword'])->name('update.password');
     Route::get('/password', [ProfileController::class, 'updatePassword'])->name('view.update.password');
-})->middleware('web');
+})->middleware('web', 'auth.check');
 Route::get('/master', function () {
     return view('layouts.master');
 });
 
-Route::get('/setNewPassword', [SetNewPasswordController::class, 'index'])->name('setNewPassword');
-Route::post('/setNewPassword', [SetNewPasswordController::class, 'updatePassword'])->name('updatePassword');
+Route::get('/reset/Password/{token}', [ResetPasswordController::class, 'verifyResetToken'])->name('verify.reset.password');
+Route::get('/reset/Password', [ResetPasswordController::class, 'passwordResetFormView'])->name('reset.password.view');
+Route::post('/reset/Password', [ResetPasswordController::class, 'resetPassword'])->name('reset.password');
+Route::post('/reset/link', [ResetPasswordController::class, 'sendLink'])->name('reset.link');
+
 
 Route::get('/category', function () {
     return view('category');
@@ -82,7 +89,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/managequestion', function () {
         return view('admin.manage_question');
     })->name('admin.question');
-    
+
     Route::get('/announcement', function () {
         return view('admin.announcement');
     })->name('admin.announcement');

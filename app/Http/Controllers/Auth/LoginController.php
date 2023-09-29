@@ -13,6 +13,7 @@ class LoginController extends Controller
 {
     function index()
     {
+        if (auth()->check()) return redirect(route('home'));
         return view('auth.login');
     }
 
@@ -33,12 +34,18 @@ class LoginController extends Controller
 
         if (auth()->attempt($credentials)) {
 
+            if (!Auth::user()->active) {
+                Auth::logout();
+                return view('auth.login')->with('error', 'Your account is not active!');
+            } elseif (Auth::user()->email_verified_at == null) {
+                Auth::logout();
+                return view('auth.login')->with('error', 'You are not verified. Please verify your account!');
+            }
+
             $this->processOTP(Auth::user());
             return view('auth.login')->with('verify_otp', true);
         }
 
-        // Authentication failed
-        // Redirect the user back to the login page with an error message
         return redirect()->back()->withInput()->withErrors([
             'email' => 'Invalid credentials',
             'password' => 'Invalid credentials',

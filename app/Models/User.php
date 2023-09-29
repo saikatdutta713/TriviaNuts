@@ -36,6 +36,7 @@ class User extends Authenticatable
         'badge_id',
         'newsletter_id',
         'login_type',
+        'reset_token',
     ];
 
     /**
