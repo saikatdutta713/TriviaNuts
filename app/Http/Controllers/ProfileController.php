@@ -46,7 +46,7 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return view('profile')
+        return redirect()->route('profile')
             ->with('user', $user)
             ->with('notification_type', 'success')
             ->with('notification_message', 'Profile updated successfully');
@@ -66,7 +66,7 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return view('profile')
+        return redirect()->route('profile')
             ->with('cuser', $user)
             ->with('notification_type', 'success')
             ->with('notification_message', 'Education details updated successfully');
@@ -84,15 +84,15 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return view('profile')->with('notification_type', 'success')->with('user', $user)
+        return redirect()->route('profile')->with('notification_type', 'success')->with('user', $user)
             ->with('notification_message', 'Bio updated successfully');
     }
 
     public function updateSocial(Request $request)
     {
         $validatedData = $request->validate([
-            'facebookProfile' => 'required|string|max:255',
-            'linkedinProfile' => 'required|string|max:255',
+            'facebookProfile' => 'string|max:255',
+            'linkedinProfile' => 'string|max:255',
         ]);
 
         $user = User::find(auth()->user()->user_id);
@@ -102,7 +102,7 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return view('profile')->with('notification_type', 'success')->with('user', $user)
+        return redirect()->route('profile')->with('notification_type', 'success')->with('user', $user)
             ->with('notification_message', 'Social links updated successfully');
     }
 
@@ -117,14 +117,14 @@ class ProfileController extends Controller
         $user = User::find(auth()->user()->user_id);
 
         if (!Hash::check($validatedData['current_password'], $user->password)) {
-            return view('profile')->with('notification_type', 'error')->with('user', $user)
+            return redirect()->route('profile')->with('notification_type', 'error')->with('user', $user)
                 ->with('notification_message', 'Current password is incorrect');
         }
 
         $user->password = Hash::make($validatedData['new_password']);
         $user->save();
 
-        return view('profile')->with('notification_type', 'success')->with('user', $user)
+        return redirect()->route('profile')->with('notification_type', 'success')->with('user', $user)
             ->with('notification_message', 'Password changed successfully');
     }
 }

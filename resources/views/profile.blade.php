@@ -97,10 +97,10 @@
             </div>
             <div class="modal-body">
                 <label for="courseName">Course Name:</label>
-                <input type="text" id="courseName" name="courseName" placeholder="Course Name">
+                <input type="text" id="courseName" name="courseName" placeholder="Course Name" value="{{ $user->course_name }}">
 
                 <label for="institutionName">Institution Name:</label>
-                <input type="text" id="institutionName" name="institutionName" placeholder="Institution Name">
+                <input type="text" id="institutionName" name="institutionName" placeholder="Institution Name" value="{{ $user->institution_name }}">
             </div>
             <div class="modal-footer">
                 <button type="submit" id="submitEditModalBtn">Add</button>
@@ -120,7 +120,7 @@
             </div>
             <div class="modal-body">
                 <label for="profileBio">Bio:</label>
-                <textarea id="profileBio" name="profileBio" rows="7" placeholder="Tell us about yourself"></textarea>
+                <textarea id="profileBio" name="profileBio" rows="7" placeholder="Tell us about yourself" value="{{ $user->bio }}"></textarea>
             </div>
             <div class="modal-footer">
                 <button type="submit" id="submitEditModalBtn">Update</button>
@@ -139,10 +139,10 @@
             </div>
             <div class="modal-body">
                 <label for="facebookProfile">Facebook Profile:</label>
-                <input type="text" id="facebookProfile" name="facebookProfile" placeholder="Facebook Profile URL">
+                <input type="text" id="facebookProfile" name="facebookProfile" placeholder="Facebook Profile URL" value="{{ $user->facebook }}">
 
                 <label for="linkedinProfile">LinkedIn Profile:</label>
-                <input type="text" id="linkedinProfile" name="linkedinProfile" placeholder="LinkedIn Profile URL">
+                <input type="text" id="linkedinProfile" name="linkedinProfile" placeholder="LinkedIn Profile URL" value="{{ $user->linkedin }}">
             </div>
             <div class="modal-footer">
                 <button type="submit" id="submitEditModalBtn">Add</button>
@@ -177,8 +177,8 @@
         </form>
     </div>
 </div>
-@isset ($notification_type)
+@if (session()->has('notification_type'))
 
-<x-notification type="{{ $notification_type }}" message="{{ $notification_message }}" />
-@endisset
+<x-notification type="{{ session()->get('notification_type') }}" message="{{ session()->get('notification_message') }}" />
+@endif
 @endsection
