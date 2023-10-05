@@ -103,4 +103,77 @@
     </div>
 
     
+<!-- The Add New Modal -->
+<div id="addNewModal" class="addNew__modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Create New Announcement</h2>
+        </div>
+        <div class="modal-body">
+            <form class="announcement">
+                <div class="form-row">
+                    <div class="form-column">
+                        <label for="audience">Audience:</label>
+                        <select id="audience" name="audience">
+                            <option value="user">User</option>
+                            <option value="editor">Editor</option>
+                        </select>
+                    </div>
+                    <div class="form-column">
+                        <label for="status">Status:</label>
+                        <select id="status" name="status">
+                            <option value="draft">Draft</option>
+                            <option value="Complete">Complete</option>
+                        </select>
+                    </div>
+                </div>  
+
+
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" rows="4" cols="50"></textarea>
+
+                <label for="publishing-date">Publishing Date:</label>
+                <input type="date" id="publishing-date" name="publishing_date">
+                
+            </form>
+
+
+        </div>
+        <div class="modal-footer">
+            <button id="submitAddNewModalBtn">Add User</button>
+            <button id="closeAddNewModalBtn">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- The Edit Modal -->
+<div id="editModal" class="edit__modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Update Announcement</h2>
+        </div>
+        <div class="modal-body">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" rows="4" cols="50"></textarea>
+
+            <label for="publishing-date">Publishing Date:</label>
+            <input type="date" id="publishing-date" name="publishing_date">
+
+            <label for="userStatus">Status:</label>
+            <select id="status" name="status">
+                <option value="complete">Complete</option>
+                <option value="draft">Draft</option>
+            </select>
+        </div>
+        <div class="modal-footer">
+            <button id="submitEditModalBtn">Update</button>
+            <button id="closeEditModalBtn">Cancel</button>
+        </div>
+    </div>
+</div>
+
 @endsection

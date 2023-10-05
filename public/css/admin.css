@@ -741,6 +741,24 @@ main .addNew__modal .modal-content .modal-body form.register input {
   font-size: 1em;
   border: 1px solid #ccc;
 }
+main .addNew__modal .modal-content .modal-body form.announcement input {
+  border-radius: 5px;
+  width: 90%;
+  height: 20px;
+  margin: 5px 5% 15px 5%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+}
+main .addNew__modal .modal-content .modal-body form.announcement textarea {
+  border-radius: 5px;
+  width: 90%;
+  height: 60px;
+  margin: 5px 5% 15px 5%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+}
 main .addNew__modal .modal-content .modal-body p.check-mark {
   width: 200px;
   padding: 0;
@@ -843,6 +861,15 @@ main .edit__modal .modal-body select {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin: 5px 0 15px 5%;
+}
+main .edit__modal .modal-body #content {
+  width: 90%;
+  padding: 10px;
+  font-size: 1.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  margin: 5px 5% 15px 5%;
 }
 main .edit__modal .modal-footer {
   display: flex;
