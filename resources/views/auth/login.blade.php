@@ -34,12 +34,18 @@
             </form>
         </div>
         <div class="loginFooter">
-            <a href="#">
+            <div class="divider">
+                
+                <div class="divisionOr">
+                    <div class="dash"></div>
+                    <p>OR </p>
+                    <div class="dash"></div>
+                </div>
                 <div class="googleLogin">
                     Sign in with google
                     <i class="fa-brands fa-google" id="googleLogo"></i>
                 </div>
-            </a>
+            </div>
             <label for="newsletter">Not yet member? <a href="#">Register now</a></label>
         </div>
     </div>
