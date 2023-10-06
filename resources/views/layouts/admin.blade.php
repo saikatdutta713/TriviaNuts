@@ -27,14 +27,39 @@
                     <i class="fa fa-clock-o" aria-hidden="true"></i>
                 </a>
                 <a href="#">
-                    {{-- <img width="30" src="{{ asset('images/avatar.svg') }}" alt="" /> --}}
+                    @if (auth()->user()->picture)
+                    <div class="rounded-wrapper">
+                        <img src="{{ Storage::url('avatars/').auth()->user()->picture }}"
+                            alt="{{ env('APP_NAME').' '.ucwords(auth()->user()->name) }}" />
+                    </div>
+                    @else
                     <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    @endif
                 </a>
             </div>
         </nav>
 
         <main>
             @yield('admin__content')
+
+            @isset ($success)
+            <x-message-modal type="success" message="{{ $success }}" showCloseButton="true" />
+            @endisset
+
+            @isset ($error)
+            <x-message-modal type="error" message="{{ $error }}" showCloseButton="true" />
+            @endisset
+
+            @isset($success_notification)
+            <x-notification type="success" message="{{ $success_notification }}" />
+            @endisset
+
+            @if(session()->has('success_notification'))
+            <x-notification type="success" message="{{ session()->get('success_notification') }}" />
+            @endif
+            @if(session()->has('error_notification'))
+            <x-notification type="error" message="{{ session()->get('error_notification') }}" />
+            @endif
         </main>
 
         <div id="sidebar">
