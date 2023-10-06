@@ -2,6 +2,8 @@
 
 // use App\Http\Controllers\RegistrationController;
 
+use App\Http\Controllers\Admin\Auth\AdminLoginController;
+use App\Http\Controllers\Admin\Auth\VerifyOtpController as AuthVerifyOtpController;
 use App\Http\Controllers\Auth\SetNewPasswordController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Controller;
@@ -35,6 +37,7 @@ Route::post('login/otp', [VerifyOtpController::class, 'verifyOtp'])->name('verif
 Route::get('register', [RegisterController::class, 'index'])->name('viewRegister');
 Route::post('register', [RegisterController::class, 'register'])->name('register');
 Route::get('verify/{token}', [VerificationController::class, 'verify'])->name('verify.mail');
+Route::get('logout', [LogoutUserController::class, 'logout'])->name('logout');
 
 Route::middleware('auth.check')->group(function () {
     Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
@@ -71,9 +74,14 @@ Route::get('/quiz', function () {
 });
 
 Route::get('/sendmail', [EmailController::class, 'sendEmail']);
-Route::get('logout', [LogoutUserController::class, 'logout'])->name('logout');
 
 Route::prefix('admin')->group(function () {
+    Route::get('/login', [AdminLoginController::class, 'index'])->name('admin.login');
+    Route::post('/login', [AdminLoginController::class, 'login'])->name('admin.login');
+    Route::get('login/otp', [AuthVerifyOtpController::class, 'index'])->name('verify.otp');
+    Route::post('login/otp', [AuthVerifyOtpController::class, 'verifyOtp'])->name('verify.otp');
+    Route::get('logout', [LogoutUserController::class, 'logout'])->name('admin.logout');
+
     Route::get('/', function () {
         return view('admin.home');
     })->name('admin.home');
