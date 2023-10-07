@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -58,4 +59,29 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public static function isSuperAdmin()
+    {
+        return auth()->check() && auth()->user()->role == 1;
+    }
+
+    public static function isAdmin()
+    {
+        return auth()->check() && auth()->user()->role == 2;
+    }
+
+    public static function isEditor()
+    {
+        return auth()->check() && auth()->user()->role == 3;
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function hasRole($role)
+    {
+        return $this->roles->contains('name', $role);
+    }
 }

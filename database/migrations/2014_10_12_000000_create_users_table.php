@@ -29,7 +29,7 @@ return new class extends Migration
             $table->integer('contribution_count')->default(0);
             $table->string('facebook')->nullable();
             $table->string('linkedin')->nullable();
-            $table->string('user_status')->default(0);
+            $table->integer('role')->default(0);
             $table->boolean('active')->default(1);
             $table->string('last_login_location')->nullable();
             $table->timestamp('last_login')->useCurrent();
