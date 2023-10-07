@@ -36,7 +36,7 @@ class AdminLoginController extends Controller
 
         if (auth()->attempt($credentials)) {
 
-            if (!auth()->user()->user_status) {
+            if (!auth()->user()->role) {
                 auth()->logout();
                 return redirect()->route('admin.login')->with('error_notification', 'You are not authorized');
             }
