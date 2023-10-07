@@ -3,6 +3,7 @@
 // use App\Http\Controllers\RegistrationController;
 
 use App\Http\Controllers\Admin\Auth\AdminLoginController;
+use App\Http\Controllers\Admin\Auth\LogoutAdminController;
 use App\Http\Controllers\Admin\Auth\VerifyOtpController as AuthVerifyOtpController;
 use App\Http\Controllers\Auth\SetNewPasswordController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutUserController;
 use App\Http\Controllers\Auth\VerifyOtpController;
 use App\Http\Controllers\Mail\VerificationController;
+use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\ResetPasswordController;
@@ -80,7 +82,7 @@ Route::prefix('admin')->group(function () {
     Route::post('/login', [AdminLoginController::class, 'login'])->name('admin.login');
     Route::get('login/otp', [AuthVerifyOtpController::class, 'index'])->name('verify.otp');
     Route::post('login/otp', [AuthVerifyOtpController::class, 'verifyOtp'])->name('verify.otp');
-    Route::get('logout', [LogoutUserController::class, 'logout'])->name('admin.logout');
+    Route::get('logout', [LogoutAdminController::class, 'logout'])->name('admin.logout');
 
     Route::get('/', function () {
         return view('admin.home');
@@ -101,6 +103,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/announcement', function () {
         return view('admin.announcement');
     })->name('admin.announcement');
+
+    Route::get('/maintenance', [MaintenanceController::class, 'toggle'])->name('maintenance.toggle');
 });
 
 Route::get('/test', [Controller::class, 'test']);
