@@ -230,7 +230,7 @@
                 border: none;
                 background: $color_5;
                 cursor: pointer;
-                border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 2px solid #0000001a;
                 transition: all 0.3s ease;
                 font-size: 18px;
                 margin-top: 1rem;
@@ -243,27 +243,43 @@
     .loginFooter {
         @include flexing;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
         height: 20%;
         width: 100%;
-        .googleLogin {
+        .divider {
             @include flexing;
-            padding: 0.7rem 1rem;
-            color: $color_5;
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-            #googleLogo {
-                margin-left: 1rem;
-                font-size: 1.3rem;
-                background: linear-gradient(
-                    to right,
-                    #4285f4,
-                    #db4437,
-                    #f4b400,
-                    #0f9d58
-                );
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent;
+            flex-direction: column;
+            gap: .7rem;
+            width: 80%;
+            .divisionOr{
+                @include flexing;
+                width: 100%;
+                .dash{
+                    width: 40%;
+                    background-color: #bfbfbf;
+                    height: 1.5px;
+                    margin: auto;
+                }
+            }
+            .googleLogin {
+                @include flexing;
+                padding: 0.7rem 1rem;
+                color: $color_5;
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+                #googleLogo {
+                    margin-left: 1rem;
+                    font-size: 1.3rem;
+                    background: linear-gradient(
+                        to right,
+                        #4285f4,
+                        #db4437,
+                        #f4b400,
+                        #0f9d58
+                    );
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    color: transparent;
+                }
             }
         }
         a {
