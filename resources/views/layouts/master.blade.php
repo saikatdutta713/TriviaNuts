@@ -79,6 +79,25 @@
 
     <article class="content">
         @yield('content')
+
+        @isset ($success)
+        <x-message-modal type="success" message="{{ $success }}" showCloseButton="true" />
+        @endisset
+
+        @isset ($error)
+        <x-message-modal type="error" message="{{ $error }}" showCloseButton="true" />
+        @endisset
+
+        @isset($success_notification)
+        <x-notification type="success" message="{{ $success_notification }}" />
+        @endisset
+
+        @if(session()->has('success_notification'))
+        <x-notification type="success" message="{{ session()->get('success_notification') }}" />
+        @endif
+        @if(session()->has('error_notification'))
+        <x-notification type="error" message="{{ session()->get('error_notification') }}" />
+        @endif
     </article>
 
     <footer class="footer">
