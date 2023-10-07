@@ -314,48 +314,24 @@ body {
             }
 
             .maintenance_mode_switch {
-                position: relative;
+                // position: relative;
                 width: 50px;
                 height: 26px;
                 bottom: 2px;
-                float: right;
+                display: inline;
 
-                input {
-                    opacity: 0;
-                    width: 0;
-                    height: 0;
-                }
-
-                .slider {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background-color: #ccc;
-                    border-radius: 34px;
+                button {
+                    width: 50px;
+                    height: 26px;
+                    border-radius: 10%;
+                    background: $color_5;
+                    color: white;
+                    margin-left: 2%;
                     cursor: pointer;
-                    transition: 0.4s;
                 }
-
-                input:checked + .slider {
-                    background-color: $color_5;
-                }
-
-                .slider::before {
-                    position: absolute;
-                    content: "";
-                    height: 18px; /* Adjust the height of the thumb */
-                    width: 18px; /* Adjust the width of the thumb */
-                    left: 6px; /* Adjust the position of the thumb */
-                    top: 4.5px; /* Adjust the position of the thumb */
-                    background-color: white; /* Color of the thumb */
-                    border-radius: 50%; /* Make it a circle */
-                    transition: 0.4s; /* Add transition for smooth animation */
-                }
-
-                input:checked + .slider:before {
-                    transform: translateX(20px);
+                .red {
+                    background-color: #cc3d38 !important;
+                    color: white !important;
                 }
             }
         }

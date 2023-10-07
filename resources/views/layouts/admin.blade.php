@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}" />
-    <title>CSS GRID DASHBOARD</title>
+    <title>{{ isset($title) ? $title : env('APP_NAME')." Control Dashboard" }}</title>
 </head>
 
 <body id="body">
@@ -74,14 +74,19 @@
             <div class="sidebar__menu">
                 <div class="sidebar__link active_menu_link">
                     <i class="fa fa-home"></i>
-                    <a href="#">Dashboard</a>
+                    <a href="{{ route('admin.home') }}">Dashboard</a>
                 </div>
                 <h2>Quizzes</h2>
                 <div class="sidebar__link">
-                    {{-- <i class="fa fa-user-secret" aria-hidden="true"></i> --}}
                     <i class="fas fa-file-alt" aria-hidden="true"></i>
-                    <a href="#">Manage Quizzes</a>
+                    <a href="{{ route('admin.quiz') }}">All Quizzes</a>
                 </div>
+                @if (auth()->user()->isSuperAdmin())
+                <div class="sidebar__link">
+                    <i class="fas fa-file-alt" aria-hidden="true"></i>
+                    <a href="#">Approve Quizzes</a>
+                </div>
+                @endif
                 <div class="sidebar__link">
                     <i class="fas fa-file-alt"></i>
                     <a href="#">Add New</a>
@@ -89,8 +94,14 @@
                 <h2>Questions</h2>
                 <div class="sidebar__link">
                     <i class="fa fa-question"></i>
-                    <a href="#">Manage Questions</a>
+                    <a href="{{ route('admin.question') }}">All Questions</a>
                 </div>
+                @if (auth()->user()->isSuperAdmin())
+                <div class="sidebar__link">
+                    <i class="fa fa-question"></i>
+                    <a href="#">Approve Questions</a>
+                </div>
+                @endif
                 <div class="sidebar__link">
                     <i class="fa fa-question"></i>
                     <a href="#">All Questions</a>
@@ -98,7 +109,7 @@
                 <h2>Users</h2>
                 <div class="sidebar__link">
                     <i class="fa fa-users"></i>
-                    <a href="#">All Users</a>
+                    <a href="{{ route('admin.user') }}">All Users</a>
                 </div>
                 <div class="sidebar__link">
                     <i class="fa fa-user"></i>
@@ -113,18 +124,24 @@
                     <i class="fa-solid fa-gear"></i>
                     <a href="#">Settings</a>
                 </div>
-                <div class="sidebar__link">
-                    <i class="fa-solid fa-gears"></i>
-                    <a href="#">maintenance Mode</a>
-                    <label class="maintenance_mode_switch">
-                        <input type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
+                @if (auth()->user()->isSuperAdmin())
+                <form method="GET" action="{{ route('maintenance.toggle') }}">
+                    @csrf
+                    <div class="sidebar__link">
+                        <i class="fa-solid fa-gears"></i>
+                        <a href="#">Maintenance Mode</a>
+                        <label class="maintenance_mode_switch">
+                            <button type="submit" class="{{ app()->isDownForMaintenance() ? 'red' : '' }}">
+                                {{ app()->isDownForMaintenance() ? 'Off' : 'On' }}
+                            </button>
+                        </label>
+                    </div>
+                </form>
+                @endif
                 <h2>Announcements</h2>
                 <div class="sidebar__link">
                     <i class="fa fa-bullhorn"></i>
-                    <a href="#">Create Announcements</a>
+                    <a href="{{ route('admin.announcement') }}">Create Announcements</a>
                 </div>
                 <h2>Analytics & Reports</h2>
                 <div class="sidebar__link">
@@ -133,7 +150,7 @@
                 </div>
                 <div class="sidebar__logout">
                     <i class="fa fa-sign-out-alt"></i>
-                    <a href="#">Log out</a>
+                    <a href="{{ route('admin.logout') }}">Log out</a>
                 </div>
             </div>
         </div>
