@@ -746,7 +746,7 @@ main .main__content .clearfix .pagination .active a.page-link {
   color: #fff;
 }
 main .addNew__modal {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -786,7 +786,8 @@ main .addNew__modal .modal-content .modal-body form label {
   font-size: 1.1em;
   margin-left: 23px;
 }
-main .addNew__modal .modal-content .modal-body label[for=question], main .addNew__modal .modal-content .modal-body label[for=category] {
+main .addNew__modal .modal-content .modal-body label[for=question],
+main .addNew__modal .modal-content .modal-body label[for=category] {
   display: block;
 }
 main .addNew__modal .modal-content .modal-body #question {
@@ -907,7 +908,7 @@ main .addNew__modal .modal-content .modal-footer button {
   cursor: pointer;
 }
 main .edit__modal {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 1;
   left: 0;

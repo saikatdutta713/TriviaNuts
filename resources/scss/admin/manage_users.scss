@@ -237,7 +237,7 @@ main {
 
     /* The Modal (background) */
     .addNew__modal {
-        display: none;
+        display: block;
         position: fixed;
         z-index: 1;
         left: 0;
@@ -280,9 +280,9 @@ main {
                     margin-left: 23px;
                 }
 
-
                 //question management
-                label[for="question"], label[for="category"] {
+                label[for="question"],
+                label[for="category"] {
                     display: block;
                 }
                 #question {
@@ -370,7 +370,6 @@ main {
                     border: 1px solid #ccc;
                 }
 
-
                 p.check-mark {
                     width: 200px;
                     padding: 0;
@@ -419,7 +418,7 @@ main {
 
     /* Modal Styles */
     .edit__modal {
-        display: none;
+        display: block;
         position: fixed;
         z-index: 1;
         left: 0;
@@ -466,14 +465,14 @@ main {
                 border: 1px solid #ccc;
             }
             #question {
-                    width: 90%;
-                    padding: 10px;
-                    font-size: 1.5em;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                    resize: vertical;
-                    margin: 5px 5% 15px 5%;
-                }
+                width: 90%;
+                padding: 10px;
+                font-size: 1.5em;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                resize: vertical;
+                margin: 5px 5% 15px 5%;
+            }
             #publishing-date {
                 width: 55%;
             }
@@ -486,14 +485,14 @@ main {
                 margin: 5px 0 15px 5%;
             }
             #content {
-                    width: 90%;
-                    padding: 10px;
-                    font-size: 1.5em;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                    resize: vertical;
-                    margin: 5px 5% 15px 5%;
-                }
+                width: 90%;
+                padding: 10px;
+                font-size: 1.5em;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                resize: vertical;
+                margin: 5px 5% 15px 5%;
+            }
         }
 
         .modal-footer {

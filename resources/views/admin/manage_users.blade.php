@@ -46,47 +46,32 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach ($users as $user)
                 <tr>
-                    <td>1</td>
+                    <td>{{ $user->user_id }}</td>
                     <td>
                         <div class="avatar-container">
                             <img src="{{ asset('images/avatar.png') }}" alt="" />
-                            <p class="avatar-name">John Doe</p>
+                            <p class="avatar-name">{{ $user->name }}</p>
                         </div>
                     </td>
-                    <td>abd@gmail.com</td>
-                    <td>Admin</td>
-                    <td>Active</td>
-                    <td>India</td>
-                    <td>04/10/2013</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->role }}</td>
+                    <td>{{ $user->active ? "Active":"Inactive" }}</td>
+                    <td>{{ $user->last_login_location }}</td>
+                    <td>{{ $user->last_login }}</td>
                     <td>
                         <span>
-                            <button title="Edit" class="editButton" data-id="1"><i class="fa fa-pen"></i></button>
-                            <button title="Delete"><i class="fa fa-trash"></i></button>
+                            <a title="Edit" class="editButton"
+                                href="{{ route('admin.user.edit',['id'=>$user->user_id]) }}"><i
+                                    class="fa fa-pen"></i></a>
+                            <a title="Delete" href="{{ route('admin.user.edit',['id'=>$user->user_id]) }}"><i
+                                    class="fa fa-trash"></i></a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>
-                        <div class="avatar-container">
-                            <img src="{{ asset('images/avatar.png') }}" alt="" />
-                            <p class="avatar-name">John Doe</p>
-                        </div>
-                    </td>
-                    <td>abd@gmail.com</td>
-                    <td>Admin</td>
-                    <td>Active</td>
-                    <td>India</td>
-                    <td>04/10/2013</td>
-                    <td>
-                        <span>
-                            <button title="Edit" class="editButton" data-id="2"><i class="fa fa-pen"></i></button>
-                            <button title="Delete"><i class="fa fa-trash"></i></button>
-                        </span>
-                    </td>
-                </tr>
-                <!-- Other table rows go here -->
+                @endforeach
+
             </tbody>
         </table>
         <div class="clearfix">
@@ -105,6 +90,7 @@
 </div>
 
 <!-- The Add New Modal -->
+@isset ($add)
 <div id="addNewModal" class="addNew__modal">
     <!-- Modal content -->
     <div class="modal-content">
@@ -112,56 +98,70 @@
             <h2>Add New User</h2>
         </div>
         <div class="modal-body">
-            <form class="register">
+            <form class="register" action="{{ route('admin.user.add') }}" method="POST">
                 <label for="name-register">Full Name:</label>
-                <input type="text" id="name-register">
+                <input type="text" id="name-register" name="name">
                 <label for="email-register">Email:</label>
-                <input type="text" id="email-register">
+                <input type="text" id="email-register" name="email">
                 <label for="gender-register">Gender:</label>
-                <input type="text" id="gender-register">
+                <input type="text" id="gender-register" name="gender">
                 <label for="dob-register">Date Of Birth:</label>
-                <input type="text" id="dob-register">
+                <input type="date" id="dob-register" name="dob">
+                <label for="dob-register">Country:</label>
+                <input type="text" id="country-register" name="country">
                 <label for="password-register">Password:</label>
-                <input type="password" id="password-register">
+                <input type="password" id="password-register" name="password">
                 <label for="password-confirmation">Confirm Password:</label>
-                <input type="password-confirmation" id="password-confirmation">
+                <input type="password-confirmation" id="password-confirmation" name="confirm_password">
                 <p class="check-mark">
-                    <input type="checkbox" id="accept-terms">
+                    <input type="checkbox" id="accept-terms" name="terms">
                     <label for="accept-terms">I agree to the <a href="#">Terms</a></label>
                 </p>
             </form>
         </div>
         <div class="modal-footer">
-            <button id="submitAddNewModalBtn">Add User</button>
+            <button id="submitAddNewModalBtn" type="submit">Add User</button>
             <button id="closeAddNewModalBtn">Cancel</button>
         </div>
     </div>
 </div>
+@endisset
 
 <!-- The Edit Modal -->
+@isset ($edit)
 <div id="editModal" class="edit__modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2>Update User</h2>
-        </div>
-        <div class="modal-body">
-            <label for="userRole">User Role:</label>
-            <select id="userRole">
-                <option value="Admin">Admin</option>
-                <option value="user">User</option>
-                <option value="Editor">Editor</option>
-            </select>
+    <form action="" method="post">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Update User</h2>
+            </div>
+            <div class="modal-body">
+                <label for="userRole">User Role:</label>
+                <select id="userRole">
+                    @if (auth()->user()->isSuperAdmin())
+                    <option value=1 @if ($editUser->role==1) selected @endif>Super Admin</option>
+                    @endif
+                    @if (auth()->user()->isSuperAdmin())
+                    <option value=2 @if ($editUser->role==2) selected @endif>Admin</option>
+                    @endif
+                    @if (auth()->user()->isSuperAdmin() || auth()->user()->isAdmin())
+                    <option value=3 @if ($editUser->role==3) selected @endif>Editor</option>
+                    @endif
+                    <option value=0 @if ($editUser->role==0) selected @endif>User</option>
+                </select>
 
-            <label for="userStatus">Status:</label>
-            <select id="userStatus">
-                <option value="Active">Active</option>
-                <option value="Deactive">Deactive</option>
-            </select>
+                <label for="userStatus">Status:</label>
+                <select id="userStatus">
+                    <option value="Active">Active</option>
+                    <option value="Deactive">Deactive</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button id="submitEditModalBtn" type="submit">Update</button>
+                <button id="closeEditModalBtn">Cancel</button>
+            </div>
         </div>
-        <div class="modal-footer">
-            <button id="submitEditModalBtn">Update</button>
-            <button id="closeEditModalBtn">Cancel</button>
-        </div>
-    </div>
+    </form>
 </div>
+@endisset
 @endsection

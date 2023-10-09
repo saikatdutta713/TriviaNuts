@@ -62,17 +62,35 @@ class User extends Authenticatable
 
     public static function isSuperAdmin()
     {
-        return auth()->check() && auth()->user()->role == 1;
+        if (auth()->check() && auth()->user()->role == 1) {
+            return 1;
+        } else {
+            return false;
+        }
+        
     }
 
     public static function isAdmin()
     {
-        return auth()->check() && auth()->user()->role == 2;
+        if (auth()->check() && auth()->user()->role == 2) {
+            return 2;
+        } else {
+            return false;
+        }
     }
 
     public static function isEditor()
     {
-        return auth()->check() && auth()->user()->role == 3;
+        if (auth()->check() && auth()->user()->role == 3) {
+            return 3;
+        } else {
+            return false;
+        }
+    }
+
+    public static function notUser()
+    {
+        return auth()->check() && auth()->user()->role != 0;
     }
 
     public function roles()
