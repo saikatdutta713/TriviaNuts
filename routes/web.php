@@ -17,6 +17,7 @@ use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -84,27 +85,37 @@ Route::prefix('admin')->group(function () {
     Route::post('login/otp', [AuthVerifyOtpController::class, 'verifyOtp'])->name('verify.otp');
     Route::get('logout', [LogoutAdminController::class, 'logout'])->name('admin.logout');
 
-    Route::get('/', function () {
-        return view('admin.home');
-    })->name('admin.home');
+    Route::middleware('admin.auth.check')->group(function () {
+        Route::middleware('checkRole:1,2,3')->group(function () {
+            Route::get('/', function () {
+                return view('admin.home');
+            })->name('admin.home');
 
-    Route::get('/manageusers', function () {
-        return view('admin.manage_users');
-    })->name('admin.user');
+            Route::get('/managequiz', function () {
+                return view('admin.manage_quiz');
+            })->name('admin.quiz');
 
-    Route::get('/managequiz', function () {
-        return view('admin.manage_quiz');
-    })->name('admin.quiz');
+            Route::get('/managequestion', function () {
+                return view('admin.manage_question');
+            })->name('admin.question');
+        });
 
-    Route::get('/managequestion', function () {
-        return view('admin.manage_question');
-    })->name('admin.question');
+        Route::middleware('checkRole:1,2')->group(function () {
+            Route::get('/users', [UserController::class,'index'])->name('admin.user');
+            Route::get('/user/add', [UserController::class,'viewAddForm'])->name('admin.user.add');
+            Route::post('/user/add', [UserController::class,'addUser'])->name('admin.user.add');
+            Route::get('/user/edit/{id}', [UserController::class,'viewEditForm'])->name('admin.user.edit');
+            Route::post('/user/edit/{id}', [UserController::class,'editUser'])->name('admin.user.edit');
 
-    Route::get('/announcement', function () {
-        return view('admin.announcement');
-    })->name('admin.announcement');
+            Route::get('/announcement', function () {
+                return view('admin.announcement');
+            })->name('admin.announcement');
+        });
 
-    Route::get('/maintenance', [MaintenanceController::class, 'toggle'])->name('maintenance.toggle');
+        Route::middleware('checkRole:1')->group(function () {
+            Route::get('/maintenance', [MaintenanceController::class, 'toggle'])->name('maintenance.toggle');
+        });
+    });
 });
 
 Route::get('/test', [Controller::class, 'test']);
