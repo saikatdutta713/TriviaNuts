@@ -135,3 +135,22 @@ window.addEventListener("click", (event) => {
         editModal.style.display = "none";
     }
 });
+
+// Get references to the form and the submit button question page
+var form = document.querySelector(".register");
+var submitButton = document.getElementById("submitAddNewModalBtn");
+
+// Add a click event listener to the submit button
+submitButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the default form submission
+    form.submit(); // Submit the form
+});
+var formUpdate = document.querySelector(".update");
+var submitButtonUpdate = document.getElementById("submitEditModalBtn");
+
+// Add a click event listener to the submit button
+submitButtonUpdate.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the default form submission
+    formUpdate.submit(); // Submit the form
+});
+

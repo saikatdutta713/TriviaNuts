@@ -136,25 +136,27 @@
                 <h2>Update User</h2>
             </div>
             <div class="modal-body">
-                <label for="userRole">User Role:</label>
-                <select id="userRole">
-                    @if (auth()->user()->isSuperAdmin())
-                    <option value=1 @if ($editUser->role==1) selected @endif>Super Admin</option>
-                    @endif
-                    @if (auth()->user()->isSuperAdmin())
-                    <option value=2 @if ($editUser->role==2) selected @endif>Admin</option>
-                    @endif
-                    @if (auth()->user()->isSuperAdmin() || auth()->user()->isAdmin())
-                    <option value=3 @if ($editUser->role==3) selected @endif>Editor</option>
-                    @endif
-                    <option value=0 @if ($editUser->role==0) selected @endif>User</option>
-                </select>
-
-                <label for="userStatus">Status:</label>
-                <select id="userStatus">
-                    <option value="Active">Active</option>
-                    <option value="Deactive">Deactive</option>
-                </select>
+                <form action="" class="update">
+                    <label for="userRole">User Role:</label>
+                    <select id="userRole">
+                        @if (auth()->user()->isSuperAdmin())
+                        <option value=1 @if ($editUser->role==1) selected @endif>Super Admin</option>
+                        @endif
+                        @if (auth()->user()->isSuperAdmin())
+                        <option value=2 @if ($editUser->role==2) selected @endif>Admin</option>
+                        @endif
+                        @if (auth()->user()->isSuperAdmin() || auth()->user()->isAdmin())
+                        <option value=3 @if ($editUser->role==3) selected @endif>Editor</option>
+                        @endif
+                        <option value=0 @if ($editUser->role==0) selected @endif>User</option>
+                    </select>
+                
+                    <label for="userStatus">Status:</label>
+                    <select id="userStatus">
+                        <option value="Active">Active</option>
+                        <option value="Deactive">Deactive</option>
+                    </select>
+                </form>
             </div>
             <div class="modal-footer">
                 <button id="submitEditModalBtn" type="submit">Update</button>

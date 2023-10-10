@@ -111,7 +111,7 @@
             <h2>Create New Announcement</h2>
         </div>
         <div class="modal-body">
-            <form class="announcement">
+            <form class="register">
                 <div class="form-row">
                     <div class="form-column">
                         <label for="audience">Audience:</label>
@@ -144,7 +144,7 @@
 
         </div>
         <div class="modal-footer">
-            <button id="submitAddNewModalBtn">Add User</button>
+            <button id="submitAddNewModalBtn">Announce</button>
             <button id="closeAddNewModalBtn">Cancel</button>
         </div>
     </div>
@@ -157,17 +157,19 @@
             <h2>Update Announcement</h2>
         </div>
         <div class="modal-body">
-            <label for="content">Content:</label>
-            <textarea id="content" name="content" rows="4" cols="50"></textarea>
+            <form action="" class="update">
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" rows="4" cols="50"></textarea>
 
-            <label for="publishing-date">Publishing Date:</label>
-            <input type="date" id="publishing-date" name="publishing_date">
+                <label for="publishing-date">Publishing Date:</label>
+                <input type="date" id="publishing-date" name="publishing_date">
 
-            <label for="userStatus">Status:</label>
-            <select id="status" name="status">
-                <option value="complete">Complete</option>
-                <option value="draft">Draft</option>
-            </select>
+                <label for="userStatus">Status:</label>
+                <select id="status" name="status">
+                    <option value="complete">Complete</option>
+                    <option value="draft">Draft</option>
+                </select>
+            </form>
         </div>
         <div class="modal-footer">
             <button id="submitEditModalBtn">Update</button>

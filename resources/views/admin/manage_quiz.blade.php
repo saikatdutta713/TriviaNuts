@@ -181,17 +181,19 @@
             <h2>Update Quiz</h2>
         </div>
         <div class="modal-body">
-            <label for="questionIds-register">Question Ids:</label>
-            <input type="text" id="questionIds-register">
+            <form action="" class="update">
+                <label for="questionIds-register">Question Ids:</label>
+                <input type="text" id="questionIds-register">
 
-            <label for="publishing-date">Schedule Date:</label>
-            <input type="date" id="publishing-date" name="publishing_date">
+                <label for="publishing-date">Schedule Date:</label>
+                <input type="date" id="publishing-date" name="publishing_date">
 
-            <label for="userStatus">Status:</label>
-            <select id="status" name="status">
-                <option value="complete">Complete</option>
-                <option value="draft">Draft</option>
-            </select>
+                <label for="userStatus">Status:</label>
+                <select id="status" name="status">
+                    <option value="complete">Complete</option>
+                    <option value="draft">Draft</option>
+                </select>
+            </form>
         </div>
         <div class="modal-footer">
             <button id="submitEditModalBtn">Update</button>

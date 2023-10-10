@@ -139,7 +139,7 @@
             </form>
         </div>
         <div class="modal-footer">
-            <button id="submitAddNewModalBtn">Add User</button>
+            <button id="submitAddNewModalBtn">Add Question</button>
             <button id="closeAddNewModalBtn">Cancel</button>
         </div>
     </div>
@@ -152,20 +152,22 @@
             <h2>Update Question</h2>
         </div>
         <div class="modal-body">
-            <label for="question">Question:</label>
-            <textarea id="question" name="question" rows="4" cols="50"></textarea>
+            <form action="" class="update">
+                <label for="question">Question:</label>
+                <textarea id="question" name="question" rows="4" cols="50"></textarea>
 
-            <label for="answer">Correct Answer:</label>
-            <input type="text" id="answer" name="answer">
+                <label for="answer">Correct Answer:</label>
+                <input type="text" id="answer" name="answer">
 
-            <label for="other-answer-1">Other Answer 1:</label>
-            <input type="text" id="other-answer-1" name="other_answer_1">
+                <label for="other-answer-1">Other Answer 1:</label>
+                <input type="text" id="other-answer-1" name="other_answer_1">
 
-            <label for="other-answer-2">Other Answer 2:</label>
-            <input type="text" id="other-answer-2" name="other_answer_2">
+                <label for="other-answer-2">Other Answer 2:</label>
+                <input type="text" id="other-answer-2" name="other_answer_2">
 
-            <label for="other-answer-3">Other Answer 3:</label>
-            <input type="text" id="other-answer-3" name="other_answer_3">
+                <label for="other-answer-3">Other Answer 3:</label>
+                <input type="text" id="other-answer-3" name="other_answer_3">
+            </form>
         </div>
         <div class="modal-footer">
             <button id="submitEditModalBtn">Update</button>
