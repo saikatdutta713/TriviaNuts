@@ -746,7 +746,7 @@ main .main__content .clearfix .pagination .active a.page-link {
   color: #fff;
 }
 main .addNew__modal {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -908,7 +908,7 @@ main .addNew__modal .modal-content .modal-footer button {
   cursor: pointer;
 }
 main .edit__modal {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -971,7 +971,7 @@ main .edit__modal .modal-body select {
   font-size: 1em;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin: 5px 0 15px 5%;
+  margin: 5px 0 15px 0;
 }
 main .edit__modal .modal-body #content {
   width: 90%;

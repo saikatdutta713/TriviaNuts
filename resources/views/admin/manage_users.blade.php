@@ -99,6 +99,7 @@
         </div>
         <div class="modal-body">
             <form class="register" action="{{ route('admin.user.add') }}" method="POST">
+                @csrf
                 <label for="name-register">Full Name:</label>
                 <input type="text" id="name-register" name="name">
                 <label for="email-register">Email:</label>
@@ -136,9 +137,10 @@
                 <h2>Update User</h2>
             </div>
             <div class="modal-body">
-                <form action="" class="update">
+                <form action="{{ route('admin.user.edit',['id'=>1]) }}" method="POST" class="update">
+                    @csrf
                     <label for="userRole">User Role:</label>
-                    <select id="userRole">
+                    <select id="userRole" name="role">
                         @if (auth()->user()->isSuperAdmin())
                         <option value=1 @if ($editUser->role==1) selected @endif>Super Admin</option>
                         @endif
@@ -150,11 +152,11 @@
                         @endif
                         <option value=0 @if ($editUser->role==0) selected @endif>User</option>
                     </select>
-                
+
                     <label for="userStatus">Status:</label>
-                    <select id="userStatus">
-                        <option value="Active">Active</option>
-                        <option value="Deactive">Deactive</option>
+                    <select id="userStatus" name="status">
+                        <option value="1" @if ($editUser->active==1) selected @endif>Active</option>
+                        <option value="0" @if ($editUser->active==0) selected @endif>Deactive</option>
                     </select>
                 </form>
             </div>
