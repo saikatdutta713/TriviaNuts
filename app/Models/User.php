@@ -67,7 +67,6 @@ class User extends Authenticatable
         } else {
             return false;
         }
-        
     }
 
     public static function isAdmin()
@@ -95,7 +94,7 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsTo(Role::class, 'priority');
     }
 
     public function hasRole($role)

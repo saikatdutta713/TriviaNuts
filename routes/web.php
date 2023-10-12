@@ -5,6 +5,7 @@
 use App\Http\Controllers\Admin\Auth\AdminLoginController;
 use App\Http\Controllers\Admin\Auth\LogoutAdminController;
 use App\Http\Controllers\Admin\Auth\VerifyOtpController as AuthVerifyOtpController;
+use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Auth\SetNewPasswordController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Controller;
@@ -87,9 +88,7 @@ Route::prefix('admin')->group(function () {
 
     Route::middleware('admin.auth.check')->group(function () {
         Route::middleware('checkRole:1,2,3')->group(function () {
-            Route::get('/', function () {
-                return view('admin.home');
-            })->name('admin.home');
+            Route::get('/', [HomeController::class, 'index'])->name('admin.home');
 
             Route::get('/managequiz', function () {
                 return view('admin.manage_quiz');
@@ -101,11 +100,11 @@ Route::prefix('admin')->group(function () {
         });
 
         Route::middleware('checkRole:1,2')->group(function () {
-            Route::get('/users', [UserController::class,'index'])->name('admin.user');
-            Route::get('/user/add', [UserController::class,'viewAddForm'])->name('admin.user.add');
-            Route::post('/user/add', [UserController::class,'addUser'])->name('admin.user.add');
-            Route::get('/user/edit/{id}', [UserController::class,'viewEditForm'])->name('admin.user.edit');
-            Route::post('/user/edit/{id}', [UserController::class,'editUser'])->name('admin.user.edit');
+            Route::get('/users', [UserController::class, 'index'])->name('admin.user');
+            Route::get('/user/add', [UserController::class, 'viewAddForm'])->name('admin.user.add');
+            Route::post('/user/add', [UserController::class, 'addUser'])->name('admin.user.add');
+            Route::get('/user/edit/{id}', [UserController::class, 'viewEditForm'])->name('admin.user.edit');
+            Route::post('/user/edit/{id}', [UserController::class, 'editUser'])->name('admin.user.edit');
 
             Route::get('/announcement', function () {
                 return view('admin.announcement');

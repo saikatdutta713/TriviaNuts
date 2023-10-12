@@ -76,7 +76,6 @@
                 }
             </style>
         </defs>
-        <title>Asset 3</title>
         <g id="Layer_2" data-name="Layer 2">
             <g id="Capa_1" data-name="Capa 1">
                 <path class="cls-1"
@@ -88,9 +87,8 @@
     </svg>
     <h1>We&rsquo;ll be back soon!</h1>
     <div>
-        <p>Sorry for the inconvenience. We&rsquo;re performing some maintenance at the moment. If you need to you can
-            always follow us on <a href="http://www.twitter.com/">Twitter</a> for updates, otherwise we&rsquo;ll be back
+        <p>Sorry for the inconvenience. We&rsquo;re performing some maintenance at the moment. we&rsquo;ll be back
             up shortly!</p>
-        <p>&mdash; The [WEBSITE NAME] Team</p>
+        <p>&mdash; The {{ env('APP_NAME') }} Team</p>
     </div>
 </article>

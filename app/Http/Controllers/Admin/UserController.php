@@ -68,4 +68,18 @@ class UserController extends Controller
             return back()->withInput()->withErrors(['An error occurred while adding the user']);
         }
     }
+
+    public function editUser(Request $request, $id)
+    {
+        // dd($request->all(), $id);
+
+        $user = User::find(intval($id));
+
+        $user->role = intval($request->role);
+        $user->active = intval($request->status);
+
+        $user->save();
+
+        return redirect()->route('admin.user')->with('success_notification', 'User updated Successfully');
+    }
 }
