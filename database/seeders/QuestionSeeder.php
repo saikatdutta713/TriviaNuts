@@ -12,6 +12,7 @@ class QuestionSeeder extends Seeder
         // Define an array of demo questions
         $demoQuestions = [
             [
+                'question_id' => '1',
                 'question_text' => 'What is 2 + 3?',
                 'answer_option_a' => '4',
                 'answer_option_b' => '5',
@@ -23,6 +24,7 @@ class QuestionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'question_id' => '2',
                 'question_text' => 'How many days are in a leap year?',
                 'answer_option_a' => '365',
                 'answer_option_b' => '366',
@@ -34,6 +36,7 @@ class QuestionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'question_id' => '3',
                 'question_text' => 'Which planet is known as the "Red Planet"?',
                 'answer_option_a' => 'Mars',
                 'answer_option_b' => 'Venus',
@@ -45,6 +48,7 @@ class QuestionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'question_id' => '4',
                 'question_text' => 'What is the capital of Japan?',
                 'answer_option_a' => 'Beijing',
                 'answer_option_b' => 'Seoul',
@@ -56,6 +60,7 @@ class QuestionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'question_id' => '5',
                 'question_text' => 'Which programming language is often used for web development?',
                 'answer_option_a' => 'Java',
                 'answer_option_b' => 'C++',
@@ -67,6 +72,7 @@ class QuestionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'question_id' => '6',
                 'question_text' => 'How many continents are there on Earth?',
                 'answer_option_a' => '4',
                 'answer_option_b' => '5',
@@ -78,6 +84,7 @@ class QuestionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'question_id' => '7',
                 'question_text' => 'Who wrote the play "Romeo and Juliet"?',
                 'answer_option_a' => 'William Shakespeare',
                 'answer_option_b' => 'Charles Dickens',
@@ -89,6 +96,7 @@ class QuestionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'question_id' => '8',
                 'question_text' => 'Which gas do plants absorb from the atmosphere?',
                 'answer_option_a' => 'Oxygen',
                 'answer_option_b' => 'Carbon Dioxide',
@@ -100,6 +108,7 @@ class QuestionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'question_id' => '9',
                 'question_text' => 'What is the largest mammal on Earth?',
                 'answer_option_a' => 'Elephant',
                 'answer_option_b' => 'Giraffe',
@@ -111,6 +120,7 @@ class QuestionSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
+                'question_id' => '10',
                 'question_text' => 'Which country is known as the "Land of the Rising Sun"?',
                 'answer_option_a' => 'China',
                 'answer_option_b' => 'South Korea',
