@@ -5,7 +5,7 @@
     <div class="register">
         <div class="registerHeader">
             <h1>Registration</h1>
-            <p><a href="#">Sign in</a> if you already have an account</p>
+            <p><a href="{{ route('login') }}">Sign in</a> if you already have an account</p>
         </div>
         <div class="registerSection">
             <form action="{{ Route('register') }}" method="POST">
@@ -144,7 +144,7 @@
     </div>
 </div>
 @if (isset($verificationMail) && $verificationMail)
-<x-message-modal type="success" message="Your account has been created successfully." buttonText="Okay"
+<x-message-modal type="success" message="Your account has been created successfully, Verify your email for successful Sign in." buttonText="Okay"
     buttonLink="{{ Route('login') }}" />
 @endif
 @endsection
