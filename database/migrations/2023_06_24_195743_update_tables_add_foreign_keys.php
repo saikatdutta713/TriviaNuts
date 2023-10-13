@@ -38,7 +38,7 @@ class UpdateTablesAddForeignKeys extends Migration
 
         Schema::table('user_answers', function (Blueprint $table) {
             $table->foreign('question_id')->references('question_id')->on('questions');
-            $table->foreign('participant_id')->references('participant_id')->on('quiz_participants');
+            // $table->foreign('participant_id')->references('participant_id')->on('quiz_participants');
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->foreign('quiz_id')->references('quiz_id')->on('quizzes');
         });
@@ -49,7 +49,7 @@ class UpdateTablesAddForeignKeys extends Migration
 
         Schema::table('scores', function (Blueprint $table) {
             $table->foreign('quiz_id')->references('quiz_id')->on('quizzes');
-            $table->foreign('participant_id')->references('participant_id')->on('quiz_participants');
+            // $table->foreign('participant_id')->references('participant_id')->on('quiz_participants');
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->foreign('badge_id')->references('badge_id')->on('badges');
         });
@@ -103,7 +103,7 @@ class UpdateTablesAddForeignKeys extends Migration
 
         Schema::table('scores', function (Blueprint $table) {
             $table->dropForeign(['quiz_id']);
-            $table->dropForeign(['participant_id']);
+            // $table->dropForeign(['participant_id']);
             $table->dropForeign(['user_id']);
             $table->dropForeign(['badge_id']);
         });
@@ -114,7 +114,7 @@ class UpdateTablesAddForeignKeys extends Migration
 
         Schema::table('user_answers', function (Blueprint $table) {
             $table->dropForeign(['question_id']);
-            $table->dropForeign(['participant_id']);
+            // $table->dropForeign(['participant_id']);
             $table->dropForeign(['user_id']);
             $table->dropForeign(['quiz_id']);
         });
