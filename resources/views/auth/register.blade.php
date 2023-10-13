@@ -5,13 +5,13 @@
     <div class="register">
         <div class="registerHeader">
             <h1>Registration</h1>
-            <p><a href="#">Sign in</a> if you already have an <a href="#">account</a></p>
+            <p><a href="#">Sign in</a> if you already have an account</p>
         </div>
         <div class="registerSection">
             <form action="{{ Route('register') }}" method="POST">
                 @csrf
                 <input type="hidden" name="verification_token" value="{{ Str::random(40) }}">
-                <div class="form-row2">
+                <div class="form-row1">
                     <div class="nameDiv">
                         <label for="name">Full Name:</label>
                         <input type="text" id="name" class="inputForm @error ('name') is-invalid @enderror" name="name">
@@ -24,7 +24,7 @@
                 <div class="form-row3">
                     <div class="detailsDiv">
                         <label for="gender">Gender:</label>
-                        <select id="gender" name="gender" class="inputForm1">
+                        <select id="gender" name="gender" class="inputForm">
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
@@ -34,21 +34,23 @@
                         @enderror
                     </div>
 
-                    <div class="detailsDiv">
-                        <label for="dob">Date of Birth:</label>
-                        <input type="date" id="dob" class="inputForm1" name="dob">
-                        @error('dob')
-                        <span class="invalid-feedback">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <div class="detailsDiv">
+                    <div class="detailsDiv1">
                         <label for="country">Country:</label>
                         <input type="text" id="country" class="inputForm" name="Country">
                         @error('country')
                         <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>
+
+                    <div class="detailsDiv2">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" class="inputForm" name="dob">
+                        @error('dob')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    
                 </div>
 
                 <div class="form-row2">
