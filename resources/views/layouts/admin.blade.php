@@ -65,8 +65,9 @@
         <div id="sidebar">
             <div class="sidebar__title">
                 <div class="sidebar__img">
-                    <img src="assets/logo.png" alt="logo" />
-                    <h1>{{ env('APP_NAME') }}</h1>
+                    {{-- <img src="assets/logo.png" alt="logo" /> --}}
+                    <img src="{{ asset('images/TriviaNuts_Logo.svg') }}" alt="logo" />
+                    {{-- <h1>{{ env('APP_NAME') }}</h1> --}}
                 </div>
                 <i onclick="closeSidebar()" class="fa fa-times" id="sidebarIcon" aria-hidden="true"></i>
             </div>

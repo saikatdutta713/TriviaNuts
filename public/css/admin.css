@@ -280,6 +280,15 @@ body {
 .container #sidebar .sidebar__img {
   display: flex;
   align-items: center;
+  width: 50%;
+  height: 100%;
+}
+.container #sidebar .sidebar__img img {
+  transform: scale(2); /* Adjust the scale factor (e.g., 1.2 for 20% larger) */
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto -10%;
 }
 .container #sidebar .sidebar__menu > h2 {
   color: #3ea175;
@@ -1003,4 +1012,71 @@ main .edit__modal button#openModalBtn {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+.main__content {
+  height: 10%;
+  width: 100%;
+  background-color: pink;
+}
+.main__content .sidebar__link {
+  height: -moz-max-content;
+  height: max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main__content .sidebar__link #maintain {
+  font-size: 30px;
+  margin-right: 1rem;
+}
+.main__content .sidebar__link .switch {
+  display: inline-block;
+  position: relative;
+  width: 45px;
+  height: 25px;
+  margin: 0 10px; /* Adjust the margin as needed */
+  /* Rounded sliders */
+  /* Checked state */
+}
+.main__content .sidebar__link .switch input {
+  display: none; /* Hide the input */
+}
+.main__content .sidebar__link .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.main__content .sidebar__link .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+.main__content .sidebar__link .switch.round .slider {
+  border-radius: 34px;
+}
+.main__content .sidebar__link .switch.round .slider:before {
+  border-radius: 50%;
+}
+.main__content .sidebar__link .switch input:checked + .slider {
+  background-color: #2196f3;
+}
+.main__content .sidebar__link .switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+.main__content .sidebar__link .switch input:checked + .slider:before {
+  transform: translateX(20px);
 }

@@ -16,7 +16,7 @@
 
     <header class="header">
         <div class="logo">
-            Logo
+            <img src="{{ asset('images/TriviaNuts_Logo.svg') }}" alt="logo" />
         </div>
         <div class="navbar">
             <a href="{{ route('home') }}">
