@@ -46,7 +46,7 @@
                     <i class="fa-brands fa-google" id="googleLogo"></i>
                 </div>
             </div>
-            <label for="newsletter">Not yet member? <a href="{{ route('register') }}">Register</a> now</label>
+            <label for="newsletter">Not yet member? <a href="{{ route('register') }}">Register now</a></label>
         </div>
     </div>
 

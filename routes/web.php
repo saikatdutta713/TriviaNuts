@@ -113,6 +113,11 @@ Route::prefix('admin')->group(function () {
 
         Route::middleware('checkRole:1')->group(function () {
             Route::get('/maintenance', [MaintenanceController::class, 'toggle'])->name('maintenance.toggle');
+            Route::get('/settings', function () {
+                return view('admin.settings');
+            })->name('admin.settings');
+            
+
         });
     });
 });

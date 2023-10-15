@@ -1013,12 +1013,25 @@ main .edit__modal button#openModalBtn {
   border-radius: 4px;
   cursor: pointer;
 }
-.main__content {
-  height: 10%;
-  width: 100%;
-  background-color: pink;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.main__content .sidebar__link {
+
+.main__content {
+  height: 100%;
+  width: 100%;
+}
+.main__content .maintain {
+  float: left;
+  height: 20%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main__content .maintain .sidebar__link {
   height: -moz-max-content;
   height: max-content;
   width: -moz-max-content;
@@ -1026,24 +1039,31 @@ main .edit__modal button#openModalBtn {
   display: flex;
   align-items: center;
   justify-content: center;
+  float: left;
+  margin-left: -12%;
 }
-.main__content .sidebar__link #maintain {
+.main__content .maintain .sidebar__link #maintain {
   font-size: 30px;
   margin-right: 1rem;
 }
-.main__content .sidebar__link .switch {
+.main__content .maintain .sidebar__link p {
+  font-size: 18px;
+  font-weight: 500;
+}
+.main__content .maintain .sidebar__link .switch {
   display: inline-block;
   position: relative;
   width: 45px;
   height: 25px;
-  margin: 0 10px; /* Adjust the margin as needed */
+  margin: 0 10px;
+  margin-left: 2rem;
   /* Rounded sliders */
   /* Checked state */
 }
-.main__content .sidebar__link .switch input {
-  display: none; /* Hide the input */
+.main__content .maintain .sidebar__link .switch input {
+  display: none;
 }
-.main__content .sidebar__link .switch .slider {
+.main__content .maintain .sidebar__link .switch .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -1054,7 +1074,7 @@ main .edit__modal button#openModalBtn {
   transition: 0.4s;
   border-radius: 34px;
 }
-.main__content .sidebar__link .switch .slider:before {
+.main__content .maintain .sidebar__link .switch .slider:before {
   position: absolute;
   content: "";
   height: 18px;
@@ -1065,18 +1085,167 @@ main .edit__modal button#openModalBtn {
   transition: 0.4s;
   border-radius: 50%;
 }
-.main__content .sidebar__link .switch.round .slider {
+.main__content .maintain .sidebar__link .switch.round .slider {
   border-radius: 34px;
 }
-.main__content .sidebar__link .switch.round .slider:before {
+.main__content .maintain .sidebar__link .switch.round .slider:before {
   border-radius: 50%;
 }
-.main__content .sidebar__link .switch input:checked + .slider {
-  background-color: #2196f3;
+.main__content .maintain .sidebar__link .switch input:checked + .slider {
+  background-color: #149d9b;
 }
-.main__content .sidebar__link .switch input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+.main__content .maintain .sidebar__link .switch input:focus + .slider {
+  box-shadow: 0 0 1px #149d9b;
 }
-.main__content .sidebar__link .switch input:checked + .slider:before {
-  transform: translateX(20px);
+.main__content .maintain .sidebar__link .switch input:checked + .slider:before {
+  transform: translateX(18px);
+}
+.main__content .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+  width: 40%;
+  margin: auto;
+}
+.main__content .logo .logo-container {
+  width: 50%;
+  height: 100%;
+  border: 1px solid #ddd;
+  text-align: center;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+.main__content .logo .logo-container img {
+  max-width: 100%;
+  max-height: 150%;
+  display: block;
+  margin: 0 auto -5%;
+}
+.main__content .logo .logo-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+.main__content .logo .logo-upload label.upload-button {
+  background-color: #149d9b;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.main__content .logo .logo-upload label.upload-button:hover {
+  background-color: #2779bd;
+}
+.main__content .logo .logo-upload input[type=file] {
+  display: none;
+}
+.main__content .logo .logo-upload button#submitButton {
+  padding: 10px 20px;
+  background-color: #149d9b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.main__content .logo .logo-upload button#submitButton:hover {
+  background-color: #2779bd;
+}
+.main__content .logo .logo-upload button#cancelButton {
+  padding: 10px 20px;
+  background-color: #3b3b3b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+}
+.main__content .logo .logo-upload button#cancelButton:hover {
+  background-color: red;
+}
+.main__content #editableDiv1 {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  width: 60%;
+}
+.main__content #editableDiv1 form {
+  padding: 10px;
+  border-radius: 5px;
+}
+.main__content #editableDiv1 form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.main__content #editableDiv1 form input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.main__content #editableDiv1 form button {
+  background-color: #149d9b;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.main__content #editableDiv1 form button:hover {
+  background-color: #0056b3;
+}
+.main__content .rowTextarea {
+  margin-top: 1rem;
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main__content .rowTextarea #editableDiv {
+  float: left;
+  padding: 10px;
+  height: 100%;
+  width: 45%;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+.main__content .rowTextarea #editableDiv form {
+  padding: 10px;
+}
+.main__content .rowTextarea #editableDiv label {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.main__content .rowTextarea #editableDiv textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.main__content .rowTextarea #editableDiv button {
+  background-color: #149d9b;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.main__content .rowTextarea #editableDiv button:hover {
+  background-color: #0056b3;
 }

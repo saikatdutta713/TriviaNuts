@@ -160,5 +160,57 @@ submitButtonUpdate.addEventListener("click", function (event) {
   event.preventDefault(); // Prevent the default form submission
   formUpdate.submit(); // Submit the form
 });
+
+// JavaScript function to toggle the upload functionality
+function toggleUpload() {
+  var uploadButton = document.getElementById("uploadButton");
+  var logoInput = document.getElementById("logoInput");
+  var submitButton = document.getElementById("submitButton");
+  var cancelButton = document.getElementById("cancelButton");
+  if (logoInput.style.display === "none") {
+    logoInput.style.display = "block";
+    submitButton.style.display = "block";
+    cancelButton.style.display = "block";
+    uploadButton.textContent = "Submit";
+  } else {
+    logoInput.style.display = "none";
+    submitButton.style.display = "none";
+    cancelButton.style.display = "none";
+    uploadButton.textContent = "Upload Logo";
+  }
+}
+
+// JavaScript function to cancel the upload
+function cancelUpload() {
+  var uploadButton = document.getElementById("uploadButton");
+  var logoInput = document.getElementById("logoInput");
+  var submitButton = document.getElementById("submitButton");
+  var cancelButton = document.getElementById("cancelButton");
+  logoInput.value = ""; // Clear the selected file
+  logoInput.style.display = "none";
+  submitButton.style.display = "none";
+  cancelButton.style.display = "none";
+  uploadButton.textContent = "Upload Logo";
+}
+
+// Attach event listeners to relevant elements
+document.addEventListener("DOMContentLoaded", function () {
+  // Example event listener for the "uploadButton"
+  var uploadButton = document.getElementById("uploadButton");
+  uploadButton.addEventListener("click", toggleUpload);
+});
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the button and description div by their IDs
+  var updateButton = document.getElementById("updateButton");
+  var descriptionDiv = document.getElementById("descriptionDiv");
+
+  // Add a click event listener to the button
+  updateButton.addEventListener("click", function () {
+    var newDescription = prompt("Enter the new description:");
+    if (newDescription !== null) {
+      descriptionDiv.innerHTML = newDescription;
+    }
+  });
+});
 /******/ })()
 ;
