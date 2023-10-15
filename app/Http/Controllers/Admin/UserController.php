@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Mockery\Undefined;
 
 class UserController extends Controller
 {
@@ -71,7 +72,6 @@ class UserController extends Controller
 
     public function editUser(Request $request, $id)
     {
-        // dd($request->all(), $id);
 
         $user = User::find(intval($id));
 
@@ -81,5 +81,39 @@ class UserController extends Controller
         $user->save();
 
         return redirect()->route('admin.user')->with('success_notification', 'User updated Successfully');
+    }
+
+    public function getAllUser($tableLength = 5, $searchCriteria = "")
+    {
+        if ($searchCriteria != "") {
+            $columns = ["user_id", "name", "gender", "email", "mobile", "picture", "course_name", "institution_name", "bio", "dob", "contribution_count", "facebook", "linkedin", "role", "last_login_location", "login_type"];
+
+            $queryBuilder = User::where(function ($query) use ($columns, $searchCriteria) {
+                foreach ($columns as $column) {
+                    $query->orWhere($column, 'like', '%' . $searchCriteria . '%');
+                }
+            });
+
+            $users = $queryBuilder->paginate($tableLength);
+
+            return response()->json($users);
+        }
+        $tableLength = (int)$tableLength;
+        return response()->json(User::paginate($tableLength));
+    }
+
+    public function search($searchCriteria)
+    {
+        $columns = ["user_id", "name", "gender", "email", "mobile", "picture", "course_name", "institution_name", "bio", "dob", "contribution_count", "facebook", "linkedin", "role", "last_login_location", "login_type"];
+
+        $queryBuilder = User::where(function ($query) use ($columns, $searchCriteria) {
+            foreach ($columns as $column) {
+                $query->orWhere($column, 'like', '%' . $searchCriteria . '%');
+            }
+        });
+
+        $users = $queryBuilder->get();
+
+        return response()->json($users);
     }
 }
