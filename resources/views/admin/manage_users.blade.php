@@ -16,7 +16,8 @@
             <div class="table__length" id="table__length">
                 <label>
                     Show
-                    <select name="table__length" class="table__length__selector">
+                    <select name="table__length" id="user__table__length" class="table__length__selector">
+                        <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="25">25</option>
                         <option value="50">50</option>
@@ -28,7 +29,7 @@
             <div id="tables_filter" class="tables__filter">
                 <label>
                     Search:
-                    <input type="search" class="table__search" aria-controls="datatables">
+                    <input type="search" id="user__data__search" class="table__search" aria-controls="datatables">
                 </label>
             </div>
         </div>
@@ -36,6 +37,7 @@
             <thead>
                 <tr>
                     <th>#</th>
+                    <th>DP</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Role</th>
@@ -45,46 +47,11 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
-                @foreach ($users as $user)
-                <tr>
-                    <td>{{ $user->user_id }}</td>
-                    <td>
-                        <div class="avatar-container">
-                            <img src="{{ asset('images/avatar.png') }}" alt="" />
-                            <p class="avatar-name">{{ $user->name }}</p>
-                        </div>
-                    </td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->role }}</td>
-                    <td>{{ $user->active ? "Active":"Inactive" }}</td>
-                    <td>{{ $user->last_login_location }}</td>
-                    <td>{{ $user->last_login }}</td>
-                    <td>
-                        <span>
-                            <a title="Edit" class="editButton"
-                                href="{{ route('admin.user.edit',['id'=>$user->user_id]) }}"><i
-                                    class="fa fa-pen"></i></a>
-                            <a title="Delete" href="{{ route('admin.user.edit',['id'=>$user->user_id]) }}"><i
-                                    class="fa fa-trash"></i></a>
-                        </span>
-                    </td>
-                </tr>
-                @endforeach
-
-            </tbody>
+            <tbody id="user_management_table"></tbody>
         </table>
         <div class="clearfix">
-            <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-            <ul class="pagination">
-                <li class="disabled"><a href="#" style="border: none">Previous</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li class="active"><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li class="next"><a href="#" style="border: none">Next</a></li>
-            </ul>
+            <div class="hint-text" id="user__hint__text">Showing <b>5</b> out of <b>25</b> entries</div>
+            <ul class="pagination" id="user__table__pagination"></ul>
         </div>
     </div>
 </div>
@@ -178,4 +145,9 @@
     </form>
 </div>
 @endisset
+<script src="{{ asset('js/adminTables.js') }}"></script>
+<script>
+    let user_management_table = document.getElementById("user_management_table");
+
+</script>
 @endsection
