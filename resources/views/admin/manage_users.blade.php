@@ -71,10 +71,20 @@
                 <input type="text" id="name-register" name="name">
                 <label for="email-register">Email:</label>
                 <input type="text" id="email-register" name="email">
-                <label for="gender-register">Gender:</label>
-                <input type="text" id="gender-register" name="gender">
-                <label for="dob-register">Date Of Birth:</label>
-                <input type="date" id="dob-register" name="dob">
+                <div class="form-row">
+                    <div class="form-column">
+                        <label for="gender-register">Gender:</label>
+                        <select id="gender" name="gender" class="inputForm1">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-column">
+                        <label for="dob-register">Date Of Birth:</label>
+                        <input type="date" id="dob-register" name="dob">
+                    </div>
+                </div>
                 <label for="dob-register">Country:</label>
                 <input type="text" id="country-register" name="country">
                 <label for="password-register">Password:</label>

@@ -288,6 +288,17 @@ body {
         .sidebar__img {
             display: flex;
             align-items: center;
+            width: 50%;
+            height: 100%;
+            img {
+                transform: scale(
+                    2
+                ); /* Adjust the scale factor (e.g., 1.2 for 20% larger) */
+                transition: transform 0.3s ease; /* Add a smooth transition effect */
+                max-width: 100%;
+                max-height: 100%;
+                margin: 0  auto -10%;
+            }
         }
         .sidebar__menu {
             > h2 {

@@ -16,7 +16,7 @@
 
     <header class="header">
         <div class="logo">
-            Logo
+            <img src="{{ asset('images/TriviaNuts_Logo.svg') }}" alt="logo" />
         </div>
         <div class="navbar">
             <a href="{{ route('home') }}">
@@ -54,7 +54,7 @@
             </div>
             @else
             <div class="login">
-                <a href="{{ Route('login') }}">Login</a>
+                <a href="{{ Route('login') }}">Sign in</a>
             </div>
             @endauth
         </div>
