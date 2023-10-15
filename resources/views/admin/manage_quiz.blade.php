@@ -190,6 +190,7 @@
 
                 <label for="userStatus">Status:</label>
                 <select id="status" name="status">
+                    <option value="approve">Approve</option>
                     <option value="complete">Complete</option>
                     <option value="draft">Draft</option>
                 </select>
