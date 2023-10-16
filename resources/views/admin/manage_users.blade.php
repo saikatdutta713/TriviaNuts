@@ -73,10 +73,23 @@
         <div class="modal-body">
             <form class="register" action="{{ route('admin.user.add') }}" method="POST">
                 @csrf
-                <label for="name-register">Full Name:</label>
-                <input type="text" id="name-register" name="name">
-                <label for="email-register">Email:</label>
-                <input type="text" id="email-register" name="email">
+                <div class="form-column">
+                    <label for="name-register">Full Name:</label>
+                    <input type="text" id="name-register" name="name">
+                    {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                    @error('name')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="form-column">
+                    <label for="email-register">Email:</label>
+                    <input type="text" id="email-register" name="email">
+                    {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                    @error('email')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
                 <div class="form-row">
                     <div class="form-column">
                         <label for="gender-register">Gender:</label>
@@ -85,21 +98,55 @@
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
                         </select>
+                        {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                        @error('gender')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-column">
                         <label for="dob-register">Date Of Birth:</label>
                         <input type="date" id="dob-register" name="dob">
+                        {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                        @error('dob')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
-                <label for="dob-register">Country:</label>
-                <input type="text" id="country-register" name="country">
-                <label for="password-register">Password:</label>
-                <input type="password" id="password-register" name="password">
+                <div class="form-column">
+                    <label for="dob-register">Country:</label>
+                    <input type="text" id="country-register" name="country">
+                    {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                    @error('country')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-column">
+                    <label for="password-register">Password:</label>
+                    <input type="password" id="password-register" name="password">
+                    {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                    @error('password')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-column">
                 <label for="password-confirmation">Confirm Password:</label>
                 <input type="password-confirmation" id="password-confirmation" name="confirm_password">
+                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                @error('password_confirmation')
+                <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                </div>
+
+                
                 <p class="check-mark">
-                    <input type="checkbox" id="accept-terms" name="terms">
-                    <label for="accept-terms">I agree to the <a href="#">Terms</a></label>
+                    <input type="checkbox" id="accept-terms" name="terms" >
+                    <label for="accept-terms">I agree to the <a href="#">Terms & Conditions</a></label>
+                    {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                    @error('terms')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
                 </p>
             </form>
         </div>

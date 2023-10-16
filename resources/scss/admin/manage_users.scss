@@ -277,6 +277,10 @@ main {
                 form.register {
                     font-size: 1em;
                     opacity: 1;
+                    .invalid-feedback {
+                        color: #f3789e !important;
+                        margin-left: 2rem !important;
+                    }
                 }
 
                 form label {
@@ -321,9 +325,10 @@ main {
                 }
                 .form-column {
                     flex: 1;
+
                     label {
                         display: block;
-                        margin-bottom: 5px;
+                        margin-top: 10px;
                     }
                     select {
                         width: 80%;
@@ -331,10 +336,14 @@ main {
                         font-size: 16px;
                         border: 1px solid #ccc;
                         border-radius: 4px;
-                        margin: 5px 10% 15px 10%;
+                        margin: 5px 10% 0px 10%;
                         option {
                             padding: 5px;
                         }
+                    }
+
+                    #dob-register {
+                        width: 80%;
                     }
                 }
                 #publishing-date {
@@ -348,7 +357,7 @@ main {
                     border-radius: 5px;
                     width: 90%;
                     height: 20px;
-                    margin: 5px 5% 15px 5%;
+                    margin: 5px 5% 0px 5%;
                     padding: 10px;
                     font-size: 1em;
                     border: 1px solid #ccc;
@@ -375,30 +384,36 @@ main {
                 }
 
                 p.check-mark {
-                    width: 200px;
+                    width: 60%;
                     padding: 0;
                     text-align: center;
-                    font-size: 0.8em;
+                    margin-top: 20px;
+                    #accept-terms {
+                        transform: scale(
+                            1.5
+                        ); 
+                        margin-right: .5rem;
+                    }
                 }
 
                 p.check-mark a {
                     color: $color_31;
+                    text-decoration: none;
                 }
 
                 p.check-mark input {
-                    border-radius: 0;
                     width: auto;
                     height: auto;
                     margin: 0;
                     padding: 0;
-                    font-size: 2em;
                     color: $color_31;
-                    outline: none;
-                    border: none;
                 }
 
                 p.check-mark label {
                     margin-left: 5px;
+                    font-size: 1.1em;
+                    // background-color: red;
+                    max-width: 90%;
                 }
             }
 
