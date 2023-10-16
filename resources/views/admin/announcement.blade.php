@@ -124,6 +124,10 @@
                             <option value="user">User</option>
                             <option value="editor">Editor</option>
                         </select>
+                        {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                        @error('terms')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-column">
                         <label for="status">Status:</label>
@@ -131,19 +135,39 @@
                             <option value="draft">Draft</option>
                             <option value="Complete">Complete</option>
                         </select>
+                        {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                        @error('terms')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>  
 
-
+                <div class="form-column">
                 <label for="title">Title:</label>
                 <input type="text" id="title" name="title">
+                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                @error('terms')
+                <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                </div>
 
+                <div class="form-column">
                 <label for="content">Content:</label>
                 <textarea id="content" name="content" rows="4" cols="50"></textarea>
+                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                @error('terms')
+                <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                </div>
 
+                <div class="form-column">
                 <label for="publishing-date">Publishing Date:</label>
                 <input type="date" id="publishing-date" name="publishing_date">
-                
+                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                @error('terms')
+                <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                </div>
             </form>
 
 

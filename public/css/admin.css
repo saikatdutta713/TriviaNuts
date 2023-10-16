@@ -799,14 +799,23 @@ main .addNew__modal .modal-content .modal-body #question {
   margin: 5px 5% 15px 5%;
 }
 main .addNew__modal .modal-content .modal-body #category {
-  width: 50%;
-  margin: 5px 0 15px 5%;
+  width: 80%;
+  margin: 5px 0 0px 5%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-main .addNew__modal .modal-content .modal-body #category:hover {
+main .addNew__modal .modal-content .modal-body #category1 {
+  width: 40%;
+  margin: 5px 0 0px 5%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+main .addNew__modal .modal-content .modal-body #category,
+main .addNew__modal .modal-content .modal-body #category1:hover {
   border-color: #555;
 }
 main .addNew__modal .modal-content .modal-body #category:focus {
@@ -863,14 +872,14 @@ main .addNew__modal .modal-content .modal-body form.announcement input {
   font-size: 1em;
   border: 1px solid #ccc;
 }
-main .addNew__modal .modal-content .modal-body form.announcement textarea {
-  border-radius: 5px;
+main .addNew__modal .modal-content .modal-body #content {
   width: 90%;
-  height: 60px;
-  margin: 5px 5% 15px 5%;
   padding: 10px;
-  font-size: 1em;
+  font-size: 1.5em;
   border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  margin: 5px 5% 15px 5%;
 }
 main .addNew__modal .modal-content .modal-body p.check-mark {
   width: 60%;

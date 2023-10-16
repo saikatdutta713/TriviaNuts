@@ -149,6 +149,10 @@
                             <option value="aptitude">Aptitude</option>
                             <option value="current_affair">Current Affair</option>
                         </select>
+                        {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                        @error('terms')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-column">
                         <label for="status">Status:</label>
@@ -156,19 +160,39 @@
                             <option value="complete">Complete</option>
                             <option value="draft">Draft</option>
                         </select>
+                        {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                        @error('terms')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
 
+                <div class="form-column">
                 <label for="tittle-register">Tittle:</label>
                 <input type="text" id="tittle-register">
+                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                @error('terms')
+                <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                </div>
 
-
+                <div class="form-column">
                 <label for="questionIds-register">Question Ids:</label>
                 <input type="text" id="questionIds-register">
+                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                @error('terms')
+                <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                </div>
 
+                <div class="form-column">
                 <label for="publishing-date">Schedule Date:</label>
                 <input type="date" id="publishing-date" name="publishing_date">
-                
+                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                @error('terms')
+                <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                </div>
             </form>
         </div>
         <div class="modal-footer">

@@ -117,29 +117,65 @@
         <div class="modal-body">
             <form class="register">
 
+                <div class="form-column">
                 <label for="category" class="category-label">Category:</label>
-                <select id="category" name="category" class="category-select">
+                <select id="category1" name="category" class="category-select">
                     <option value="mathematics">Mathematics</option>
                     <option value="computer">Computer</option>
                     <option value="aptitude">Aptitude</option>
                     <option value="current_affair">Current Affair</option>
                 </select>
+                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                @error('terms')
+                <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                </div>
 
+                <div class="form-column">
                 <label for="question">Question:</label>
                 <textarea id="question" name="question" rows="4" cols="50"></textarea>
+                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                @error('terms')
+                <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                </div>
 
+                <div class="form-column">
                 <label for="answer">Correct Answer:</label>
                 <input type="text" id="answer" name="answer">
+                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                @error('terms')
+                <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                </div>
 
+                <div class="form-column">
                 <label for="other-answer-1">Other Answer 1:</label>
                 <input type="text" id="other-answer-1" name="other_answer_1">
+                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                @error('terms')
+                <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                </div>
 
+                <div class="form-column">
                 <label for="other-answer-2">Other Answer 2:</label>
                 <input type="text" id="other-answer-2" name="other_answer_2">
+                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                @error('terms')
+                <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                </div>
 
+                <div class="form-column">
                 <label for="other-answer-3">Other Answer 3:</label>
                 <input type="text" id="other-answer-3" name="other_answer_3">
-                
+                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
+                @error('terms')
+                <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                </div>
+
             </form>
         </div>
         <div class="modal-footer">
