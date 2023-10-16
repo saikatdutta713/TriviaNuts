@@ -15,14 +15,12 @@
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
             <div class="navbar__left">
-                <a href="#">Subscribers</a>
+                {{-- <a href="#">Subscribers</a>
                 <a href="#">Video Management</a>
-                <a class="active_link" href="#">Admin</a>
+                <a class="active_link" href="#">Admin</a> --}}
+                @yield('admin__pageHeading')
             </div>
             <div class="navbar__right">
-                <a href="#">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </a>
                 <a href="#">
                     <i class="fa fa-clock-o" aria-hidden="true"></i>
                 </a>
@@ -125,7 +123,7 @@
                     <i class="fa-solid fa-gear"></i>
                     <a href="#">Settings</a>
                 </div>
-                @if (auth()->user()->isSuperAdmin())
+                {{-- @if (auth()->user()->isSuperAdmin())
                 <form method="GET" action="{{ route('maintenance.toggle') }}">
                     @csrf
                     <div class="sidebar__link">
@@ -138,7 +136,7 @@
                         </label>
                     </div>
                 </form>
-                @endif
+                @endif --}}
                 <h2>Announcements</h2>
                 <div class="sidebar__link">
                     <i class="fa fa-bullhorn"></i>

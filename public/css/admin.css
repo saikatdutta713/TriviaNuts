@@ -205,19 +205,9 @@ body {
   color: white;
 }
 .container .navbar .navbar__left {
-  visibility: hidden;
-}
-.container .navbar .navbar__left > a {
-  margin-right: 30px;
-  text-decoration: none;
   color: white;
-  font-size: 15px;
-  font-weight: 700;
-}
-.container .navbar .navbar__left .active_link {
-  color: #265acc;
-  border-bottom: 3px solid #265acc;
-  padding-bottom: 12px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .container .navbar .navbar__right {
   display: flex;
@@ -580,16 +570,6 @@ main .main__content {
   margin: 0 auto;
   padding: 20px;
 }
-main .main__content .table__container .table__header {
-  background: #299be4;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2vh;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
 main .main__content .table__container .table__sub__header {
   width: inherit;
   padding: 20px;
@@ -619,15 +599,12 @@ main .main__content .table__container .table__sub__header .tables__filter .table
   width: auto;
   height: 30px;
   padding-left: 5px;
+  border-radius: 8px;
 }
-main .main__content .table__container .table__title h2 {
-  margin: 0;
-  font-size: 24px;
-}
-main .main__content .table__container .table__buttons button {
-  color: #566787;
+main .main__content .table__container .table__sub__header .table__buttons button {
+  color: white;
   font-size: 13px;
-  background: #fff;
+  background: #149d9b;
   border: none;
   border-radius: 2px;
   border: none;
@@ -636,9 +613,13 @@ main .main__content .table__container .table__buttons button {
   padding: 8px;
   cursor: pointer;
 }
-main .main__content .table__container .table__buttons button i {
+main .main__content .table__container .table__sub__header .table__buttons button i {
   transform: scale(1.1);
   margin-right: 5px;
+}
+main .main__content .table__container .table__title h2 {
+  margin: 0;
+  font-size: 24px;
 }
 main .main__content .table {
   width: 100%;

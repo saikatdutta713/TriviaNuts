@@ -1,9 +1,11 @@
 @extends('layouts.admin')
-
+@section('admin__pageHeading')
+    <p>User Management</p>
+@endsection
 @section('admin__content')
 <div class="main__content">
     <div class="table__container">
-        <div class="table__header">
+        {{-- <div class="table__header">
             <div class="table__title">
                 <h2>User Management</h2>
             </div>
@@ -11,7 +13,7 @@
                 <button class="add_new" id="openAddNewModalBtn"><i class="fa-solid fa-circle-plus"></i> Add New
                     User</button>
             </div>
-        </div>
+        </div> --}}
         <div class="table__sub__header">
             <div class="table__length" id="table__length">
                 <label>
@@ -23,7 +25,7 @@
                         <option value="50">50</option>
                         <option value="100">100</option>
                     </select>
-                    entries
+                    Entries
                 </label>
             </div>
             <div id="tables_filter" class="tables__filter">
@@ -31,6 +33,10 @@
                     Search:
                     <input type="search" id="user__data__search" class="table__search" aria-controls="datatables">
                 </label>
+            </div>
+            <div class="table__buttons">
+                <button class="add_new" id="openAddNewModalBtn"><i class="fa-solid fa-circle-plus"></i> Add New
+                    User</button>
             </div>
         </div>
         <table class="table">

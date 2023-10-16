@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
+@section('admin__pageHeading')
+    <p>Question Management</p>
+@endsection
 @section('admin__content')
 <div class="main__content">
     <div class="table__container">
         <div class="table__header">
-            <div class="table__title">
+            {{-- <div class="table__title">
                 <h2>Question Management</h2>
-            </div>
-            <div class="table__buttons">
-                <button class="add_new" id="openAddNewModalBtn"><i class="fa-solid fa-circle-plus"></i> Add New
-                    Question</button>
-            </div>
+            </div> --}}
+            
         </div>
         <div class="table__sub__header">
             <div class="table__length" id="table__length">
@@ -22,7 +22,7 @@
                         <option value="50">50</option>
                         <option value="100">100</option>
                     </select>
-                    entries
+                    Entries
                 </label>
             </div>
             <div id="tables_filter" class="tables__filter">
@@ -30,6 +30,10 @@
                     Search:
                     <input type="search" class="table__search" aria-controls="datatables">
                 </label>
+            </div>
+            <div class="table__buttons">
+                <button class="add_new" id="openAddNewModalBtn"><i class="fa-solid fa-circle-plus"></i> Add New
+                    Question</button>
             </div>
         </div>
         <table class="table">

@@ -205,19 +205,23 @@ body {
             }
         }
         .navbar__left {
-            visibility: hidden;
-            > a {
-                margin-right: 30px;
-                text-decoration: none;
-                color: $color_1;
-                font-size: 15px;
-                font-weight: 700;
-            }
-            .active_link {
-                color: $color_13;
-                border-bottom: 3px solid #265acc;
-                padding-bottom: 12px;
-            }
+            color: $color_1;
+            font-size: 20px;
+            font-weight: bold;
+            // visibility: hidden;
+            // background-color: pink;
+            // > a {
+            //     margin-right: 30px;
+            //     text-decoration: none;
+            //     color: $color_1;
+            //     font-size: 15px;
+            //     font-weight: 700;
+            // }
+            // .active_link {
+            //     color: $color_13;
+            //     border-bottom: 3px solid #265acc;
+            //     padding-bottom: 12px;
+            // }
         }
         .navbar__right {
             display: flex;

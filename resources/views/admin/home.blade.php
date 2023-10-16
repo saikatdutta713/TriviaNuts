@@ -8,7 +8,7 @@
             <img src="{{ asset('images/avatar.png') }}" alt="" />
         </div>
         <div class="main__greeting">
-            <h1>Hello {{ ucwords($user->name) }}</h1>
+            <h1>Hello, {{ ucwords($user->name) }}</h1>
             <p>Welcome to your {{ $role }} dashboard</p>
         </div>
     </div>

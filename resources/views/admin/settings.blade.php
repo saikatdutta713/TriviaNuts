@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 
+@section('admin__pageHeading')
+    <p>Settings</p>
+@endsection
 @section('admin__content')
     <div class="main__content">
 
