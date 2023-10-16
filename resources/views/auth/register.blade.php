@@ -8,7 +8,7 @@
             <p><a href="{{ route('login') }}">Sign in</a> if you already have an account</p>
         </div>
         <div class="registerSection">
-            <form action="{{ Route('register') }}" method="POST">
+            <form action="{{ Route('register') }}" method="POST" class="registerForm">
                 @csrf
                 <input type="hidden" name="verification_token" value="{{ Str::random(40) }}">
                 <div class="form-row1">
@@ -44,7 +44,8 @@
 
                     <div class="detailsDiv2">
                         <label for="dob">Date of Birth:</label>
-                        <input type="date" id="dob" class="inputForm" name="dob">
+                        <input type="date" id="dob" class="inputForm" name="dob" >
+                        <span class="invalid-feedback" id="dobError"></span>
                         @error('dob')
                         <span class="invalid-feedback">{{ $message }}</span>
                         @enderror

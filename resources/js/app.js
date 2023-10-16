@@ -219,4 +219,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//Registration page dob checking
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the date of birth input element
+    const dobInput = document.getElementById("dob");
+    const dobError = document.getElementById("dobError");
 
+    // Listen for form submission
+    document
+        .querySelector(".registerForm")
+        .addEventListener("submit", function (event) {
+            // Reset the error message
+            dobError.textContent = "";
+
+            // Get the entered date of birth
+            const dobValue = new Date(dobInput.value);
+
+            // Calculate the user's age
+            const currentDate = new Date();
+            const age = currentDate.getFullYear() - dobValue.getFullYear();
+
+            // Check if the age is less than 12
+            if (age < 12) {
+                dobError.textContent =
+                    "You must be at least 12 years old to the register.";
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+});

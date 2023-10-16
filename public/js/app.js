@@ -6529,6 +6529,32 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+//Registration page dob checking
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the date of birth input element
+  var dobInput = document.getElementById("dob");
+  var dobError = document.getElementById("dobError");
+
+  // Listen for form submission
+  document.querySelector(".registerForm").addEventListener("submit", function (event) {
+    // Reset the error message
+    dobError.textContent = "";
+
+    // Get the entered date of birth
+    var dobValue = new Date(dobInput.value);
+
+    // Calculate the user's age
+    var currentDate = new Date();
+    var age = currentDate.getFullYear() - dobValue.getFullYear();
+
+    // Check if the age is less than 12
+    if (age < 12) {
+      dobError.textContent = "You must be at least 12 years old to the register.";
+      event.preventDefault(); // Prevent form submission
+    }
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

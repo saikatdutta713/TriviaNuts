@@ -649,6 +649,7 @@ footer .row2 {
   height: 40%;
   width: 10%;
   margin-right: 0.5rem;
+  cursor: pointer;
 }
 .register .registerSection form .form-row4 .regsterution {
   height: 40%;
@@ -658,6 +659,7 @@ footer .row2 {
   color: white;
   background-color: #149d9b;
   border: none;
+  cursor: pointer;
 }
 .register .registerFooter {
   display: flex;
