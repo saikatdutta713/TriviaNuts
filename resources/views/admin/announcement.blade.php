@@ -1,16 +1,17 @@
 @extends('layouts.admin')
+@section('admin__pageHeading')
+    <p>Announcement Management</p>
+@endsection
+
 @section('admin__content')
    <div class="main__content">
         <div class="table__container">
-            <div class="table__header">
+            {{-- <div class="table__header">
                 <div class="table__title">
                     <h2>Announcement Management</h2>
                 </div>
-                <div class="table__buttons">
-                    <button class="add_new" id="openAddNewModalBtn"><i class="fa-solid fa-circle-plus"></i> 
-                        Create an announcement</button>
-                </div>
-            </div>
+                
+            </div> --}}
             <div class="table__sub__header">
                 <div class="table__length" id="table__length">
                     <label>
@@ -29,6 +30,10 @@
                         Search:
                         <input type="search" class="table__search" aria-controls="datatables">
                     </label>
+                </div>
+                <div class="table__buttons">
+                    <button class="add_new" id="openAddNewModalBtn"><i class="fa-solid fa-circle-plus"></i> 
+                        Create new announcement</button>
                 </div>
             </div>
             <table class="table">
