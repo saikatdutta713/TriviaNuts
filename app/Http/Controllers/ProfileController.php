@@ -12,8 +12,8 @@ class ProfileController extends Controller
     public function showProfile()
     {
         $user = User::find(auth()->user()->user_id);
-
-        return view('profile', ['user' => $user]);
+        $title = "Profile Page";
+        return view('profile',compact('title'), ['user' => $user]);
     }
 
     public function updateProfile(Request $request)

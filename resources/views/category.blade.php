@@ -1,5 +1,9 @@
 
     @extends('layouts.master')
+    @section('title')
+    {{ isset($title) ? $title : env('APP_NAME')." Home Page" }}
+    @endsection
+
     @section('content')
         <div class="scategory">
             <div class="punch_line">
