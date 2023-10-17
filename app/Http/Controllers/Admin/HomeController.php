@@ -13,7 +13,7 @@ class HomeController extends Controller
     {
         $user = auth()->user();
         $role = Role::where('priority', 1)->first()->name;
-
-        return view('admin.home', compact('user', 'role'));
+        $title = "Dashboard";
+        return view('admin.home', compact('user', 'role','title'));
     }
 }

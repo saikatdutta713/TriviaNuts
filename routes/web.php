@@ -21,6 +21,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\QuizController;
+use App\Http\Controllers\Admin\QuestionController;
+use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\AnnouncementController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,9 +72,6 @@ Route::post('/reset/Password', [ResetPasswordController::class, 'resetPassword']
 Route::post('/reset/link', [ResetPasswordController::class, 'sendLink'])->name('reset.link');
 
 
-// Route::get('/category', function () {
-//     return view('category');
-// })->name('category');
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
 Route::get('/community', [CommunityController::class, 'index'])->name('community');
 
@@ -90,14 +92,8 @@ Route::prefix('admin')->group(function () {
     Route::middleware('admin.auth.check')->group(function () {
         Route::middleware('checkRole:1,2,3')->group(function () {
             Route::get('/', [HomeController::class, 'index'])->name('admin.home');
-
-            Route::get('/managequiz', function () {
-                return view('admin.manage_quiz');
-            })->name('admin.quiz');
-
-            Route::get('/managequestion', function () {
-                return view('admin.manage_question');
-            })->name('admin.question');
+            Route::get('/managequiz', [QuizController::class, 'index'])->name('admin.quiz');
+            Route::get('/managequestion', [QuestionController::class, 'index'])->name('admin.question');
         });
 
         Route::middleware('checkRole:1,2')->group(function () {
@@ -107,16 +103,18 @@ Route::prefix('admin')->group(function () {
             Route::get('/user/edit/{id}', [UserController::class, 'viewEditForm'])->name('admin.user.edit');
             Route::post('/user/edit/{id}', [UserController::class, 'editUser'])->name('admin.user.edit');
 
-            Route::get('/announcement', function () {
-                return view('admin.announcement');
-            })->name('admin.announcement');
+            // Route::get('/announcement', function () {
+            //     return view('admin.announcement');
+            // })->name('admin.announcement');
+            Route::get('/announcement', [AnnouncementController::class, 'index'])->name('admin.announcement');
         });
 
         Route::middleware('checkRole:1')->group(function () {
             Route::get('/maintenance', [MaintenanceController::class, 'toggle'])->name('maintenance.toggle');
-            Route::get('/settings', function () {
-                return view('admin.settings');
-            })->name('admin.settings');
+            // Route::get('/settings', function () {
+            //     return view('admin.settings');
+            // })->name('admin.settings');
+            Route::get('/settings', [SettingsController::class, 'index'])->name('admin.settings');
             
 
         });

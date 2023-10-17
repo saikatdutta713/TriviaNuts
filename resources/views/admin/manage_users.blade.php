@@ -1,4 +1,8 @@
 @extends('layouts.admin')
+
+@section('admin_title')
+    {{ isset($title) ? $title : env('APP_NAME')." Home Page" }}
+@endsection
 @section('admin__pageHeading')
     <p>User Management</p>
 @endsection
@@ -64,6 +68,7 @@
 
 <!-- The Add New Modal -->
 @isset ($add)
+
 <div id="addNewModal" class="addNew__modal">
     <!-- Modal content -->
     <div class="modal-content">
