@@ -19,8 +19,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\QuestionController;
-use App\Http\Controllers\QuizController;
+use App\Http\Controllers\Admin\QuestionController;
+use App\Http\Controllers\Admin\QuizController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -92,17 +92,21 @@ Route::prefix('admin')->group(function () {
         Route::middleware('checkRole:1,2,3')->group(function () {
             Route::get('/', [HomeController::class, 'index'])->name('admin.home');
 
-            Route::get('/quizs', [QuizController::class, 'index'])->name('admin.quiz');
+            Route::get('/quizzes', [QuizController::class, 'index'])->name('admin.quiz');
             Route::get('/quiz/add', [QuizController::class, 'viewAddForm'])->name('admin.quiz.add.view');
             Route::post('/quiz/add', [QuizController::class, 'addQuiz'])->name('admin.quiz.add');
-            Route::get('/quiz/edit/{id}', [QuizController::class, 'viewAddForm'])->name('admin.quiz.edit.view');
-            Route::post('/quiz/edit/{id}', [QuizController::class, 'addQuiz'])->name('admin.quiz.edit');
+            Route::get('/quiz/edit/{id}', [QuizController::class, 'viewEditForm'])->name('admin.quiz.edit.view');
+            Route::post('/quiz/edit/{id}', [QuizController::class, 'editQuiz'])->name('admin.quiz.edit');
+            Route::get('/quiz/delete/attempt/{id}', [QuizController::class, 'deleteAttemptQuiz'])->name('admin.quiz.delete.attempt');
+            Route::get('/quiz/delete/{id}', [QuizController::class, 'deleteQuiz'])->name('admin.quiz.delete');
 
             Route::get('/questions', [QuestionController::class, 'index'])->name('admin.question');
             Route::get('/question/add', [QuestionController::class, 'viewAddForm'])->name('admin.question.add.view');
             Route::post('/question/add', [QuestionController::class, 'addQuestion'])->name('admin.question.add');
             Route::get('/question/edit/{id}', [QuestionController::class, 'viewEditForm'])->name('admin.question.edit.view');
             Route::post('/question/edit/{id}', [QuestionController::class, 'editQuestion'])->name('admin.question.edit');
+            Route::get('/question/delete/attempt/{id}', [QuestionController::class, 'deleteAttemptQuestion'])->name('admin.question.delete.attempt');
+            Route::get('/question/delete/{id}', [QuestionController::class, 'deleteQuestion'])->name('admin.question.delete');
         });
 
         Route::middleware('checkRole:1,2')->group(function () {
@@ -111,6 +115,8 @@ Route::prefix('admin')->group(function () {
             Route::post('/user/add', [UserController::class, 'addUser'])->name('admin.user.add');
             Route::get('/user/edit/{id}', [UserController::class, 'viewEditForm'])->name('admin.user.edit.view');
             Route::post('/user/edit/{id}', [UserController::class, 'editUser'])->name('admin.user.edit');
+            Route::get('/user/delete/attempt/{id}', [UserController::class, 'deleteAttemptUser'])->name('admin.user.delete.attempt');
+            Route::get('/user/delete/{id}', [UserController::class, 'deleteUser'])->name('admin.user.delete');
 
             Route::get('/announcement', function () {
                 return view('admin.announcement');
@@ -122,8 +128,6 @@ Route::prefix('admin')->group(function () {
             Route::get('/settings', function () {
                 return view('admin.settings');
             })->name('admin.settings');
-            
-
         });
     });
 });

@@ -38,31 +38,26 @@ class UserController extends Controller
         }
     }
 
-    public function validator(array $data)
+    public function addUser(Request $request)
     {
-        return Validator::make($data, [
+        Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => ['required', 'unique:users,email'], // unique:table,column
             'gender' => ['required', 'in:Male,Female,Other'],
             'dob' => 'date',
-            'Country' => ['required', 'string', 'max:255'],
+            'country' => ['required', 'string', 'max:255'],
             'password' => 'required|string|min:8',
             'confirm_password' => 'required|string|same:password',
             'terms' => 'required',
         ], [
             'terms.accepted' => 'You must accept the terms and conditions.',
-        ]);
-    }
-
-    public function addUser(Request $request)
-    {
-        $this->validator($request->all())->validate();
+        ])->validate();
 
         $user = User::create([
             'name' => $request['name'],
             'gender' => $request['gender'],
             'dob' => $request['dob'],
-            'last_login_location' => $request['Country'],
+            'last_login_location' => $request['country'],
             'email' => $request['email'],
             'verification_token' => $request['verification_token'],
             'password' => Hash::make($request['password']),
@@ -90,36 +85,68 @@ class UserController extends Controller
         return redirect()->route('admin.user')->with('success_notification', 'User updated Successfully');
     }
 
-    public function getAllUser($tableLength = 5, $searchCriteria = "")
+    public function deleteAttemptUser($id)
     {
-        if ($searchCriteria != "") {
-            $columns = ["user_id", "name", "gender", "email", "mobile", "picture", "course_name", "institution_name", "bio", "dob", "contribution_count", "facebook", "linkedin", "role", "last_login_location", "login_type"];
+        $user = User::find($id);
 
-            $queryBuilder = User::where(function ($query) use ($columns, $searchCriteria) {
-                foreach ($columns as $column) {
-                    $query->orWhere($column, 'like', '%' . $searchCriteria . '%');
-                }
-            });
-
-            $users = $queryBuilder->paginate($tableLength);
-
-            return response()->json($users);
+        if ($user) {
+            return redirect()->route('admin.user')
+                ->with('warning', 'Are you sure?')
+                ->with('buttonText', 'Yes')
+                ->with('closeButtonText', 'No')
+                ->with('redirect_link', route('admin.user.delete', ['id' => $id]));
+        } else {
+            return redirect()->route('admin.user')->with('error_notification', 'User not found or already deleted');
         }
-        $tableLength = (int)$tableLength;
-        return response()->json(User::paginate($tableLength));
     }
 
-    public function search($searchCriteria)
+    public function deleteUser($id)
     {
-        $columns = ["user_id", "name", "gender", "email", "mobile", "picture", "course_name", "institution_name", "bio", "dob", "contribution_count", "facebook", "linkedin", "role", "last_login_location", "login_type"];
+        $user = User::find($id);
 
-        $queryBuilder = User::where(function ($query) use ($columns, $searchCriteria) {
-            foreach ($columns as $column) {
-                $query->orWhere($column, 'like', '%' . $searchCriteria . '%');
-            }
-        });
+        if ($user) {
+            $user->delete();
+            return redirect()->route('admin.user')->with('success_notification', 'User deleted Successfully');
+        } else {
+            return redirect()->route('admin.user')->with('error_notification', 'User not found or already deleted');
+        }
+    }
 
-        $users = $queryBuilder->get();
+    public function getAllUser($tableLength = 5, $searchCriteria = "")
+    {
+        $tableLength = (int)$tableLength;
+
+        // Create a base query for the users
+        $query = User::query();
+
+        // If search criteria is provided, filter the users
+        if (!empty($searchCriteria)) {
+            $query->where(function ($query) use ($searchCriteria) {
+                $query->orWhere('users.user_id', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.name', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.gender', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.email', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.mobile', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.picture', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.course_name', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.institution_name', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.bio', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.dob', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.contribution_count', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.facebook', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.linkedin', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('roles.name', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.last_login_location', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('users.login_type', 'like', '%' . $searchCriteria . '%');
+            });
+        }
+
+        // Join with the 'roles' table to get the role name
+        $query->join('roles', 'users.role', '=', 'roles.priority')
+            ->select('users.*', 'roles.name AS role_name');
+
+        // Paginate the results
+        $users = $query->paginate($tableLength);
 
         return response()->json($users);
     }

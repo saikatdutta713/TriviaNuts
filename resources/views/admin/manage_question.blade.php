@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('admin__pageHeading')
-    <p>Question Management</p>
+<p>Question Management</p>
 @endsection
 @section('admin__content')
 <div class="main__content">
@@ -10,13 +10,14 @@
             {{-- <div class="table__title">
                 <h2>Question Management</h2>
             </div> --}}
-            
+
         </div>
         <div class="table__sub__header">
             <div class="table__length" id="table__length">
                 <label>
                     Show
-                    <select name="table__length" class="table__length__selector">
+                    <select name="table__length" class="table__length__selector" id="question__table__length">
+                        <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="25">25</option>
                         <option value="50">50</option>
@@ -28,12 +29,13 @@
             <div id="tables_filter" class="tables__filter">
                 <label>
                     Search:
-                    <input type="search" class="table__search" aria-controls="datatables">
+                    <input type="search" id="question__data__search" class="table__search" aria-controls="datatables">
                 </label>
             </div>
             <div class="table__buttons">
-                <button class="add_new" id="openAddNewModalBtn"><i class="fa-solid fa-circle-plus"></i> Add New
-                    Question</button>
+                <button class="add_new" id="openAddNewModalBtn"><a href="{{ route('admin.question.add.view') }}"><i
+                            class="fa-solid fa-circle-plus"></i> Add New
+                        Question</a></button>
             </div>
         </div>
         <table class="table">
@@ -43,66 +45,17 @@
                     <th>Question Id</th>
                     <th>Category</th>
                     <th>Question</th>
-                    <th>Answer</th>
-                    <th>Other 3 options</th>
+                    <th>Answers</th>
+                    <th>Correct Answer</th>
                     <th>Quiz Id</th>
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <div class="avatar-container">
-                            <p class="avatar-name">#M052</p>
-                        </div>
-                    </td>
-                    <td>Mathematics</td>
-                    <td>What is the solution to the equation 2x + 3 = 11?</td>
-                    <td> x = 4</td>
-                    <td>x = 5, x = 6, x = 7</td>
-                    <td>#052ab</td>
-                    <td>
-                        <span>
-                            <button title="Edit" class="editButton" data-id="1"><i class="fa fa-pen"></i></button>
-                            <button title="Delete"><i class="fa fa-trash"></i></button>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>
-                        <div class="avatar-container">
-                            <p class="avatar-name">#C0123</p>
-                        </div>
-                    </td>
-                    <td>Computer</td>
-                    <td> In computer science, what does the acronym "CPU" stand for?</td>
-                    <td>Central Processing Unit</td>
-                    <td> Computer Peripheral Unit, Control Program Utility, Central Power Unit</td>
-                    <td>-</td>
-                    <td>
-                        <span>
-                            <button title="Edit" class="editButton" data-id="2"><i class="fa fa-pen"></i></button>
-                            <button title="Delete"><i class="fa fa-trash"></i></button>
-                        </span>
-                    </td>
-                </tr>
-
-                <!-- Other table rows go here -->
-            </tbody>
+            <tbody id="question_management_table"></tbody>
         </table>
         <div class="clearfix">
-            <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-            <ul class="pagination">
-                <li class="disabled"><a href="#" style="border: none">Previous</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li class="active"><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li class="next"><a href="#" style="border: none">Next</a></li>
-            </ul>
+            <div class="hint-text" id="question__hint__text">Showing <b>5</b> out of <b>25</b> entries</div>
+            <ul class="pagination" id="question__table__pagination"></ul>
         </div>
     </div>
 </div>
@@ -116,72 +69,73 @@
             <h2>Add New Question</h2>
         </div>
         <div class="modal-body">
-            <form class="register">
-
+            <form class="register" action="{{ route('admin.question.add') }}" method="POST">
+                @csrf
                 <div class="form-column">
-                <label for="category" class="category-label">Category:</label>
-                <select id="category1" name="category" class="category-select">
-                    <option value="mathematics">Mathematics</option>
-                    <option value="computer">Computer</option>
-                    <option value="aptitude">Aptitude</option>
-                    <option value="current_affair">Current Affair</option>
-                </select>
-                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
-                @error('terms')
-                <span class="invalid-feedback">{{ $message }}</span>
-                @enderror
+                    <label for="category" class="category-label">Category:</label>
+                    <select id="category1" name="category" class="category-select">
+                        @foreach ($categories as $category)
+                        <option value="{{ $category->category_id }}">{{ $category->category_title }}</option>
+                        @endforeach
+                    </select>
+                    @error('category')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="form-column">
-                <label for="question">Question:</label>
-                <textarea id="question" name="question" rows="4" cols="50"></textarea>
-                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
-                @error('terms')
-                <span class="invalid-feedback">{{ $message }}</span>
-                @enderror
+                    <label for="question">Question:</label>
+                    <textarea id="question" name="question" rows="4" cols="50"></textarea>
+                    @error('question')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="form-column">
-                <label for="answer">Correct Answer:</label>
-                <input type="text" id="answer" name="answer">
-                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
-                @error('terms')
-                <span class="invalid-feedback">{{ $message }}</span>
-                @enderror
+                    <label for="answer">Correct Answer:</label>
+                    <input type="text" id="answer" name="answer">
+                    @error('answer')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="form-column">
-                <label for="other-answer-1">Other Answer 1:</label>
-                <input type="text" id="other-answer-1" name="other_answer_1">
-                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
-                @error('terms')
-                <span class="invalid-feedback">{{ $message }}</span>
-                @enderror
+                    <label for="answer_option_a">Answer A:</label>
+                    <input type="text" id="answer_option_a" name="answer_option_a">
+                    @error('answer_option_a')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="form-column">
-                <label for="other-answer-2">Other Answer 2:</label>
-                <input type="text" id="other-answer-2" name="other_answer_2">
-                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
-                @error('terms')
-                <span class="invalid-feedback">{{ $message }}</span>
-                @enderror
+                    <label for="answer_option_b">Answer B:</label>
+                    <input type="text" id="answer_option_b" name="answer_option_b">
+                    @error('answer_option_b')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="form-column">
-                <label for="other-answer-3">Other Answer 3:</label>
-                <input type="text" id="other-answer-3" name="other_answer_3">
-                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
-                @error('terms')
-                <span class="invalid-feedback">{{ $message }}</span>
-                @enderror
+                    <label for="answer_option_c">Answer C:</label>
+                    <input type="text" id="answer_option_c" name="answer_option_c">
+                    @error('answer_option_c')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-column">
+                    <label for="answer_option_d">Answer D:</label>
+                    <input type="text" id="answer_option_d" name="answer_option_d">
+                    @error('answer_option_d')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
                 </div>
 
             </form>
         </div>
         <div class="modal-footer">
             <button id="submitAddNewModalBtn">Add Question</button>
-            <button id="closeAddNewModalBtn">Cancel</button>
+            <button id="closeAddNewModalBtn"><a href="{{ route('admin.question') }}">Cancel</a></button>
         </div>
     </div>
 </div>
@@ -191,32 +145,52 @@
 @isset ($edit)
 <div id="editModal" class="edit__modal">
     <div class="modal-content">
-        <div class="modal-header">
-            <h2>Update Question</h2>
-        </div>
-        <div class="modal-body">
-            <form action="" class="update">
+        <form action="{{ route('admin.question.edit',['id'=>$editQuestion->question_id]) }}" method="POST"
+            class="update">
+            <div class="modal-header">
+                <h2>Update Question</h2>
+            </div>
+            <div class="modal-body">
+                @csrf
                 <label for="question">Question:</label>
-                <textarea id="question" name="question" rows="4" cols="50"></textarea>
+                <textarea id="question" name="question" rows="4" cols="50">
+                    @isset ($editQuestion) 
+                    {{trim($editQuestion->question_text) }}
+                    @endisset
+                </textarea>
 
                 <label for="answer">Correct Answer:</label>
-                <input type="text" id="answer" name="answer">
+                <input type="text" id="answer" name="answer" @isset ($editQuestion) value={{
+                    $editQuestion->correct_option }}
+                @endisset></textarea>
 
-                <label for="other-answer-1">Other Answer 1:</label>
-                <input type="text" id="other-answer-1" name="other_answer_1">
+                <label for="answer_option_a-1">Other Answer 1:</label>
+                <input type="text" id="answer_option_a" name="answer_option_a" @isset ($editQuestion) value={{
+                    $editQuestion->answer_option_a }}
+                @endisset></textarea>
 
-                <label for="other-answer-2">Other Answer 2:</label>
-                <input type="text" id="other-answer-2" name="other_answer_2">
+                <label for="answer_option_b">Other Answer 2:</label>
+                <input type="text" id="answer_option_b" name="answer_option_b" @isset ($editQuestion) value={{
+                    $editQuestion->answer_option_b }}
+                @endisset></textarea>
 
-                <label for="other-answer-3">Other Answer 3:</label>
-                <input type="text" id="other-answer-3" name="other_answer_3">
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button id="submitEditModalBtn">Update</button>
-            <button id="closeEditModalBtn">Cancel</button>
-        </div>
+                <label for="answer_option_c">Other Answer 3:</label>
+                <input type="text" id="answer_option_c" name="answer_option_c" @isset ($editQuestion) value={{
+                    $editQuestion->answer_option_c }}
+                @endisset></textarea>
+
+                <label for="answer_option_d">Other Answer 4:</label>
+                <input type="text" id="answer_option_d" name="answer_option_d" @isset ($editQuestion) value={{
+                    $editQuestion->answer_option_d }}
+                @endisset></textarea>
+            </div>
+            <div class="modal-footer">
+                <button id="submitEditModalBtn" type="submit">Update</button>
+                <button id="closeEditModalBtn"><a href="{{ route('admin.question') }}">Cancel</a></button>
+            </div>
+        </form>
     </div>
 </div>
 @endisset
+<script src="{{ asset('js/adminTables.js') }}"></script>
 @endsection

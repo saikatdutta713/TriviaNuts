@@ -12,14 +12,16 @@ class MessageModal extends Component
     public $type;
     public $message;
     public $showCloseButton;
+    public $closeButtonText;
     public $buttonText;
     public $buttonLink;
 
-    public function __construct($type, $message, $showCloseButton = null, $buttonText = null, $buttonLink = null)
+    public function __construct($type, $message, $showCloseButton = null, $closeButtonText=null, $buttonText = null, $buttonLink = null)
     {
         $this->type = $type;
         $this->message = $message;
         $this->showCloseButton = $showCloseButton;
+        $this->closeButtonText = $closeButtonText;
         $this->buttonText = $buttonText;
         $this->buttonLink = $buttonLink;
     }

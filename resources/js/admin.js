@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     var formUpdate = document.querySelector(".update");
     var submitButtonUpdate = document.getElementById("submitEditModalBtn");
+    console.log(submitButtonUpdate);
 
     // Add a click event listener to the submit button
     submitButtonUpdate.addEventListener("click", function (event) {
