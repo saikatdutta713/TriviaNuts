@@ -88,7 +88,7 @@
                         </span>
                     </td>
                 </tr>
-                
+
                 <!-- Other table rows go here -->
             </tbody>
         </table>
@@ -108,6 +108,7 @@
 </div>
 
 <!-- The Add New Modal -->
+@isset ($add)
 <div id="addNewModal" class="addNew__modal">
     <!-- Modal content -->
     <div class="modal-content">
@@ -184,8 +185,10 @@
         </div>
     </div>
 </div>
+@endisset
 
 <!-- The Edit Modal -->
+@isset ($edit)
 <div id="editModal" class="edit__modal">
     <div class="modal-content">
         <div class="modal-header">
@@ -215,4 +218,5 @@
         </div>
     </div>
 </div>
+@endisset
 @endsection

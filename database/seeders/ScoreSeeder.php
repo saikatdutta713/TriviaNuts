@@ -12,7 +12,6 @@ class ScoreSeeder extends Seeder
     {
         $scores = [
             [
-                'quiz_id' => 1,
                 'participant_id' => 1,
                 'user_id' => 1,
                 'badge_id' => 1,
@@ -23,7 +22,6 @@ class ScoreSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'quiz_id' => 2,
                 'participant_id' => 2,
                 'user_id' => 2,
                 'badge_id' => 2,

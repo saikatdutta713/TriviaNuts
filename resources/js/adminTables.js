@@ -59,7 +59,6 @@ const loadUsers = async (
         user__table__pagination.innerHTML = "";
         let pageLinks = data.links;
         pageLinks.forEach((link) => {
-            console.log(link);
             const li = document.createElement("li");
             li.innerHTML = `<span>${link.label}</span>`;
             li.classList.add("page__link");
@@ -104,7 +103,6 @@ user__table__length.addEventListener("change", (ev) => {
 
 // User data search
 let userDataSearchForm = document.getElementById("user__data__search");
-console.log(userDataSearchForm);
 let apiCallTimer;
 const apiCallDelay = 1000;
 userDataSearchForm.addEventListener("keyup", (ev) => {

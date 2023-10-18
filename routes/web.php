@@ -19,6 +19,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -90,20 +92,24 @@ Route::prefix('admin')->group(function () {
         Route::middleware('checkRole:1,2,3')->group(function () {
             Route::get('/', [HomeController::class, 'index'])->name('admin.home');
 
-            Route::get('/managequiz', function () {
-                return view('admin.manage_quiz');
-            })->name('admin.quiz');
+            Route::get('/quizs', [QuizController::class, 'index'])->name('admin.quiz');
+            Route::get('/quiz/add', [QuizController::class, 'viewAddForm'])->name('admin.quiz.add.view');
+            Route::post('/quiz/add', [QuizController::class, 'addQuiz'])->name('admin.quiz.add');
+            Route::get('/quiz/edit/{id}', [QuizController::class, 'viewAddForm'])->name('admin.quiz.edit.view');
+            Route::post('/quiz/edit/{id}', [QuizController::class, 'addQuiz'])->name('admin.quiz.edit');
 
-            Route::get('/managequestion', function () {
-                return view('admin.manage_question');
-            })->name('admin.question');
+            Route::get('/questions', [QuestionController::class, 'index'])->name('admin.question');
+            Route::get('/question/add', [QuestionController::class, 'viewAddForm'])->name('admin.question.add.view');
+            Route::post('/question/add', [QuestionController::class, 'addQuestion'])->name('admin.question.add');
+            Route::get('/question/edit/{id}', [QuestionController::class, 'viewEditForm'])->name('admin.question.edit.view');
+            Route::post('/question/edit/{id}', [QuestionController::class, 'editQuestion'])->name('admin.question.edit');
         });
 
         Route::middleware('checkRole:1,2')->group(function () {
             Route::get('/users', [UserController::class, 'index'])->name('admin.user');
-            Route::get('/user/add', [UserController::class, 'viewAddForm'])->name('admin.user.add');
+            Route::get('/user/add', [UserController::class, 'viewAddForm'])->name('admin.user.add.view');
             Route::post('/user/add', [UserController::class, 'addUser'])->name('admin.user.add');
-            Route::get('/user/edit/{id}', [UserController::class, 'viewEditForm'])->name('admin.user.edit');
+            Route::get('/user/edit/{id}', [UserController::class, 'viewEditForm'])->name('admin.user.edit.view');
             Route::post('/user/edit/{id}', [UserController::class, 'editUser'])->name('admin.user.edit');
 
             Route::get('/announcement', function () {

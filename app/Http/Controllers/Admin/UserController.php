@@ -8,7 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Mockery\Undefined;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -38,9 +38,9 @@ class UserController extends Controller
         }
     }
 
-    public function addUser(Request $request)
+    public function validator(array $data)
     {
-        $validatedData = $request->validate([
+        return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => ['required', 'unique:users,email'], // unique:table,column
             'gender' => ['required', 'in:Male,Female,Other'],
@@ -49,16 +49,23 @@ class UserController extends Controller
             'password' => 'required|string|min:8',
             'confirm_password' => 'required|string|same:password',
             'terms' => 'required',
+        ], [
+            'terms.accepted' => 'You must accept the terms and conditions.',
         ]);
+    }
+
+    public function addUser(Request $request)
+    {
+        $this->validator($request->all())->validate();
 
         $user = User::create([
-            'name' => $validatedData['name'],
-            'gender' => $validatedData['gender'],
-            'dob' => $validatedData['dob'],
-            'last_login_location' => $validatedData['Country'],
-            'email' => $validatedData['email'],
-            'verification_token' => $validatedData['verification_token'],
-            'password' => Hash::make($validatedData['password']),
+            'name' => $request['name'],
+            'gender' => $request['gender'],
+            'dob' => $request['dob'],
+            'last_login_location' => $request['Country'],
+            'email' => $request['email'],
+            'verification_token' => $request['verification_token'],
+            'password' => Hash::make($request['password']),
         ]);
 
         if ($user) {

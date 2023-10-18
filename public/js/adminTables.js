@@ -77,7 +77,6 @@ var loadUsers = /*#__PURE__*/function () {
           user__table__pagination.innerHTML = "";
           pageLinks = data.links;
           pageLinks.forEach(function (link) {
-            console.log(link);
             var li = document.createElement("li");
             li.innerHTML = "<span>".concat(link.label, "</span>");
             li.classList.add("page__link");
@@ -124,7 +123,6 @@ user__table__length.addEventListener("change", function (ev) {
 
 // User data search
 var userDataSearchForm = document.getElementById("user__data__search");
-console.log(userDataSearchForm);
 var apiCallTimer;
 var apiCallDelay = 1000;
 userDataSearchForm.addEventListener("keyup", function (ev) {

@@ -12,13 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('quizzes', function (Blueprint $table) {
-            
+
             $table->bigInteger('quiz_id')->unsigned()->autoIncrement();
-            $table->string('time');
             $table->string('title');
+            $table->string('time');
             $table->string('duration')->default('10 Minutes');
+            $table->string('questions');
+            $table->string('status');
             $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('set_id');
 
             $table->timestamps();
         });

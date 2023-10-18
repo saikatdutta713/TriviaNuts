@@ -18,8 +18,9 @@ class QuizSeeder extends Seeder
                 'time' => '2023-09-25 10:00:00',
                 'title' => 'Math Quiz 1',
                 'duration' => 10,
-                'category_id' => 1, // Replace with an actual category ID from your "categories" table
-                'set_id' => 1, // Replace with an actual set ID from your "sets" table
+                'category_id' => 1,
+                'questions' => '1,2',
+                'status' => 'draft',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -27,12 +28,12 @@ class QuizSeeder extends Seeder
                 'time' => '2023-09-26 14:30:00',
                 'title' => 'Science Quiz 1',
                 'duration' => 10,
-                'category_id' => 2, // Replace with an actual category ID
-                'set_id' => 2, // Replace with an actual set ID
+                'category_id' => 2,
+                'questions' => '4,5',
+                'status' => 'completed',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            // Add more demo quizzes here...
         ];
 
         // Insert the demo quizzes into the "quizzes" table

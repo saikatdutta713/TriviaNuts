@@ -92,7 +92,7 @@
 
                 <div class="form-row">
                     <div class="form-column">
-                        <label for="gender-register">Gender:</label>
+                        <label for="gender">Gender:</label>
                         <select id="gender" name="gender" class="inputForm1">
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -151,7 +151,7 @@
             </form>
         </div>
         <div class="modal-footer">
-            <button id="submitAddNewModalBtn" type="submit">Add User</button>
+            <button id="submitAddNewModalBtn">Add User</button>
             <button id="closeAddNewModalBtn">Cancel</button>
         </div>
     </div>
