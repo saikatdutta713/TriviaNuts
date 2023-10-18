@@ -12,10 +12,13 @@ use Illuminate\Support\Str;
 class LoginController extends Controller
 {
     function index()
-    {
+    {   
+        $title = "Login Page";
         if (auth()->check()) return redirect(route('home'));
-        return view('auth.login');
+        return view('auth.login',compact('title'));
+        
     }
+    
 
     function processOTP($user)
     {

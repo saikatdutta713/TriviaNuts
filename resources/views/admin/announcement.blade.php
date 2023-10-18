@@ -1,4 +1,8 @@
 @extends('layouts.admin')
+
+@section('admin_title')
+    {{ isset($title) ? $title : env('APP_NAME')." Home Page" }}
+@endsection
 @section('admin__pageHeading')
     <p>Announcement Management</p>
 @endsection

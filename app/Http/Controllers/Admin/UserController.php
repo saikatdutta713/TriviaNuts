@@ -15,15 +15,16 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-
-        return view('admin.manage_users', compact('users'));
+        $title = "User Management"; // Fixed variable name
+        return view('admin.manage_users', compact('users', 'title'));
     }
 
     public function viewAddForm()
     {
         $users = User::all();
         $add = true;
-        return view('admin.manage_users', compact('users', 'add'));
+        $title = "Add User";
+        return view('admin.manage_users', compact('users', 'add', 'title'));
     }
 
     public function viewEditForm($id)
@@ -31,8 +32,9 @@ class UserController extends Controller
         $users = User::all();
         $edit = true;
         $editUser = User::find($id);
+        $title = "Update User";
         if ($editUser) {
-            return view('admin.manage_users', compact('users', 'edit', 'editUser'));
+            return view('admin.manage_users', compact('users', 'edit', 'editUser', 'title'));
         } else {
             return redirect()->route('admin.user')->with('error_notification', 'User does not exists');
         }

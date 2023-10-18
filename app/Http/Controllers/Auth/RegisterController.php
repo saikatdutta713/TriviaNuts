@@ -16,7 +16,9 @@ class RegisterController extends Controller
 {
     function index()
     {
-        return view('auth.register')->with('verificationMail', false);
+        $title = "Registration Page";
+        return view('auth.register',compact('title'))->with('verificationMail', false);
+        
     }
 
     function validator(array $data)

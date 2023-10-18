@@ -14,7 +14,8 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
 
     function index(){
-        return view('home');
+        $title = "Home Page";
+        return view('home',compact('title'));
     }
 
     function test(Request $request)

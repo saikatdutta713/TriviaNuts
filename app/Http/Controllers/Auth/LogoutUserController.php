@@ -14,4 +14,5 @@ class LogoutUserController extends Controller
 
         return redirect('/');
     }
+    
 }

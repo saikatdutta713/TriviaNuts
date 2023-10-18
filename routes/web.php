@@ -15,12 +15,17 @@ use App\Http\Controllers\Auth\LogoutUserController;
 use App\Http\Controllers\Auth\VerifyOtpController;
 use App\Http\Controllers\Mail\VerificationController;
 use App\Http\Controllers\MaintenanceController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\QuizController;
+use App\Http\Controllers\Admin\QuestionController;
+use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\AnnouncementController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,13 +72,9 @@ Route::post('/reset/Password', [ResetPasswordController::class, 'resetPassword']
 Route::post('/reset/link', [ResetPasswordController::class, 'sendLink'])->name('reset.link');
 
 
-Route::get('/category', function () {
-    return view('category');
-})->name('category');
+Route::get('/category', [CategoryController::class, 'index'])->name('category');
+Route::get('/community', [CommunityController::class, 'index'])->name('community');
 
-Route::get('/community', function () {
-    return view('community');
-})->name('community');
 
 Route::get('/quiz', function () {
     return view('quiz');
