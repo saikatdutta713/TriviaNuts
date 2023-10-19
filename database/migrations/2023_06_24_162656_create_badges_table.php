@@ -16,7 +16,6 @@ return new class extends Migration
             $table->bigInteger('badge_id')->unsigned()->autoIncrement();
             $table->string('badge_title');
             $table->string('badge_picture');
-            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

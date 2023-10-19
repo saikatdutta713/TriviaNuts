@@ -14,14 +14,12 @@ class BadgesSeeder extends Seeder
             [
                 'badge_title' => 'Bronze Badge',
                 'badge_picture' => 'bronze.png',
-                'user_id' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'badge_title' => 'Silver Badge',
                 'badge_picture' => 'silver.png',
-                'user_id' => 2,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
