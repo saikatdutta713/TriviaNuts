@@ -4,20 +4,11 @@
     {{ isset($title) ? $title : env('APP_NAME')." Home Page" }}
 @endsection
 @section('admin__pageHeading')
-    <p>User Management</p>
+<p>User Management</p>
 @endsection
 @section('admin__content')
 <div class="main__content">
     <div class="table__container">
-        {{-- <div class="table__header">
-            <div class="table__title">
-                <h2>User Management</h2>
-            </div>
-            <div class="table__buttons">
-                <button class="add_new" id="openAddNewModalBtn"><i class="fa-solid fa-circle-plus"></i> Add New
-                    User</button>
-            </div>
-        </div> --}}
         <div class="table__sub__header">
             <div class="table__length" id="table__length">
                 <label>
@@ -39,8 +30,9 @@
                 </label>
             </div>
             <div class="table__buttons">
-                <button class="add_new" id="openAddNewModalBtn"><i class="fa-solid fa-circle-plus"></i> Add New
-                    User</button>
+                <button class="add_new" id="openAddNewModalBtn"><a href="{{ route('admin.user.add') }}"><i
+                            class="fa-solid fa-circle-plus"></i> Add New
+                        User</a></button>
             </div>
         </div>
         <table class="table">
@@ -81,7 +73,6 @@
                 <div class="form-column">
                     <label for="name-register">Full Name:</label>
                     <input type="text" id="name-register" name="name">
-                    {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
                     @error('name')
                     <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
@@ -89,7 +80,6 @@
                 <div class="form-column">
                     <label for="email-register">Email:</label>
                     <input type="text" id="email-register" name="email">
-                    {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
                     @error('email')
                     <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
@@ -97,13 +87,12 @@
 
                 <div class="form-row">
                     <div class="form-column">
-                        <label for="gender-register">Gender:</label>
+                        <label for="gender">Gender:</label>
                         <select id="gender" name="gender" class="inputForm1">
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
                         </select>
-                        {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
                         @error('gender')
                         <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
@@ -111,7 +100,6 @@
                     <div class="form-column">
                         <label for="dob-register">Date Of Birth:</label>
                         <input type="date" id="dob-register" name="dob">
-                        {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
                         @error('dob')
                         <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
@@ -120,7 +108,6 @@
                 <div class="form-column">
                     <label for="dob-register">Country:</label>
                     <input type="text" id="country-register" name="country">
-                    {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
                     @error('country')
                     <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
@@ -129,26 +116,23 @@
                 <div class="form-column">
                     <label for="password-register">Password:</label>
                     <input type="password" id="password-register" name="password">
-                    {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
                     @error('password')
                     <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>
 
                 <div class="form-column">
-                <label for="password-confirmation">Confirm Password:</label>
-                <input type="password-confirmation" id="password-confirmation" name="confirm_password">
-                {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
-                @error('password_confirmation')
-                <span class="invalid-feedback">{{ $message }}</span>
-                @enderror
+                    <label for="password-confirmation">Confirm Password:</label>
+                    <input type="password-confirmation" id="password-confirmation" name="confirm_password">
+                    @error('confirm_password')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
                 </div>
 
-                
+
                 <p class="check-mark">
-                    <input type="checkbox" id="accept-terms" name="terms" >
+                    <input type="checkbox" id="accept-terms" name="terms">
                     <label for="accept-terms">I agree to the <a href="#">Terms & Conditions</a></label>
-                    {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
                     @error('terms')
                     <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
@@ -156,8 +140,8 @@
             </form>
         </div>
         <div class="modal-footer">
-            <button id="submitAddNewModalBtn" type="submit">Add User</button>
-            <button id="closeAddNewModalBtn">Cancel</button>
+            <button id="submitAddNewModalBtn">Add User</button>
+            <button id="closeAddNewModalBtn"><a href="{{ route('admin.user') }}">Cancel</a></button>
         </div>
     </div>
 </div>
@@ -166,13 +150,13 @@
 <!-- The Edit Modal -->
 @isset ($edit)
 <div id="editModal" class="edit__modal">
-    <form action="" method="post">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Update User</h2>
-            </div>
-            <div class="modal-body">
-                <form action="{{ route('admin.user.edit',['id'=>1]) }}" method="POST" class="update">
+    {{-- <form action="{{  }}" method="post"> --}}
+        <form action="{{ route('admin.user.edit',['id'=>$editUser->user_id]) }}" method="POST" class="update">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Update User</h2>
+                </div>
+                <div class="modal-body">
                     @csrf
                     <label for="userRole">User Role:</label>
                     <select id="userRole" name="role">
@@ -193,19 +177,14 @@
                         <option value="1" @if ($editUser->active==1) selected @endif>Active</option>
                         <option value="0" @if ($editUser->active==0) selected @endif>Deactive</option>
                     </select>
-                </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="submitEditModalBtn" type="submit">Update</button>
+                    <button id="closeEditModalBtn"><a href="{{ route('admin.user') }}">Cancel</a></button>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button id="submitEditModalBtn" type="submit">Update</button>
-                <button id="closeEditModalBtn">Cancel</button>
-            </div>
-        </div>
-    </form>
+        </form>
 </div>
 @endisset
 <script src="{{ asset('js/adminTables.js') }}"></script>
-<script>
-    let user_management_table = document.getElementById("user_management_table");
-
-</script>
 @endsection

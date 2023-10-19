@@ -85,6 +85,11 @@ main {
                             transform: scale(1.1);
                             margin-right: 5px;
                         }
+
+                        > a {
+                            text-decoration: none;
+                            color: inherit;
+                        }
                     }
                 }
             }
@@ -446,6 +451,11 @@ main {
                     border: none;
                     border-radius: 4px;
                     cursor: pointer;
+
+                    > a {
+                        text-decoration: none;
+                        color: inherit;
+                    }
                 }
             }
         }
@@ -543,6 +553,11 @@ main {
                 border: none;
                 border-radius: 4px;
                 cursor: pointer;
+
+                > a {
+                    text-decoration: none;
+                    color: inherit;
+                }
             }
         }
 

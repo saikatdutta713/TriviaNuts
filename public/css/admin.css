@@ -617,6 +617,10 @@ main .main__content .table__container .table__sub__header .table__buttons button
   transform: scale(1.1);
   margin-right: 5px;
 }
+main .main__content .table__container .table__sub__header .table__buttons button > a {
+  text-decoration: none;
+  color: inherit;
+}
 main .main__content .table__container .table__title h2 {
   margin: 0;
   font-size: 24px;
@@ -921,6 +925,10 @@ main .addNew__modal .modal-content .modal-footer button {
   border-radius: 4px;
   cursor: pointer;
 }
+main .addNew__modal .modal-content .modal-footer button > a {
+  text-decoration: none;
+  color: inherit;
+}
 main .edit__modal {
   display: block;
   position: fixed;
@@ -1009,6 +1017,10 @@ main .edit__modal .modal-footer button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+main .edit__modal .modal-footer button > a {
+  text-decoration: none;
+  color: inherit;
 }
 main .edit__modal button#openModalBtn {
   padding: 10px 20px;
