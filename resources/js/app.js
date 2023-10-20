@@ -1,5 +1,26 @@
 import "./bootstrap.js";
 
+//notification div display
+document.addEventListener("DOMContentLoaded", function () {
+    const notificationBell = document.getElementById("Icon");
+    const notificationDesign = document.getElementById("notifications-container");
+    const notificationClose = document.getElementById("closeIcon");
+    notificationBell.addEventListener("click", (event) => {
+        event.stopPropagation();
+        notificationDesign.style.display = "block";
+    });
+
+    notificationClose.addEventListener("click", () => {
+        notificationDesign.style.display = "none";
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!notificationDesign.contains(event.target)) {
+            notificationDesign.style.display = "none";
+        }
+    });
+});
+
 //category.blade.php
 document.addEventListener("DOMContentLoaded", function () {
     let prevContent = null;

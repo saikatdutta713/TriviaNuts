@@ -39,6 +39,66 @@
                 </div>
             </a>
         </div>
+        
+        <div class="notifications-container" id="notifications-container">
+            <div class="notifications-header">
+                <h3>Notifications</h3>
+                <button class="close-button">
+                    <i class="fa-solid fa-xmark" id="closeIcon"></i>
+                </button>
+            </div>
+            <div class="notifications-body">
+                <div class="notification-div" id="unread">
+                    <div class="notiImage">
+                        <img src="{{ asset('images/avatar-blue.png') }}" alt="Notification Image" />
+                    </div>
+                    <div class="notification-content">
+                    <div class="notification-header">
+                        <div class="notification-title"> A message from John Doe: </div>
+                        <div class="notification-time">
+                            50 min ago
+                        </div>
+                    </div>
+                    <div class="notification-message">
+                        "Hey, how are you doing today?"
+                    </div>
+                    </div>
+                </div>
+                <div class="notification-div">
+                    <div class="notiImage">
+                        <img src="{{ asset('images/avatar-blue.png') }}" alt="Notification Image" />
+                    </div>
+                    <div class="notification-content">
+                    <div class="notification-header">
+                        <div class="notification-title">New Friend Request</div>
+                        <div class="notification-time">1 hr ago</div>
+                    </div>
+                    <div class="notification-message">
+                        Jane Smith wants to be your friend.
+                    </div>
+                    </div>
+                </div>
+                <div class="notification-div">
+                    <div class="notiImage">
+                        <img src="{{ asset('images/avatar-blue.png') }}" alt="Notification Image" />
+                    </div>
+                    <div class="notification-content">
+                    <div class="notification-header">
+                        <div class="notification-title">Today's new quiz is live</div>
+                        <div class="notification-time">2 hrs ago</div>
+                    </div>
+                    <div class="notification-message">
+                        <button class="notification-button">Play Now</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more notification rows as needed -->
+        </div>
+        <div class="notificationIcon">
+            <i class="fa-solid fa-bell" id="Icon"></i>
+        </div>
+
         <div class="login__container">
             @auth
             <div class="profile-container">
