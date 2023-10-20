@@ -19,8 +19,12 @@ return new class extends Migration
             $table->bigInteger('dislike')->default(0);
             $table->unsignedBigInteger('answer_id')->comment('Forum answer id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('comment_id');
+
 
             $table->timestamps();
+            
+            
         });
     }
 
