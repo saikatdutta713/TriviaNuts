@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{-- <title>{{ isset($title) ? $title : env('APP_NAME')." Home Page" }}</title> --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/kit.fontawesome.com_1cad59c07c.js') }}" crossorigin="anonymous"></script>
@@ -102,37 +101,38 @@
                         
                     </div>
                     <div class="modal-body">
-                    <div class="content">
+                    <div class="content" id="content">
                         <!-- Your scrollable content goes here -->
-                        <p>1. What is the sum of 5 and 3?</p>
+                        <p class="quizQuestion">1. What is the sum of 5 and 3?</p>
                         <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
-                        <p>2. Which shape has six equal sides and six equal angles?</p>
+                        <p class="quizQuestion">2. Which shape has six equal sides and six equal angles?</p>
                         <p>A.Rectangle  / B.Triangle  / C.Hexagon  / D.Circle   => Answer: C. Hexagon</p>
-                        <p>3. In the equation 3x - 7 = 20, what is the value of 'x'?</p>
+                        <p class="quizQuestion">3. In the equation 3x - 7 = 20, what is the value of 'x'?</p>
                         <p>A.9  / B.6  / C.7  / D.8  => Answer: A. 9</p>
-                        <p>1. What is the sum of 5 and 3?</p>
+                        <p class="quizQuestion">1. What is the sum of 5 and 3?</p>
                         <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
-                        <p>1. What is the sum of 5 and 3?</p>
+                        <p class="quizQuestion">1. What is the sum of 5 and 3?</p>
                         <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
-                        <p>1. What is the sum of 5 and 3?</p>
+                        <p class="quizQuestion">1. What is the sum of 5 and 3?</p>
                         <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
-                        <p>1. What is the sum of 5 and 3?</p>
+                        <p class="quizQuestion">1. What is the sum of 5 and 3?</p>
                         <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
-                        <p>1. What is the sum of 5 and 3?</p>
+                        <p class="quizQuestion">1. What is the sum of 5 and 3?</p>
                         <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
-                        <p>1. What is the sum of 5 and 3?</p>
+                        <p class="quizQuestion">1. What is the sum of 5 and 3?</p>
                         <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
-                        <p>1. What is the sum of 5 and 3?</p>
+                        <p class="quizQuestion">1. What is the sum of 5 and 3?</p>
                         <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
-                        <p>1. What is the sum of 5 and 3?</p>
+                        <p class="quizQuestion">1. What is the sum of 5 and 3?</p>
                         <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
-                        <p>1. What is the sum of 5 and 3?</p>
+                        <p class="quizQuestion">1. What is the sum of 5 and 3?</p>
                         <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
                     </div>
                     </div>
                     <div class="modal-footer">
                     <button class="accept-button">Approve</button>
                     <button class="reject-button">Reject</button>
+                    <button class="expand-button" id="expand-button">Expand</button>
                     </div>
                 </div>
             </div>

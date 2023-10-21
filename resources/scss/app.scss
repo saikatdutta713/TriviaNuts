@@ -215,10 +215,10 @@
     }
 
     .notifications-container {
-        // display: none;
+        display: none;
         max-width: 450px;
         position: fixed;
-        top: 4rem;
+        top: 3.5rem;
         right: 10px;
         border: 1px solid #ddd;
         border-radius: 15px;
@@ -315,26 +315,28 @@
                     color: #ffffff;
                     font-size: 17px;
                     letter-spacing: 1px;
-                    #backIcon{
-                        color: #00baaf;
+                    color: #149c9a;
+                    #backIcon {
                         cursor: pointer;
                     }
                     p {
                         margin: auto;
-                        color: #00baaf;
+                        font-weight: bold;
                     }
                 }
 
                 .modal-body {
                     border-radius: 15px;
-                    // background-color: #ffffff;
                     .content {
                         max-height: 200px;
                         padding: 0 1.5rem 0 1.5rem;
                         overflow: auto;
                         p {
                             margin-bottom: 2px;
-                            color: black;
+                            color: #299a92;
+                        }
+                        .quizQuestion {
+                            color: #00514c;
                         }
                     }
                 }
@@ -342,29 +344,25 @@
                     display: flex;
                     align-items: center;
                     padding: 1rem 1rem 1rem;
-
-                    button.accept-button {
+                    button {
                         font-size: 16px;
                         background: none;
-                        border: none;
+                        border-color: #149c9a;
                         cursor: pointer;
-                        color: black;
-                        background-color: greenyellow;
-                        border-color: #00baaf;
                         padding: 0.2rem 1rem;
                         border-radius: 5px;
-                        margin-right: 15px;
+                        font-weight: bold;
                     }
-
-                    button.reject-button {
-                        font-size: 16px;
-                        background: none;
-                        border: none;
-                        cursor: pointer;
-                        color: #ffffff;
-                        background-color: #fe0404;
-                        padding: 0.2rem 1rem;
-                        border-radius: 5px;
+                    .accept-button {
+                        margin-right: 15px;
+                        color: green;
+                    }
+                    .reject-button {
+                        color: red;
+                    }
+                    .expand-button {
+                        margin-left: auto;
+                        color: #149c9a;
                     }
                 }
             }
