@@ -215,8 +215,8 @@
     }
 
     .notifications-container {
-        display: none;
-        max-width: 500px;
+        // display: none;
+        max-width: 450px;
         position: fixed;
         top: 4rem;
         right: 10px;
@@ -245,9 +245,10 @@
                 cursor: pointer;
             }
         }
-        .notifications-body {
+        .notification-body {
             border-radius: 15px;
             background-color: #ffffff;
+            // display: none;
         }
         #unread {
             background-color: #c2f7f3;
@@ -259,7 +260,7 @@
             background-color: #ffffff;
             border-bottom: 2px solid #d8f5f4;
             color: #00baaf;
-            border-radius: 10px;  
+            border-radius: 10px;
             .notiImage {
                 width: 60px;
                 height: 100%;
@@ -272,9 +273,9 @@
                 }
             }
             .notification-content {
-                width: 380px;
+                width: 350px;
                 height: 100%;
-                margin-left: 30px;
+                margin-left: 20px;
                 .notification-header {
                     display: flex;
                     justify-content: space-between;
@@ -297,6 +298,73 @@
                         padding: 0.2rem;
                         border-radius: 5px;
                         cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .notification-body1 {
+            border-radius: 15px;
+            display: none;
+            background-color: #ffffff;
+            // padding: 1rem;
+            .modal-content {
+                .modal-header {
+                    @include flexing;
+                    padding: 1rem;
+                    color: #ffffff;
+                    font-size: 17px;
+                    letter-spacing: 1px;
+                    #backIcon{
+                        color: #00baaf;
+                        cursor: pointer;
+                    }
+                    p {
+                        margin: auto;
+                        color: #00baaf;
+                    }
+                }
+
+                .modal-body {
+                    border-radius: 15px;
+                    // background-color: #ffffff;
+                    .content {
+                        max-height: 200px;
+                        padding: 0 1.5rem 0 1.5rem;
+                        overflow: auto;
+                        p {
+                            margin-bottom: 2px;
+                            color: black;
+                        }
+                    }
+                }
+                .modal-footer {
+                    display: flex;
+                    align-items: center;
+                    padding: 1rem 1rem 1rem;
+
+                    button.accept-button {
+                        font-size: 16px;
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        color: black;
+                        background-color: greenyellow;
+                        border-color: #00baaf;
+                        padding: 0.2rem 1rem;
+                        border-radius: 5px;
+                        margin-right: 15px;
+                    }
+
+                    button.reject-button {
+                        font-size: 16px;
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        color: #ffffff;
+                        background-color: #fe0404;
+                        padding: 0.2rem 1rem;
+                        border-radius: 5px;
                     }
                 }
             }

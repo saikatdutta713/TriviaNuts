@@ -47,7 +47,7 @@
                     <i class="fa-solid fa-xmark" id="closeIcon"></i>
                 </button>
             </div>
-            <div class="notifications-body">
+            <div class="notification-body" id="notification-body">
                 <div class="notification-div" id="unread">
                     <div class="notiImage">
                         <img src="{{ asset('images/avatar-blue.png') }}" alt="Notification Image" />
@@ -70,11 +70,11 @@
                     </div>
                     <div class="notification-content">
                     <div class="notification-header">
-                        <div class="notification-title">New Friend Request</div>
+                        <div class="notification-title">Mathematics: Quiz no 10</div>
                         <div class="notification-time">1 hr ago</div>
                     </div>
                     <div class="notification-message">
-                        Jane Smith wants to be your friend.
+                        <button class="notification-button" id="verify">Verify Now</button>
                     </div>
                     </div>
                 </div>
@@ -93,8 +93,52 @@
                     </div>
                 </div>
             </div>
-            <!-- Add more notification rows as needed -->
+            
+            <div class="notification-body1" id="notification-body1">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <i class="fa-solid fa-left-long" id="backIcon"></i>
+                        <p>Mathematics: Quiz no 10</p>
+                        
+                    </div>
+                    <div class="modal-body">
+                    <div class="content">
+                        <!-- Your scrollable content goes here -->
+                        <p>1. What is the sum of 5 and 3?</p>
+                        <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
+                        <p>2. Which shape has six equal sides and six equal angles?</p>
+                        <p>A.Rectangle  / B.Triangle  / C.Hexagon  / D.Circle   => Answer: C. Hexagon</p>
+                        <p>3. In the equation 3x - 7 = 20, what is the value of 'x'?</p>
+                        <p>A.9  / B.6  / C.7  / D.8  => Answer: A. 9</p>
+                        <p>1. What is the sum of 5 and 3?</p>
+                        <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
+                        <p>1. What is the sum of 5 and 3?</p>
+                        <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
+                        <p>1. What is the sum of 5 and 3?</p>
+                        <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
+                        <p>1. What is the sum of 5 and 3?</p>
+                        <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
+                        <p>1. What is the sum of 5 and 3?</p>
+                        <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
+                        <p>1. What is the sum of 5 and 3?</p>
+                        <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
+                        <p>1. What is the sum of 5 and 3?</p>
+                        <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
+                        <p>1. What is the sum of 5 and 3?</p>
+                        <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
+                        <p>1. What is the sum of 5 and 3?</p>
+                        <p>A.7  / B.8  / C.6  / D.9   => Answer: A. 7</p>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button class="accept-button">Approve</button>
+                    <button class="reject-button">Reject</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
+        
         <div class="notificationIcon">
             <i class="fa-solid fa-bell" id="Icon"></i>
         </div>
