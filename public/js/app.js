@@ -6347,6 +6347,68 @@ document.addEventListener("DOMContentLoaded", function () {
       notificationDesign.style.display = "none";
     }
   });
+  var verifyButton = document.getElementById("verify");
+  var verifyDisplay = document.getElementById("notification-body1");
+  var notificationDisplay = document.getElementById("notification-body");
+  var backIcon = document.getElementById("backIcon");
+  verifyButton.addEventListener("click", function () {
+    verifyDisplay.style.display = "block";
+    notificationDisplay.style.display = "none";
+  });
+  backIcon.addEventListener("click", function () {
+    verifyDisplay.style.display = "none";
+    notificationDisplay.style.display = "block";
+  });
+  var expandButton = document.getElementById("expand-button");
+  var expandableContent = document.getElementById("content");
+  var isExpanded = false;
+  expandButton.addEventListener("click", function () {
+    if (isExpanded) {
+      expandButton.textContent = "Expand";
+      expandableContent.style.maxHeight = "200px"; // Set the initial max height
+    } else {
+      expandButton.textContent = "Reduce";
+      expandableContent.style.maxHeight = "450px"; // Set the expanded max height
+    }
+
+    isExpanded = !isExpanded;
+  });
+
+  // Code for handling the Create post modal
+  var postButtons = document.querySelectorAll("#createPost");
+  var postModal = document.getElementById("postModal");
+  postButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      postModal.style.display = "block";
+    });
+  });
+  var closepostBtn = document.getElementById("closePostnModalBtn");
+  closepostBtn.addEventListener("click", function () {
+    postModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === postModal) {
+      postodal.style.display = "none";
+    }
+  });
+
+  // Code for handling the Ask question modal
+  var askQuestionButtons = document.querySelectorAll("#askHelp");
+  var questionModal = document.getElementById("askQuestionModal");
+  askQuestionButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      questionModal.style.display = "block";
+    });
+  });
+  var closeQuestionBtn = document.getElementById("closeQuestionModalBtn");
+  closeQuestionBtn.addEventListener("click", function () {
+    questionModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === questionModal) {
+      questionModal.style.display = "none";
+    }
+  });
 });
 
 //category.blade.php
@@ -6571,6 +6633,19 @@ document.addEventListener("DOMContentLoaded", function () {
       dobError.textContent = "You must be at least 12 years old to the register.";
       event.preventDefault(); // Prevent form submission
     }
+  });
+});
+
+//Community Page
+document.addEventListener("DOMContentLoaded", function () {
+  var postTitles = document.querySelectorAll("#tittleP");
+  var Content1 = document.getElementById("communityContent1");
+  var Content2 = document.getElementById("communityContent2");
+  postTitles.forEach(function (postTitle) {
+    postTitle.addEventListener("click", function () {
+      Content1.style.display = "none";
+      Content2.style.display = "block";
+    });
   });
 });
 

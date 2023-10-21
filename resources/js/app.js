@@ -3,7 +3,9 @@ import "./bootstrap.js";
 //notification div display
 document.addEventListener("DOMContentLoaded", function () {
     const notificationBell = document.getElementById("Icon");
-    const notificationDesign = document.getElementById("notifications-container");
+    const notificationDesign = document.getElementById(
+        "notifications-container"
+    );
     const notificationClose = document.getElementById("closeIcon");
     notificationBell.addEventListener("click", (event) => {
         event.stopPropagation();
@@ -17,6 +19,73 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("click", (event) => {
         if (!notificationDesign.contains(event.target)) {
             notificationDesign.style.display = "none";
+        }
+    });
+
+    const verifyButton = document.getElementById("verify");
+    const verifyDisplay = document.getElementById("notification-body1");
+    const notificationDisplay = document.getElementById("notification-body");
+    const backIcon = document.getElementById("backIcon");
+
+    verifyButton.addEventListener("click", () => {
+        verifyDisplay.style.display = "block";
+        notificationDisplay.style.display = "none";
+    });
+
+    backIcon.addEventListener("click", () => {
+        verifyDisplay.style.display = "none";
+        notificationDisplay.style.display = "block";
+    });
+
+    const expandButton = document.getElementById("expand-button");
+    const expandableContent = document.getElementById("content");
+    let isExpanded = false;
+
+    expandButton.addEventListener("click", function () {
+        if (isExpanded) {
+            expandButton.textContent = "Expand";
+            expandableContent.style.maxHeight = "200px"; // Set the initial max height
+        } else {
+            expandButton.textContent = "Reduce";
+            expandableContent.style.maxHeight = "450px"; // Set the expanded max height
+        }
+
+        isExpanded = !isExpanded;
+    });
+
+    // Code for handling the Create post modal
+    const postButtons = document.querySelectorAll("#createPost");
+    const postModal = document.getElementById("postModal");
+    postButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            postModal.style.display = "block";
+        });
+    });
+    const closepostBtn = document.getElementById("closePostnModalBtn");
+    closepostBtn.addEventListener("click", () => {
+        postModal.style.display = "none";
+    });
+    window.addEventListener("click", (event) => {
+        if (event.target === postModal) {
+            postodal.style.display = "none";
+        }
+    });
+
+    // Code for handling the Ask question modal
+    const askQuestionButtons = document.querySelectorAll("#askHelp");
+    const questionModal = document.getElementById("askQuestionModal");
+    askQuestionButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            questionModal.style.display = "block";
+        });
+    });
+    const closeQuestionBtn = document.getElementById("closeQuestionModalBtn");
+    closeQuestionBtn.addEventListener("click", () => {
+        questionModal.style.display = "none";
+    });
+    window.addEventListener("click", (event) => {
+        if (event.target === questionModal) {
+            questionModal.style.display = "none";
         }
     });
 });
@@ -267,4 +336,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 event.preventDefault(); // Prevent form submission
             }
         });
+});
+
+//Community Page
+document.addEventListener("DOMContentLoaded", function () {
+    const postTitles = document.querySelectorAll("#tittleP");
+    const Content1 = document.getElementById("communityContent1");
+    const Content2 = document.getElementById("communityContent2");
+
+    postTitles.forEach((postTitle) => {
+        postTitle.addEventListener("click", () => {
+            Content1.style.display = "none";
+            Content2.style.display = "block";
+        });
+    });
 });
