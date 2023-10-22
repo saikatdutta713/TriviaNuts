@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('picture')->nullable();
             $table->string('course_name')->nullable();
             $table->string('institution_name')->nullable();
-            $table->string('bio')->nullable();
+            $table->text('bio')->nullable();
             $table->string('dob')->nullable();
             $table->integer('contribution_count')->default(0);
             $table->string('facebook')->nullable();

@@ -4,7 +4,7 @@
 @endsection
     @section('content')
         <div class="communityContent">
-            <div class="communityContent1">
+            <div class="communityContent1" id="communityContent1">
                 <div class="upperContent">
                     <div class="searchBox">
                         <i class="fa-solid fa-magnifying-glass" id="searchLogo"></i>
@@ -23,7 +23,7 @@
                 </div>
                 <div class="lowerContent">
                     <div class="postTab">
-                        <div class="createPost">
+                        <div class="createPost" id="createPost">
                             <p>Create Post</p>
                         </div>
                         <div class="postNav">
@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="ContentHelp">
-                        <div class="askHelp">
+                        <div class="askHelp" id="askHelp">
                             <p><i class="fa-regular fa-circle-question" id="questionLogo"></i>
                             Ask Question</p>
                             
@@ -129,8 +129,8 @@
                                 <i class="fa-solid fa-circle-user" id="profilePic"></i>
                                 </div>
                                 <div class="details">
-                                    <div class="tittle">
-                                        <p>Exploring the Cutting-Edge World of Robotics: Unveiling Innovations and Future Possibilities</p>
+                                    <div class="tittle" >
+                                        <p id="tittleP">Exploring the Cutting-Edge World of Robotics: Unveiling Innovations and Future Possibilities</p>
                                     </div>
                                     <div class="aboutTittle">
                                         <div class="tittleType">
@@ -167,7 +167,7 @@
                                 </div>
                                 <div class="details">
                                     <div class="tittle">
-                                        <p>Robotics: Shaping Tomorrow's World Today</p>
+                                        <p id="tittleP">Robotics: Shaping Tomorrow's World Today</p>
                                     </div>
                                     <div class="aboutTittle">
                                         <div class="tittleType">
@@ -204,7 +204,7 @@
                                 </div>
                                 <div class="details">
                                     <div class="tittle">
-                                        <p>Revolutionizing Industries: The Role of Robotics in Shaping the Future</p>
+                                        <p id="tittleP">Revolutionizing Industries: The Role of Robotics in Shaping the Future</p>
                                     </div>
                                     <div class="aboutTittle">
                                         <div class="tittleType">
@@ -243,7 +243,7 @@
             </div>
 
 
-            <div class="communityContent2">
+            <div class="communityContent2" id="communityContent2">
                 <div class="leftContent">
                     <div class="contentTab">
                         <div class="searchTab">
@@ -534,7 +534,7 @@
                         
                     </div>
                     <div class="postTab">
-                        <div class="createPost">
+                        <div class="createPost" id="createPost">
                             <p>Create Post</p>
                         </div>
                         <div class="postNav">
@@ -556,7 +556,7 @@
                         </div>
                     </div>
                     <div class="ContentHelp">
-                        <div class="askHelp">
+                        <div class="askHelp" id="askHelp">
                             <p><i class="fa-regular fa-circle-question" id="questionLogo"></i>
                             Ask Question</p>
                             
@@ -610,4 +610,44 @@
             </div>
         </div>
     @endsection
+
+{{-- Create post modal --}}
+<div id="postModal" class="postModal">
+    <div class="modal-content">
+        <form action="" method="">
+            <div class="modal-header">
+                <h2>Post Your Thoughts</h2>
+            </div>
+            <div class="modal-body">
+                <label for="postTitle">Title:</label>
+                <input type="text" id="postTitle" name="postTitle" placeholder="Your title" value="">
+                <label for="postTitle">Content:</label>
+                <textarea id="postTitle" name="postTitle" rows="8" placeholder="Write here your thoughts" value=""></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" id="submitEditModalBtn">Post</button>
+                <button id="closePostnModalBtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{{-- Ask question modal --}}
+<div id="askQuestionModal" class="askQuestionModal">
+    <div class="modal-content">
+        <form action="" method="">
+            <div class="modal-header">
+                <h2>Ask Your Question</h2>
+            </div>
+            <div class="modal-body">
+                <label for="askQuestion">Question:</label>
+                <textarea id="askQuestion" name="askQuestion" rows="8" placeholder="Write here your mind's hesitation" value=""></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" id="submitEditModalBtn">Ask</button>
+                <button id="closeQuestionModalBtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
 

@@ -166,9 +166,9 @@
         display: none;
     }
 
-    * {
-        cursor: pointer;
-    }
+    // * {
+    //     cursor: pointer;
+    // }
     .logo {
         @include flexing;
         height: 100%;
@@ -179,7 +179,7 @@
             object-fit: fill;
             max-width: 100%;
             max-height: 300%;
-            margin: 0  auto -10%;
+            margin: 0 auto -10%;
         }
     }
     .navbar {
@@ -187,7 +187,7 @@
         width: auto;
         float: left;
         color: $color_2;
-        margin: 0 auto;
+        margin:0 0 0 auto;
         color: $color_1;
         font-size: large;
         a {
@@ -205,6 +205,170 @@
             }
         }
     }
+
+    .notificationIcon {
+        margin-left: auto;
+        #Icon {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+    }
+
+    .notifications-container {
+        display: none;
+        max-width: 450px;
+        position: fixed;
+        top: 3.5rem;
+        right: 10px;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        background-color: #00baaf;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        font-family: "Roboto", sans-serif;
+        .notifications-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            color: #ffffff;
+            font-size: 18px;
+            letter-spacing: 1px;
+            h3 {
+                margin: 0;
+            }
+            .close-button {
+                font-size: 20px;
+                background: none;
+                border: none;
+                color: $color_1;
+                cursor: pointer;
+            }
+        }
+        .notification-body {
+            border-radius: 15px;
+            background-color: #ffffff;
+            // display: none;
+        }
+        #unread {
+            background-color: #c2f7f3;
+        }
+        .notification-div {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background-color: #ffffff;
+            border-bottom: 2px solid #d8f5f4;
+            color: #00baaf;
+            border-radius: 10px;
+            .notiImage {
+                width: 60px;
+                height: 100%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    background-color: black;
+                }
+            }
+            .notification-content {
+                width: 350px;
+                height: 100%;
+                margin-left: 20px;
+                .notification-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .notification-title {
+                        font-weight: bold;
+                    }
+                    .notification-time {
+                        color: #00baaf;
+                        font-size: 13px;
+                        font-weight: 600;
+                    }
+                }
+                .notification-message {
+                    margin-top: 5px;
+                    .notification-button {
+                        color: #00baaf;
+                        background-color: #ffffff;
+                        border-color: #00baaf;
+                        padding: 0.2rem;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .notification-body1 {
+            border-radius: 15px;
+            display: none;
+            background-color: #ffffff;
+            // padding: 1rem;
+            .modal-content {
+                .modal-header {
+                    @include flexing;
+                    padding: 1rem;
+                    color: #ffffff;
+                    font-size: 17px;
+                    letter-spacing: 1px;
+                    color: #149c9a;
+                    #backIcon {
+                        cursor: pointer;
+                    }
+                    p {
+                        margin: auto;
+                        font-weight: bold;
+                    }
+                }
+
+                .modal-body {
+                    border-radius: 15px;
+                    .content {
+                        max-height: 200px;
+                        padding: 0 1.5rem 0 1.5rem;
+                        overflow: auto;
+                        p {
+                            margin-bottom: 2px;
+                            color: #299a92;
+                        }
+                        .quizQuestion {
+                            color: #00514c;
+                        }
+                    }
+                }
+                .modal-footer {
+                    display: flex;
+                    align-items: center;
+                    padding: 1rem 1rem 1rem;
+                    button {
+                        font-size: 16px;
+                        background: none;
+                        border-color: #149c9a;
+                        cursor: pointer;
+                        padding: 0.2rem 1rem;
+                        border-radius: 5px;
+                        font-weight: bold;
+                    }
+                    .accept-button {
+                        margin-right: 15px;
+                        color: green;
+                    }
+                    .reject-button {
+                        color: red;
+                    }
+                    .expand-button {
+                        margin-left: auto;
+                        color: #149c9a;
+                    }
+                }
+            }
+        }
+    }
+
     .login__container {
         margin: 0 2%;
         .login {

@@ -65,6 +65,11 @@ class UpdateTablesAddForeignKeys extends Migration
         Schema::table('forum_posts', function (Blueprint $table) {
             $table->foreign('answer_id')->references('answer_id')->on('forum_answers')->onDelete('cascade');
             $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('comment_id')->references('comment_id')->on('comments')->onDelete('cascade');
+        });
+        
+        Schema::table('notifications', function (Blueprint $table) {
+            $table->foreign('user_id')->references('user_id')->on('users');
         });
     }
 
@@ -76,9 +81,14 @@ class UpdateTablesAddForeignKeys extends Migration
     public function down()
     {
         // Drop foreign key constraints in the reverse order they were added
+        Schema::table('notifications', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+        });
+        
         Schema::table('forum_posts', function (Blueprint $table) {
             $table->dropForeign(['answer_id']);
             $table->dropForeign(['user_id']);
+            $table->dropForeign(['comment_id']);
         });
 
         Schema::table('forum_answers', function (Blueprint $table) {

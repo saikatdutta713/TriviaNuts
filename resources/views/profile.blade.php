@@ -5,61 +5,103 @@
 
 @section('content')
 <div class="profilePage">
-    <div class="profilePicture">
-        <i class="fa-solid fa-gem" id="userBadge"></i>
-        <i class="fa-solid fa-circle-user" id="userPic"></i>
-
-        <div class="profileName">
-            <p>{{ $user->name }}</p>
-        </div>
-        <div class="profilePoints">
-            <p>Points : 765</p>
-        </div>
-    </div>
-
-    <div class="profileDetails">
-        <div class="personalDetails">
-            <div class="personDetails">
-                <h4>Personal Details:</h4>
-                <p>{{ $user->name }}</p>
-                <p>{{ $user->gender }}</p>
-                <p>Birth Date - {{ $user->dob }}</p>
-            </div>
-            <div class="education">
-                <h4>Last Education Details:</h4>
-                @if ($user->course_name && $user->institution_name)
-                <p>{{ $user->course_name }} from {{ $user->institution_name }}</p>
-                @endif
-            </div>
-        </div>
-        <div class="bio">
-            <h4>Bio:</h4>
-            @if ($user->bio)
-            <p>{{ $user->bio }}</p>
-            @else
-            <p>Bio is not updated!</p>
-            @endif
-        </div>
-        <div class="contactDetails">
-            <h4>Contact Details:</h4>
-            <p><i class="fa-solid fa-envelope" id="userSocial"></i> {{ $user->email }}</p>
-            @if ($user->facebook)
-            <p><i class="fa-brands fa-square-facebook" id="userSocial"></i> {{ $user->facebook }}</p>
-            @endif
-            @if ($user->linkedin)
-            <p><i class="fa-brands fa-linkedin" id="userSocial"></i> {{ $user->linkedin }}</p>
-            @endif
-        </div>
-    </div>
-
     <div class="profileEdit">
-        <h4>Edit Details:</h4>
-        <button id="editProfileButton" class="editButton">Profile</button>
-        <button id="editEducationButton" class="editButton">Education Details</button>
-        <button id="editBioButton" class="editButton">Bio </button>
-        <button id="editSocialButton" class="editButton">Social Media</button>
-        <button id="editPasswordButton" class="editButton">Change Password</button>
+        <div class="heading">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <p>Update Details</p>
+        </div>
+        <button id="editProfileButton" class="editButton">
+            <i class="fa-solid fa-user"></i>
+            <p>Profile</p>
+        </button>
+        <button id="editEducationButton" class="editButton">
+            <i class="fa-solid fa-school"></i>
+            <p>Education</p> 
+        </button>
+        <button id="editBioButton" class="editButton">
+            <i class="fa-solid fa-file"></i>
+            <p>About Me</p> 
+        </button>
+        <button id="editSocialButton" class="editButton">
+            <i class="fa-solid fa-share-from-square"></i>
+            <p>Social Media</p>
+        </button>
+        <button id="editPasswordButton" class="editButton">
+            <i class="fa-solid fa-key"></i>
+            <p>Change Password</p>
+        </button>
     </div>
+    <div class="rightDiv">
+        <div class="profileDetails">
+            <div class="personalDetails1">
+                <div class="personDetails">
+                    <p class="detailsHeading">Name</p>
+                    <p>{{ $user->name }}</p>
+                    <p class="detailsHeading">Gender</p>
+                    <p>{{ $user->gender }}</p>
+                    <p class="detailsHeading">Birth Date</p>
+                    <p>{{ $user->dob }}</p>
+                </div>
+                <div class="contactDetails">
+                    <h4>Social Handle</h4>
+                    <p>
+                        <i class="fa-solid fa-envelope" id="userSocial"></i> 
+                        {{ $user->email }}
+                    </p>
+                    <p>
+                        <i class="fa-brands fa-square-facebook" id="userSocial"></i>
+                        @if ($user->facebook) {{ $user->facebook }}
+                    </p>
+                    @endif
+                    <p>
+                        <i class="fa-brands fa-linkedin" id="userSocial"></i>
+                        @if ($user->linkedin) {{ $user->linkedin }}
+                    </p>
+                    @endif
+                </div>
+            </div>
+            <div class="personalDetails2">
+                
+                
+                <div class="education">
+                    <p class="detailsHeading">Last Course</p>
+                    @if ($user->course_name)
+                    <p>{{ $user->course_name }}</p>
+                    @endif
+                    <p class="detailsHeading">Institution Name</p>
+                    @if ($user->institution_name)
+                    <p>{{ $user->institution_name}}</p>
+                    @endif
+                </div>
+                <div class="bio">
+                    <h4>About Me</h4>
+                    @if ($user->bio)
+                    <p>{{ $user->bio }}</p>
+                    @else
+                    <p>About me is not updated!</p>
+                    @endif
+                </div>
+            </div>
+            <div class="profilePicture">
+                <div class="avatar-container">
+                        <img src="{{ asset('images/avatar-blue.png') }}" alt="User Avatar" class="avatar">
+                    </div>
+                <i class="fa-solid fa-gem" id="userBadge"></i>
+                <div class="profileName">
+                    <p>{{ $user->name }}</p>
+                </div>
+                <div class="profilePoints">
+                    <p>Points : 765</p>
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+    </div>
+
+    
 
 </div>
 
@@ -123,7 +165,7 @@
             </div>
             <div class="modal-body">
                 <label for="profileBio">Bio:</label>
-                <textarea id="profileBio" name="profileBio" rows="7" placeholder="Tell us about yourself" value="{{ $user->bio }}"></textarea>
+                <textarea id="profileBio" name="profileBio" rows="15" placeholder="Tell us about yourself" value="{{ $user->bio }}"></textarea>
             </div>
             <div class="modal-footer">
                 <button type="submit" id="submitEditModalBtn">Update</button>

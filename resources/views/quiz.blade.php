@@ -14,7 +14,7 @@
     <div class="leftcolumn" id="leftcolumn">
         {{-- <div class="content1"> --}}
             <div class="logo">
-                    Logo
+                    <img src="{{ asset('images/TriviaNuts_Logo.svg') }}" alt="logo" />
                     <div class="closeoption" onclick="toggleDisplayNone()">
                     <p id="closeb">Back</p>
                 </div>

@@ -1,4 +1,50 @@
 @import "./variables.scss";
+
+@mixin modal {
+    display: none; /* Hide the modal by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $modal-background-color; /* Semi-transparent black background */
+    z-index: 999;
+}
+@mixin modal-content-header {
+    background-color: $modal-content-background-color;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 50%;
+    max-height: 90%;
+    overflow-y: auto;
+    margin: 2rem auto;
+    .modal-header {
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #007bff;
+        color: $modal-content-background-color;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+}
+@mixin modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: $modal-content-background-color;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover {
+            background-color: #c82333; // Darker red on hover
+        }
+    }
+}
 .communityContent {
     height: 120vh;
     width: 100%;
@@ -153,6 +199,9 @@
                     color: $color_5;
                     p {
                         cursor: pointer;
+                        &:hover{
+                            text-decoration: underline;
+                        }
                     }
                 }
                 .aboutTittle {
@@ -224,6 +273,7 @@
             border-radius: 1rem;
             @include flexing;
             background-color: $color_5;
+            cursor: pointer;
             #questionLogo {
                 color: $color_1;
             }
@@ -316,7 +366,7 @@
     .communityContent1 {
         height: 100%;
         width: 100%;
-        display: none;
+        // display: none;
         .upperContent {
             height: 43%;
             width: 100%;
@@ -698,6 +748,7 @@
     .communityContent2 {
         height: 100%;
         width: 100%;
+        display: none;
         .leftContent {
             height: 100%;
             width: 80%;
@@ -893,6 +944,68 @@
             .ContentHelp {
                 margin: auto;
                 @include ContentHelp(30%, 60%, 65%);
+            }
+        }
+    }
+}
+
+/* Create post Modal */
+.postModal {
+    @include modal;
+    .modal-content {
+        @include modal-content-header;
+        .modal-body {
+            padding: 1rem;
+            label {
+                display: block;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+            input,textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin-bottom: 15px;
+                font-size: 16px;
+            }
+        }
+        .modal-footer {
+            @include modal-footer;
+            #closePostnModalBtn  {
+                background-color: #dc3545;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+/* Ask question Modal */
+.askQuestionModal {
+    @include modal;
+    .modal-content {
+        @include modal-content-header;
+        .modal-body {
+            padding: 1rem;
+            label {
+                display: block;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+            textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin-bottom: 15px;
+                font-size: 16px;
+            }
+        }
+        .modal-footer {
+            @include modal-footer;
+            #closeQuestionModalBtn {
+                background-color: #dc3545;
+                margin-left: 10px;
             }
         }
     }

@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('badges', function (Blueprint $table) {
-            
-            $table->bigInteger('badge_id')->unsigned()->autoIncrement();
-            $table->string('badge_title');
-            $table->string('badge_picture');
+        Schema::create('comments', function (Blueprint $table) {
+            $table->bigInteger('comment_id')->unsigned()->autoIncrement();
+            $table->text('content'); 
+            $table->integer('likes')->default(0); 
+            $table->integer('dislikes')->default(0);
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('badges');
+        Schema::dropIfExists('comments');
     }
 };
