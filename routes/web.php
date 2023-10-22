@@ -14,7 +14,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutUserController;
 use App\Http\Controllers\Auth\VerifyOtpController;
 use App\Http\Controllers\Mail\VerificationController;
-use App\Http\Controllers\MaintenanceController;
+use App\Http\Controllers\Admin\MaintenanceController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\TrendsController;
@@ -129,9 +129,7 @@ Route::prefix('admin')->group(function () {
 
         Route::middleware('checkRole:1')->group(function () {
             Route::get('/maintenance', [MaintenanceController::class, 'toggle'])->name('maintenance.toggle');
-            Route::get('/settings', function () {
-                return view('admin.settings');
-            })->name('admin.settings');
+            Route::get('/settings', [SettingsController::class, 'index'])->name('admin.settings');
         });
     });
 });

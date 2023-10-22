@@ -373,5 +373,7 @@ if (quiz_management_table) {
     }, _apiCallDelay2);
   });
 }
+
+// if(document.body.contains(document.getElementById('admin-dashboard'))){
 /******/ })()
 ;

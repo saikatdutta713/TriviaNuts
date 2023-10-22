@@ -1068,48 +1068,20 @@ main .edit__modal button#openModalBtn {
   height: 25px;
   margin: 0 10px;
   margin-left: 2rem;
-  /* Rounded sliders */
-  /* Checked state */
 }
-.main__content .maintain .sidebar__link .switch input {
-  display: none;
-}
-.main__content .maintain .sidebar__link .switch .slider {
-  position: absolute;
+.main__content .maintain .sidebar__link .switch button {
+  width: 50px;
+  height: 26px;
+  border: none;
+  border-radius: 10%;
+  background: #149d9b;
+  color: white;
+  margin-left: 2%;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #333;
-  transition: 0.4s;
-  border-radius: 34px;
 }
-.main__content .maintain .sidebar__link .switch .slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-.main__content .maintain .sidebar__link .switch.round .slider {
-  border-radius: 34px;
-}
-.main__content .maintain .sidebar__link .switch.round .slider:before {
-  border-radius: 50%;
-}
-.main__content .maintain .sidebar__link .switch input:checked + .slider {
-  background-color: #149d9b;
-}
-.main__content .maintain .sidebar__link .switch input:focus + .slider {
-  box-shadow: 0 0 1px #149d9b;
-}
-.main__content .maintain .sidebar__link .switch input:checked + .slider:before {
-  transform: translateX(18px);
+.main__content .maintain .sidebar__link .switch .red {
+  background-color: #cc3d38 !important;
+  color: white !important;
 }
 .main__content .logo {
   display: flex;

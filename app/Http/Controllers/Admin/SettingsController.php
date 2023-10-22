@@ -9,7 +9,7 @@ class SettingsController extends Controller
 {
     public function index()
     {
-        $title = "Settings"; // Fixed variable name
+        $title = "Settings";
         return view('admin.settings', compact('title'));
     }
 }
