@@ -17,6 +17,7 @@ use App\Http\Controllers\Mail\VerificationController;
 use App\Http\Controllers\MaintenanceController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommunityController;
+use App\Http\Controllers\TrendsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\ResetPasswordController;
@@ -74,11 +75,13 @@ Route::post('/reset/link', [ResetPasswordController::class, 'sendLink'])->name('
 
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
 Route::get('/community', [CommunityController::class, 'index'])->name('community');
-
+Route::get('/trends', [TrendsController::class, 'index'])->name('trends');
 
 Route::get('/quiz', function () {
     return view('quiz');
 });
+
+
 
 Route::get('/sendmail', [EmailController::class, 'sendEmail']);
 

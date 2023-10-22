@@ -18,4 +18,5 @@ mix.setPublicPath("public")
     .sass("resources/scss/admin/settings.scss", "public/css/admin.css")
     .sass("resources/scss/community.scss", "public/css/app.css")
     .sass("resources/scss/quiz.scss", "public/css")
-    .sass("resources/scss/profile.scss", "public/css/app.css");
+    .sass("resources/scss/profile.scss", "public/css/app.css")
+    .sass("resources/scss/trends.scss", "public/css/app.css");

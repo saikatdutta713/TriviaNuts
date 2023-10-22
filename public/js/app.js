@@ -2176,6 +2176,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/scss/trends.scss":
+/*!************************************!*\
+  !*** ./resources/scss/trends.scss ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/scss/app.scss":
 /*!*********************************!*\
   !*** ./resources/scss/app.scss ***!
@@ -6649,6 +6662,39 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Trends page
+// document.addEventListener("DOMContentLoaded", function () {
+//     const frames = document.querySelectorAll(".carousel-frame");
+//     let currentFrame = 0;
+
+//     function showNextFrame() {
+//         frames[currentFrame].classList.remove("active");
+//         currentFrame = (currentFrame + 1) % frames.length;
+//         frames[currentFrame].classList.add("active");
+//     }
+
+//     // Initially show the first frame
+//     frames[currentFrame].classList.add("active");
+
+//     // Start the automatic carousel
+//     setInterval(showNextFrame, 3000); // Change frame every 3 seconds
+// });
+document.addEventListener("DOMContentLoaded", function () {
+  var frames = document.querySelectorAll(".carousel-frame");
+  var currentFrame = 0;
+  function showNextFrame() {
+    frames[currentFrame].classList.remove("active");
+    currentFrame = (currentFrame + 1) % frames.length;
+    frames[currentFrame].classList.add("active");
+  }
+
+  // Initially show the first frame
+  frames[currentFrame].classList.add("active");
+
+  // Start the automatic carousel
+  setInterval(showNextFrame, 8000); // Change frame every 3 seconds
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -6922,7 +6968,8 @@ document.addEventListener("DOMContentLoaded", function () {
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/admin/settings.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/community.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/quiz.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/profile.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/profile.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/trends.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

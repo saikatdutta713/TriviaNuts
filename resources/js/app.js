@@ -351,3 +351,38 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// Trends page
+// document.addEventListener("DOMContentLoaded", function () {
+//     const frames = document.querySelectorAll(".carousel-frame");
+//     let currentFrame = 0;
+
+//     function showNextFrame() {
+//         frames[currentFrame].classList.remove("active");
+//         currentFrame = (currentFrame + 1) % frames.length;
+//         frames[currentFrame].classList.add("active");
+//     }
+
+//     // Initially show the first frame
+//     frames[currentFrame].classList.add("active");
+
+//     // Start the automatic carousel
+//     setInterval(showNextFrame, 3000); // Change frame every 3 seconds
+// });
+document.addEventListener("DOMContentLoaded", function () {
+    const frames = document.querySelectorAll(".carousel-frame");
+    let currentFrame = 0;
+
+    function showNextFrame() {
+        frames[currentFrame].classList.remove("active");
+        currentFrame = (currentFrame + 1) % frames.length;
+        frames[currentFrame].classList.add("active");
+    }
+
+    // Initially show the first frame
+    frames[currentFrame].classList.add("active");
+
+    // Start the automatic carousel
+    setInterval(showNextFrame, 8000); // Change frame every 3 seconds
+});
+

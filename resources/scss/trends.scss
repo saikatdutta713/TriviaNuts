@@ -1,0 +1,84 @@
+@import "./variables.scss";
+
+@mixin carousel-frame-design {
+    @include flexing;
+    height: 90%;
+    width: 60%;
+    background-color: #fbebda;
+    .image {
+        float: left;
+        @include flexing;
+        height: 100%;
+        width: 50%;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .frame-content {
+        float: left;
+        @include flexing;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+        height: 100%;
+        width: 50%;
+        h1 {
+            font-size: 35px;
+            width: 80%;
+            color: #4b4e81;
+        }
+        p {
+            width: 70%;
+            margin-left: 15%;
+            font-size: 1em;
+        }
+        .learn-more-button {
+            padding: 0.5rem 1rem;
+            background-color: #4b4e81;
+            color: $color_1;
+            margin-right: 20%;
+            border: none;
+        }
+    }
+}
+
+.trendsContent {
+    height: 150vh;
+    width: 100%;
+    .contentRow1 {
+        @include flexing;
+        height: 50%;
+        width: 100%;
+        overflow: hidden;
+        .carousel-frame {
+            @include carousel-frame-design;
+            display: none;
+        }
+        .carousel-frame.active {
+            display: block;
+            animation: fadeInOut 2s forwards;
+            
+        }
+
+        // .carousel-frame:nth-child(1) {
+        //     animation: fadeInOut 3s forwards;
+        // }
+        // .carousel-frame:nth-child(2) {
+        //     animation: fadeInOut 3s forwards;
+        // }
+        // .carousel-frame:nth-child(3) {
+        //     animation: fadeInOut 3s forwards;
+        // }
+    }
+}
+@keyframes fadeInOut {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

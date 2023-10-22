@@ -4258,3 +4258,79 @@ input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.i
   background-color: #dc3545;
   margin-left: 10px;
 }
+.trendsContent {
+  height: 150vh;
+  width: 100%;
+}
+.trendsContent .contentRow1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
+}
+.trendsContent .contentRow1 .carousel-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: 60%;
+  background-color: #fbebda;
+  display: none;
+}
+.trendsContent .contentRow1 .carousel-frame .image {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+}
+.trendsContent .contentRow1 .carousel-frame .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.trendsContent .contentRow1 .carousel-frame .frame-content {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  height: 100%;
+  width: 50%;
+}
+.trendsContent .contentRow1 .carousel-frame .frame-content h1 {
+  font-size: 35px;
+  width: 80%;
+  color: #4b4e81;
+}
+.trendsContent .contentRow1 .carousel-frame .frame-content p {
+  width: 70%;
+  margin-left: 15%;
+  font-size: 1em;
+}
+.trendsContent .contentRow1 .carousel-frame .frame-content .learn-more-button {
+  padding: 0.5rem 1rem;
+  background-color: #4b4e81;
+  color: white;
+  margin-right: 20%;
+  border: none;
+}
+.trendsContent .contentRow1 .carousel-frame.active {
+  display: block;
+  animation: fadeInOut 2s forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
