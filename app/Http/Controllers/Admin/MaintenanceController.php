@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
 class MaintenanceController extends Controller
 {
-
     public function toggle(Request $request)
     {
         if (app()->isDownForMaintenance()) {
@@ -16,6 +16,6 @@ class MaintenanceController extends Controller
             Artisan::call('down');
         }
 
-        return redirect()->route('admin.home');
+        return redirect()->back();
     }
 }
