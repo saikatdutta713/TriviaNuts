@@ -24,6 +24,10 @@ class DatabaseSeeder extends Seeder
             UserAnswersSeeder::class,
             ParticipantsSeeder::class,
             UserQuizProgressSeeder::class,
+            ForumCategoriesSeeder::class,
+            ForumAnswersSeeder::class,
+            CommentsSeeder::class,
+            ForumPostsSeeder::class,
         ]);
     }
 }
