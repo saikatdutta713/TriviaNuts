@@ -7,6 +7,7 @@ use App\Models\category;
 use App\Models\Question;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class QuizController extends Controller
 {
@@ -32,7 +33,7 @@ class QuizController extends Controller
         $edit = true;
         $editQuiz = Quiz::find(intval($id));
         if ($editQuiz) {
-            return view('<admin class="manage_quiz"></admin>', compact('quizzes', 'categories', 'edit', 'editQuiz'));
+            return view('admin.manage_quiz', compact('quizzes', 'categories', 'edit', 'editQuiz'));
         } else {
             return redirect()->route('admin.quiz')->with('error_notification', 'Quiz does not exists');
         }
@@ -52,6 +53,8 @@ class QuizController extends Controller
                     ->orWhere('title', 'like', '%' . $searchCriteria . '%')
                     ->orWhere('duration', 'like', '%' . $searchCriteria . '%')
                     ->orWhere('time', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('questions', 'like', '%' . $searchCriteria . '%')
+                    ->orWhere('status', 'like', '%' . $searchCriteria . '%')
                     ->orWhere('categories.category_title', 'like', '%' . $searchCriteria . '%'); // Search in category name
             });
         }
@@ -64,6 +67,54 @@ class QuizController extends Controller
         $questions = $query->paginate($tableLength);
 
         return response()->json($questions);
+    }
+
+    public function addQuiz(Request $request)
+    {
+        Validator::make($request->all(), [
+            'category' => ['required'],
+            'title' => ['required'],
+            'status' => ['required'],
+            'questions' => ['required'],
+            'publishing_date' => ['required']
+        ])->validate();
+
+        $newQuiz = new Quiz([
+            'title' => $request->get('title'),
+            'time' => $request->get('publishing_date'),
+            'questions' => $request->get('questions'),
+            'status' => $request->get('status'),
+            'category_id' => $request->get('category')
+        ]);
+        $success = $newQuiz->save();
+        if ($success) {
+            return redirect()->route('admin.quiz')->with('success_notification', 'Question added successfully');
+        } else {
+            return back()->withInput()->withErrors(['An error occurred while adding the question']);
+        }
+    }
+
+    public function editQuiz(Request $request, $id)
+    {
+        Validator::make($request->all(), [
+            'status' => ['required'],
+            'questions' => ['required'],
+            'publishing_date' => ['required']
+        ])->validate();
+
+        $quiz = Quiz::find($id);
+        // dd($request->all());
+        $quiz->time = $request->input("publishing_date");
+        $quiz->questions = $request->input("questions");
+        $quiz->status = $request->input("status");
+
+        $success = $quiz->save();
+
+        if ($success) {
+            return redirect()->route('admin.quiz')->with('success_notification', 'Quiz updated Successfully');
+        } else {
+            return redirect()->route('admin.quiz')->with('error_notification', 'Quiz not updated! try again');
+        }
     }
 
     public function deleteAttemptQuiz($id)
