@@ -16,5 +16,7 @@ class Quiz extends Model
         'title',
         'duration',
         'category_id',
+        'questions',
+        'status',
     ];
 }

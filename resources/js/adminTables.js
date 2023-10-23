@@ -1,6 +1,6 @@
 // User Management
 let user_management_table = document.getElementById("user_management_table");
-if (user_management_table) {
+if (document.body.contains(user_management_table)) {
     const loadUsers = async (
         tableLength = 5,
         query = undefined,
@@ -129,7 +129,7 @@ if (user_management_table) {
 let question_management_table = document.getElementById(
     "question_management_table"
 );
-if (question_management_table) {
+if (document.body.contains(question_management_table)) {
     const loadQuestions = async (
         tableLength = 5,
         query = undefined,
@@ -261,7 +261,7 @@ if (question_management_table) {
 
 // quiz Management
 let quiz_management_table = document.getElementById("quiz_management_table");
-if (quiz_management_table) {
+if (document.body.contains(quiz_management_table)) {
     const loadquizzes = async (
         tableLength = 5,
         query = undefined,

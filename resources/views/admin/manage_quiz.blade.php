@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('admin_ title')
-    {{ isset($title) ? $title : env('APP_NAME')." Home Page" }}
+{{ isset($title) ? $title : env('APP_NAME')." Home Page" }}
 @endsection
 @section('admin__pageHeading')
 <p>Quiz Management</p>
@@ -50,29 +50,7 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody id="quiz_management_table">
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <div class="avatar-container">
-                            <p class="avatar-name">#052aa</p>
-                        </div>
-                    </td>
-                    <td>Mathematics</td>
-                    <td>Set Theory, Probability</td>
-                    <td>Complete</td>
-                    <td>Q39.Q29,Q35,
-                        Q40,Q53,Q15,
-                        Q21,Q19,Q69,Q90</td>
-                    <td>01/11/2023</td>
-                    <td>
-                        <span>
-                            <button title="Edit" class="editButton" data-id="1"><i class="fa fa-pen"></i></button>
-                            <button title="Delete"><i class="fa fa-trash"></i></button>
-                        </span>
-                    </td>
-                </tr>
-            </tbody>
+            <tbody id="quiz_management_table"></tbody>
         </table>
         <div class="clearfix">
             <div class="hint-text" id="quiz__hint__text">Showing <b>5</b> out of <b>25</b> entries</div>
@@ -91,18 +69,16 @@
         </div>
         <div class="modal-body">
             <form class="register" action="{{ route('admin.quiz.add') }}" method="POST">
-
+                @csrf
                 <div class="form-row">
                     <div class="form-column">
                         <label for="category">Category:</label>
                         <select id="category" name="category">
-                            <option value="mathematics">Mathematics</option>
-                            <option value="computer">Computer</option>
-                            <option value="aptitude">Aptitude</option>
-                            <option value="current_affair">Current Affair</option>
+                            @foreach ($categories as $category)
+                            <option value="{{ $category->category_id }}">{{ $category->category_title }}</option>
+                            @endforeach
                         </select>
-                        {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
-                        @error('terms')
+                        @error('category')
                         <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>
@@ -112,27 +88,24 @@
                             <option value="complete">Complete</option>
                             <option value="draft">Draft</option>
                         </select>
-                        {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
-                        @error('terms')
+                        @error('status')
                         <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>
                 </div>
 
                 <div class="form-column">
-                    <label for="tittle-register">Tittle:</label>
-                    <input type="text" id="tittle-register">
-                    {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
-                    @error('terms')
+                    <label for="tittle-register">Title:</label>
+                    <input type="text" id="tittle-register" name="title">
+                    @error('title')
                     <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>
 
                 <div class="form-column">
                     <label for="questionIds-register">Question Ids:</label>
-                    <input type="text" id="questionIds-register">
-                    {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
-                    @error('terms')
+                    <input type="text" id="questionIds-register" name="questions">
+                    @error('questions')
                     <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>
@@ -140,8 +113,7 @@
                 <div class="form-column">
                     <label for="publishing-date">Schedule Date:</label>
                     <input type="date" id="publishing-date" name="publishing_date">
-                    {{-- <span class="invalid-feedback" id="dobError">Hello</span> --}}
-                    @error('terms')
+                    @error('publishing_date')
                     <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>
@@ -158,31 +130,40 @@
 <!-- The Edit Modal -->
 @isset ($edit)
 <div id="editModal" class="edit__modal">
-    <div class="modal-content">
-        <form action="{{ route('admin.quiz.edit',['id'=>$editQuiz->quiz_id]) }}" action="POST" class="update">
-            @csrf
-            <div class="modal-header">
-                <h2>Update Quiz</h2>
-            </div>
-            <div class="modal-body">
-                <label for="questionIds-register">Question Ids:</label>
-                <input type="text" id="questionIds-register">
+    <div id="editModal" class="edit__modal">
+        <div class="modal-content">
+            <form action="{{ route('admin.quiz.edit', ['id' => $editQuiz->quiz_id]) }}" method="POST" class="update">
+                @csrf
+                <div class="modal-header">
+                    <h2>Update Quiz</h2>
+                </div>
+                <div class="modal-body">
+                    <label for="questionIds-register">Question Ids:</label>
+                    <input type="text" id="questionIds-register" name="questions" @isset ($editQuiz)
+                        value="{{ $editQuiz->questions }}" @endisset>
 
-                <label for="publishing-date">Schedule Date:</label>
-                <input type="date" id="publishing-date" name="publishing_date">
+                    <label for="publishing-date">Schedule Date:</label>
+                    <input type="date" id="publishing-date" name="publishing_date" @isset ($editQuiz)
+                        value="{{ $editQuiz->time }}" @endisset>
 
-                <label for="userStatus">Status:</label>
-                <select id="status" name="status">
-                    <option value="approve">Approve</option>
-                    <option value="complete">Complete</option>
-                    <option value="draft">Draft</option>
-                </select>
-            </div>
-            <div class="modal-footer">
-                <button id="submitEditModalBtn">Update</button>
-                <button id="closeEditModalBtn"><a href="{{ route('admin.quiz') }}">Cancel</a></button>
-            </div>
-        </form>
+                    <label for="userStatus">Status:</label>
+                    <select id="status" name="status">
+                        <option value="approved" @if ($editQuiz && $editQuiz->status == "approved") selected
+                            @endif>Approve
+                        </option>
+                        <option value="complete" @if ($editQuiz && $editQuiz->status == "complete") selected
+                            @endif>Complete
+                        </option>
+                        <option value="draft" @if ($editQuiz && $editQuiz->status == "draft") selected @endif>Draft
+                        </option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit">Update</button>
+                    <button id="closeEditModalBtn"><a href="{{ route('admin.quiz') }}">Cancel</a></button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 @endisset
