@@ -125,10 +125,11 @@ function toggleUpload() {
   var submitButton = document.getElementById("submitButton");
   var cancelButton = document.getElementById("cancelButton");
   if (logoInput.style.display === "none") {
-    logoInput.style.display = "block";
+    // logoInput.style.display = "block";
     submitButton.style.display = "block";
     cancelButton.style.display = "block";
-    uploadButton.textContent = "Submit";
+    // uploadButton.textContent = "Submit";
+    uploadButton.style.display = "none";
   } else {
     logoInput.style.display = "none";
     submitButton.style.display = "none";
