@@ -1577,7 +1577,8 @@ input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.i
     height: 80.5%;
     width: 93%;
     margin: auto;
-    margin-block-start: 4%;
+    -webkit-margin-before: 4%;
+            margin-block-start: 4%;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -3070,7 +3071,6 @@ input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.i
 .communityContent .communityContent2 {
   height: 100%;
   width: 100%;
-  display: none;
 }
 .communityContent .communityContent2 .leftContent {
   height: 100%;
