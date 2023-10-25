@@ -69,7 +69,7 @@
             <p>Thank you for joining {{ env('APP_NAME') }}! We're excited to have you as a member of our community.</p>
             <p>Get ready to challenge your knowledge and have fun with our trivia quizzes.</p>
             <p>Click the button below to start playing:</p>
-            <a href="{{ Route('home') }}" class="btn">Start Playing</a>
+            <a href="{{ Route('home_page') }}" class="btn">Start Playing</a>
             <div class="spacer"></div>
             <p>If you have any questions or need assistance, don't hesitate to contact our support team.</p>
             <p>Enjoy your time on TriviaNuts!</p>
