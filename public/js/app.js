@@ -2085,6 +2085,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/scss/quiz_play.scss":
+/*!***************************************!*\
+  !*** ./resources/scss/quiz_play.scss ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/scss/admin/admin.scss":
 /*!*****************************************!*\
   !*** ./resources/scss/admin/admin.scss ***!
@@ -6933,6 +6946,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/auth/login.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/auth/setNewPassword.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/category.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/quiz_play.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/admin/admin.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/admin/home.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/admin/manage_users.scss")))
