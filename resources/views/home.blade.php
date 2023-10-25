@@ -16,7 +16,7 @@
             <img src="{{ asset('images/TriviaNuts_Logo.svg') }}" alt="logo" />
         </div>
         <div class="navbar">
-            <a href="{{ Route('home') }}" class="navbutton">
+            <a href="{{ Route('home_page') }}" class="navbutton">
                 Home
             </a>
             <a href="{{ Route('community') }}" class="navbutton">

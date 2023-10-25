@@ -15,7 +15,7 @@ class Controller extends BaseController
 
     function index(){
         $title = "Home Page";
-        return view('home',compact('title'));
+        return view('home_page',compact('title'));
     }
 
     function test(Request $request)
