@@ -214,10 +214,15 @@ body {
   margin-right: 1%;
 }
 .rightcolumn .uppertab .ruppertab .timeoption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   height: auto;
   width: -moz-max-content;
   width: max-content;
-  padding: 1rem;
+  padding: 0 2rem;
+  margin-right: 1rem;
 }
 .rightcolumn .uppertab .ruppertab .closeoption {
   height: auto;

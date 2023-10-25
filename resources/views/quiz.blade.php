@@ -82,10 +82,12 @@
             </div>
             <div class="ruppertab">
                 <div class="timeoption">
-                    Timmer
+                    Total time
+                    <div id="timer">01:00</div>
                 </div>
                 <div class="timeoption">
-                    Rtime
+                    Time remain for this question
+                    <div id="reverse-timer">01:00</div>
                 </div>
                 <div class="closeoption">
                     <p id="closeb">Back</p>
