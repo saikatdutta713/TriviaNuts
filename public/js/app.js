@@ -2189,6 +2189,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/scss/home_page.scss":
+/*!***************************************!*\
+  !*** ./resources/scss/home_page.scss ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/scss/trends.scss":
 /*!************************************!*\
   !*** ./resources/scss/trends.scss ***!
@@ -6954,6 +6967,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/community.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/quiz.scss")))
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/profile.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/home_page.scss")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/admin","css/home","css/quiz"], () => (__webpack_require__("./resources/scss/trends.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	

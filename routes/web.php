@@ -42,7 +42,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Controller::class, 'index'])->name('home');
+Route::get('/', [Controller::class, 'index'])->name('home_page');
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'login'])->name('login');
@@ -83,6 +83,9 @@ Route::get('/trends', [TrendsController::class, 'index'])->name('trends');
 
 Route::get('/question', function () {
     return view('quiz');
+});
+Route::get('/homepage', function () {
+    return view('home');
 });
 
 
