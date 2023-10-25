@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             ForumAnswersSeeder::class,
             CommentsSeeder::class,
             ForumPostsSeeder::class,
+            NotificationsSeeder::class,
         ]);
     }
 }
