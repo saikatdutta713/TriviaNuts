@@ -84,7 +84,7 @@
 
 @isset($verify_otp)
 <div id="OtpModal" class="otpModal">
-    <form action="{{ route('verify.otp') }}" method="POST">
+    <form action="{{ route('admin.verify.otp') }}" method="POST">
         @csrf
         <div class="modal-content">
             <div class="modal-header">

@@ -34,12 +34,8 @@
     let modal = document.getElementById("message-modal");
     let modalClose = document.getElementById("close-button");
     
-    // Function to close the modal
-    function closeModal() {
-        modal.style.display = "none";
-    }
-    
-    // Event listeners
-    modalClose.onclick = closeModal;
+    modalClose.addEventListener("click", function() {
+    modal.remove();
+    });
 
 </script>

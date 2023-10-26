@@ -13,6 +13,12 @@ use Illuminate\Support\Str;
 
 class ResetPasswordController extends Controller
 {
+
+    public function resetLinkForm()
+    {
+        return view('auth.login')->with('forgotPass', true);
+    }
+
     public function passwordResetFormView()
     {
         if (!$this->isValidPasswordResetToken()) {
@@ -24,11 +30,11 @@ class ResetPasswordController extends Controller
 
     public function sendLink(Request $request)
     {
-        $email = $request->email;
+        $email = $request->email_forgotPass;
         $user = User::where('email', $email)->first();
 
         if (!$user) {
-            return redirect()->route('login')->with('error', 'This email id is not registered yet!');
+            return redirect()->route('reset.link')->withErrors(['email_forgotPass' => 'This email id is not registered yet!']);
         }
 
         $token = Str::random(40);
@@ -36,7 +42,7 @@ class ResetPasswordController extends Controller
 
         Mail::to($email)->send(new ResetPasswordMail(route('verify.reset.password', ['token' => $token]), $user->name));
 
-        return view('auth.login')->with("success", "We have sent you an email to reset your password");
+        return redirect()->route('login')->with("success", "We have sent you an email to reset your password");
     }
 
     public function verifyResetToken(Request $request)
@@ -49,7 +55,7 @@ class ResetPasswordController extends Controller
         }
 
         Session::put('PasswordResetToken', $token);
-        return redirect()->route('reset.password.view');
+        return redirect()->route('reset.password.form.view');
     }
 
     public function resetPassword(Request $request)

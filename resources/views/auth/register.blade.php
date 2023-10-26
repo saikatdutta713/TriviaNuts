@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    {{ isset($title) ? $title : env('APP_NAME')." Home Page" }}
+{{ isset($title) ? $title : env('APP_NAME')." Home Page" }}
 @endsection
 @section('content')
 <div class="registrationPage">
@@ -17,7 +17,8 @@
                 <div class="form-row1">
                     <div class="nameDiv">
                         <label for="name">Full Name:</label>
-                        <input type="text" id="name" class="inputForm @error ('name') is-invalid @enderror" name="name">
+                        <input type="text" id="name" class="inputForm @error ('name') is-invalid @enderror" name="name"
+                            value="{{ old('name') }}">
                         @error('name')
                         <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
@@ -39,7 +40,7 @@
 
                     <div class="detailsDiv1">
                         <label for="country">Country:</label>
-                        <input type="text" id="country" class="inputForm" name="Country">
+                        <input type="text" id="country" class="inputForm" name="Country" value="{{ old('country') }}">
                         @error('country')
                         <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
@@ -47,19 +48,19 @@
 
                     <div class="detailsDiv2">
                         <label for="dob">Date of Birth:</label>
-                        <input type="date" id="dob" class="inputForm" name="dob" >
+                        <input type="date" id="dob" class="inputForm" name="dob" value="{{ old('dob') }}">
                         <span class="invalid-feedback" id="dobError"></span>
                         @error('dob')
                         <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>
 
-                    
+
                 </div>
 
                 <div class="form-row2">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" class="inputForm" name="email">
+                    <input type="email" id="email" class="inputForm" name="email" value="{{ old('email') }}">
                     @error('email')
                     <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
@@ -148,7 +149,8 @@
     </div>
 </div>
 @if (isset($verificationMail) && $verificationMail)
-<x-message-modal type="success" message="Your account has been created successfully, Verify your email for successful Sign in." buttonText="Okay"
+<x-message-modal type="success"
+    message="Your account has been created successfully, Verify your email for successful Sign in." buttonText="Okay"
     buttonLink="{{ Route('login') }}" />
 @endif
 @endsection

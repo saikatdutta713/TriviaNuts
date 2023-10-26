@@ -1143,10 +1143,15 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   color: #fff;
   border: none;
   border-radius: 4px;
+  margin-right: 5px;
   cursor: pointer;
 }
 .otpModal .modal-content .modal-footer button:hover {
   background-color: #c82333;
+}
+.otpModal .modal-content .modal-footer button > a {
+  color: #fff;
+  text-decoration: none;
 }
 .otpModal .modal-content .modal-footer #resendOTPBtn {
   background-color: transparent;
@@ -1168,6 +1173,7 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
   z-index: 999;
+  display: block !important;
 }
 .forgotPasswordModal .modal-content {
   background-color: #fff;
@@ -1217,14 +1223,20 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   color: #fff;
   border: none;
   border-radius: 4px;
+  margin-right: 5px;
   cursor: pointer;
 }
 .forgotPasswordModal .modal-content .modal-footer button:hover {
   background-color: #c82333;
 }
+.forgotPasswordModal .modal-content .modal-footer button > a {
+  color: #fff;
+  text-decoration: none;
+}
 .forgotPasswordModal .modal-content .modal-footer #cancelForgotPasswordBtn {
   background-color: #dc3545;
   margin-left: 10px;
+  color: white;
 }
 .setNewPasswordPage {
   display: flex;

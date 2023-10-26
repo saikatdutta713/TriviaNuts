@@ -26,3 +26,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/get/users/{tableLength?}/{searchCriteria?}', [UserController::class, 'getAllUser'])->name('get.all.users');
 Route::get('/get/questions/{tableLength?}/{searchCriteria?}', [QuestionController::class, 'getAllQuestions'])->name('get.all.questions');
 Route::get('/get/quizzes/{tableLength?}/{searchCriteria?}', [QuizController::class, 'getAllQuizzes'])->name('get.all.quizzes');
+
+// Route::get('get/ca')
