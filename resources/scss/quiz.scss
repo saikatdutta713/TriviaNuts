@@ -194,9 +194,12 @@ body {
             align-items: center;
             margin-right: 1%;
             .timeoption {
+                @include flexing;
+                flex-direction: column;
                 height: auto;
                 width: max-content;
-                padding: 1rem;
+                padding: 0 2rem;
+                margin-right: 1rem;
             }
             .closeoption {
                 height: auto;

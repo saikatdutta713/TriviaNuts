@@ -23,12 +23,18 @@ class VerificationController extends Controller
 
                 Auth::login($user);
 
-                return redirect()->route('home')->with('success_notification', 'Your email has been verified.');
+                return view('home_page')
+                    ->with('message_mailid_verify', 'Your email has been verified. You can now log in.')
+                    ->with('status_mailid_verify', 'success');
             } else {
-                return redirect()->route('home')->with('warning_notification', 'Your email is already verified. You can log in.');
+                return view('home_page')
+                    ->with('message_mailid_verify', 'Your email is already verified. You can log in.')
+                    ->with('status_mailid_verify', 'warning');
             }
         } catch (ModelNotFoundException $e) {
-            return redirect()->route('home')->with('error_notification', 'Invalid verification token');
+            return view('home_page')
+                ->with('message_mailid_verify', 'Invalid verification token.')
+                ->with('status_mailid_verify', 'error');
         }
     }
 }

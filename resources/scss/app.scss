@@ -2,11 +2,11 @@
 
 @import "./variables.scss";
 
-@mixin flexing {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+// @mixin flexing {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
 
 /* Notification styles */
 .notification {
@@ -378,9 +378,7 @@
             padding: 5px 15px;
             color: $color_5;
             font-weight: bolder;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include flexing;
             border-radius: 15px;
             background-color: $color_1;
             margin: 0 2% 0 2%;
@@ -391,17 +389,18 @@
             }
         }
 
-        .profile-container {
-            position: relative;
-            display: inline-block;
-        }
+        // .profile-container {
+        //     position: relative;
+        //     display: inline-block;
+        // }
 
         .profile-dropdown {
             position: relative;
             display: flex;
             align-items: center;
             cursor: pointer;
-            margin-top: 4px;
+            // margin-top: 4px;
+            z-index: 3;
         }
 
         .avatar-container {
@@ -410,7 +409,7 @@
             background: #fff;
             border-radius: 50%;
             margin-right: 5px;
-            padding-top: 3px;
+            // padding-top: 3px;
             outline: 2px solid #fff;
 
             .avatar {
@@ -427,8 +426,8 @@
 
         .dropdown-menu {
             position: absolute;
-            top: 100%;
-            left: -55px;
+            top: 110%;
+            left: -40px;
             list-style: none;
             padding: 0;
             margin: 0;
@@ -474,7 +473,7 @@
 
 // Mobile Header Styles
 .mobile_header {
-    position: fixed;
+    // position: fixed;
     top: 0;
     left: 0;
     right: 0;

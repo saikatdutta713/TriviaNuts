@@ -338,37 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
-//Community Page
-document.addEventListener("DOMContentLoaded", function () {
-    const postTitles = document.querySelectorAll("#tittleP");
-    const Content1 = document.getElementById("communityContent1");
-    const Content2 = document.getElementById("communityContent2");
-
-    postTitles.forEach((postTitle) => {
-        postTitle.addEventListener("click", () => {
-            Content1.style.display = "none";
-            Content2.style.display = "block";
-        });
-    });
-});
-
 // Trends page
-// document.addEventListener("DOMContentLoaded", function () {
-//     const frames = document.querySelectorAll(".carousel-frame");
-//     let currentFrame = 0;
-
-//     function showNextFrame() {
-//         frames[currentFrame].classList.remove("active");
-//         currentFrame = (currentFrame + 1) % frames.length;
-//         frames[currentFrame].classList.add("active");
-//     }
-
-//     // Initially show the first frame
-//     frames[currentFrame].classList.add("active");
-
-//     // Start the automatic carousel
-//     setInterval(showNextFrame, 3000); // Change frame every 3 seconds
-// });
 document.addEventListener("DOMContentLoaded", function () {
     const frames = document.querySelectorAll(".carousel-frame");
     let currentFrame = 0;

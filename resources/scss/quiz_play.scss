@@ -1,0 +1,127 @@
+@import "./variables.scss";
+
+@mixin quiz-button {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    background-color: $color_1;
+    .first-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        i {
+            font-size: 30px;
+            color: #efa333;
+
+        }
+
+        .subject-tag {
+            @include flexing;
+            p {
+                color: #1e4467;
+                font-size: 0.8em;
+                letter-spacing: 1px;
+                background-color: #f3f6f7;
+                border-radius: 0.5rem;
+                padding: 0.3rem;
+            }
+            #completed-icon {
+                font-size: 20px;
+                margin-left: 0.5rem;
+                color: #3ea895;
+            }
+        }
+    }
+
+    .tittle {
+        text-align: left;
+        font-size: 1em;
+        padding: 1.5rem 0 1rem;
+        color: #12131b;
+        font-weight: 500;
+    }
+
+    .second-row {
+        display: flex;
+        // justify-content: space-between;
+        .attendance,
+        .full-marks {
+            display: flex;
+            align-items: center;
+            padding-right: 1rem;
+            i {
+                font-size: 15px;
+                margin-right: 5px;
+                color: #1e4467;
+            }
+            p {
+                font-size: 13px;
+                color: #1e4467;
+            }
+        }
+    }
+}
+
+.quiz-content {
+    background-color: #fafbfe;
+}
+.grid-heading {
+    padding: 2rem 1rem 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #12131b;
+}
+.grid-subject {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    padding: 1rem 3rem;
+    .subject {
+        background: lightblue;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 0.2rem;
+        cursor: pointer;
+    }
+}
+
+.grid-quiz-heading {
+    padding: 4rem 1rem 1rem;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #12131b;
+}
+.grid-quiz-today {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    padding: 1rem 5rem;
+    .quiz {
+        @include quiz-button;
+    }
+}
+
+.grid-quiz-active {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    padding: 1rem 5rem 3rem;
+    .quiz {
+        @include quiz-button;
+    }
+}
+
+.grid-next-page {
+    @include flexing;
+    padding: 0 1rem 0;
+    font-size: 1.1em;
+    font-weight: bold;
+
+    i {
+        padding-left: 1rem;
+    }
+}

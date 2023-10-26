@@ -19,7 +19,7 @@
             <img src="{{ asset('images/TriviaNuts_Logo.svg') }}" alt="logo" />
         </div>
         <div class="navbar">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('home_page') }}">
                 <div class="navbutton">
                     Home
                 </div>
@@ -29,10 +29,12 @@
                     Community
                 </div>
             </a>
-            <div class="navbutton">
-                Trends
-            </div>
-            <a href="{{ route('category') }}">
+            <a href="{{ route('trends') }}">
+                <div class="navbutton">
+                    Trends
+                </div>
+            </a>
+            <a href="{{ route('quiz_play') }}">
                 <div class="navbutton">
                     Category
                 </div>
@@ -173,7 +175,7 @@
 
     <nav class="mobile_sidebar">
         <ul class="menu">
-            <li><a href="{{ Route('home') }}">Home</a></li>
+            <li><a href="{{ Route('home_page') }}">Home</a></li>
             <li><a href="#">Community</a></li>
             <li><a href="#">Trends</a></li>
             <li><a href="#">Category</a></li>

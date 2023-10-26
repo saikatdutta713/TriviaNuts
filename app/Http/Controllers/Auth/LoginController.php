@@ -14,7 +14,7 @@ class LoginController extends Controller
     function index()
     {   
         $title = "Login Page";
-        if (auth()->check()) return redirect(route('home'));
+        if (auth()->check()) return redirect(route('home_page'));
         return view('auth.login',compact('title'));
         
     }

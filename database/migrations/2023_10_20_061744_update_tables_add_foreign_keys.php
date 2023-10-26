@@ -58,7 +58,7 @@ class UpdateTablesAddForeignKeys extends Migration
         });
 
         Schema::table('forum_answers', function (Blueprint $table) {
-            $table->foreign('post_id')->references('post_id')->on('forum_posts');
+            // $table->foreign('post_id')->references('post_id')->on('forum_posts');
             $table->foreign('user_id')->references('user_id')->on('users');
         });
 
@@ -92,7 +92,7 @@ class UpdateTablesAddForeignKeys extends Migration
         });
 
         Schema::table('forum_answers', function (Blueprint $table) {
-            $table->dropForeign(['post_id']);
+            // $table->dropForeign(['post_id']);
             $table->dropForeign(['user_id']);
         });
 

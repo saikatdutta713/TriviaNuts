@@ -16,7 +16,9 @@ use App\Http\Controllers\Auth\VerifyOtpController;
 use App\Http\Controllers\Mail\VerificationController;
 use App\Http\Controllers\Admin\MaintenanceController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\QuizPlayController;
 use App\Http\Controllers\CommunityController;
+use App\Http\Controllers\CommunityPostController;
 use App\Http\Controllers\TrendsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuoteController;
@@ -42,7 +44,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Controller::class, 'index'])->name('home');
+Route::get('/', [Controller::class, 'index'])->name('home_page');
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'login'])->name('login.user');
@@ -75,7 +77,9 @@ Route::prefix('/update')->group(function () {
 });
 
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
+Route::get('/quiz', [QuizPlayController::class, 'index'])->name('quiz_play');
 Route::get('/community', [CommunityController::class, 'index'])->name('community');
+Route::get('/community/post', [CommunityPostController::class, 'index'])->name('community_post');
 Route::get('/trends', [TrendsController::class, 'index'])->name('trends');
 
 
@@ -88,6 +92,10 @@ Route::prefix('/quiz')->group(function () {
 Route::get('/master', function () {
     return view('layouts.master');
 });
+Route::get('/homepage', function () {
+    return view('home');
+});
+
 
 
 Route::get('/sendmail', [EmailController::class, 'sendEmail']);

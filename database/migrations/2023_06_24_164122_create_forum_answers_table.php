@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('forum_answers', function (Blueprint $table) {
             
             $table->bigInteger('answer_id')->unsigned()->autoIncrement();
-            $table->json('answer');
+            $table->text('forum_answer');
             $table->bigInteger('like')->default(0);
             $table->bigInteger('dislike')->default(0);
-            $table->unsignedBigInteger('post_id');
+            // $table->unsignedBigInteger('post_id');
             $table->unsignedBigInteger('user_id');
 
             $table->timestamps();
