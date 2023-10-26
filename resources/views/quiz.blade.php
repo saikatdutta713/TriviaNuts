@@ -83,7 +83,7 @@
             <div class="ruppertab">
                 <div class="timeoption">
                     Total time
-                    <div id="timer">01:00</div>
+                    <div id="timer">00:00</div>
                 </div>
                 <div class="timeoption">
                     Time remain for this question
@@ -142,39 +142,139 @@
 
 
     <script>
-    //   // Function to check the value and hide the next div if needed
-    //     function checkAndHideNextDiv() {
-    //         const firstDiv = document.getElementById("quizQuestionNo");
-    //         const nextDiv = document.getElementById("nextButton");
+        function toggleDisplay() {
+        var contentDiv = document.getElementById("leftcolumn");
+        if (contentDiv.style.display === "none") {
+            contentDiv.style.display = "block";
+        } else {
+            contentDiv.style.display = "none";
+        }
+        }
 
-    //         if (parseInt(firstDiv.textContent) >= 10) {
-    //             nextDiv.style.display = "none";
-    //         } else {
-    //             nextDiv.style.display = "block";
-    //         }
-    //     }
+        function toggleDisplayNone() {
+        var contentDiv = document.getElementById("leftcolumn");
+        if (contentDiv.style.display === "block") {
+            contentDiv.style.display = "none";
+        } else {
+            contentDiv.style.display = "block";
+        }
+        }
 
-    //     // Call the function initially to check the initial value
-    //     checkAndHideNextDiv();
 
-    function toggleDisplay() {
-    var contentDiv = document.getElementById("leftcolumn");
-    if (contentDiv.style.display === "none") {
-        contentDiv.style.display = "block";
-    } else {
-        contentDiv.style.display = "none";
-    }
-    }
 
-    function toggleDisplayNone() {
-    var contentDiv = document.getElementById("leftcolumn");
-    if (contentDiv.style.display === "block") {
-        contentDiv.style.display = "none";
-    } else {
-        contentDiv.style.display = "block";
-    }
-    }
+        
+        let currentQuestionNo = 1;
+        let reverseTimerInterval;
+        let manualNextClicked = false;
+        let manualPreviousClicked = false;
+        let timerInterval;
 
+        function simulateNextQuestion() {
+            const quizQuestionNo = document.getElementById("quizQuestionNo");
+            const nextButton = document.getElementById("nextButton");
+            const previousDiv = document.getElementById("previousButton");
+            const reverseTimer = document.getElementById("reverse-timer");
+
+            if (!manualPreviousClicked) {
+                currentQuestionNo++;
+            }else{
+                currentQuestionNo--;
+                if (currentQuestionNo ==1) {
+                previousDiv.style.display = "none";
+            }
+            }
+
+            manualPreviousClicked = false;
+
+            if (currentQuestionNo >= 11) {
+                clearInterval(reverseTimerInterval);
+                clearInterval(timerInterval);
+                return;
+            }
+
+            if (currentQuestionNo >= 10) {
+                nextButton.textContent = "Submit";
+                nextButton.style.backgroundColor = "green";
+            }
+
+            quizQuestionNo.textContent = currentQuestionNo + ".";
+
+            if (currentQuestionNo >=2) {
+                previousDiv.style.display = "block";
+            }
+            if (currentQuestionNo ==1) {
+                previousDiv.style.display = "none";
+            }
+
+
+            reverseTimer.textContent = "01:00";
+        }
+
+        function updateReverseTimer() {
+            const reverseTimer = document.getElementById("reverse-timer");
+            let [minutes, seconds] = reverseTimer.textContent.split(":").map(Number);
+
+            if (minutes === 0 && seconds === 0) {
+                simulateNextQuestion();
+            } else {
+                if (seconds === 0) {
+                    seconds = 59;
+                    minutes--;
+                } else {
+                    seconds--;
+                }
+
+                reverseTimer.textContent = `${minutes
+                    .toString()
+                    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+            }
+        }
+
+        function initTimer() {
+            let seconds = 0;
+            let minutes = 0;
+            const timerDisplay = document.getElementById("timer");
+
+            function updateTimer() {
+                if (minutes === 10 && seconds === 0) {
+                    clearInterval(timerInterval);
+                } else {
+                    if (seconds === 59) {
+                        seconds = 0;
+                        minutes++;
+                    } else if (minutes === 10 && seconds === 0) {
+                        clearInterval(timerInterval); // Stop the timer at 10 minutes
+                    } else {
+                        seconds++;
+                    }
+
+                    
+
+                    const timeString = `${minutes.toString().padStart(2, "0")}:${seconds
+                        .toString()
+                        .padStart(2, "0")}`;
+                    timerDisplay.innerText = timeString;
+                }
+            }
+
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        reverseTimerInterval = setInterval(updateReverseTimer, 1000);
+
+        const manualNextButton = document.getElementById("nextButton");
+        manualNextButton.addEventListener("click", function () {
+            manualNextClicked = true;
+            simulateNextQuestion();
+        });
+
+        const manualPreviousButton = document.getElementById("previousButton");
+        manualPreviousButton.addEventListener("click", function () {
+            manualPreviousClicked = true;
+            simulateNextQuestion();
+        });
+
+        initTimer();
     </script>
 
     <script src="{{ asset('js/quiz.js') }}"></script>
