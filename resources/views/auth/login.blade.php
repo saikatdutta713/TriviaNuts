@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    {{ isset($title) ? $title : env('APP_NAME')." Home Page" }}
+{{ isset($title) ? $title : env('APP_NAME')." Home Page" }}
 @endsection
 @section('content')
 <div class="loginPage">
@@ -32,22 +32,26 @@
                     <div class="error-txt">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="pass-txt" id="openForgotPasswordModalBtn"><a href="#">Forgot password?</a></div>
+                <div class="pass-txt">
+                    <a href="{{ route('reset.password.email.form') }}">Forgot password?</a>
+                </div>
                 <input type="submit" value="Sign in" id="openOtpModalBtn">
             </form>
         </div>
         <div class="loginFooter">
             <div class="divider">
-                
+
                 <div class="divisionOr">
                     <div class="dash"></div>
                     <p>OR </p>
                     <div class="dash"></div>
                 </div>
-                <div class="googleLogin">
-                    Sign in with google
-                    <i class="fa-brands fa-google" id="googleLogo"></i>
-                </div>
+                <a href="{{ url('/auth/google') }}">
+                    <div class="googleLogin">
+                        Sign in with google
+                        <i class="fa-brands fa-google" id="googleLogo"></i>
+                    </div>
+                </a>
             </div>
             <label for="newsletter">Not yet member? <a href="{{ route('register') }}">Register now</a></label>
         </div>
@@ -125,7 +129,8 @@
 </div>
 @endisset
 
-<div id="ForgotPasswordModal" class="forgotPasswordModal">
+@isset ($forgotPass)
+<div class="forgotPasswordModal">
     <form action="{{ route('reset.link') }}" method="POST">
         @csrf
         <div class="modal-content">
@@ -135,15 +140,19 @@
             <div class="modal-body">
                 <p>Enter your registered email address to reset your password.</p>
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email">
+                <input type="email" id="email" name="email_forgotPass" placeholder="Enter your email">
+                @error('email_forgotPass')
+                <div class="error-txt">{{ $message }}</div>
+                @enderror
             </div>
             <div class="modal-footer">
-                <button id="submitForgotPasswordBtn">Submit</button>
-                <button id="cancelForgotPasswordBtn" class="cancel">Cancel</button>
+                <button type="submit">Submit</button>
+                <button class="cancel"><a href="{{ route('login') }}">Cancel</a></button>
             </div>
         </div>
     </form>
 </div>
+@endisset
 
 @isset ($success)
 <x-message-modal type="success" message="{{ $success }}" showCloseButton="true" />
@@ -152,6 +161,14 @@
 @isset ($error)
 <x-message-modal type="error" message="{{ $error }}" showCloseButton="true" />
 @endisset
+
+@if (session()->has('success'))
+<x-message-modal type="success" message="{{ session()->get('success') }}" showCloseButton="true" />
+@endif
+
+@if (session()->has('error'))
+<x-message-modal type="error" message="{{ session()->get('error') }}" showCloseButton="true" />
+@endif
 
 @isset($success_notification)
 <x-notification type="success" message="{{ $success_notification }}" />

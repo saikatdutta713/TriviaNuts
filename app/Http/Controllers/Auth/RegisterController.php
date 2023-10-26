@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -17,8 +18,7 @@ class RegisterController extends Controller
     function index()
     {
         $title = "Registration Page";
-        return view('auth.register',compact('title'))->with('verificationMail', false);
-        
+        return view('auth.register', compact('title'))->with('verificationMail', false);
     }
 
     function validator(array $data)
@@ -64,8 +64,18 @@ class RegisterController extends Controller
         $user = $this->create($request->all());
 
         if ($user) {
-            $this->sendEmail($user);
-            return view('auth.register')->with('verificationMail', true);
+            if (!Session::has('socialite')) {
+                $this->sendEmail($user);
+                return view('auth.register')->with('verificationMail', true);
+            } else {
+                $user->update([
+                    'email_verified_at' => now(),
+                    'verification_token' => null,
+                ]);
+                Mail::to($user->email)->send(new WelcomeMail($user->name));
+                Auth::login($user);
+                return redirect()->route('home')->with('success_notification', 'Login Successful!');
+            }
         }
     }
 }

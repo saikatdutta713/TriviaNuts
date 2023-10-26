@@ -1,6 +1,6 @@
 <!-- resources/views/components/notification.blade.php -->
 <div class="notification {{ $type }}">
-    
+
     {{ $message }}
     <span class="close" onclick="closeNotification(this)">&times;</span>
 </div>
@@ -16,10 +16,7 @@
     setTimeout(function() {
         var notification = document.querySelector('.notification');
         if (notification) {
-            notification.style.display = 'none';
+            notification.remove();
         }
     }, 20000);
 </script>
-
-
-

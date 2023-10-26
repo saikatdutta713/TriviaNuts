@@ -38,7 +38,7 @@ class AdminLoginController extends Controller
 
             if (!auth()->user()->role) {
                 auth()->logout();
-                return redirect()->route('admin.login')->with('error_notification', 'You are not authorized');
+                return redirect()->route('admin.login.view')->with('error_notification', 'You are not authorized');
             }
 
             // return redirect()->route('admin.home')->with('success_notification', 'Login Successful');

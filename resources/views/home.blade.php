@@ -193,6 +193,42 @@
     @isset($status_mailid_verify)
     <x-notification type="{{ $status_mailid_verify }}" message="{{ $message_mailid_verify }}" />
     @endisset
+    @isset ($success)
+    <x-message-modal type="success" message="{{ $success }}" showCloseButton="true" />
+    @endisset
+
+    @isset ($error)
+    <x-message-modal type="error" message="{{ $error }}" showCloseButton="true" />
+    @endisset
+
+    @isset ($warning)
+    <x-message-modal type="warning" message="{{ $warning }}" buttonText="Confirm" buttonLink="{{ $redirect_link }}"
+        showCloseButton="true" />
+    @endisset
+
+    @if (session()->has('success'))
+    <x-message-modal type="success" message="{{ $success }}" showCloseButton="true" />
+    @endif
+
+    @if (session()->has('error'))
+    <x-message-modal type="error" message="{{ $error }}" showCloseButton="true" />
+    @endif
+
+    @if (session()->has('warning'))
+    <x-message-modal type="warning" message="{{ session()->get('warning') }}"
+        buttonText="{{ session()->get('buttonText') }}" buttonLink="{{ session()->get('redirect_link') }}"
+        showCloseButton="true" closeButtonText="{{ session()->get('closeButtonText') }}" />
+    @endif
+
+    @if(session()->has('success_notification'))
+    <x-notification type="success" message="{{ session()->get('success_notification') }}" />
+    @endif
+    @if(session()->has('error_notification'))
+    <x-notification type="error" message="{{ session()->get('error_notification') }}" />
+    @endif
+    @if(session()->has('warning_notification'))
+    <x-notification type="warning" message="{{ session()->get('warning_notification') }}" />
+    @endif
 </body>
 
 </html>

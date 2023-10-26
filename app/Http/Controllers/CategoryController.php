@@ -10,7 +10,7 @@ class CategoryController extends Controller
     function index()
     {
         $title = "Category Page";
-        return view('category',compact('title'));
-        
+        $user = auth()->user();
+        return view('category', compact('title', 'user'));
     }
 }

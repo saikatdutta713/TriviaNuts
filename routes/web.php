@@ -26,8 +26,10 @@ use App\Http\Controllers\Admin\QuizController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\AnnouncementController;
-
+use App\Http\Controllers\Auth\SocialLoginController;
+use App\Http\Controllers\PlayQuizController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,17 +45,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [Controller::class, 'index'])->name('home');
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
-Route::post('login', [LoginController::class, 'login'])->name('login');
-Route::get('login/otp', [VerifyOtpController::class, 'index'])->name('verify.otp');
+Route::post('login', [LoginController::class, 'login'])->name('login.user');
+Route::get('login/otp', [VerifyOtpController::class, 'index'])->name('verify.otp.view');
 Route::post('login/otp', [VerifyOtpController::class, 'verifyOtp'])->name('verify.otp');
 Route::get('register', [RegisterController::class, 'index'])->name('viewRegister');
 Route::post('register', [RegisterController::class, 'register'])->name('register');
 Route::get('verify/{token}', [VerificationController::class, 'verify'])->name('verify.mail');
 Route::get('logout', [LogoutUserController::class, 'logout'])->name('logout');
 
-Route::middleware('auth.check')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
-});
+Route::get('/reset/link', [ResetPasswordController::class, 'resetLinkForm'])->name('reset.password.email.form');
+Route::post('/reset/link', [ResetPasswordController::class, 'sendLink'])->name('reset.link');
+Route::get('/reset/Password/{token}', [ResetPasswordController::class, 'verifyResetToken'])->name('verify.reset.password');
+Route::get('/reset/Password', [ResetPasswordController::class, 'passwordResetFormView'])->name('reset.password.form.view');
+Route::post('/reset/Password', [ResetPasswordController::class, 'resetPassword'])->name('reset.password');
+
+Route::get('/auth/google', [SocialLoginController::class, 'googleLogin'])->name('googleLogin');
+Route::get('/auth/google/callback', [SocialLoginController::class, 'googleHandle'])->name('googleHandle');
+
+// Route::middleware('auth.check')->group(function () {
+Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
 
 Route::prefix('/update')->group(function () {
     Route::post('/profile', [ProfileController::class, 'updateProfile'])->name('update.profile');
@@ -62,34 +72,31 @@ Route::prefix('/update')->group(function () {
     Route::post('/socialMedia', [ProfileController::class, 'updateSocial'])->name('update.social');
     Route::post('/password', [ProfileController::class, 'updatePassword'])->name('update.password');
     Route::get('/password', [ProfileController::class, 'updatePassword'])->name('view.update.password');
-})->middleware('web', 'auth.check');
-Route::get('/master', function () {
-    return view('layouts.master');
 });
-
-Route::get('/reset/Password/{token}', [ResetPasswordController::class, 'verifyResetToken'])->name('verify.reset.password');
-Route::get('/reset/Password', [ResetPasswordController::class, 'passwordResetFormView'])->name('reset.password.view');
-Route::post('/reset/Password', [ResetPasswordController::class, 'resetPassword'])->name('reset.password');
-Route::post('/reset/link', [ResetPasswordController::class, 'sendLink'])->name('reset.link');
-
 
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
 Route::get('/community', [CommunityController::class, 'index'])->name('community');
 Route::get('/trends', [TrendsController::class, 'index'])->name('trends');
 
-Route::get('/quiz', function () {
-    return view('quiz');
-});
 
+Route::prefix('/quiz')->group(function () {
+    Route::get('/{id}', [PlayQuizController::class, 'index'])->name('quiz');
+});
+// });
+
+
+Route::get('/master', function () {
+    return view('layouts.master');
+});
 
 
 Route::get('/sendmail', [EmailController::class, 'sendEmail']);
 
 Route::prefix('admin')->group(function () {
-    Route::get('/login', [AdminLoginController::class, 'index'])->name('admin.login');
+    Route::get('/login', [AdminLoginController::class, 'index'])->name('admin.login.view');
     Route::post('/login', [AdminLoginController::class, 'login'])->name('admin.login');
-    Route::get('login/otp', [AuthVerifyOtpController::class, 'index'])->name('verify.otp');
-    Route::post('login/otp', [AuthVerifyOtpController::class, 'verifyOtp'])->name('verify.otp');
+    Route::get('login/otp', [AuthVerifyOtpController::class, 'index'])->name('admin.verify.otp.view');
+    Route::post('login/otp', [AuthVerifyOtpController::class, 'verifyOtp'])->name('admin.verify.otp');
     Route::get('logout', [LogoutAdminController::class, 'logout'])->name('admin.logout');
 
     Route::middleware('admin.auth.check')->group(function () {
@@ -133,5 +140,9 @@ Route::prefix('admin')->group(function () {
         });
     });
 });
+
+Route::get('send/back', function () {
+    return redirect()->back();
+})->name('back');
 
 Route::get('/test', [Controller::class, 'test']);
