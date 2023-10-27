@@ -36,7 +36,7 @@
             </a>
             <a href="{{ route('quiz_play') }}">
                 <div class="navbutton">
-                    Category
+                    Quiz
                 </div>
             </a>
         </div>

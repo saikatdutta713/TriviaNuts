@@ -6692,6 +6692,27 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(showNextFrame, 8000); // Change frame every 3 seconds
 });
 
+//quiz_play.blade.php
+document.addEventListener("DOMContentLoaded", function () {
+  // Code for handling the Rules modal
+  var editRulesButton = document.querySelectorAll("#quiz");
+  var editModal = document.getElementById("rules-Modal");
+  editRulesButton.forEach(function (button) {
+    button.addEventListener("click", function () {
+      editModal.style.display = "block";
+    });
+  });
+  var closeEditModalBtn = document.getElementById("closeRulesModalBtn");
+  closeEditModalBtn.addEventListener("click", function () {
+    editModal.style.display = "none";
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === editModal) {
+      editModal.style.display = "none";
+    }
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

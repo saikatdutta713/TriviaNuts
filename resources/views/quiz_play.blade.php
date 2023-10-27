@@ -15,7 +15,7 @@
 
         <p class="grid-quiz-heading">Today's Quizzes</p>
         <div class="grid-quiz-today">
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-calculator"></i>
                     <div class="subject-tag">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-computer"></i>
                     <div class="subject-tag">
@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-head-side-virus"></i>
                     <div class="subject-tag">
@@ -78,7 +78,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-calendar-week"></i>
                     <div class="subject-tag">
@@ -103,7 +103,7 @@
 
         <p class="grid-quiz-heading">Active Quizzes</p>
         <div class="grid-quiz-active">
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-computer"></i>
                     <div class="subject-tag">
@@ -124,7 +124,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-computer"></i>
                     <div class="subject-tag">
@@ -145,7 +145,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-computer"></i>
                     <div class="subject-tag">
@@ -166,7 +166,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-computer"></i>
                     <div class="subject-tag">
@@ -187,7 +187,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-computer"></i>
                     <div class="subject-tag">
@@ -208,7 +208,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-computer"></i>
                     <div class="subject-tag">
@@ -229,7 +229,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-computer"></i>
                     <div class="subject-tag">
@@ -250,7 +250,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-computer"></i>
                     <div class="subject-tag">
@@ -279,7 +279,7 @@
 
         <p class="grid-quiz-heading">Completed Quizzes</p>
         <div class="grid-quiz-today">
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-calculator"></i>
                     <div class="subject-tag">
@@ -302,7 +302,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-computer"></i>
                     <div class="subject-tag">
@@ -324,7 +324,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-head-side-virus"></i>
                     <div class="subject-tag">
@@ -346,7 +346,7 @@
                     </div>
                 </div>
             </div>
-            <div class="quiz">
+            <div class="quiz" id="quiz">
                 <div class="first-row">
                     <i class="fa-solid fa-calendar-week"></i>
                     <div class="subject-tag">
@@ -372,3 +372,23 @@
         
     </div>
 @endsection
+<div id="rules-Modal" class="rules-Modal">
+    <div class="modal-content">
+        <form action="" method="">
+            @csrf
+            <div class="modal-header">
+                <h2>Rules & Regulations</h2>
+            </div>
+            <div class="modal-body">
+                <i class="fa-solid fa-handshake"></i>
+                <p>
+                    You have 10 minutes to solve 10 question. You can only choose 1 option out of 4 for each question. On the time of playing quiz if you click on back button your quiz will automatically submitted.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" id="submitEditModalBtn">Start</button>
+                <button id="closeRulesModalBtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

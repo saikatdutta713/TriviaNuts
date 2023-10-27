@@ -1,5 +1,49 @@
 @import "./variables.scss";
-
+@mixin modal {
+    display: none; /* Hide the modal by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $modal-background-color; /* Semi-transparent black background */
+    z-index: 999;
+}
+@mixin modal-content-header {
+    background-color: $modal-content-background-color;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 50%;
+    max-height: 90%;
+    overflow-y: auto;
+    margin: 2rem auto;
+    .modal-header {
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #007bff;
+        color: $modal-content-background-color;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+}
+@mixin modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: $modal-content-background-color;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover {
+            background-color: #c82333; // Darker red on hover
+        }
+    }
+}
 @mixin quiz-button {
     background: #f0f0f0;
     border: 1px solid #ddd;
@@ -16,7 +60,6 @@
         i {
             font-size: 30px;
             color: #efa333;
-
         }
 
         .subject-tag {
@@ -123,5 +166,33 @@
 
     i {
         padding-left: 1rem;
+    }
+}
+
+/* Create post Modal */
+.rules-Modal {
+    @include modal;
+    .modal-content {
+        @include modal-content-header;
+        .modal-body {
+            padding: 2rem;
+            @include flexing;
+            width: 80%;
+            margin-left: 10%;
+            i{
+                font-size: 40px;
+            }
+            p{
+                padding: 1rem;
+                padding-left: 2rem
+            }
+        }
+        .modal-footer {
+            @include modal-footer;
+            #closeRulesModalBtn {
+                background-color: #dc3545;
+                margin-left: 10px;
+            }
+        }
     }
 }
