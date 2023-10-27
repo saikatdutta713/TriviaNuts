@@ -25,7 +25,7 @@ class SocialLoginController extends Controller
             if (User::where('email', $user->getEmail())->first()) {
                 Auth::login(User::where('email', $user->getEmail())->first());
 
-                return redirect()->route('home')->with('success_notification', 'Hello ' . $user->getName() . ', You have successfully logged in');
+                return redirect()->route('home_page')->with('success_notification', 'Hello ' . $user->getName() . ', You have successfully logged in');
             } else {
                 $inputData = [
                     'name' => $user->getName(),
