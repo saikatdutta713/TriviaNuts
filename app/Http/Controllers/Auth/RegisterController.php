@@ -74,7 +74,7 @@ class RegisterController extends Controller
                 ]);
                 Mail::to($user->email)->send(new WelcomeMail($user->name));
                 Auth::login($user);
-                return redirect()->route('home')->with('success_notification', 'Login Successful!');
+                return redirect()->route('home_page')->with('success_notification', 'Login Successful!');
             }
         }
     }

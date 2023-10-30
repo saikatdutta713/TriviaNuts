@@ -356,3 +356,26 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(showNextFrame, 8000); // Change frame every 3 seconds
 });
 
+//quiz_play.blade.php
+document.addEventListener("DOMContentLoaded", function () {
+    // Code for handling the Rules modal
+    const editRulesButton = document.querySelectorAll("#quiz");
+    const editModal = document.getElementById("rules-Modal");
+
+    editRulesButton.forEach((button) => {
+        button.addEventListener("click", () => {
+            editModal.style.display = "block";
+        });
+    });
+    const closeEditModalBtn = document.getElementById("closeRulesModalBtn");
+    closeEditModalBtn.addEventListener("click", () => {
+        editModal.style.display = "none";
+    });
+    window.addEventListener("click", (event) => {
+        if (event.target === editModal) {
+            editModal.style.display = "none";
+        }
+    });
+});
+
+
