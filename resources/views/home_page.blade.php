@@ -23,88 +23,207 @@
             </div>
         </div>
     </section>
-    <section class="quote_motivation">
-        <div class="quote">
-            <div class="quote_container">
-                <div class="the_quote">
-                    <h2>{{ "The greatest glory in living lies not in never falling, but in rising every time we fall" }}
-                    </h2>
-                    <h3>{{ "Nelson Mandela" }}</h3>
-                </div>
+
+    <p id="content-heading">Badges</p>
+    <div class="grid-quiz-today">
+        <div class="quiz" id="quiz">
+            <div class="first-row">
+                <img src="{{ asset('images/badge1.svg') }}" alt="">
+                <p class="tittle">
+                    Gold
+                </p>
+            </div>
+            
+            <div class="second-row">
+                Unlock at 10 points 
             </div>
         </div>
-        <div class="leaderboard">
-            <div class="leaderview">
-                <p>Leader Board</p>
-                <div class="leader1">
-                    <div class="dp">
-                        <i id="medel" class="fas fa-medal" style="color: #ffd700"></i>
-                        <i class="fa-solid fa-circle-user" id="leaderDp"></i>
-                    </div>
-                    <div class="leaderDetails">
-                        <div id="name">Uday_Krishna_Pal</div>
-                        <i class="fa-solid fa-gem" id="badgeDp"></i>
-                        <div id="points">7000</div>
-                    </div>
-                </div>
-                <div class="leader1">
-                    <div class="dp">
-                        <i id="medel" class="fas fa-medal" style="color: #C0C0C0"></i>
-                        <i class="fa-solid fa-circle-user" id="leaderDp"></i>
-                    </div>
-                    <div class="leaderDetails">
-                        <div id="name">Subhankar_$inha </div>
-                        <i class="fa-solid fa-gem" id="badgeDp"></i>
-                        <div id="points">6890</div>
-                    </div>
-                </div>
-                <div class="leader1">
-                    <div class="dp">
-                        <i id="medel" class="fas fa-medal" style="color: #CD7F32"></i>
-                        <i class="fa-solid fa-circle-user" id="leaderDp"></i>
-                    </div>
-                    <div class="leaderDetails">
-                        <div id="name">Saikat_Dutta35 </div>
-                        <i class="fa-solid fa-star-half-stroke" id="badgeDp"></i>
-                        <div id="points">5742</div>
-                    </div>
-                </div>
-                <div class="leader1">
-                    <div class="dp">
-                        <div id="noId">4</div>
-                        <i class="fa-solid fa-circle-user" id="leaderDp"></i>
-                    </div>
-                    <div class="leaderDetails">
-                        <div id="name">Hacker_Win</div>
-                        <i class="fa-solid fa-shield-virus" id="badgeDp"></i>
-                        <div id="points">5342</div>
-                    </div>
-                </div>
-                <div class="leader1">
-                    <div class="dp">
-                        <div id="noId">5</div>
-                        <i class="fa-solid fa-circle-user" id="leaderDp"></i>
-                    </div>
-                    <div class="leaderDetails">
-                        <div id="name">Ronit$ingh</div>
-                        <i class="fa-solid fa-shield-cat" id="badgeDp"></i>
-                        <div id="points">5742</div>
-                    </div>
-                </div>
-                <div class="leader1">
-                    <div class="dp">
-                        <div id="noId">6</div>
-                        <i class="fa-solid fa-circle-user" id="leaderDp"></i>
-                    </div>
-                    <div class="leaderDetails">
-                        <div id="name">Pritam_Bag002</div>
-                        <i class="fa-solid fa-shield-heart" id="badgeDp"></i>
-                        <div id="points">5000</div>
-                    </div>
-                </div>
+        <div class="quiz" id="quiz">
+            <div class="first-row">
+               <img src="{{ asset('images/badge2.svg') }}" alt="">
+                <p class="tittle">
+                    Platinum
+                </p>
+            </div>
+            
+            <div class="second-row">
+                Unlock at 50 points 
             </div>
         </div>
-    </section>
+        <div class="quiz" id="quiz">
+            <div class="first-row">
+               <img src="{{ asset('images/badge3.svg') }}" alt="">
+                <p class="tittle">
+                    Ruby
+                </p>
+            </div>
+            <div class="second-row">
+                Unlock at 100 points 
+            </div>
+        </div>
+        <div class="quiz" id="quiz">
+            <div class="first-row">
+                <img src="{{ asset('images/badge4.svg') }}" alt="">
+                <p class="tittle">
+                    Diamond
+                </p>
+            </div>
+            <div class="second-row">
+                Unlock at 160 points 
+            </div>
+        </div>
+        <div class="quiz" id="quiz">
+            <div class="first-row">
+               <img src="{{ asset('images/badge5.svg') }}" alt="">
+                <p class="tittle">
+                    Eagle
+                </p>
+            </div>
+            <div class="second-row">
+                Unlock at 240 points 
+            </div>
+        </div>
+        <div class="quiz" id="quiz">
+            <div class="first-row">
+               <img src="{{ asset('images/badge6.svg') }}" alt="">
+                <p class="tittle">
+                    Wolf
+                </p>
+            </div>
+            <div class="second-row">
+                Unlock at 320 points 
+            </div>
+        </div>
+        <div class="quiz" id="quiz">
+            <div class="first-row">
+               <img src="{{ asset('images/badge7.svg') }}" alt="">
+                <p class="tittle">
+                    Lion
+                </p>
+            </div>
+            <div class="second-row">
+                Unlock at 410 points 
+            </div>
+        </div>
+        <div class="quiz" id="quiz">
+            <div class="first-row">
+               <img src="{{ asset('images/badge8.svg') }}" alt="">
+                <p class="tittle">
+                    Pirate
+                </p>
+            </div>
+            <div class="second-row">
+                Unlock at 500 points 
+            </div>
+        </div>
+        <div class="quiz" id="quiz">
+            <div class="first-row">
+               <img src="{{ asset('images/badge9.svg') }}" alt="">
+                <p class="tittle">
+                    Samurai
+                </p>
+            </div>
+            <div class="second-row">
+                Unlock at 650 points 
+            </div>
+        </div>
+        <div class="quiz" id="quiz">
+            <div class="first-row">
+               <img src="{{ asset('images/badge10.svg') }}" alt="">
+                <p class="tittle">
+                    Ninja
+                </p>
+            </div>
+            <div class="second-row">
+                Unlock at 800 points 
+            </div>
+        </div>
+    </div>
+    <div class="quote">
+        <div class="quote_container">
+            <div class="the_quote">
+                <h2>" {{ "The greatest glory in living lies not in never falling, but in rising every time we fall" }} "
+                </h2>
+                <h3>{{ "Nelson Mandela" }}</h3>
+            </div>
+        </div>
+    </div>
+    <p id="content-heading">Leader Board</p>
+    <div class="leaderview">
+        <div class="leader1">
+            <div class="dp">
+                <div id="medel">
+                    <i  class="fas fa-medal" style="color: #FFD700"></i>
+                    <img src="{{ asset('images/avatar-blue.png') }}" alt="">
+                </div>
+            </div>
+            <div class="leaderDetails">
+                <div id="name">Uday_Krishna_Pal</div>
+                <p id="points">Points: 7000</p>
+            </div>
+        </div>
+        <div class="leader1">
+            <div class="dp">
+                <div id="medel">
+                    <i  class="fas fa-medal" style="color: #808080"></i>
+                    <img src="{{ asset('images/avatar-blue.png') }}" alt="">
+                </div>
+            </div>
+            <div class="leaderDetails">
+                <div id="name">Uday_Krishna_Pal</div>
+                <p id="points">Points: 7000</p>
+            </div>
+        </div>
+        <div class="leader1">
+            <div class="dp">
+                <div id="medel">
+                    <i  class="fas fa-medal" style="color: 	#CD7F32"></i>
+                    <img src="{{ asset('images/avatar-blue.png') }}" alt="">
+                </div>
+            </div>
+            <div class="leaderDetails">
+                <div id="name">Uday_Krishna_Pal</div>
+                <p id="points">Points: 7000</p>
+            </div>
+        </div>
+        <div class="leader1">
+            <div class="dp">
+                <div id="medel">
+                    <p>4</p>
+                    <img src="{{ asset('images/avatar-blue.png') }}" alt="">
+                </div>
+            </div>
+            <div class="leaderDetails">
+                <div id="name">Uday_Krishna_Pal</div>
+                <p id="points">Points: 7000</p>
+            </div>
+        </div>
+        <div class="leader1">
+            <div class="dp">
+                <div id="medel">
+                    <p>5</p>
+                    <img src="{{ asset('images/avatar-blue.png') }}" alt="">
+                </div>
+            </div>
+            <div class="leaderDetails">
+                <div id="name">Uday_Krishna_Pal</div>
+                <p id="points">Points: 7000</p>
+            </div>
+        </div>
+        <div class="leader1">
+            <div class="dp">
+                <div id="medel">
+                    <p>6</p>
+                    <img src="{{ asset('images/avatar-blue.png') }}" alt="">
+                </div>
+            </div>
+            <div class="leaderDetails">
+                <div id="name">Uday_Krishna_Pal</div>
+                <p id="points">Points: 7000</p>
+            </div>
+        </div>
+    </div>
+    
 @endsection
 
 @isset($status_mailid_verify)
