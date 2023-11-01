@@ -30,6 +30,7 @@ use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\AnnouncementController;
 use App\Http\Controllers\Auth\SocialLoginController;
 use App\Http\Controllers\PlayQuizController;
+use App\Http\Controllers\QuizResultController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -78,6 +79,7 @@ Route::prefix('/update')->group(function () {
 
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
 Route::get('/quiz', [QuizPlayController::class, 'index'])->name('quiz_play');
+Route::get('/result', [QuizResultController::class, 'index'])->name('quiz_result');
 Route::get('/community', [CommunityController::class, 'index'])->name('community');
 Route::get('/community/post', [CommunityPostController::class, 'index'])->name('community_post');
 Route::get('/trends', [TrendsController::class, 'index'])->name('trends');

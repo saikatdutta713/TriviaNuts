@@ -1,0 +1,144 @@
+@import "./variables.scss";
+
+@mixin answer-symbol($color) {
+    font-size: 1.2em;
+    padding-top: 0.5rem;
+    margin-left: 95%;
+    color: $color;
+}
+@mixin padding-font($font-size) {
+    padding: 1rem;
+    font-size: $font-size;
+}
+.reattempt {
+    @include flexing;
+    padding: 20px;
+    p {
+        font-size: 18px;
+        margin-right: 20px;
+    }
+
+    .reattempt-button {
+        padding: 10px 20px;
+        background-color: $color_5;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: $color_13;
+        }
+    }
+}
+
+h1 {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2em;
+}
+.row-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 3rem;
+    padding: 2rem 3rem 3rem;
+    align-items: flex-start;
+
+    .total-score,
+    .question-answer,
+    .timer {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        background-color: $color_1;
+        border-radius: 1rem;
+    }
+
+    .total-score {
+        box-shadow: 0px 4px 6px $color_32;
+        .score {
+            @include padding-font(1.5em);
+            margin: 0.5rem 0.5rem 0 0.5rem;
+            color: $color_27;
+            font-weight: 600;
+        }
+        .point {
+            @include padding-font(1.1em);
+            margin: 0rem 0.5rem 0.5rem 0.5rem;
+        }
+    }
+
+    .question-answer {
+        box-shadow: 0px 4px 6px $color_32;
+        .question-answer-container {
+            padding: 1rem;
+            background-color: #e0e0e0;
+            margin: 0.5rem 0.5rem 3rem 0.5rem;
+            padding: 2rem 2rem 1rem;
+            border-radius: 15px;
+            .question {
+                display: flex;
+                align-items: center;
+                padding: 0 0 1rem 2rem;
+                p:first-child {
+                    font-weight: bold;
+                    margin-right: 7px;
+                    background-color: $color_1;
+                    padding: 0.3rem;
+                    border-radius: 6px;
+                }
+                p:nth-child(2) {
+                    font-weight: normal;
+                    font-size: 1.2em;
+                }
+            }
+            .answer-options {
+                text-align: left;
+                background-color: $color_1;
+                padding: 1rem 2rem 1rem 2rem;
+                max-width: 90%;
+                margin: auto;
+                border-radius: 8px;
+                p {
+                    margin: 8px 0;
+                }
+                .answer {
+                    margin: 15px 0;
+                    font-size: 17px;
+                    font-weight: bold;
+                    color: $color_35;
+                }
+            }
+            #wright {
+                @include answer-symbol($color_35);
+            }
+            #wrong {
+                @include answer-symbol($color_34);
+            }
+            #not-answer {
+                @include answer-symbol($color_5);
+            }
+        }
+    }
+
+    .timer {
+        box-shadow: 0px 2px 3px $color_32;
+        .heading {
+            @include padding-font(1.1em);
+            margin: 0.5rem 0.5rem 0 0.5rem;
+        }
+        .time {
+            @include padding-font(1.5em);
+            margin: 0rem 0.5rem 1rem 0.5rem;
+            color: $color_34;
+        }
+        .footer-heading {
+            font-size: 0.8em;
+            font-weight: bold;
+            margin: 0rem 0.5rem 0.5rem 0.5rem;
+        }
+    }
+}
