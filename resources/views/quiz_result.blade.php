@@ -5,10 +5,27 @@
 
 @section('content')
     <div class="reattempt">
-        <p>Want to re - attempt ?</p>
+        <p>Want to re-attempt ?</p>
         <button class="reattempt-button">Re - attempt</button>
     </div>
     <h1>Math quiz no - 1</h1>
+    <div class="row-container-mobile">
+        <div class="total-score">
+            <p class="score">Score - 9/10</p>
+            <p class="point">Total Points - 100</p>
+        </div>
+        <div class="timer">
+            <p class="heading">
+                Total time consumed
+            </p>
+            <p class="time">
+                09:23
+            </p>
+            <p class="footer-heading">
+                Minutes:Seconds
+            </p>
+        </div>
+    </div>
     <div class="row-container">
         <div class="total-score">
             <p class="score">Score - 9/10</p>
