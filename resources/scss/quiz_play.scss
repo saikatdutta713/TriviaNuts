@@ -153,25 +153,37 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 2rem;
     padding: 1rem 5rem 3rem;
+
+    a {
+        text-decoration: none;
+    }
+
     .quiz {
         @include quiz-button;
     }
 }
-
-.grid-next-page {
+.link__container {
     @include flexing;
-    padding: 0 1rem 0;
-    font-size: 1.1em;
-    font-weight: bold;
+    .grid-prev-page,
+    .grid-next-page {
+        @include flexing;
+        padding: 0 1rem 0;
+        font-size: 1.1em;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        color: $color_5;
+    }
 
-    i {
-        padding-left: 1rem;
+    span {
+        cursor: none;
     }
 }
 
 /* Create post Modal */
 .rules-Modal {
     @include modal;
+    display: block !important;
     .modal-content {
         @include modal-content-header;
         .modal-body {
@@ -179,19 +191,27 @@
             @include flexing;
             width: 80%;
             margin-left: 10%;
-            i{
+            i {
                 font-size: 40px;
             }
-            p{
+            p {
                 padding: 1rem;
-                padding-left: 2rem
+                padding-left: 2rem;
             }
         }
         .modal-footer {
             @include modal-footer;
+            justify-content: center;
+            a {
+                text-decoration: none;
+                padding: 5px 10px;
+                border-radius: 5px;
+                color: white;
+                background: $color_5;
+            }
             #closeRulesModalBtn {
                 background-color: #dc3545;
-                margin-left: 10px;
+                margin-left: 15px;
             }
         }
     }

@@ -2784,6 +2784,9 @@ input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.i
   grid-gap: 2rem;
   padding: 1rem 5rem 3rem;
 }
+.grid-quiz-active a {
+  text-decoration: none;
+}
 .grid-quiz-active .quiz {
   background: #f0f0f0;
   border: 1px solid #ddd;
@@ -2848,16 +2851,25 @@ input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.i
   color: #1e4467;
 }
 
-.grid-next-page {
+.link__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.link__container .grid-prev-page,
+.link__container .grid-next-page {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 1rem 0;
   font-size: 1.1em;
   font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: #149d9b;
 }
-.grid-next-page i {
-  padding-left: 1rem;
+.link__container span {
+  cursor: none;
 }
 
 /* Create post Modal */
@@ -2870,6 +2882,7 @@ input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.i
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
   z-index: 999;
+  display: block !important;
 }
 .rules-Modal .modal-content {
   background-color: #fff;
@@ -2909,6 +2922,7 @@ input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.i
   display: flex;
   justify-content: flex-end;
   padding: 10px;
+  justify-content: center;
 }
 .rules-Modal .modal-content .modal-footer button {
   padding: 10px 20px;
@@ -2921,9 +2935,16 @@ input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.i
 .rules-Modal .modal-content .modal-footer button:hover {
   background-color: #c82333;
 }
+.rules-Modal .modal-content .modal-footer a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  background: #149d9b;
+}
 .rules-Modal .modal-content .modal-footer #closeRulesModalBtn {
   background-color: #dc3545;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 .reattempt {
   display: flex;

@@ -13,8 +13,6 @@ class ParticipantsSeeder extends Seeder
         $participants = [
             [
                 'answer_id' => 1,
-                'badge_id' => 1,
-                'question_id' => 1,
                 'score_id' => 1, // Make sure this corresponds to a valid score_id
                 'user_id' => 1,
                 'quiz_id' => 1,
@@ -25,8 +23,6 @@ class ParticipantsSeeder extends Seeder
             ],
             [
                 'answer_id' => 2,
-                'badge_id' => 2,
-                'question_id' => 2,
                 'score_id' => 2, // Make sure this corresponds to a valid score_id
                 'user_id' => 2,
                 'quiz_id' => 1,

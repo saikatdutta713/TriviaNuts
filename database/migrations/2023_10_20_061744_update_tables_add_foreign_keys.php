@@ -25,10 +25,8 @@ class UpdateTablesAddForeignKeys extends Migration
         Schema::table('quiz_participants', function (Blueprint $table) {
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->foreign('quiz_id')->references('quiz_id')->on('quizzes')->onDelete('cascade');
-            $table->foreign('question_id')->references('question_id')->on('questions');
             $table->foreign('answer_id')->references('answer_id')->on('user_answers')->onDelete('cascade');
             $table->foreign('score_id')->references('score_id')->on('scores')->onDelete('cascade');
-            $table->foreign('badge_id')->references('badge_id')->on('badges');
         });
 
         Schema::table('questions', function (Blueprint $table) {
@@ -67,7 +65,7 @@ class UpdateTablesAddForeignKeys extends Migration
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->foreign('comment_id')->references('comment_id')->on('comments')->onDelete('cascade');
         });
-        
+
         Schema::table('notifications', function (Blueprint $table) {
             $table->foreign('user_id')->references('user_id')->on('users');
         });
@@ -84,7 +82,7 @@ class UpdateTablesAddForeignKeys extends Migration
         Schema::table('notifications', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
         });
-        
+
         Schema::table('forum_posts', function (Blueprint $table) {
             $table->dropForeign(['answer_id']);
             $table->dropForeign(['user_id']);
