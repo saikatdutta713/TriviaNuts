@@ -64,29 +64,30 @@ Route::post('/reset/Password', [ResetPasswordController::class, 'resetPassword']
 Route::get('/auth/google', [SocialLoginController::class, 'googleLogin'])->name('googleLogin');
 Route::get('/auth/google/callback', [SocialLoginController::class, 'googleHandle'])->name('googleHandle');
 
-// Route::middleware('auth.check')->group(function () {
-Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
+Route::middleware('auth.check')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile');
 
-Route::prefix('/update')->group(function () {
-    Route::post('/profile', [ProfileController::class, 'updateProfile'])->name('update.profile');
-    Route::post('/education', [ProfileController::class, 'updateEducation'])->name('update.education');
-    Route::post('/bio', [ProfileController::class, 'updateBio'])->name('update.bio');
-    Route::post('/socialMedia', [ProfileController::class, 'updateSocial'])->name('update.social');
-    Route::post('/password', [ProfileController::class, 'updatePassword'])->name('update.password');
-    Route::get('/password', [ProfileController::class, 'updatePassword'])->name('view.update.password');
+    Route::prefix('/update')->group(function () {
+        Route::post('/profile', [ProfileController::class, 'updateProfile'])->name('update.profile');
+        Route::post('/education', [ProfileController::class, 'updateEducation'])->name('update.education');
+        Route::post('/bio', [ProfileController::class, 'updateBio'])->name('update.bio');
+        Route::post('/socialMedia', [ProfileController::class, 'updateSocial'])->name('update.social');
+        Route::post('/password', [ProfileController::class, 'updatePassword'])->name('update.password');
+        Route::get('/password', [ProfileController::class, 'updatePassword'])->name('view.update.password');
+    });
+
+    Route::get('/category', [CategoryController::class, 'index'])->name('category');
+    Route::get('/community', [CommunityController::class, 'index'])->name('community');
+    Route::get('/community/post', [CommunityPostController::class, 'index'])->name('community_post');
+    Route::get('/trends', [TrendsController::class, 'index'])->name('trends');
+
+    Route::prefix('/quiz')->group(function () {
+        Route::get('/', [QuizPlayController::class, 'index'])->name('quiz_play');
+        Route::post('/category', [QuizPlayController::class, 'selectCategory'])->name('select.category');
+        Route::get('/{id}/start', [QuizPlayController::class, 'quizStart'])->name('quiz.start');
+        Route::get('/{id}/play', [QuizPlayController::class, 'quizPlay'])->name('quiz.play');
+    });
 });
-
-Route::get('/category', [CategoryController::class, 'index'])->name('category');
-Route::get('/quiz', [QuizPlayController::class, 'index'])->name('quiz_play');
-Route::get('/community', [CommunityController::class, 'index'])->name('community');
-Route::get('/community/post', [CommunityPostController::class, 'index'])->name('community_post');
-Route::get('/trends', [TrendsController::class, 'index'])->name('trends');
-
-
-Route::prefix('/quiz')->group(function () {
-    Route::get('/{id}', [PlayQuizController::class, 'index'])->name('quiz');
-});
-// });
 
 
 Route::get('/master', function () {

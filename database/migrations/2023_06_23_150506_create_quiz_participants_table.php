@@ -15,10 +15,8 @@ return new class extends Migration
             $table->bigInteger('participant_id')->unsigned()->autoIncrement();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('quiz_id');
-            $table->unsignedBigInteger('question_id');
             $table->unsignedBigInteger('answer_id')->nullable();
             $table->unsignedBigInteger('score_id')->nullable();
-            $table->unsignedBigInteger('badge_id');
             $table->string('total_time_consumed')->nullable();
             $table->string('per_question_time')->nullable();
 
