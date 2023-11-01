@@ -443,7 +443,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   background-color: #149d9b;
   color: white;
   border-bottom: 1px solid white;
@@ -455,7 +454,20 @@
   }
 }
 .mobile_header .logo {
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 30%;
+  float: left;
+  color: white;
+}
+.mobile_header .logo img {
+  -o-object-fit: fill;
+     object-fit: fill;
+  max-width: 100%;
+  max-height: 300%;
+  margin: 0 0 -10%;
 }
 .mobile_header .toggle-menu {
   display: flex;
@@ -644,11 +656,35 @@ footer .row2 {
   width: 100%;
   background-color: #ecfeff;
 }
+@media (max-width: 768px) {
+  .registrationPage {
+    flex-direction: column;
+    height: 250vh;
+    background-color: white;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .registrationPage {
+    background-color: white;
+  }
+}
 
 .register {
   height: 80%;
   width: 40%;
   background-color: white;
+}
+@media (max-width: 768px) {
+  .register {
+    height: 60%;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .register {
+    height: 90%;
+    width: 55%;
+  }
 }
 .register .registerHeader {
   display: flex;
@@ -709,6 +745,11 @@ footer .row2 {
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
+@media (max-width: 768px) {
+  .register .registerSection form .form-row1 {
+    height: 10%;
+  }
+}
 .register .registerSection form .form-row2 {
   height: 13%;
   width: 86%;
@@ -723,6 +764,11 @@ footer .row2 {
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
+@media (max-width: 768px) {
+  .register .registerSection form .form-row2 {
+    height: 10%;
+  }
+}
 .register .registerSection form .form-row3 {
   display: flex;
   align-items: center;
@@ -730,6 +776,13 @@ footer .row2 {
   height: 13%;
   width: 86%;
   margin: auto;
+}
+@media (max-width: 768px) {
+  .register .registerSection form .form-row3 {
+    flex-direction: column;
+    height: 33%;
+    width: 95%;
+  }
 }
 .register .registerSection form .form-row3 .detailsDiv {
   height: 100%;
@@ -746,6 +799,23 @@ footer .row2 {
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
   font-size: 15px;
 }
+@media (max-width: 768px) {
+  .register .registerSection form .form-row3 .detailsDiv {
+    height: 33%;
+    width: 90%;
+    margin: auto;
+  }
+  .register .registerSection form .form-row3 .detailsDiv .inputForm {
+    height: 60%;
+    width: 50%;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    font-size: 15px;
+  }
+}
 .register .registerSection form .form-row3 .detailsDiv1 {
   height: 100%;
   width: 36%;
@@ -760,6 +830,23 @@ footer .row2 {
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
+@media (max-width: 768px) {
+  .register .registerSection form .form-row3 .detailsDiv1 {
+    height: 33%;
+    width: 90%;
+    margin: auto;
+  }
+  .register .registerSection form .form-row3 .detailsDiv1 .inputForm {
+    height: 60%;
+    width: 70%;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    font-size: 15px;
+  }
+}
 .register .registerSection form .form-row3 .detailsDiv2 {
   height: 100%;
   width: 40%;
@@ -773,6 +860,23 @@ footer .row2 {
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 768px) {
+  .register .registerSection form .form-row3 .detailsDiv2 {
+    height: 33%;
+    width: 90%;
+    margin: auto;
+  }
+  .register .registerSection form .form-row3 .detailsDiv2 .inputForm {
+    height: 60%;
+    width: 50%;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    font-size: 15px;
+  }
 }
 .register .registerSection form .form-row4 {
   display: flex;
@@ -790,6 +894,11 @@ footer .row2 {
   height: 55%;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .register .registerSection form .form-row4 .agreement {
+    height: 65%;
+  }
+}
 .register .registerSection form .form-row4 .agreement a {
   text-decoration: none;
 }
@@ -798,6 +907,12 @@ footer .row2 {
   width: 10%;
   margin-right: 0.5rem;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .register .registerSection form .form-row4 .agreement .agreeBox {
+    width: 20%;
+    height: 30%;
+  }
 }
 .register .registerSection form .form-row4 .regsterution {
   height: 40%;
@@ -808,6 +923,13 @@ footer .row2 {
   background-color: #149d9b;
   border: none;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .register .registerSection form .form-row4 .regsterution {
+    width: 30%;
+    height: 30%;
+    letter-spacing: 1px;
+  }
 }
 .register .registerFooter {
   display: flex;
@@ -820,11 +942,35 @@ footer .row2 {
 .register .registerFooter a {
   text-decoration: none;
 }
+@media (max-width: 768px) {
+  .register .registerFooter {
+    padding: 3rem 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .register .registerFooter {
+    padding: 3rem;
+  }
+}
 
 .newUser {
   height: 80%;
   width: 35%;
   background-color: #149d9b;
+}
+@media (max-width: 768px) {
+  .newUser {
+    height: 40%;
+    width: 100%;
+    padding: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .newUser {
+    height: 90%;
+    width: 45%;
+    padding: 1rem;
+  }
 }
 .newUser .joinGifts {
   height: 30%;
@@ -837,6 +983,16 @@ footer .row2 {
   font-size: 22px;
   color: #ecfeff;
 }
+@media (max-width: 768px) {
+  .newUser .joinGifts p {
+    font-size: 1.2em;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .newUser .joinGifts p {
+    font-size: 1.2em;
+  }
+}
 .newUser .joinBenifits {
   height: 70%;
   width: 100%;
@@ -848,6 +1004,16 @@ footer .row2 {
   font-size: 18px;
   margin-left: 5%;
   color: #f3f4f6;
+}
+@media (max-width: 768px) {
+  .newUser .joinBenifits .benifits1 {
+    font-size: 1em;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .newUser .joinBenifits .benifits1 {
+    font-size: 1em;
+  }
 }
 .newUser .joinBenifits .benifits1 #benifitsIcon {
   font-size: 30px;
@@ -882,6 +1048,18 @@ footer .row2 {
   width: 100%;
   background-color: #ecfeff;
 }
+@media (max-width: 768px) {
+  .loginPage {
+    flex-direction: column;
+    height: 220vh;
+    background-color: white;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .loginPage {
+    background-color: white;
+  }
+}
 
 .login {
   padding: 2rem;
@@ -891,6 +1069,19 @@ footer .row2 {
   width: 35%;
   background-color: white;
 }
+@media (max-width: 768px) {
+  .login {
+    height: 50%;
+    width: 100%;
+    padding-top: 2rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .login {
+    height: 90%;
+    width: 55%;
+  }
+}
 .login .loginHeader {
   display: flex;
   align-items: center;
@@ -899,6 +1090,14 @@ footer .row2 {
   height: max-content;
   width: 100%;
   padding: 1rem;
+}
+@media (max-width: 768px) {
+  .login .loginHeader {
+    padding: 0rem;
+  }
+  .login .loginHeader #loginlogo {
+    font-size: 6rem;
+  }
 }
 .login .loginHeader #loginlogo {
   font-size: 7rem;
@@ -945,6 +1144,11 @@ footer .row2 {
 }
 .login .loginSection form .field.shake {
   animation: shake 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+  .login .loginSection form .field {
+    width: 100%;
+  }
 }
 .login .loginSection form .field .input-area {
   height: 100%;
@@ -1034,6 +1238,12 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
 .login .loginSection form input[type=submit]:hover {
   background: #2c52ed;
 }
+@media (max-width: 768px) {
+  .login .loginSection form input[type=submit] {
+    width: 30%;
+    height: 15%;
+  }
+}
 .login .loginFooter {
   display: flex;
   align-items: center;
@@ -1081,6 +1291,74 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
 }
 .login .loginFooter a {
   text-decoration: none;
+}
+
+.newUser-login {
+  height: 80%;
+  width: 35%;
+  background-color: #149d9b;
+}
+@media (max-width: 768px) {
+  .newUser-login {
+    height: 50%;
+    width: 100%;
+    padding: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .newUser-login {
+    height: 90%;
+    width: 45%;
+    padding: 1rem;
+  }
+}
+.newUser-login .joinGifts {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.newUser-login .joinGifts p {
+  font-size: 22px;
+  color: #ecfeff;
+}
+@media (max-width: 768px) {
+  .newUser-login .joinGifts p {
+    font-size: 1.2em;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .newUser-login .joinGifts p {
+    font-size: 1.2em;
+  }
+}
+.newUser-login .joinBenifits {
+  height: 70%;
+  width: 100%;
+}
+.newUser-login .joinBenifits .benifits1 {
+  height: 14.5%;
+  width: 90%;
+  display: flex;
+  font-size: 18px;
+  margin-left: 5%;
+  color: #f3f4f6;
+}
+@media (max-width: 768px) {
+  .newUser-login .joinBenifits .benifits1 {
+    font-size: 1em;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .newUser-login .joinBenifits .benifits1 {
+    font-size: 1em;
+  }
+}
+.newUser-login .joinBenifits .benifits1 #benifitsIcon {
+  font-size: 30px;
+  margin-right: 1rem;
+  color: white;
 }
 
 .otpModal {
@@ -4763,33 +5041,33 @@ section.greeting .content .right img {
   background-color: rgb(16, 14, 14);
 }
 
-.grid-quiz-today {
+.grid-quiz-badge {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 1rem;
   padding: 1rem 3rem 3rem;
   background-color: #ecfeff;
 }
-.grid-quiz-today .quiz {
+.grid-quiz-badge .badge-design {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
 }
-.grid-quiz-today .quiz .first-row {
+.grid-quiz-badge .badge-design .first-row {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.grid-quiz-today .quiz .first-row img {
+.grid-quiz-badge .badge-design .first-row img {
   max-width: 50%;
 }
-.grid-quiz-today .quiz .first-row .tittle {
+.grid-quiz-badge .badge-design .first-row .tittle {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-.grid-quiz-today .quiz .second-row {
+.grid-quiz-badge .badge-design .second-row {
   display: flex;
   align-items: center;
   justify-content: center;

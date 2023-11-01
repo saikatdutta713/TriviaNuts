@@ -167,7 +167,9 @@
         </div>
     </header>
     <header class="mobile_header">
-        <div class="logo">Logo</div>
+        <div class="logo">
+            <img src="{{ asset('images/TriviaNuts_Logo.svg') }}" alt="logo" />
+        </div>
         <button class="toggle-menu">
             <span class="menu-icon"></span>
         </button>
@@ -176,9 +178,9 @@
     <nav class="mobile_sidebar">
         <ul class="menu">
             <li><a href="{{ Route('home_page') }}">Home</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Trends</a></li>
-            <li><a href="#">Category</a></li>
+            <li><a href="{{ Route('community') }}">Community</a></li>
+            <li><a href="{{ Route('trends') }}">Trends</a></li>
+            <li><a href="{{ Route('quiz_play') }}">Quiz</a></li>
             <li><a href="{{ Route('login') }}">Login</a></li>
         </ul>
     </nav>

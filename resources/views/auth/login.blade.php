@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <div class="newUser">
+    <div class="newUser-login">
 
         <div class="joinGifts">
             <p>Join TriviaNuts community for free.</p>

@@ -481,7 +481,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    // padding: 10px;
     background-color: $header-color;
     color: $color_1;
     border-bottom: 1px solid $color_1;
@@ -492,7 +492,17 @@
     }
 
     .logo {
-        font-weight: bold;
+        @include flexing;
+        height: 100%;
+        width: 30%;
+        float: left;
+        color: $color_1;
+        img {
+            object-fit: fill;
+            max-width: 100%;
+            max-height: 300%;
+            margin: 0 0 -10%;
+        }
     }
 
     .toggle-menu {

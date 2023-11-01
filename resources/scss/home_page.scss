@@ -135,13 +135,13 @@ section.greeting {
     }
 }
 
-.grid-quiz-today {
+.grid-quiz-badge {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 1rem;
     padding: 1rem 3rem 3rem;
     background-color: $color_6;
-    .quiz {
+    .badge-design {
         border: 1px solid #ccc;
         border-radius: 5px;
         padding: 10px;
@@ -166,7 +166,7 @@ section.greeting {
     }
 }
 
-#content-heading{
+#content-heading {
     padding: 1rem 0 2rem 2rem;
     font-size: 30px;
     font-weight: bold;
@@ -199,7 +199,7 @@ section.greeting {
                 i.fas.fa-medal {
                     font-size: 30px;
                 }
-                p{
+                p {
                     font-size: 25px;
                     font-weight: bold;
                 }
