@@ -5,6 +5,7 @@
 
 @section('content')
 <div class="profilePage">
+    
     <div class="profileEdit">
         <div class="heading">
             <i class="fa-solid fa-pen-to-square"></i>
@@ -95,12 +96,13 @@
                 </div>
             </div>
         </div>
-
-        
-
         
     </div>
-
+    <div class="button-update">
+        <button id="toggleProfileEditButton" class="mobileToggleButton">
+            Update
+        </button>
+    </div>
     
 
 </div>
@@ -161,10 +163,10 @@
         <form action="{{ route('update.bio') }}" method="POST">
             @csrf
             <div class="modal-header">
-                <h2>Update Bio</h2>
+                <h2>Update About Me</h2>
             </div>
             <div class="modal-body">
-                <label for="profileBio">Bio:</label>
+                <label for="profileBio">About Me:</label>
                 <textarea id="profileBio" name="profileBio" rows="15" placeholder="Tell us about yourself" value="{{ $user->bio }}"></textarea>
             </div>
             <div class="modal-footer">
@@ -222,6 +224,25 @@
         </form>
     </div>
 </div>
+<script>
+$(document).ready(function () {
+    $("#toggleProfileEditButton").click(function () {
+        $(".profileEdit").slideToggle(); // Toggle the visibility of profileEdit
+    });
+
+    // Close the profileEdit when clicking outside of it
+    $(document).click(function (event) {
+        if (!$(event.target).closest(".profileEdit").length && !$(event.target).is("#toggleProfileEditButton")) {
+            $(".profileEdit").slideUp();
+        }
+    });
+
+    // Prevent clicks inside the profileEdit from closing it
+    $(".profileEdit").click(function (event) {
+        event.stopPropagation();
+    });
+});
+</script>
 @if (session()->has('notification_type'))
 
 <x-notification type="{{ session()->get('notification_type') }}" message="{{ session()->get('notification_message') }}" />

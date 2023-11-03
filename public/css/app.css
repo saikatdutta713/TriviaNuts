@@ -4540,6 +4540,15 @@ h1 {
 .profilePage {
   height: 90vh;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1024px) {
+  .profilePage {
+    flex-direction: column;
+    height: 180vh;
+  }
 }
 
 .rightDiv {
@@ -4550,6 +4559,12 @@ h1 {
   width: 87%;
   background-color: #f7f7f6;
 }
+@media (max-width: 1024px) {
+  .rightDiv {
+    height: 90%;
+    width: 100%;
+  }
+}
 .rightDiv .profileDetails {
   height: 80%;
   width: 80%;
@@ -4559,10 +4574,25 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails {
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    width: 100%;
+  }
+}
 .rightDiv .profileDetails .personalDetails1 {
   height: 80%;
   width: 25%;
   margin: auto;
+}
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails .personalDetails1 {
+    order: 2;
+    height: 35%;
+    width: 100%;
+  }
 }
 .rightDiv .profileDetails .personalDetails1 .personDetails {
   height: 60%;
@@ -4601,9 +4631,22 @@ h1 {
   width: 35%;
   margin: auto;
 }
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails .personalDetails2 {
+    order: 3;
+    height: 35%;
+    width: 100%;
+  }
+}
 .rightDiv .profileDetails .personalDetails2 .education {
   height: 40%;
   width: 100%;
+}
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails .personalDetails2 .education {
+    width: 90%;
+    margin: auto;
+  }
 }
 .rightDiv .profileDetails .personalDetails2 .education .detailsHeading {
   padding: 0.3rem;
@@ -4618,6 +4661,11 @@ h1 {
   width: 100%;
   height: 60%;
   margin: auto;
+}
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails .personalDetails2 .bio {
+    width: 90%;
+  }
 }
 .rightDiv .profileDetails .personalDetails2 .bio h4 {
   padding: 0.3rem;
@@ -4639,6 +4687,14 @@ h1 {
   background: linear-gradient(to top, #f06444 80%, transparent 80%);
   color: white;
   margin: auto;
+}
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails .profilePicture {
+    order: 1;
+    height: 30%;
+    width: 70%;
+    padding: 1rem;
+  }
 }
 .rightDiv .profileDetails .profilePicture .avatar-container {
   height: 150px;
@@ -4675,12 +4731,51 @@ h1 {
   width: 100%;
   font-size: 18px;
 }
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails .profilePicture .profilePoints {
+    padding-top: 1rem;
+  }
+}
+
+.button-update {
+  display: none;
+  width: 100%;
+  height: 10%;
+}
+.button-update .mobileToggleButton {
+  background-color: #149d9b;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+@media (max-width: 1024px) {
+  .button-update {
+    display: block;
+    display: flex;
+    align-items: center;
+  }
+}
 
 .profileEdit {
   height: 100%;
   width: 13%;
   padding-top: 3rem;
   background-color: #999;
+}
+@media (max-width: 1024px) {
+  .profileEdit {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Transparent black background */
+    z-index: 1;
+  }
 }
 .profileEdit .heading {
   display: flex;
@@ -4737,7 +4832,7 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 50%;
+  max-width: 90%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
@@ -4808,7 +4903,7 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 50%;
+  max-width: 90%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
@@ -4874,7 +4969,7 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 50%;
+  max-width: 90%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
@@ -4940,7 +5035,7 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 50%;
+  max-width: 90%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
@@ -5006,7 +5101,7 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 50%;
+  max-width: 90%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;

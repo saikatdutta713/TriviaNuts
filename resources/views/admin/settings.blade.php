@@ -40,20 +40,20 @@
         </form>
     </div>
 
-    <div id="editableDiv1">
+    {{-- <div id="editableDiv1">
         <form id="titleForm">
             <label for="title">Page Title:</label>
             <input type="text" id="titleInput" size="30">
             <button type="button" onclick="updateTitle()">Update Title</button>
         </form>
-    </div>
+    </div> --}}
 
     <div class="rowTextarea">
         <div id="editableDiv">
-            <form id="descriptionForm">
-                <label for="description">Description:</label>
-                <textarea id="descriptionInput" cols="30" rows="10"></textarea>
-                <button type="button" onclick="updateDescription()">Update Description</button>
+            <form id="scriptForm">
+                <label for="script">Script:</label>
+                <textarea id="scriptInput" cols="30" rows="10"></textarea>
+                <button type="button" >Update Script</button>
             </form>
         </div>
 
@@ -61,7 +61,7 @@
             <form id="metaTagForm">
                 <label for="metaTag">Meta Tag:</label>
                 <textarea id="metaTagInput" cols="30" rows="10"></textarea>
-                <button type="button" onclick="updateMetaDescription()">Update Meta Tag</button>
+                <button type="button" >Update Meta Tag</button>
             </form>
         </div>
     </div>
