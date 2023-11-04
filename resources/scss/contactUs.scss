@@ -1,0 +1,72 @@
+@import "./variables";
+
+.contact-form {
+    max-width: 800px;
+    margin: 5rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    
+
+    h2 {
+        color: $color_36;
+        font-size: 24px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+
+        label{
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 0 10px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input,
+        textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            border-bottom: 1px solid $color_3;
+        }
+
+        input,
+        textarea {
+            background-color: $color_1;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            background-color: $color_5;
+            color: $color_1;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: $color_36;
+            }
+        }
+    }
+
+    @media (max-width: $tablet-breakpoint) {
+        padding: 1rem;
+        max-width: 95%;
+    }
+}
