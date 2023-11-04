@@ -7,6 +7,7 @@
 <div class="profilePage">
     
     <div class="profileEdit">
+        <i class="fa-solid fa-square-xmark" id="cross-mark"></i>
         <div class="heading">
             <i class="fa-solid fa-pen-to-square"></i>
             <p>Update Details</p>
@@ -230,16 +231,9 @@ $(document).ready(function () {
         $(".profileEdit").slideToggle(); // Toggle the visibility of profileEdit
     });
 
-    // Close the profileEdit when clicking outside of it
-    $(document).click(function (event) {
-        if (!$(event.target).closest(".profileEdit").length && !$(event.target).is("#toggleProfileEditButton")) {
-            $(".profileEdit").slideUp();
-        }
-    });
-
-    // Prevent clicks inside the profileEdit from closing it
-    $(".profileEdit").click(function (event) {
-        event.stopPropagation();
+    // Close the profileEdit when clicking on the cross-mark
+    $("#cross-mark").click(function () {
+        $(".profileEdit").slideUp();
     });
 });
 </script>

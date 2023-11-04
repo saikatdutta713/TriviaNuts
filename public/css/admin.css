@@ -233,7 +233,10 @@ body {
   background: white;
 }
 .container .navbar .navbar__right .rounded-wrapper img {
-  width: inherit;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .container main {
   background: #f3f4f6;

@@ -4762,10 +4762,9 @@ h1 {
 .profileEdit {
   height: 100%;
   width: 13%;
-  padding-top: 3rem;
   background-color: #999;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .profileEdit {
     display: none;
     position: fixed;
@@ -4773,8 +4772,33 @@ h1 {
     left: 0;
     width: 70%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Transparent black background */
+    background: #3b3b3b; /* Transparent black background */
     z-index: 1;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .profileEdit {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background: #3b3b3b; /* Transparent black background */
+    z-index: 1;
+  }
+}
+.profileEdit #cross-mark {
+  margin-left: 90%;
+  display: none;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .profileEdit #cross-mark {
+    display: block;
   }
 }
 .profileEdit .heading {
@@ -4786,6 +4810,7 @@ h1 {
   font-size: 18px;
   color: white;
   margin-bottom: 1rem;
+  padding-top: 2rem;
 }
 .profileEdit .heading p {
   margin-left: 0.5rem;
@@ -4832,10 +4857,20 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 90%;
+  max-width: 40%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+}
+@media (max-width: 768px) {
+  .profileModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .profileModal .modal-content {
+    max-width: 60%;
+  }
 }
 .profileModal .modal-content .modal-header {
   text-align: center;
@@ -4903,10 +4938,20 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 90%;
+  max-width: 40%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+}
+@media (max-width: 768px) {
+  .educationModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .educationModal .modal-content {
+    max-width: 60%;
+  }
 }
 .educationModal .modal-content .modal-header {
   text-align: center;
@@ -4969,10 +5014,20 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 90%;
+  max-width: 40%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+}
+@media (max-width: 768px) {
+  .bioModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .bioModal .modal-content {
+    max-width: 60%;
+  }
 }
 .bioModal .modal-content .modal-header {
   text-align: center;
@@ -5035,10 +5090,20 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 90%;
+  max-width: 40%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+}
+@media (max-width: 768px) {
+  .socialModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .socialModal .modal-content {
+    max-width: 60%;
+  }
 }
 .socialModal .modal-content .modal-header {
   text-align: center;
@@ -5101,10 +5166,20 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 90%;
+  max-width: 40%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+}
+@media (max-width: 768px) {
+  .passwordModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .passwordModal .modal-content {
+    max-width: 60%;
+  }
 }
 .passwordModal .modal-content .modal-header {
   text-align: center;

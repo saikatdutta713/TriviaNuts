@@ -107,7 +107,8 @@
 </div>
 @endisset
 
-<div id="ForgotPasswordModal" class="forgotPasswordModal">
+@isset($forgotPass)
+    <div id="ForgotPasswordModal" class="forgotPasswordModal">
     <form action="{{ route('reset.link') }}" method="POST">
         @csrf
         <div class="modal-content">
@@ -125,6 +126,7 @@
             </div>
         </div>
     </form>
-</div>
+    </div>
 
+@endisset
 @endsection
