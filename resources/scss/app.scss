@@ -443,7 +443,7 @@
         }
 
         .dropdown-menu li {
-            padding: 10px 20px;
+            padding: 10px 10px;
             > a {
                 text-decoration: none;
                 color: black;
@@ -572,7 +572,14 @@
     &.active {
         top: 0;
     }
-
+    #close-toggle-menu{
+        font-size: 2rem;
+        // text-align: right;
+        margin-left: 90%;
+        color: $color_1;
+        padding-top: 1rem;
+        cursor: pointer;
+    }
     .menu {
         @include flexing;
         list-style: none;
@@ -580,7 +587,7 @@
         margin: 0;
         flex-direction: column;
         position: relative;
-        top: 50%;
+        top: 30%;
         transform: translateY(-50%);
 
         li {

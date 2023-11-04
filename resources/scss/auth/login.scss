@@ -19,6 +19,12 @@
     max-height: 90%;
     overflow-y: auto;
     margin: 2rem auto;
+    @media (max-width: $mobile-breakpoint) {
+        max-width: 90%;
+    }
+    @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
+        max-width: 60%;
+    }
     .modal-header {
         text-align: center;
         margin-bottom: 20px;
@@ -381,6 +387,7 @@
     display: block !important;
     .modal-content {
         @include modal-content-header;
+        max-width: 30%;
         .modal-body {
             padding: 1rem;
             p {
@@ -392,7 +399,7 @@
                 font-weight: bold;
             }
             input {
-                width: 100%;
+                width: 30%;
                 padding: 10px;
                 border: 1px solid #ccc;
                 border-radius: 4px;
@@ -401,7 +408,7 @@
         }
         .modal-footer {
             @include modal-footer;
-            justify-content: center !important;
+            // justify-content: center !important;
             #resendOTPBtn {
                 background-color: transparent;
                 color: #10c469;

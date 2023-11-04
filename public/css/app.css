@@ -413,7 +413,7 @@
   pointer-events: none;
 }
 .header .login__container .dropdown-menu li {
-  padding: 10px 20px;
+  padding: 10px 10px;
 }
 .header .login__container .dropdown-menu li > a {
   text-decoration: none;
@@ -529,6 +529,13 @@
 .mobile_sidebar.active {
   top: 0;
 }
+.mobile_sidebar #close-toggle-menu {
+  font-size: 2rem;
+  margin-left: 90%;
+  color: white;
+  padding-top: 1rem;
+  cursor: pointer;
+}
 .mobile_sidebar .menu {
   display: flex;
   align-items: center;
@@ -538,7 +545,7 @@
   margin: 0;
   flex-direction: column;
   position: relative;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
 }
 .mobile_sidebar .menu li {
@@ -1381,6 +1388,17 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+  max-width: 30%;
+}
+@media (max-width: 768px) {
+  .otpModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .otpModal .modal-content {
+    max-width: 60%;
+  }
 }
 .otpModal .modal-content .modal-header {
   text-align: center;
@@ -1403,7 +1421,7 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   font-weight: bold;
 }
 .otpModal .modal-content .modal-body input {
-  width: 100%;
+  width: 30%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -1413,7 +1431,6 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   display: flex;
   justify-content: flex-end;
   padding: 10px;
-  justify-content: center !important;
 }
 .otpModal .modal-content .modal-footer button {
   padding: 10px 20px;
@@ -1462,6 +1479,16 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+}
+@media (max-width: 768px) {
+  .forgotPasswordModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .forgotPasswordModal .modal-content {
+    max-width: 60%;
+  }
 }
 .forgotPasswordModal .modal-content .modal-header {
   text-align: center;

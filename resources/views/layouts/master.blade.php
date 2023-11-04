@@ -155,7 +155,7 @@
                     <i class="fa-solid fa-caret-down dropdown-icon"></i>
                     <ul class="dropdown-menu">
                         <li><a href="{{ Route('profile') }}">Profile</a></li>
-                        <li><a href="{{ Route('logout') }}">Logout</a></li>
+                        <li><a href="{{ Route('logout') }}">Sign Out</a></li>
                     </ul>
                 </div>
             </div>
@@ -176,12 +176,18 @@
     </header>
 
     <nav class="mobile_sidebar">
+        <i class="fa-solid fa-square-xmark" id="close-toggle-menu"></i>
         <ul class="menu">
             <li><a href="{{ Route('home_page') }}">Home</a></li>
             <li><a href="{{ Route('community') }}">Community</a></li>
             <li><a href="{{ Route('trends') }}">Trends</a></li>
             <li><a href="{{ Route('quiz_play') }}">Quiz</a></li>
-            <li><a href="{{ Route('login') }}">Login</a></li>
+            @auth
+            <li><a href="{{ Route('profile') }}">Profile</a></li>
+            <li><a href="{{ Route('logout') }}">Sign Out</a></li>
+             @else
+            <li><a href="{{ Route('login') }}">Sign in</a></li>
+            @endauth
         </ul>
     </nav>
 
@@ -251,11 +257,17 @@
         document.addEventListener('DOMContentLoaded', function() {
             const toggleMenuBtn = document.querySelector('.toggle-menu');
             const sidebar = document.querySelector('.mobile_sidebar');
-                
+            const closeToggleMenuBtn = document.querySelector('#close-toggle-menu');
+
             toggleMenuBtn.addEventListener('click', function() {
                 sidebar.classList.toggle('active');
                 toggleMenuBtn.classList.toggle('active');
             });  
+
+            closeToggleMenuBtn.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+                toggleMenuBtn.classList.remove('active');
+            });
         });
 
         console.log($('document'));
