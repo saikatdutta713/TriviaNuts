@@ -291,6 +291,9 @@ body {
   padding: 0 10px;
   font-weight: 700;
 }
+.container #sidebar a {
+  text-decoration: none;
+}
 .container #sidebar .sidebar__link {
   color: #f3f4f6;
   padding: 10px;
@@ -304,6 +307,9 @@ body {
 .container #sidebar .sidebar__link > i {
   margin-right: 10px;
   font-size: 18px;
+}
+.container #sidebar .sidebar__link:hover {
+  background-color: #149d9b;
 }
 .container #sidebar .sidebar__link .maintenance_mode_switch {
   width: 50px;
@@ -385,6 +391,13 @@ body {
     display: none;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
 .main__container {
   padding: 20px 35px;
 }

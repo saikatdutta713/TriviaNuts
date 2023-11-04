@@ -143,14 +143,20 @@
         
         <div class="notificationIcon">
             <i class="fa-solid fa-bell" id="Icon"></i>
-        </div>
+        </div>  
 
         <div class="login__container">
             @auth
             <div class="profile-container">
                 <div class="profile-dropdown">
                     <div class="avatar-container">
+                        @if (auth()->user()->picture)
+                        <img src="{{ Storage::url('avatars/').auth()->user()->picture }}"
+                                alt="{{ env('APP_NAME').' '.ucwords(auth()->user()->name) }}" class="avatar"/>
+                        
+                        @else
                         <img src="{{ asset('images/avatar-blue.png') }}" alt="User Avatar" class="avatar">
+                        @endif  
                     </div>
                     <i class="fa-solid fa-caret-down dropdown-icon"></i>
                     <ul class="dropdown-menu">

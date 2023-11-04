@@ -261,6 +261,7 @@ body {
         background: #f3f4f6;
         grid-area: main;
         overflow-y: auto;
+        
     }
 
     #sidebar {
@@ -317,6 +318,9 @@ body {
                 font-weight: 700;
             }
         }
+        a{
+            text-decoration: none;
+        }
         .sidebar__link {
             color: $color_19;
             padding: 10px;
@@ -330,7 +334,9 @@ body {
                 margin-right: 10px;
                 font-size: 18px;
             }
-
+            &:hover{
+                background-color: $color_5;
+            }
             .maintenance_mode_switch {
                 width: 50px;
                 height: 26px;

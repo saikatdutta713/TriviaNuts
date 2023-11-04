@@ -86,8 +86,15 @@
             </div>
             <div class="profilePicture">
                 <div class="avatar-container">
-                        <img src="{{ asset('images/avatar-blue.png') }}" alt="User Avatar" class="avatar">
-                    </div>
+                    @if (auth()->user()->picture)
+                    <img src="{{ Storage::url('avatars/').auth()->user()->picture }}"
+                            alt="{{ env('APP_NAME').' '.ucwords(auth()->user()->name) }}" class="avatar"/>
+                    
+                    @else
+                    <img src="{{ asset('images/avatar-blue.png') }}" alt="User Avatar" class="avatar">
+                    @endif
+                    
+                </div>
                 <i class="fa-solid fa-gem" id="userBadge"></i>
                 <div class="profileName">
                     <p>{{ $user->name }}</p>
