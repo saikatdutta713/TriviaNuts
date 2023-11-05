@@ -224,16 +224,16 @@
     <footer class="footer">
         <div class="row1">
             <div class="company_tab">
-                <a href="#" class="links">
+                <a href="{{ Route('contactUs') }}" class="links">
                     Contact Us
                 </a>
-                <a href="#" class="links">
+                <a href="{{ Route('aboutUs') }}" class="links">
                     About Us
                 </a>
-                <a href="#" class="links">
+                <a href="{{ Route('privacy') }}" class="links">
                     Privacy Policy
                 </a>
-                <a href="#" class="links">
+                <a href="{{ Route('terms') }}" class="links">
                     Terms and Conditions
                 </a>
             </div>

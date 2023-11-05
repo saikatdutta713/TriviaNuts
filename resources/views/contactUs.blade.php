@@ -5,7 +5,7 @@
 
 @section('content')
     <section class="contact-form">
-        <h2>Get in Touch</h2>
+        <h1>Get in Touch</h1>
         <form action="submit_form.php" method="post">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
