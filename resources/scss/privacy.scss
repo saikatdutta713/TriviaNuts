@@ -1,0 +1,37 @@
+@import "./variables";
+
+.main {
+    max-width: 800px;
+    margin: 2m auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    h1{
+        color: $color_36;
+        padding: 2rem;
+    }
+    .privacy-policy {
+        h3 {
+            color: $color_31;
+            margin-top: 20px;
+        }
+
+        p {
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+    }
+    @media (max-width: $tablet-breakpoint) {
+        padding: 10px;
+        h1 {
+            padding: 1rem;
+        }
+        .privacy-policy {
+            h3 {
+                font-size: 18px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
