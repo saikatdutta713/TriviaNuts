@@ -143,6 +143,11 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 2rem;
     padding: 1rem 5rem;
+    
+    a {
+        text-decoration: none;
+    }
+
     .quiz {
         @include quiz-button;
     }

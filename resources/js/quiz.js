@@ -14,6 +14,20 @@ function changeBackgroundColor(clickedDiv) {
     const childDivs = document.querySelectorAll(".options");
     childDivs.forEach((div) => div.classList.remove("selected"));
     clickedDiv.classList.add("selected");
+
+    const optionValue = clickedDiv.dataset.option;
+    const quiz = clickedDiv.dataset.quiz;
+    const question = clickedDiv.dataset.question;
+    console.log(optionValue, quiz, question);
+
+    fetch("/quiz/" + quiz + "/play/" + question + "/answer/" + optionValue)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("Success: ", data);
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
 }
 
 // Event listener for DOMContentLoaded to initialize the functionality
@@ -28,6 +42,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
-
-

@@ -22,52 +22,23 @@
                 </div>
             </div>
             <div class="userprofile">
-                <div class="userdp">
-                    <i class="fa-solid fa-circle-user" id="userdp"></i>
+                <div class="userdp__container">
+                    @if (auth()->user()->picture==null)
+                    <i class="fa-solid fa-circle-user" id="avatar"></i>
+                    @else
+                    <img src="{{ Storage::url('avatars/').auth()->user()->picture }}" class="userdp" alt="picture" />
+                    @endif
                 </div>
                 <div class="username">
-                    {{ ucwords($user->name) }}
+                    {{ ucwords(auth()->user()->name) }}
                 </div>
             </div>
             <div class="questiontab">
-                <div class="qrow1">
-                    <div class="question_no">
-                        1
-                    </div>
-                    <div class="question_no">
-                        2
-                    </div>
-                    <div class="question_no">
-                        3
-                    </div>
-                </div>
-                <div class="qrow1">
-                    <div class="question_no">
-                        4
-                    </div>
-                    <div class="question_no">
-                        5
-                    </div>
-                    <div class="question_no">
-                        6
-                    </div>
-                </div>
-                <div class="qrow1">
-                    <div class="question_no">
-                        7
-                    </div>
-                    <div class="question_no">
-                        8
-                    </div>
-                    <div class="question_no">
-                        9
-                    </div>
-                </div>
-                <div class="qrow1">
-                    <div class="question_no">
-                        10
-                    </div>
-                </div>
+                @foreach ($questions as $question)
+                <a href="{{ route('quiz.jump.quesion',['id'=>$thisQuiz->quiz_id,'question'=>$loop->index]) }}">
+                    <div class="question_no">{{ $loop->index+1 }}</div>
+                </a>
+                @endforeach
             </div>
         </div>
         {{-- </div> --}}
@@ -79,7 +50,7 @@
                     Logo
                 </div>
                 <div class="quizname">
-                    <p> Mathematics : Quiz Level 1</p>
+                    <p> {{ $quizCategory->category_title }} : {{ $thisQuiz->title }}</p>
                 </div>
             </div>
             <div class="ruppertab">
@@ -92,7 +63,8 @@
                     <div id="reverse-timer">01:00</div>
                 </div>
                 <div class="closeoption">
-                    <p id="closeb">Back</p>
+                    <a href="{{ route('quiz.exit',['id'=>$thisQuiz->quiz_id]) }}" id="closeb"
+                        style="text-decoration: none;">Back</a>
                 </div>
             </div>
         </div>
@@ -100,12 +72,11 @@
 
             <div class="question">
                 <div class="questionno" id="quizQuestionNo">
-                    1.
+                    {{ intval($activeQuestion) + 1 }}.
                     <i class="fa-solid fa-caret-down" onclick="toggleDisplay()" id="quizQuestion"></i>
                 </div>
                 <div class="questiontext">
-                    Which of the following is the most important trend in computer technology in 2023?
-
+                    {{ trim($questions[$activeQuestion]->question_text) }}
                 </div>
             </div>
             <div class="answer">
@@ -113,59 +84,111 @@
                 </div>
                 <div class="option">
                     <div class="boxoption">
-                        <div class="options" onclick="changeBackgroundColor(this)">
-                            Rise of artificial intelligence
+                        <div class="options @if($answers!=null)
+                            @if(array_key_exists($questions[$activeQuestion]->question_id,$answers) && $answers[$questions[$activeQuestion]->question_id]=='a')
+                                selected
+                            @endif
+                        @endif" data-option='a' data-quiz="{{ $thisQuiz->quiz_id }}"
+                            data-question="{{ $questions[$activeQuestion]->question_id }}">
+                            {{ $questions[$activeQuestion]->answer_option_a }}
                         </div>
-                        <div class="options" onclick="changeBackgroundColor(this)">
-                            Growth of cloud computing
+                        <div class="options @if($answers!=null)
+                            @if(array_key_exists($questions[$activeQuestion]->question_id,$answers) && $answers[$questions[$activeQuestion]->question_id]=='b')
+                                selected
+                            @endif
+                        @endif" data-option='b' data-quiz="{{ $thisQuiz->quiz_id }}"
+                            data-question="{{ $questions[$activeQuestion]->question_id }}">
+                            {{ $questions[$activeQuestion]->answer_option_b }}
                         </div>
-                        <div class="options" onclick="changeBackgroundColor(this)">
-                            Increasing use of big data
+                        <div class="options @if($answers!=null)
+                            @if(array_key_exists($questions[$activeQuestion]->question_id,$answers) && $answers[$questions[$activeQuestion]->question_id]=='c')
+                                selected
+                            @endif
+                        @endif" data-option='c' data-quiz="{{ $thisQuiz->quiz_id }}"
+                            data-question="{{ $questions[$activeQuestion]->question_id }}">
+                            {{ $questions[$activeQuestion]->answer_option_c }}
                         </div>
-                        <div class="options" onclick="changeBackgroundColor(this)">
-                            Development of quantum computing
+                        <div class="options @if($answers!=null)
+                            @if(array_key_exists($questions[$activeQuestion]->question_id,$answers) && $answers[$questions[$activeQuestion]->question_id]=='d')
+                                selected
+                            @endif
+                        @endif" data-option='d' data-quiz="{{ $thisQuiz->quiz_id }}"
+                            data-question="{{ $questions[$activeQuestion]->question_id }}">
+                            {{ $questions[$activeQuestion]->answer_option_d }}
                         </div>
                     </div>
                 </div>
             </div>
+            @isset ($success)
+            <x-message-modal type="success" message="{{ $success }}" showCloseButton="true" />
+            @endisset
 
+            @isset ($error)
+            <x-message-modal type="error" message="{{ $error }}" showCloseButton="true" />
+            @endisset
+
+            @isset ($warning)
+            <x-message-modal type="warning" message="{{ $warning }}" buttonText="Confirm"
+                buttonLink="{{ $redirect_link }}" showCloseButton="true" />
+            @endisset
+
+            @if (session()->has('success'))
+            <x-message-modal type="success" message="{{ $success }}" showCloseButton="true" />
+            @endif
+
+            @if (session()->has('error'))
+            <x-message-modal type="error" message="{{ $error }}" showCloseButton="true" />
+            @endif
+
+            @if (session()->has('warning'))
+            <x-message-modal type="warning" message="{{ session()->get('warning') }}"
+                buttonText="{{ session()->get('buttonText') }}" buttonLink="{{ session()->get('redirect_link') }}"
+                showCloseButton="true" closeButtonText="{{ session()->get('closeButtonText') }}" />
+            @endif
+
+            @if(session()->has('success_notification'))
+            <x-notification type="success" message="{{ session()->get('success_notification') }}" />
+            @endif
+            @if(session()->has('error_notification'))
+            <x-notification type="error" message="{{ session()->get('error_notification') }}" />
+            @endif
+            @if(session()->has('warning_notification'))
+            <x-notification type="warning" message="{{ session()->get('warning_notification') }}" />
+            @endif
         </div>
         <div class="lowertab">
-            <div class="tabbutton" id="previousButton">
+            @if ($activeQuestion!=0)
+            <a href="{{ route('quiz.jump.quesion',['id'=>$thisQuiz->quiz_id,'question'=>$activeQuestion-1]) }}"
+                class="tabbutton">
                 <i class="fa-solid fa-angle-left"></i>
                 Previous
-            </div>
-            <div class="tabbutton" id="nextButton">
+            </a>
+            @endif
+            @if ($activeQuestion!=count($questions)-1)
+            <a href="{{ route('quiz.jump.quesion',['id'=>$thisQuiz->quiz_id,'question'=>$activeQuestion+1]) }}"
+                class="tabbutton">
                 Next
                 <i class="fa-solid fa-angle-right"></i>
-            </div>
+            </a>
+            @endif
+            @if ($activeQuestion==count($questions)-1)
+            <a href="{{ route('quiz.submit',['id'=>$thisQuiz->quiz_id]) }}" class="tabbutton @if (!array_key_exists('answers',$quiz)) 
+                disabled
+            @endif">
+                Submit
+            </a>
+            @endif
         </div>
     </div>
 
-
     <script>
-    //   // Function to check the value and hide the next div if needed
-    //     function checkAndHideNextDiv() {
-    //         const firstDiv = document.getElementById("quizQuestionNo");
-    //         const nextDiv = document.getElementById("nextButton");
-
-    //         if (parseInt(firstDiv.textContent) >= 10) {
-    //             nextDiv.style.display = "none";
-    //         } else {
-    //             nextDiv.style.display = "block";
-    //         }
-    //     }
-
-    //     // Call the function initially to check the initial value
-    //     checkAndHideNextDiv();
-
-    function toggleDisplay() {
-    var contentDiv = document.getElementById("leftcolumn");
-    if (contentDiv.style.display === "none") {
-        contentDiv.style.display = "block";
-    } else {
-        contentDiv.style.display = "none";
-    }
+        function toggleDisplay() {
+        var contentDiv = document.getElementById("leftcolumn");
+        if (contentDiv.style.display === "none") {
+            contentDiv.style.display = "block";
+        } else {
+            contentDiv.style.display = "none";
+        }
     }
 
         function toggleDisplayNone() {
@@ -193,12 +216,12 @@
             const reverseTimer = document.getElementById("reverse-timer");
 
             if (!manualPreviousClicked) {
-                currentQuestionNo++;
+                // currentQuestionNo++;
             }else{
-                currentQuestionNo--;
+                // currentQuestionNo--;
                 if (currentQuestionNo ==1) {
-                previousDiv.style.display = "none";
-            }
+                    previousDiv.style.display = "none";
+                }
             }
 
             manualPreviousClicked = false;

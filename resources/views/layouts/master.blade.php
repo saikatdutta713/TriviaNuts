@@ -34,7 +34,7 @@
                     Trends
                 </div>
             </a>
-            <a href="{{ route('quiz_play') }}">
+            <a href="{{ route('quiz') }}">
                 <div class="navbutton">
                     Quiz
                 </div>

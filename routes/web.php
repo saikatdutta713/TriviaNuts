@@ -78,16 +78,23 @@ Route::middleware('auth.check')->group(function () {
     });
 
     Route::get('/category', [CategoryController::class, 'index'])->name('category');
-    Route::get('/result', [QuizResultController::class, 'index'])->name('quiz_result');
-Route::get('/community', [CommunityController::class, 'index'])->name('community');
+    Route::get('/community', [CommunityController::class, 'index'])->name('community');
     Route::get('/community/post', [CommunityPostController::class, 'index'])->name('community_post');
     Route::get('/trends', [TrendsController::class, 'index'])->name('trends');
 
     Route::prefix('/quiz')->group(function () {
-        Route::get('/', [QuizPlayController::class, 'index'])->name('quiz_play');
+        Route::get('/', [QuizPlayController::class, 'index'])->name('quiz');
         Route::post('/category', [QuizPlayController::class, 'selectCategory'])->name('select.category');
         Route::get('/{id}/start', [QuizPlayController::class, 'quizStart'])->name('quiz.start');
         Route::get('/{id}/play', [QuizPlayController::class, 'quizPlay'])->name('quiz.play');
+        Route::get('/{id}/play/{question}', [QuizPlayController::class, 'quizPlayJumpQuestion'])->name('quiz.jump.quesion');
+        Route::get('/{id}/play/{question}/answer/{option}', [QuizPlayController::class, 'saveAnswer'])->name('quiz.answer.save');
+        // Route::get('/{id}/play/submit', [QuizPlayController::class, 'quizSubmit'])->name('quiz.submit');
+        Route::get('/{id}/submit', [QuizPlayController::class, 'quizSubmit'])->name('quiz.submit');
+        Route::get('/{id}/reatempt', [QuizPlayController::class, 'quizReattempt'])->name('quiz.reattempt');
+        Route::get('/{id}/exit', [QuizPlayController::class, 'quizExit'])->name('quiz.exit');
+        Route::get('/{id}/result', [QuizResultController::class, 'show'])->name('quiz.result');
+        // Route::get('/{id}/pla/exit', [QuizPlayController::class, 'quizExit'])->name('quiz.exit');
     });
 });
 

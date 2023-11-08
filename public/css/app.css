@@ -112,6 +112,11 @@
   text-decoration: none;
 }
 
+@media (max-width: 768px) {
+  .message-modal .modal-content {
+    width: 80%; /* Adjust the modal width for smaller screens */
+  }
+}
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -1583,8 +1588,7 @@ input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.i
     height: 80.5%;
     width: 93%;
     margin: auto;
-    -webkit-margin-before: 4%;
-            margin-block-start: 4%;
+    margin-block-start: 4%;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -2435,6 +2439,9 @@ input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.i
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 2rem;
   padding: 1rem 5rem;
+}
+.grid-quiz-today a {
+  text-decoration: none;
 }
 .grid-quiz-today .quiz {
   background: #f0f0f0;

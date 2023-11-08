@@ -50,16 +50,22 @@ body {
   width: 100%;
   margin-top: 20%;
 }
-.leftcolumn .userprofile .userdp {
+.leftcolumn .userprofile .userdp__container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 65%;
   width: 100%;
 }
-.leftcolumn .userprofile .userdp #userdp {
+.leftcolumn .userprofile .userdp__container #avatar {
   font-size: 100px;
   color: #a5aaad;
+}
+.leftcolumn .userprofile .userdp__container .userdp {
+  width: 8vw;
+  height: 8vw;
+  border-radius: 50%;
+  overflow: hidden;
 }
 .leftcolumn .userprofile .username {
   display: flex;
@@ -88,37 +94,33 @@ body {
   }
 }
 .leftcolumn .questiontab {
-  height: 25%;
-  width: 90%;
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-}
-.leftcolumn .questiontab .qrow1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 20%;
-  width: 90%;
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Display in 3 columns */
+  grid-gap: 1rem; /* Add some spacing between items */
   margin: auto;
 }
-.leftcolumn .questiontab .qrow1 .question_no {
+.leftcolumn .questiontab a {
+  text-decoration: none;
+}
+.leftcolumn .questiontab .question_no {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 80%;
-  width: 23%;
-  margin: auto;
+  align-items: center;
+  height: 40px; /* Adjust the height as needed */
+  width: 40px; /* Adjust the width as needed */
   color: #333;
   border-radius: 5px;
   font-size: 14px;
+  font-weight: 400;
   background-color: #ffdf52;
+  cursor: pointer;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .leftcolumn .questiontab {
-    height: 20%;
+    /* Add responsive styles as needed */
   }
-  .leftcolumn .questiontab .qrow1 .question_no {
+  .leftcolumn .questiontab .question_no {
     font-size: 10px;
   }
 }
@@ -250,6 +252,114 @@ body {
   height: 77%;
   width: 90%;
   margin: auto;
+  /* Notification styles */
+  /* Message Modal styles */
+}
+.rightcolumn .content .notification {
+  display: block;
+  color: white;
+  position: fixed;
+  font-weight: bold;
+  bottom: 80px;
+  right: 50px;
+  min-width: 150px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: bottom 0.3s ease-in-out;
+  animation: fadeIn 2s ease-in-out;
+}
+.rightcolumn .content .notification .close {
+  margin-left: 1rem;
+  float: right;
+  cursor: pointer;
+  font-size: 2em;
+}
+.rightcolumn .content .notification .close:hover {
+  color: black;
+}
+.rightcolumn .content .success {
+  background-color: #238737 !important;
+}
+.rightcolumn .content .warning {
+  background-color: #ffc107 !important;
+}
+.rightcolumn .content .error {
+  background-color: #cc3d38 !important;
+}
+.rightcolumn .content .message-modal {
+  display: block; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  overflow: auto; /* Enable scrolling if the content overflows */
+}
+.rightcolumn .content .message-modal .modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  border: 1px solid #888;
+  width: 50%;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  /* Modal button styles */
+}
+.rightcolumn .content .message-modal .modal-content .modal-header {
+  color: white;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.rightcolumn .content .message-modal .modal-content .modal-header .icon {
+  font-size: 50px;
+  margin-right: 10px;
+}
+.rightcolumn .content .message-modal .modal-content .modal-header .icon .success {
+  background-color: #4caf50 !important; /* Green for success */
+}
+.rightcolumn .content .message-modal .modal-content .modal-header .icon .warning {
+  background-color: #ffc107 !important; /* Yellow for warning */
+}
+.rightcolumn .content .message-modal .modal-content .modal-header .icon .error {
+  background-color: #ff5733 !important; /* Red for error */
+}
+.rightcolumn .content .message-modal .modal-content .modal-header h2 {
+  margin-top: 1%;
+}
+.rightcolumn .content .message-modal .modal-content .modal-body {
+  padding: 20px;
+  color: #454d61;
+}
+.rightcolumn .content .message-modal .modal-content .modal-buttons {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.rightcolumn .content .message-modal .modal-content .modal-buttons .close-button {
+  background-color: #e65061;
+  color: #fff;
+  font-weight: 400;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.rightcolumn .content .message-modal .modal-content .modal-buttons .redirect-button {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
 }
 .rightcolumn .content .question {
   display: flex;
@@ -405,11 +515,16 @@ body {
   background-color: #149d9b;
   cursor: pointer;
   margin-right: 2%;
+  text-decoration: none;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .rightcolumn .lowertab .tabbutton {
     font-size: 12px;
   }
+}
+.rightcolumn .lowertab .disabled {
+  background-color: rgba(20, 157, 155, 0.8);
+  pointer-events: none;
 }
 @media (max-width: 767px) {
   .rightcolumn .lowertab {
@@ -419,10 +534,20 @@ body {
     font-size: 9px;
     padding: 0.3rem;
     border-radius: 8px;
+    text-decoration: none;
   }
 }
 @media (max-width: 767px) {
   .rightcolumn {
     width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

@@ -14,7 +14,7 @@
             <input type="hidden" name="category"
                 value="{{ $category->category_id }},{{ strtolower($category->category_title) }}">
             <button type="submit" class="subject"
-                style="font-size: medium;width:100%;@if(session()->has('selectedCategory'))@if(strtolower($category->category_title) == $selectedCategory)background:#149d9b;color: #fff; @endif @endif">{{
+                style="font-size: medium;width:100%;@if(session()->has('selectedCategory'))@if(strtolower($category->category_title) == session()->get('selectedCategory'))background:#149d9b;color: #fff; @endif @endif">{{
                 $category->category_title}}
             </button>
         </form>
@@ -24,27 +24,29 @@
     <p class="grid-quiz-heading">Today's Quizzes</p>
     <div class="grid-quiz-today">
         @forelse ($todayQuizzes as $quiz)
-        <div class="quiz">
-            <div class="first-row">
-                <i class="fa-solid fa-calculator"></i>
-                <div class="subject-tag">
-                    <p>{{ $quiz->category_title }}</p>
+        <a href="{{ route('quiz.start',['id'=>$quiz->quiz_id]) }}">
+            <div class="quiz">
+                <div class="first-row">
+                    <i class="fa-solid fa-calculator"></i>
+                    <div class="subject-tag">
+                        <p>{{ $quiz->category_title }}</p>
+                    </div>
+                </div>
+                <p class="tittle">
+                    {{ $quiz->title }}
+                </p>
+                <div class="second-row">
+                    <div class="attendance">
+                        <i class="fa-solid fa-users"></i>
+                        <p>{{ $quiz->participants->count() }}</p>
+                    </div>
+                    <div class="full-marks">
+                        <i class="fa-solid fa-star"></i>
+                        <p>{{ $quiz->getQuestions()->count() }}</p>
+                    </div>
                 </div>
             </div>
-            <p class="tittle">
-                {{ $quiz->title }}
-            </p>
-            <div class="second-row">
-                <div class="attendance">
-                    <i class="fa-solid fa-users"></i>
-                    <p>{{ $quiz->participants->count() }}</p>
-                </div>
-                <div class="full-marks">
-                    <i class="fa-solid fa-star"></i>
-                    <p>{{ $quiz->getQuestions()->count() }}</p>
-                </div>
-            </div>
-        </div>
+        </a>
         @empty
         <div class="quiz">
             <p class="tittle" style="text-align: center;">No Quiz available!</p>
@@ -101,29 +103,31 @@
     <p class="grid-quiz-heading">Completed Quizzes</p>
     <div class="grid-quiz-today">
         @forelse ($completedQuizzes as $quiz)
-        <div class="quiz" id="quiz">
-            <div class="first-row">
-                <i class="fa-solid fa-calculator"></i>
-                <div class="subject-tag">
-                    <p>{{ $quiz->category_title }}</p>
-                    <i class="fa-solid fa-circle-check" id="completed-icon"></i>
-                </div>
+        <a href="{{ route('quiz.start',['id'=>$quiz->quiz_id]) }}">
+            <div class="quiz" id="quiz">
+                <div class="first-row">
+                    <i class="fa-solid fa-calculator"></i>
+                    <div class="subject-tag">
+                        <p>{{ $quiz->category_title }}</p>
+                        <i class="fa-solid fa-circle-check" id="completed-icon"></i>
+                    </div>
 
-            </div>
-            <p class="tittle">
-                {{ $quiz->title }}
-            </p>
-            <div class="second-row">
-                <div class="attendance">
-                    <i class="fa-solid fa-users"></i>
-                    <p>{{ $quiz->participants->count() }}</p>
                 </div>
-                <div class="full-marks">
-                    <i class="fa-solid fa-star"></i>
-                    <p>{{ $quiz->getQuestions()->count() }}</p>
+                <p class="tittle">
+                    {{ $quiz->title }}
+                </p>
+                <div class="second-row">
+                    <div class="attendance">
+                        <i class="fa-solid fa-users"></i>
+                        <p>{{ $quiz->participants->count() }}</p>
+                    </div>
+                    <div class="full-marks">
+                        <i class="fa-solid fa-star"></i>
+                        <p>{{ $quiz->getQuestions()->count() }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </a>
         @empty
         <div class="quiz">
             <p class="tittle" style="text-align: center;">No Quiz available!</p>
@@ -160,7 +164,7 @@
         </div>
         <div class="modal-footer">
             <a href="{{ route('quiz.play',['id'=>session()->get('quizStart')]) }}">Start</a>
-            <a href="{{ route('quiz_play') }}" id="closeRulesModalBtn">Cancel</a>
+            <a href="{{ route('quiz') }}" id="closeRulesModalBtn">Cancel</a>
         </div>
     </div>
 </div>

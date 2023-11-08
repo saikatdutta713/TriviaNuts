@@ -2319,7 +2319,7 @@ const knownAdapters = {
 }
 
 _utils_js__WEBPACK_IMPORTED_MODULE_2__["default"].forEach(knownAdapters, (fn, value) => {
-  if(fn) {
+  if (fn) {
     try {
       Object.defineProperty(fn, 'name', {value});
     } catch (e) {
@@ -2329,6 +2329,10 @@ _utils_js__WEBPACK_IMPORTED_MODULE_2__["default"].forEach(knownAdapters, (fn, va
   }
 });
 
+const renderReason = (reason) => `- ${reason}`;
+
+const isResolvedHandle = (adapter) => _utils_js__WEBPACK_IMPORTED_MODULE_2__["default"].isFunction(adapter) || adapter === null || adapter === false;
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   getAdapter: (adapters) => {
     adapters = _utils_js__WEBPACK_IMPORTED_MODULE_2__["default"].isArray(adapters) ? adapters : [adapters];
@@ -2337,30 +2341,44 @@ _utils_js__WEBPACK_IMPORTED_MODULE_2__["default"].forEach(knownAdapters, (fn, va
     let nameOrAdapter;
     let adapter;
 
+    const rejectedReasons = {};
+
     for (let i = 0; i < length; i++) {
       nameOrAdapter = adapters[i];
-      if((adapter = _utils_js__WEBPACK_IMPORTED_MODULE_2__["default"].isString(nameOrAdapter) ? knownAdapters[nameOrAdapter.toLowerCase()] : nameOrAdapter)) {
+      let id;
+
+      adapter = nameOrAdapter;
+
+      if (!isResolvedHandle(nameOrAdapter)) {
+        adapter = knownAdapters[(id = String(nameOrAdapter)).toLowerCase()];
+
+        if (adapter === undefined) {
+          throw new _core_AxiosError_js__WEBPACK_IMPORTED_MODULE_3__["default"](`Unknown adapter '${id}'`);
+        }
+      }
+
+      if (adapter) {
         break;
       }
+
+      rejectedReasons[id || '#' + i] = adapter;
     }
 
     if (!adapter) {
-      if (adapter === false) {
-        throw new _core_AxiosError_js__WEBPACK_IMPORTED_MODULE_3__["default"](
-          `Adapter ${nameOrAdapter} is not supported by the environment`,
-          'ERR_NOT_SUPPORT'
+
+      const reasons = Object.entries(rejectedReasons)
+        .map(([id, state]) => `adapter ${id} ` +
+          (state === false ? 'is not supported by the environment' : 'is not available in the build')
         );
-      }
 
-      throw new Error(
-        _utils_js__WEBPACK_IMPORTED_MODULE_2__["default"].hasOwnProp(knownAdapters, nameOrAdapter) ?
-          `Adapter '${nameOrAdapter}' is not available in the build` :
-          `Unknown adapter '${nameOrAdapter}'`
+      let s = length ?
+        (reasons.length > 1 ? 'since :\n' + reasons.map(renderReason).join('\n') : ' ' + renderReason(reasons[0])) :
+        'as no adapter specified';
+
+      throw new _core_AxiosError_js__WEBPACK_IMPORTED_MODULE_3__["default"](
+        `There is no suitable adapter to dispatch the request ` + s,
+        'ERR_NOT_SUPPORT'
       );
-    }
-
-    if (!_utils_js__WEBPACK_IMPORTED_MODULE_2__["default"].isFunction(adapter)) {
-      throw new TypeError('adapter is not a function');
     }
 
     return adapter;
@@ -2458,11 +2476,16 @@ const isXHRAdapterSupported = typeof XMLHttpRequest !== 'undefined';
       }
     }
 
+    let contentType;
+
     if (_utils_js__WEBPACK_IMPORTED_MODULE_2__["default"].isFormData(requestData)) {
       if (_platform_index_js__WEBPACK_IMPORTED_MODULE_3__["default"].isStandardBrowserEnv || _platform_index_js__WEBPACK_IMPORTED_MODULE_3__["default"].isStandardBrowserWebWorkerEnv) {
         requestHeaders.setContentType(false); // Let the browser set it
-      } else {
-        requestHeaders.setContentType('multipart/form-data;', false); // mobile/desktop app frameworks
+      } else if(!requestHeaders.getContentType(/^\s*multipart\/form-data/)){
+        requestHeaders.setContentType('multipart/form-data'); // mobile/desktop app frameworks
+      } else if(_utils_js__WEBPACK_IMPORTED_MODULE_2__["default"].isString(contentType = requestHeaders.getContentType())){
+        // fix semicolon duplication issue for ReactNative FormData implementation
+        requestHeaders.setContentType(contentType.replace(/^\s*(multipart\/form-data);+/, '$1'))
       }
     }
 
@@ -2678,7 +2701,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_spread_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./helpers/spread.js */ "./node_modules/axios/lib/helpers/spread.js");
 /* harmony import */ var _helpers_isAxiosError_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./helpers/isAxiosError.js */ "./node_modules/axios/lib/helpers/isAxiosError.js");
 /* harmony import */ var _core_AxiosHeaders_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./core/AxiosHeaders.js */ "./node_modules/axios/lib/core/AxiosHeaders.js");
-/* harmony import */ var _helpers_HttpStatusCode_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./helpers/HttpStatusCode.js */ "./node_modules/axios/lib/helpers/HttpStatusCode.js");
+/* harmony import */ var _adapters_adapters_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./adapters/adapters.js */ "./node_modules/axios/lib/adapters/adapters.js");
+/* harmony import */ var _helpers_HttpStatusCode_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./helpers/HttpStatusCode.js */ "./node_modules/axios/lib/helpers/HttpStatusCode.js");
+
 
 
 
@@ -2759,7 +2784,9 @@ axios.AxiosHeaders = _core_AxiosHeaders_js__WEBPACK_IMPORTED_MODULE_13__["defaul
 
 axios.formToJSON = thing => (0,_helpers_formDataToJSON_js__WEBPACK_IMPORTED_MODULE_14__["default"])(_utils_js__WEBPACK_IMPORTED_MODULE_2__["default"].isHTMLForm(thing) ? new FormData(thing) : thing);
 
-axios.HttpStatusCode = _helpers_HttpStatusCode_js__WEBPACK_IMPORTED_MODULE_15__["default"];
+axios.getAdapter = _adapters_adapters_js__WEBPACK_IMPORTED_MODULE_15__["default"].getAdapter;
+
+axios.HttpStatusCode = _helpers_HttpStatusCode_js__WEBPACK_IMPORTED_MODULE_16__["default"];
 
 axios.default = axios;
 
@@ -3062,15 +3089,13 @@ class Axios {
     // Set config.method
     config.method = (config.method || this.defaults.method || 'get').toLowerCase();
 
-    let contextHeaders;
-
     // Flatten headers
-    contextHeaders = headers && _utils_js__WEBPACK_IMPORTED_MODULE_3__["default"].merge(
+    let contextHeaders = headers && _utils_js__WEBPACK_IMPORTED_MODULE_3__["default"].merge(
       headers.common,
       headers[config.method]
     );
 
-    contextHeaders && _utils_js__WEBPACK_IMPORTED_MODULE_3__["default"].forEach(
+    headers && _utils_js__WEBPACK_IMPORTED_MODULE_3__["default"].forEach(
       ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
       (method) => {
         delete headers[method];
@@ -3607,7 +3632,17 @@ class AxiosHeaders {
 
 AxiosHeaders.accessor(['Content-Type', 'Content-Length', 'Accept', 'Accept-Encoding', 'User-Agent', 'Authorization']);
 
-_utils_js__WEBPACK_IMPORTED_MODULE_0__["default"].freezeMethods(AxiosHeaders.prototype);
+// reserved names hotfix
+_utils_js__WEBPACK_IMPORTED_MODULE_0__["default"].reduceDescriptors(AxiosHeaders.prototype, ({value}, key) => {
+  let mapped = key[0].toUpperCase() + key.slice(1); // map `set` => `Set`
+  return {
+    get: () => value,
+    set(headerValue) {
+      this[mapped] = headerValue;
+    }
+  }
+});
+
 _utils_js__WEBPACK_IMPORTED_MODULE_0__["default"].freezeMethods(AxiosHeaders);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AxiosHeaders);
@@ -4081,10 +4116,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const DEFAULT_CONTENT_TYPE = {
-  'Content-Type': undefined
-};
-
 /**
  * It takes a string, tries to parse it, and if it fails, it returns the stringified version
  * of the input
@@ -4223,17 +4254,14 @@ const defaults = {
 
   headers: {
     common: {
-      'Accept': 'application/json, text/plain, */*'
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type': undefined
     }
   }
 };
 
-_utils_js__WEBPACK_IMPORTED_MODULE_0__["default"].forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+_utils_js__WEBPACK_IMPORTED_MODULE_0__["default"].forEach(['delete', 'get', 'head', 'post', 'put', 'patch'], (method) => {
   defaults.headers[method] = {};
-});
-
-_utils_js__WEBPACK_IMPORTED_MODULE_0__["default"].forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
-  defaults.headers[method] = _utils_js__WEBPACK_IMPORTED_MODULE_0__["default"].merge(DEFAULT_CONTENT_TYPE);
 });
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (defaults);
@@ -4274,7 +4302,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   VERSION: () => (/* binding */ VERSION)
 /* harmony export */ });
-const VERSION = "1.4.0";
+const VERSION = "1.5.1";
 
 /***/ }),
 
@@ -6187,8 +6215,9 @@ const reduceDescriptors = (obj, reducer) => {
   const reducedDescriptors = {};
 
   forEach(descriptors, (descriptor, name) => {
-    if (reducer(descriptor, name, obj) !== false) {
-      reducedDescriptors[name] = descriptor;
+    let ret;
+    if ((ret = reducer(descriptor, name, obj)) !== false) {
+      reducedDescriptors[name] = ret || descriptor;
     }
   });
 
@@ -6464,84 +6493,93 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //category.blade.php
-document.addEventListener("DOMContentLoaded", function () {
-  var prevContent = null;
-  function toggleDisplay(event) {
-    var contentDiv = document.getElementById("metarial2");
-    var contentDiv1 = document.getElementById("metarial1");
-    var subjectDiv = document.getElementById("subjectName");
-    if (contentDiv.style.display === "" || contentDiv.style.display === "none" || contentDiv.style.display === "block") {
-      contentDiv.style.display = "block";
-      contentDiv1.style.display = "none";
-    }
-    contentDiv.style.transition = "background-color 0.1s ease-in-out";
-    contentDiv.style.backgroundColor = "#a1fa6e"; // Set the desired color
-    var clickedContent = event.target.textContent;
-    if (prevContent !== clickedContent) {
-      setTimeout(function () {
-        contentDiv.style.backgroundColor = ""; // Revert back to previous background color
-      }, 500);
-    } else {
-      contentDiv.style.backgroundColor = "";
-    }
-    prevContent = clickedContent;
-    subjectDiv.textContent = clickedContent;
-  }
-  var toggleButtons = document.querySelectorAll(".subject1");
-  toggleButtons.forEach(function (toggleButton) {
-    toggleButton.addEventListener("click", toggleDisplay);
-  });
-  function changeBackgroundColor(clickedDiv) {
-    var subjectDivs = document.querySelectorAll(".subject1");
-    subjectDivs.forEach(function (div) {
-      return div.classList.remove("selected");
-    });
-    clickedDiv.classList.add("selected");
-  }
-  var subjectDivs = document.querySelectorAll(".subject1");
-  subjectDivs.forEach(function (div) {
-    div.addEventListener("click", function () {
-      changeBackgroundColor(this);
-    });
-  });
-  var contentDiv1 = document.getElementById("metarial1");
-  var contentDiv2 = document.getElementById("metarial2");
-  var contentDiv3 = document.getElementById("metarial3");
-  var toggleStartB = document.querySelector("#quizstartb");
-  // Displaying rule window by clicking stat button
-  toggleStartB.addEventListener("click", function () {
-    contentDiv1.style.display = "none";
-    contentDiv2.style.display = "none";
-    contentDiv3.style.display = "block";
-  });
-  var toggleStartSmallB = document.querySelectorAll("#startB");
-  toggleStartSmallB.forEach(function (toggleButton) {
-    toggleButton.addEventListener("click", function () {
-      var bhoverText = toggleButton.closest(".quizno1").querySelector(".bhover").textContent;
-      var levelNameDiv = document.querySelector("#levelText");
-      levelNameDiv.textContent = bhoverText;
-      contentDiv1.style.display = "none";
-      contentDiv2.style.display = "none";
-      contentDiv3.style.display = "block";
-    });
-  });
+// document.addEventListener("DOMContentLoaded", function () {
+//     let prevContent = null;
+//     function toggleDisplay(event) {
+//         const contentDiv = document.getElementById("metarial2");
+//         const contentDiv1 = document.getElementById("metarial1");
+//         const subjectDiv = document.getElementById("subjectName");
+//         if (
+//             contentDiv.style.display === "" ||
+//             contentDiv.style.display === "none" ||
+//             contentDiv.style.display === "block"
+//         ) {
+//             contentDiv.style.display = "block";
+//             contentDiv1.style.display = "none";
+//         }
+//         contentDiv.style.transition = "background-color 0.1s ease-in-out";
+//         contentDiv.style.backgroundColor = "#a1fa6e"; // Set the desired color
+//         const clickedContent = event.target.textContent;
+//         if (prevContent !== clickedContent) {
+//             setTimeout(function () {
+//                 contentDiv.style.backgroundColor = ""; // Revert back to previous background color
+//             }, 500);
+//         } else {
+//             contentDiv.style.backgroundColor = "";
+//         }
+//         prevContent = clickedContent;
+//         subjectDiv.textContent = clickedContent;
+//     }
+//     // const toggleButtons = document.querySelectorAll(".subject1");
+//     // toggleButtons.forEach(function (toggleButton) {
+//     //     toggleButton.addEventListener("click", toggleDisplay);
+//     // });
 
-  // Displaying quiz levels by clicking back button of rule window
-  var toggleButtonBack = document.querySelector(".back");
-  toggleButtonBack.addEventListener("click", function () {
-    contentDiv1.style.display = "none";
-    contentDiv2.style.display = "block";
-    contentDiv3.style.display = "none";
-  });
-  var toggleButtonMetarial2 = document.querySelectorAll(".subject1");
-  toggleButtonMetarial2.forEach(function (toggleButton) {
-    toggleButton.addEventListener("click", function () {
-      contentDiv1.style.display = "none";
-      contentDiv2.style.display = "block";
-      contentDiv3.style.display = "none";
-    });
-  });
-});
+//     // function changeBackgroundColor(clickedDiv) {
+//     //     const subjectDivs = document.querySelectorAll(".subject1");
+//     //     subjectDivs.forEach((div) => div.classList.remove("selected"));
+//     //     clickedDiv.classList.add("selected");
+//     // }
+
+//     // const subjectDivs = document.querySelectorAll(".subject1");
+//     // subjectDivs.forEach(function (div) {
+//     //     div.addEventListener("click", function () {
+//     //         changeBackgroundColor(this);
+//     //     });
+//     // });
+
+//     const contentDiv1 = document.getElementById("metarial1");
+//     const contentDiv2 = document.getElementById("metarial2");
+//     const contentDiv3 = document.getElementById("metarial3");
+//     const toggleStartB = document.querySelector("#quizstartb");
+//     // Displaying rule window by clicking stat button
+//     toggleStartB.addEventListener("click", function () {
+//         contentDiv1.style.display = "none";
+//         contentDiv2.style.display = "none";
+//         contentDiv3.style.display = "block";
+//     });
+
+//     const toggleStartSmallB = document.querySelectorAll("#startB");
+//     toggleStartSmallB.forEach(function (toggleButton) {
+//         toggleButton.addEventListener("click", function () {
+//             const bhoverText = toggleButton
+//                 .closest(".quizno1")
+//                 .querySelector(".bhover").textContent;
+//             const levelNameDiv = document.querySelector("#levelText");
+//             levelNameDiv.textContent = bhoverText;
+//             contentDiv1.style.display = "none";
+//             contentDiv2.style.display = "none";
+//             contentDiv3.style.display = "block";
+//         });
+//     });
+
+//     // Displaying quiz levels by clicking back button of rule window
+//     const toggleButtonBack = document.querySelector(".back");
+//     toggleButtonBack.addEventListener("click", function () {
+//         contentDiv1.style.display = "none";
+//         contentDiv2.style.display = "block";
+//         contentDiv3.style.display = "none";
+//     });
+
+//     const toggleButtonMetarial2 = document.querySelectorAll(".subject1");
+//     toggleButtonMetarial2.forEach(function (toggleButton) {
+//         toggleButton.addEventListener("click", function () {
+//             contentDiv1.style.display = "none";
+//             contentDiv2.style.display = "block";
+//             contentDiv3.style.display = "none";
+//         });
+//     });
+// });
 
 //profile.blade.php
 document.addEventListener("DOMContentLoaded", function () {
@@ -6797,6 +6835,17 @@ function changeBackgroundColor(clickedDiv) {
     return div.classList.remove("selected");
   });
   clickedDiv.classList.add("selected");
+  var optionValue = clickedDiv.dataset.option;
+  var quiz = clickedDiv.dataset.quiz;
+  var question = clickedDiv.dataset.question;
+  console.log(optionValue, quiz, question);
+  fetch("/quiz/" + quiz + "/play/" + question + "/answer/" + optionValue).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    console.log("Success: ", data);
+  })["catch"](function (error) {
+    console.error("Error:", error);
+  });
 }
 
 // Event listener for DOMContentLoaded to initialize the functionality
