@@ -5261,6 +5261,16 @@ section.greeting {
   position: relative;
   border-top: 1px solid white;
 }
+@media (max-width: 768px) {
+  section.greeting {
+    height: 40vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  section.greeting {
+    height: 60vh;
+  }
+}
 section.greeting .polygon {
   width: inherit;
   height: inherit;
@@ -5285,11 +5295,20 @@ section.greeting .content .left {
   flex-direction: column;
   padding: 5% 10%;
 }
+@media (max-width: 768px) {
+  section.greeting .content .left {
+    padding: 2% 10%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  section.greeting .content .left {
+    padding: 2% 10%;
+  }
+}
 section.greeting .content .left .tagline-container {
   overflow: hidden;
 }
 section.greeting .content .left .tagline {
-  font-size: 24px;
   font-weight: bold;
   font-size: 3vw;
   color: white;
@@ -5309,6 +5328,19 @@ section.greeting .content .left .tagline {
 section.greeting .content .left .button {
   height: 30px;
   margin-top: 10%;
+  margin-left: 25%;
+}
+@media (max-width: 768px) {
+  section.greeting .content .left .button {
+    margin-left: 15%;
+    font-size: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  section.greeting .content .left .button {
+    margin-top: 10%;
+    margin-left: 25%;
+  }
 }
 section.greeting .content .left .button a {
   background-color: white;
