@@ -187,7 +187,7 @@
             <li><a href="{{ Route('home_page') }}">Home</a></li>
             <li><a href="{{ Route('community') }}">Community</a></li>
             <li><a href="{{ Route('trends') }}">Trends</a></li>
-            <li><a href="{{ Route('quiz_play') }}">Quiz</a></li>
+            <li><a href="{{ Route('quiz') }}">Quiz</a></li>
             @auth
             <li><a href="{{ Route('profile') }}">Profile</a></li>
             <li><a href="{{ Route('logout') }}">Sign Out</a></li>
