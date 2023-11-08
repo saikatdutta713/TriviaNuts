@@ -233,7 +233,10 @@ body {
   background: white;
 }
 .container .navbar .navbar__right .rounded-wrapper img {
-  width: inherit;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .container main {
   background: #f3f4f6;
@@ -288,6 +291,9 @@ body {
   padding: 0 10px;
   font-weight: 700;
 }
+.container #sidebar a {
+  text-decoration: none;
+}
 .container #sidebar .sidebar__link {
   color: #f3f4f6;
   padding: 10px;
@@ -301,6 +307,9 @@ body {
 .container #sidebar .sidebar__link > i {
   margin-right: 10px;
   font-size: 18px;
+}
+.container #sidebar .sidebar__link:hover {
+  background-color: #149d9b;
 }
 .container #sidebar .sidebar__link .maintenance_mode_switch {
   width: 50px;
@@ -382,6 +391,13 @@ body {
     display: none;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
 .main__container {
   padding: 20px 35px;
 }
@@ -1150,44 +1166,8 @@ main .edit__modal button#openModalBtn {
 .main__content .logo .logo-upload button#cancelButton:hover {
   background-color: red;
 }
-.main__content #editableDiv1 {
-  margin-top: 1rem;
-  margin-left: 1rem;
-  padding: 20px;
-  background-color: #f5f5f5;
-  border-radius: 5px;
-  width: 60%;
-}
-.main__content #editableDiv1 form {
-  padding: 10px;
-  border-radius: 5px;
-}
-.main__content #editableDiv1 form label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-.main__content #editableDiv1 form input {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-.main__content #editableDiv1 form button {
-  background-color: #149d9b;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.main__content #editableDiv1 form button:hover {
-  background-color: #0056b3;
-}
 .main__content .rowTextarea {
-  margin-top: 1rem;
+  margin-top: 4rem;
   height: 10%;
   width: 100%;
   display: flex;

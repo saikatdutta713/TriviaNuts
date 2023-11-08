@@ -390,6 +390,7 @@
   border-radius: 50%;
   margin-right: 5px;
   outline: 2px solid #fff;
+  overflow: hidden;
 }
 .header .login__container .avatar-container .avatar {
   width: 35px;
@@ -418,7 +419,7 @@
   pointer-events: none;
 }
 .header .login__container .dropdown-menu li {
-  padding: 10px 20px;
+  padding: 10px 10px;
 }
 .header .login__container .dropdown-menu li > a {
   text-decoration: none;
@@ -448,7 +449,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   background-color: #149d9b;
   color: white;
   border-bottom: 1px solid white;
@@ -460,7 +460,20 @@
   }
 }
 .mobile_header .logo {
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 30%;
+  float: left;
+  color: white;
+}
+.mobile_header .logo img {
+  -o-object-fit: fill;
+     object-fit: fill;
+  max-width: 100%;
+  max-height: 300%;
+  margin: 0 0 -10%;
 }
 .mobile_header .toggle-menu {
   display: flex;
@@ -522,6 +535,13 @@
 .mobile_sidebar.active {
   top: 0;
 }
+.mobile_sidebar #close-toggle-menu {
+  font-size: 2rem;
+  margin-left: 90%;
+  color: white;
+  padding-top: 1rem;
+  cursor: pointer;
+}
 .mobile_sidebar .menu {
   display: flex;
   align-items: center;
@@ -531,7 +551,7 @@
   margin: 0;
   flex-direction: column;
   position: relative;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
 }
 .mobile_sidebar .menu li {
@@ -649,11 +669,35 @@ footer .row2 {
   width: 100%;
   background-color: #ecfeff;
 }
+@media (max-width: 768px) {
+  .registrationPage {
+    flex-direction: column;
+    height: 250vh;
+    background-color: white;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .registrationPage {
+    background-color: white;
+  }
+}
 
 .register {
   height: 80%;
   width: 40%;
   background-color: white;
+}
+@media (max-width: 768px) {
+  .register {
+    height: 60%;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .register {
+    height: 90%;
+    width: 55%;
+  }
 }
 .register .registerHeader {
   display: flex;
@@ -714,6 +758,11 @@ footer .row2 {
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
+@media (max-width: 768px) {
+  .register .registerSection form .form-row1 {
+    height: 10%;
+  }
+}
 .register .registerSection form .form-row2 {
   height: 13%;
   width: 86%;
@@ -728,6 +777,11 @@ footer .row2 {
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
+@media (max-width: 768px) {
+  .register .registerSection form .form-row2 {
+    height: 10%;
+  }
+}
 .register .registerSection form .form-row3 {
   display: flex;
   align-items: center;
@@ -735,6 +789,13 @@ footer .row2 {
   height: 13%;
   width: 86%;
   margin: auto;
+}
+@media (max-width: 768px) {
+  .register .registerSection form .form-row3 {
+    flex-direction: column;
+    height: 33%;
+    width: 95%;
+  }
 }
 .register .registerSection form .form-row3 .detailsDiv {
   height: 100%;
@@ -751,6 +812,23 @@ footer .row2 {
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
   font-size: 15px;
 }
+@media (max-width: 768px) {
+  .register .registerSection form .form-row3 .detailsDiv {
+    height: 33%;
+    width: 90%;
+    margin: auto;
+  }
+  .register .registerSection form .form-row3 .detailsDiv .inputForm {
+    height: 60%;
+    width: 50%;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    font-size: 15px;
+  }
+}
 .register .registerSection form .form-row3 .detailsDiv1 {
   height: 100%;
   width: 36%;
@@ -765,6 +843,23 @@ footer .row2 {
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
+@media (max-width: 768px) {
+  .register .registerSection form .form-row3 .detailsDiv1 {
+    height: 33%;
+    width: 90%;
+    margin: auto;
+  }
+  .register .registerSection form .form-row3 .detailsDiv1 .inputForm {
+    height: 60%;
+    width: 70%;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    font-size: 15px;
+  }
+}
 .register .registerSection form .form-row3 .detailsDiv2 {
   height: 100%;
   width: 40%;
@@ -778,6 +873,23 @@ footer .row2 {
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0.4);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 768px) {
+  .register .registerSection form .form-row3 .detailsDiv2 {
+    height: 33%;
+    width: 90%;
+    margin: auto;
+  }
+  .register .registerSection form .form-row3 .detailsDiv2 .inputForm {
+    height: 60%;
+    width: 50%;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    font-size: 15px;
+  }
 }
 .register .registerSection form .form-row4 {
   display: flex;
@@ -795,6 +907,11 @@ footer .row2 {
   height: 55%;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .register .registerSection form .form-row4 .agreement {
+    height: 65%;
+  }
+}
 .register .registerSection form .form-row4 .agreement a {
   text-decoration: none;
 }
@@ -803,6 +920,12 @@ footer .row2 {
   width: 10%;
   margin-right: 0.5rem;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .register .registerSection form .form-row4 .agreement .agreeBox {
+    width: 20%;
+    height: 30%;
+  }
 }
 .register .registerSection form .form-row4 .regsterution {
   height: 40%;
@@ -813,6 +936,13 @@ footer .row2 {
   background-color: #149d9b;
   border: none;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .register .registerSection form .form-row4 .regsterution {
+    width: 30%;
+    height: 30%;
+    letter-spacing: 1px;
+  }
 }
 .register .registerFooter {
   display: flex;
@@ -825,11 +955,35 @@ footer .row2 {
 .register .registerFooter a {
   text-decoration: none;
 }
+@media (max-width: 768px) {
+  .register .registerFooter {
+    padding: 3rem 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .register .registerFooter {
+    padding: 3rem;
+  }
+}
 
 .newUser {
   height: 80%;
   width: 35%;
   background-color: #149d9b;
+}
+@media (max-width: 768px) {
+  .newUser {
+    height: 40%;
+    width: 100%;
+    padding: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .newUser {
+    height: 90%;
+    width: 45%;
+    padding: 1rem;
+  }
 }
 .newUser .joinGifts {
   height: 30%;
@@ -842,6 +996,16 @@ footer .row2 {
   font-size: 22px;
   color: #ecfeff;
 }
+@media (max-width: 768px) {
+  .newUser .joinGifts p {
+    font-size: 1.2em;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .newUser .joinGifts p {
+    font-size: 1.2em;
+  }
+}
 .newUser .joinBenifits {
   height: 70%;
   width: 100%;
@@ -853,6 +1017,16 @@ footer .row2 {
   font-size: 18px;
   margin-left: 5%;
   color: #f3f4f6;
+}
+@media (max-width: 768px) {
+  .newUser .joinBenifits .benifits1 {
+    font-size: 1em;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .newUser .joinBenifits .benifits1 {
+    font-size: 1em;
+  }
 }
 .newUser .joinBenifits .benifits1 #benifitsIcon {
   font-size: 30px;
@@ -887,6 +1061,18 @@ footer .row2 {
   width: 100%;
   background-color: #ecfeff;
 }
+@media (max-width: 768px) {
+  .loginPage {
+    flex-direction: column;
+    height: 220vh;
+    background-color: white;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .loginPage {
+    background-color: white;
+  }
+}
 
 .login {
   padding: 2rem;
@@ -896,6 +1082,19 @@ footer .row2 {
   width: 35%;
   background-color: white;
 }
+@media (max-width: 768px) {
+  .login {
+    height: 50%;
+    width: 100%;
+    padding-top: 2rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .login {
+    height: 90%;
+    width: 55%;
+  }
+}
 .login .loginHeader {
   display: flex;
   align-items: center;
@@ -904,6 +1103,14 @@ footer .row2 {
   height: max-content;
   width: 100%;
   padding: 1rem;
+}
+@media (max-width: 768px) {
+  .login .loginHeader {
+    padding: 0rem;
+  }
+  .login .loginHeader #loginlogo {
+    font-size: 6rem;
+  }
 }
 .login .loginHeader #loginlogo {
   font-size: 7rem;
@@ -950,6 +1157,11 @@ footer .row2 {
 }
 .login .loginSection form .field.shake {
   animation: shake 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+  .login .loginSection form .field {
+    width: 100%;
+  }
 }
 .login .loginSection form .field .input-area {
   height: 100%;
@@ -1039,6 +1251,12 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
 .login .loginSection form input[type=submit]:hover {
   background: #2c52ed;
 }
+@media (max-width: 768px) {
+  .login .loginSection form input[type=submit] {
+    width: 30%;
+    height: 15%;
+  }
+}
 .login .loginFooter {
   display: flex;
   align-items: center;
@@ -1088,6 +1306,74 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   text-decoration: none;
 }
 
+.newUser-login {
+  height: 80%;
+  width: 35%;
+  background-color: #149d9b;
+}
+@media (max-width: 768px) {
+  .newUser-login {
+    height: 50%;
+    width: 100%;
+    padding: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .newUser-login {
+    height: 90%;
+    width: 45%;
+    padding: 1rem;
+  }
+}
+.newUser-login .joinGifts {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.newUser-login .joinGifts p {
+  font-size: 22px;
+  color: #ecfeff;
+}
+@media (max-width: 768px) {
+  .newUser-login .joinGifts p {
+    font-size: 1.2em;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .newUser-login .joinGifts p {
+    font-size: 1.2em;
+  }
+}
+.newUser-login .joinBenifits {
+  height: 70%;
+  width: 100%;
+}
+.newUser-login .joinBenifits .benifits1 {
+  height: 14.5%;
+  width: 90%;
+  display: flex;
+  font-size: 18px;
+  margin-left: 5%;
+  color: #f3f4f6;
+}
+@media (max-width: 768px) {
+  .newUser-login .joinBenifits .benifits1 {
+    font-size: 1em;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .newUser-login .joinBenifits .benifits1 {
+    font-size: 1em;
+  }
+}
+.newUser-login .joinBenifits .benifits1 #benifitsIcon {
+  font-size: 30px;
+  margin-right: 1rem;
+  color: white;
+}
+
 .otpModal {
   display: none; /* Hide the modal by default */
   position: fixed;
@@ -1108,6 +1394,17 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+  max-width: 30%;
+}
+@media (max-width: 768px) {
+  .otpModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .otpModal .modal-content {
+    max-width: 60%;
+  }
 }
 .otpModal .modal-content .modal-header {
   text-align: center;
@@ -1130,7 +1427,7 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   font-weight: bold;
 }
 .otpModal .modal-content .modal-body input {
-  width: 100%;
+  width: 30%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -1140,7 +1437,6 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   display: flex;
   justify-content: flex-end;
   padding: 10px;
-  justify-content: center !important;
 }
 .otpModal .modal-content .modal-footer button {
   padding: 10px 20px;
@@ -1189,6 +1485,16 @@ input:focus ~ .login .loginSection form .field .input-area i.icon, .field.valid 
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+}
+@media (max-width: 768px) {
+  .forgotPasswordModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .forgotPasswordModal .modal-content {
+    max-width: 60%;
+  }
 }
 .forgotPasswordModal .modal-content .modal-header {
   text-align: center;
@@ -2681,6 +2987,15 @@ input:focus ~ .setNewPassword .setNewPasswordSection form .field .input-area i.i
   justify-content: center;
   padding: 20px;
 }
+@media (max-width: 1024px) {
+  .reattempt {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .reattempt p {
+    margin-left: 20px;
+  }
+}
 .reattempt p {
   font-size: 18px;
   margin-right: 20px;
@@ -2705,12 +3020,72 @@ h1 {
   font-size: 2em;
 }
 
+.row-container-mobile {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .row-container-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem 0;
+  }
+  .row-container-mobile .total-score,
+  .row-container-mobile .timer {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    border-radius: 1rem;
+  }
+  .row-container-mobile .total-score {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+  }
+  .row-container-mobile .total-score .score {
+    padding: 0px;
+    font-size: 1.3em;
+    color: #ffc107;
+    font-weight: 600;
+  }
+  .row-container-mobile .total-score .point {
+    padding: 0px;
+    font-size: 1em;
+    margin-top: 1rem;
+  }
+  .row-container-mobile .timer {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+  }
+  .row-container-mobile .timer .heading {
+    padding: 0px;
+    font-size: 1em;
+  }
+  .row-container-mobile .timer .time {
+    padding: 0px;
+    font-size: 1.5em;
+    color: #ff0000;
+    margin-top: 1rem;
+  }
+  .row-container-mobile .timer .footer-heading {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+}
+
 .row-container {
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 3rem;
   padding: 2rem 3rem 3rem;
   align-items: flex-start;
+}
+@media (max-width: 1024px) {
+  .row-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding: 2rem 0 3rem;
+  }
 }
 .row-container .total-score,
 .row-container .question-answer,
@@ -2724,6 +3099,11 @@ h1 {
 }
 .row-container .total-score {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 1024px) {
+  .row-container .total-score {
+    display: none;
+  }
 }
 .row-container .total-score .score {
   padding: 1rem;
@@ -2740,6 +3120,12 @@ h1 {
 .row-container .question-answer {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
 }
+@media (max-width: 768px) {
+  .row-container .question-answer {
+    width: 100%;
+    padding: 0px;
+  }
+}
 .row-container .question-answer .question-answer-container {
   padding: 1rem;
   background-color: #e0e0e0;
@@ -2747,10 +3133,21 @@ h1 {
   padding: 2rem 2rem 1rem;
   border-radius: 15px;
 }
+@media (max-width: 768px) {
+  .row-container .question-answer .question-answer-container {
+    padding: 1rem;
+  }
+}
 .row-container .question-answer .question-answer-container .question {
   display: flex;
   align-items: center;
   padding: 0 0 1rem 2rem;
+}
+@media (max-width: 768px) {
+  .row-container .question-answer .question-answer-container .question {
+    width: 100%;
+    padding: 0 0 1rem 0;
+  }
 }
 .row-container .question-answer .question-answer-container .question p:first-child {
   font-weight: bold;
@@ -2770,6 +3167,12 @@ h1 {
   max-width: 90%;
   margin: auto;
   border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .row-container .question-answer .question-answer-container .answer-options {
+    width: 100%;
+    padding: 0.5rem 0 0.5rem 1rem;
+  }
 }
 .row-container .question-answer .question-answer-container .answer-options p {
   margin: 8px 0;
@@ -2800,6 +3203,11 @@ h1 {
 }
 .row-container .timer {
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 1024px) {
+  .row-container .timer {
+    display: none;
+  }
 }
 .row-container .timer .heading {
   padding: 1rem;
@@ -4167,6 +4575,15 @@ h1 {
 .profilePage {
   height: 90vh;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1024px) {
+  .profilePage {
+    flex-direction: column;
+    height: 180vh;
+  }
 }
 
 .rightDiv {
@@ -4177,6 +4594,12 @@ h1 {
   width: 87%;
   background-color: #f7f7f6;
 }
+@media (max-width: 1024px) {
+  .rightDiv {
+    height: 90%;
+    width: 100%;
+  }
+}
 .rightDiv .profileDetails {
   height: 80%;
   width: 80%;
@@ -4186,10 +4609,25 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails {
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    width: 100%;
+  }
+}
 .rightDiv .profileDetails .personalDetails1 {
   height: 80%;
   width: 25%;
   margin: auto;
+}
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails .personalDetails1 {
+    order: 2;
+    height: 35%;
+    width: 100%;
+  }
 }
 .rightDiv .profileDetails .personalDetails1 .personDetails {
   height: 60%;
@@ -4228,9 +4666,22 @@ h1 {
   width: 35%;
   margin: auto;
 }
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails .personalDetails2 {
+    order: 3;
+    height: 35%;
+    width: 100%;
+  }
+}
 .rightDiv .profileDetails .personalDetails2 .education {
   height: 40%;
   width: 100%;
+}
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails .personalDetails2 .education {
+    width: 90%;
+    margin: auto;
+  }
 }
 .rightDiv .profileDetails .personalDetails2 .education .detailsHeading {
   padding: 0.3rem;
@@ -4245,6 +4696,11 @@ h1 {
   width: 100%;
   height: 60%;
   margin: auto;
+}
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails .personalDetails2 .bio {
+    width: 90%;
+  }
 }
 .rightDiv .profileDetails .personalDetails2 .bio h4 {
   padding: 0.3rem;
@@ -4267,12 +4723,21 @@ h1 {
   color: white;
   margin: auto;
 }
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails .profilePicture {
+    order: 1;
+    height: 30%;
+    width: 70%;
+    padding: 1rem;
+  }
+}
 .rightDiv .profileDetails .profilePicture .avatar-container {
   height: 150px;
   width: 150px;
   margin: auto;
   border-radius: 50%;
   background-color: #a5aaad;
+  overflow: hidden;
 }
 .rightDiv .profileDetails .profilePicture .avatar-container .avatar {
   width: 150px;
@@ -4302,12 +4767,75 @@ h1 {
   width: 100%;
   font-size: 18px;
 }
+@media (max-width: 1024px) {
+  .rightDiv .profileDetails .profilePicture .profilePoints {
+    padding-top: 1rem;
+  }
+}
+
+.button-update {
+  display: none;
+  width: 100%;
+  height: 10%;
+}
+.button-update .mobileToggleButton {
+  background-color: #149d9b;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+@media (max-width: 1024px) {
+  .button-update {
+    display: block;
+    display: flex;
+    align-items: center;
+  }
+}
 
 .profileEdit {
   height: 100%;
   width: 13%;
-  padding-top: 3rem;
   background-color: #999;
+}
+@media (max-width: 768px) {
+  .profileEdit {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: #3b3b3b; /* Transparent black background */
+    z-index: 1;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .profileEdit {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background: #3b3b3b; /* Transparent black background */
+    z-index: 1;
+  }
+}
+.profileEdit #cross-mark {
+  margin-left: 90%;
+  display: none;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .profileEdit #cross-mark {
+    display: block;
+  }
 }
 .profileEdit .heading {
   display: flex;
@@ -4318,6 +4846,7 @@ h1 {
   font-size: 18px;
   color: white;
   margin-bottom: 1rem;
+  padding-top: 2rem;
 }
 .profileEdit .heading p {
   margin-left: 0.5rem;
@@ -4364,10 +4893,20 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 50%;
+  max-width: 40%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+}
+@media (max-width: 768px) {
+  .profileModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .profileModal .modal-content {
+    max-width: 60%;
+  }
 }
 .profileModal .modal-content .modal-header {
   text-align: center;
@@ -4435,10 +4974,20 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 50%;
+  max-width: 40%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+}
+@media (max-width: 768px) {
+  .educationModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .educationModal .modal-content {
+    max-width: 60%;
+  }
 }
 .educationModal .modal-content .modal-header {
   text-align: center;
@@ -4501,10 +5050,20 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 50%;
+  max-width: 40%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+}
+@media (max-width: 768px) {
+  .bioModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .bioModal .modal-content {
+    max-width: 60%;
+  }
 }
 .bioModal .modal-content .modal-header {
   text-align: center;
@@ -4567,10 +5126,20 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 50%;
+  max-width: 40%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+}
+@media (max-width: 768px) {
+  .socialModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .socialModal .modal-content {
+    max-width: 60%;
+  }
 }
 .socialModal .modal-content .modal-header {
   text-align: center;
@@ -4633,10 +5202,20 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   width: 90%;
-  max-width: 50%;
+  max-width: 40%;
   max-height: 90%;
   overflow-y: auto;
   margin: 2rem auto;
+}
+@media (max-width: 768px) {
+  .passwordModal .modal-content {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .passwordModal .modal-content {
+    max-width: 60%;
+  }
 }
 .passwordModal .modal-content .modal-header {
   text-align: center;
@@ -4689,6 +5268,16 @@ section.greeting {
   position: relative;
   border-top: 1px solid white;
 }
+@media (max-width: 768px) {
+  section.greeting {
+    height: 40vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  section.greeting {
+    height: 60vh;
+  }
+}
 section.greeting .polygon {
   width: inherit;
   height: inherit;
@@ -4713,11 +5302,20 @@ section.greeting .content .left {
   flex-direction: column;
   padding: 5% 10%;
 }
+@media (max-width: 768px) {
+  section.greeting .content .left {
+    padding: 2% 10%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  section.greeting .content .left {
+    padding: 2% 10%;
+  }
+}
 section.greeting .content .left .tagline-container {
   overflow: hidden;
 }
 section.greeting .content .left .tagline {
-  font-size: 24px;
   font-weight: bold;
   font-size: 3vw;
   color: white;
@@ -4737,6 +5335,19 @@ section.greeting .content .left .tagline {
 section.greeting .content .left .button {
   height: 30px;
   margin-top: 10%;
+  margin-left: 25%;
+}
+@media (max-width: 768px) {
+  section.greeting .content .left .button {
+    margin-left: 15%;
+    font-size: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  section.greeting .content .left .button {
+    margin-top: 10%;
+    margin-left: 25%;
+  }
 }
 section.greeting .content .left .button a {
   background-color: white;
@@ -4791,33 +5402,33 @@ section.greeting .content .right img {
   background-color: rgb(16, 14, 14);
 }
 
-.grid-quiz-today {
+.grid-quiz-badge {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 1rem;
   padding: 1rem 3rem 3rem;
   background-color: #ecfeff;
 }
-.grid-quiz-today .quiz {
+.grid-quiz-badge .badge-design {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
 }
-.grid-quiz-today .quiz .first-row {
+.grid-quiz-badge .badge-design .first-row {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.grid-quiz-today .quiz .first-row img {
+.grid-quiz-badge .badge-design .first-row img {
   max-width: 50%;
 }
-.grid-quiz-today .quiz .first-row .tittle {
+.grid-quiz-badge .badge-design .first-row .tittle {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-.grid-quiz-today .quiz .second-row {
+.grid-quiz-badge .badge-design .second-row {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4955,5 +5566,183 @@ section.greeting .content .right img {
   }
   100% {
     opacity: 1;
+  }
+}
+.contact-form {
+  max-width: 800px;
+  margin: 5rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.contact-form h1 {
+  color: #ff5733;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.contact-form form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.contact-form form label {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 0 10px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.contact-form form input,
+.contact-form form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  border-bottom: 1px solid #333;
+}
+.contact-form form input,
+.contact-form form textarea {
+  background-color: white;
+}
+.contact-form form textarea {
+  resize: none;
+}
+.contact-form form button {
+  background-color: #149d9b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+.contact-form form button:hover {
+  background-color: #ff5733;
+}
+@media (max-width: 1024px) {
+  .contact-form {
+    padding: 1rem;
+    max-width: 95%;
+  }
+}
+.main {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.main .about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main .about-section .about-image img {
+  max-width: 100%;
+  height: 450px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 1024px) {
+  .main .about-section .about-image img {
+    height: auto;
+  }
+}
+.main .about-section .about-content {
+  margin-top: 3rem;
+}
+.main .about-section .about-content .title {
+  color: #ff5733;
+  margin: 2rem 0 0;
+}
+.main .about-section .about-content h4 {
+  color: #299be4;
+}
+.main .about-section .about-content p {
+  line-height: 1.5;
+  padding: 0.5rem 0 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header .title {
+    font-size: 24px;
+  }
+  .main {
+    padding: 1rem;
+  }
+}
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+main h1 {
+  color: #ff5733;
+  padding: 2rem;
+}
+main .terms-conditions {
+  text-align: left;
+  margin: 20px 0;
+}
+main .terms-conditions h3 {
+  color: #299be4;
+  margin-top: 20px;
+}
+main .terms-conditions p {
+  line-height: 1.5;
+}
+@media (max-width: 1024px) {
+  main {
+    padding: 10px;
+  }
+  main h1 {
+    padding: 1rem;
+  }
+  main .privacy-policy h3 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+.main {
+  max-width: 800px;
+  margin: 2m auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.main h1 {
+  color: #ff5733;
+  padding: 2rem;
+}
+.main .privacy-policy h3 {
+  color: #299be4;
+  margin-top: 20px;
+}
+.main .privacy-policy p {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+@media (max-width: 1024px) {
+  .main {
+    padding: 10px;
+  }
+  .main h1 {
+    padding: 1rem;
+  }
+  .main .privacy-policy h3 {
+    font-size: 18px;
+    margin-top: 10px;
   }
 }

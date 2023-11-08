@@ -19,6 +19,12 @@
     max-height: 90%;
     overflow-y: auto;
     margin: 2rem auto;
+    @media (max-width: $mobile-breakpoint) {
+        max-width: 90%;
+    }
+    @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
+        max-width: 60%;
+    }
     .modal-header {
         text-align: center;
         margin-bottom: 20px;
@@ -73,8 +79,15 @@
     height: 110vh;
     width: 100%;
     background-color: $color_6;
+    @media (max-width: $mobile-breakpoint) {
+        flex-direction: column;
+        height: 220vh;
+        background-color: $color_1;
+    }
+    @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
+        background-color: $color_1;
+    }
 }
-
 .login {
     padding: 2rem;
     padding-top: 3rem;
@@ -82,12 +95,26 @@
     height: 80%;
     width: 35%;
     background-color: $color_1;
-
+    @media (max-width: $mobile-breakpoint) {
+        height: 50%;
+        width: 100%;
+        padding-top: 2rem;
+    }
+    @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
+        height: 90%;
+        width: 55%;
+    }
     .loginHeader {
         @include flexing;
         height: max-content;
         width: 100%;
         padding: 1rem;
+        @media (max-width: $mobile-breakpoint) {
+            padding: 0rem;
+            #loginlogo {
+                font-size: 6rem;
+            }
+        }
         #loginlogo {
             font-size: 7rem;
             color: $color_5;
@@ -137,6 +164,9 @@
                 margin-bottom: 1.5rem;
                 &.shake {
                     animation: shake 0.3s ease-in-out;
+                }
+                @media (max-width: $mobile-breakpoint) {
+                    width: 100%;
                 }
 
                 .input-area {
@@ -243,6 +273,10 @@
                 &:hover {
                     background: #2c52ed;
                 }
+                @media (max-width: $mobile-breakpoint) {
+                    width: 30%;
+                    height: 15%;
+                }
             }
         }
     }
@@ -293,12 +327,67 @@
         }
     }
 }
+.newUser-login {
+    height: 80%;
+    width: 35%;
+    background-color: $color_5;
+    @media (max-width: $mobile-breakpoint) {
+        height: 50%;
+        width: 100%;
+        padding: 1rem;
+    }
+    @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
+        height: 90%;
+        width: 45%;
+        padding: 1rem;
+    }
+
+    .joinGifts {
+        height: 30%;
+        width: 100%;
+        @include flexing;
+        p {
+            font-size: 22px;
+            color: $color_6;
+             @media (max-width: $mobile-breakpoint) {
+                font-size: 1.2em;
+            }
+            @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
+                font-size: 1.2em;
+            }
+        }
+    }
+    .joinBenifits {
+        height: 70%;
+        width: 100%;
+        .benifits1 {
+            height: 14.5%;
+            width: 90%;
+            display: flex;
+            font-size: 18px;
+            margin-left: 5%;
+            color: $color_19;
+            @media (max-width: $mobile-breakpoint) {
+                font-size: 1em;
+            }
+            @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
+                font-size: 1em;
+            }
+            #benifitsIcon {
+                font-size: 30px;
+                margin-right: 1rem;
+                color: $color_1;
+            }
+        }
+    }
+}
 
 .otpModal {
     @include modal;
     display: block !important;
     .modal-content {
         @include modal-content-header;
+        max-width: 30%;
         .modal-body {
             padding: 1rem;
             p {
@@ -310,7 +399,7 @@
                 font-weight: bold;
             }
             input {
-                width: 100%;
+                width: 30%;
                 padding: 10px;
                 border: 1px solid #ccc;
                 border-radius: 4px;
@@ -319,7 +408,7 @@
         }
         .modal-footer {
             @include modal-footer;
-            justify-content: center !important;
+            // justify-content: center !important;
             #resendOTPBtn {
                 background-color: transparent;
                 color: #10c469;

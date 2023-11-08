@@ -5,7 +5,9 @@
 
 @section('content')
 <div class="profilePage">
+    
     <div class="profileEdit">
+        <i class="fa-solid fa-square-xmark" id="cross-mark"></i>
         <div class="heading">
             <i class="fa-solid fa-pen-to-square"></i>
             <p>Update Details</p>
@@ -84,8 +86,15 @@
             </div>
             <div class="profilePicture">
                 <div class="avatar-container">
-                        <img src="{{ asset('images/avatar-blue.png') }}" alt="User Avatar" class="avatar">
-                    </div>
+                    @if (auth()->user()->picture)
+                    <img src="{{ Storage::url('avatars/').auth()->user()->picture }}"
+                            alt="{{ env('APP_NAME').' '.ucwords(auth()->user()->name) }}" class="avatar"/>
+                    
+                    @else
+                    <img src="{{ asset('images/avatar-blue.png') }}" alt="User Avatar" class="avatar">
+                    @endif
+                    
+                </div>
                 <i class="fa-solid fa-gem" id="userBadge"></i>
                 <div class="profileName">
                     <p>{{ $user->name }}</p>
@@ -95,12 +104,13 @@
                 </div>
             </div>
         </div>
-
-        
-
         
     </div>
-
+    <div class="button-update">
+        <button id="toggleProfileEditButton" class="mobileToggleButton">
+            Update
+        </button>
+    </div>
     
 
 </div>
@@ -161,10 +171,10 @@
         <form action="{{ route('update.bio') }}" method="POST">
             @csrf
             <div class="modal-header">
-                <h2>Update Bio</h2>
+                <h2>Update About Me</h2>
             </div>
             <div class="modal-body">
-                <label for="profileBio">Bio:</label>
+                <label for="profileBio">About Me:</label>
                 <textarea id="profileBio" name="profileBio" rows="15" placeholder="Tell us about yourself" value="{{ $user->bio }}"></textarea>
             </div>
             <div class="modal-footer">
@@ -222,6 +232,18 @@
         </form>
     </div>
 </div>
+<script>
+$(document).ready(function () {
+    $("#toggleProfileEditButton").click(function () {
+        $(".profileEdit").slideToggle(); // Toggle the visibility of profileEdit
+    });
+
+    // Close the profileEdit when clicking on the cross-mark
+    $("#cross-mark").click(function () {
+        $(".profileEdit").slideUp();
+    });
+});
+</script>
 @if (session()->has('notification_type'))
 
 <x-notification type="{{ session()->get('notification_type') }}" message="{{ session()->get('notification_message') }}" />

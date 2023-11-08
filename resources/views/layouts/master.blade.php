@@ -143,19 +143,25 @@
         
         <div class="notificationIcon">
             <i class="fa-solid fa-bell" id="Icon"></i>
-        </div>
+        </div>  
 
         <div class="login__container">
             @auth
             <div class="profile-container">
                 <div class="profile-dropdown">
                     <div class="avatar-container">
+                        @if (auth()->user()->picture)
+                        <img src="{{ Storage::url('avatars/').auth()->user()->picture }}"
+                                alt="{{ env('APP_NAME').' '.ucwords(auth()->user()->name) }}" class="avatar"/>
+                        
+                        @else
                         <img src="{{ asset('images/avatar-blue.png') }}" alt="User Avatar" class="avatar">
+                        @endif  
                     </div>
                     <i class="fa-solid fa-caret-down dropdown-icon"></i>
                     <ul class="dropdown-menu">
                         <li><a href="{{ Route('profile') }}">Profile</a></li>
-                        <li><a href="{{ Route('logout') }}">Logout</a></li>
+                        <li><a href="{{ Route('logout') }}">Sign Out</a></li>
                     </ul>
                 </div>
             </div>
@@ -167,19 +173,27 @@
         </div>
     </header>
     <header class="mobile_header">
-        <div class="logo">Logo</div>
+        <div class="logo">
+            <img src="{{ asset('images/TriviaNuts_Logo.svg') }}" alt="logo" />
+        </div>
         <button class="toggle-menu">
             <span class="menu-icon"></span>
         </button>
     </header>
 
     <nav class="mobile_sidebar">
+        <i class="fa-solid fa-square-xmark" id="close-toggle-menu"></i>
         <ul class="menu">
             <li><a href="{{ Route('home_page') }}">Home</a></li>
-            <li><a href="#">Community</a></li>
-            <li><a href="#">Trends</a></li>
-            <li><a href="#">Category</a></li>
-            <li><a href="{{ Route('login') }}">Login</a></li>
+            <li><a href="{{ Route('community') }}">Community</a></li>
+            <li><a href="{{ Route('trends') }}">Trends</a></li>
+            <li><a href="{{ Route('quiz_play') }}">Quiz</a></li>
+            @auth
+            <li><a href="{{ Route('profile') }}">Profile</a></li>
+            <li><a href="{{ Route('logout') }}">Sign Out</a></li>
+             @else
+            <li><a href="{{ Route('login') }}">Sign in</a></li>
+            @endauth
         </ul>
     </nav>
 
@@ -210,16 +224,16 @@
     <footer class="footer">
         <div class="row1">
             <div class="company_tab">
-                <a href="#" class="links">
+                <a href="{{ Route('contactUs') }}" class="links">
                     Contact Us
                 </a>
-                <a href="#" class="links">
+                <a href="{{ Route('aboutUs') }}" class="links">
                     About Us
                 </a>
-                <a href="#" class="links">
+                <a href="{{ Route('privacy') }}" class="links">
                     Privacy Policy
                 </a>
-                <a href="#" class="links">
+                <a href="{{ Route('terms') }}" class="links">
                     Terms and Conditions
                 </a>
             </div>
@@ -249,11 +263,17 @@
         document.addEventListener('DOMContentLoaded', function() {
             const toggleMenuBtn = document.querySelector('.toggle-menu');
             const sidebar = document.querySelector('.mobile_sidebar');
-                
+            const closeToggleMenuBtn = document.querySelector('#close-toggle-menu');
+
             toggleMenuBtn.addEventListener('click', function() {
                 sidebar.classList.toggle('active');
                 toggleMenuBtn.classList.toggle('active');
             });  
+
+            closeToggleMenuBtn.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+                toggleMenuBtn.classList.remove('active');
+            });
         });
 
         console.log($('document'));

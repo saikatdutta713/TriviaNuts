@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <div class="newUser">
+    <div class="newUser-login">
 
         <div class="joinGifts">
             <p>Join TriviaNuts community for free.</p>
@@ -147,7 +147,7 @@
             </div>
             <div class="modal-footer">
                 <button type="submit">Submit</button>
-                <button class="cancel"><a href="{{ route('login') }}">Cancel</a></button>
+                <button class="cancel" id="cancelForgotPasswordBtn"><a href="{{ route('login') }}">Cancel</a></button>
             </div>
         </div>
     </form>

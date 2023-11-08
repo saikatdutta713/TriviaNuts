@@ -20,10 +20,16 @@
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     width: 90%;
-    max-width: 50%;
+    max-width: 40%;
     max-height: 90%;
     overflow-y: auto;
     margin: 2rem auto;
+    @media (max-width: $mobile-breakpoint) {
+        max-width: 90%;
+    }
+    @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
+        max-width: 60%;
+    }
     .modal-header {
         text-align: center;
         margin-bottom: 20px;
@@ -53,6 +59,11 @@
 .profilePage {
     height: 90vh;
     width: 100%;
+    @include flexing;
+    @media (max-width: $tablet-breakpoint) {
+        flex-direction: column;
+        height: 180vh;
+    }
 }
 
 .rightDiv {
@@ -60,16 +71,31 @@
     height: 100%;
     width: 87%;
     background-color: $color_22;
+    @media (max-width: $tablet-breakpoint) {
+        height: 90%;
+        width: 100%;
+    }
     .profileDetails {
         height: 80%;
         width: 80%;
         background-color: $color_1;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
         @include flexing;
+        @media (max-width: $tablet-breakpoint) {
+            flex-direction: column;
+            gap: 1rem;
+            height: 100%;
+            width: 100%;
+        }
         .personalDetails1 {
             height: 80%;
             width: 25%;
             margin: auto;
+            @media (max-width: $tablet-breakpoint) {
+                order: 2;
+                height: 35%;
+                width: 100%;
+            }
             .personDetails {
                 height: 60%;
                 width: 90%;
@@ -107,9 +133,18 @@
             height: 80%;
             width: 35%;
             margin: auto;
+            @media (max-width: $tablet-breakpoint) {
+                order: 3;
+                height: 35%;
+                width: 100%;
+            }
             .education {
                 height: 40%;
                 width: 100%;
+                @media (max-width: $tablet-breakpoint) {
+                    width: 90%;
+                    margin: auto;
+                }
                 .detailsHeading {
                     padding: 0.3rem;
                     font-size: 17px;
@@ -123,8 +158,10 @@
             .bio {
                 width: 100%;
                 height: 60%;
-                // background-color: $color_22;
                 margin: auto;
+                @media (max-width: $tablet-breakpoint) {
+                    width: 90%;
+                }
                 h4 {
                     padding: 0.3rem;
                     width: 100%;
@@ -147,12 +184,19 @@
             background: linear-gradient(to top, $color_33 80%, transparent 80%);
             color: $color_1;
             margin: auto;
+            @media (max-width: $tablet-breakpoint) {
+                order: 1;
+                height: 30%;
+                width: 70%;
+                padding: 1rem;
+            }
             .avatar-container {
                 height: 150px;
                 width: 150px;
                 margin: auto;
                 border-radius: 50%;
                 background-color: $color_7;
+                overflow: hidden;
                 .avatar {
                     width: 150px;
                     height: 150px;
@@ -177,15 +221,68 @@
                 height: auto;
                 width: 100%;
                 font-size: 18px;
+                @media (max-width: $tablet-breakpoint) {
+                    padding-top: 1rem;
+                }
             }
         }
+    }
+}
+.button-update {
+    display: none;
+    width: 100%;
+    height: 10%;
+    .mobileToggleButton {
+        background-color: $color_5;
+        color: $color_1;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 1rem;
+    }
+    @media (max-width: $tablet-breakpoint) {
+        display: block;
+        // justify-content:;
+        display: flex;
+        align-items: center;
     }
 }
 .profileEdit {
     height: 100%;
     width: 13%;
-    padding-top: 3rem;
     background-color: $color_29;
+    @media (max-width: $mobile-breakpoint) {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 70%;
+        height: 100%;
+        background: $color_4; /* Transparent black background */
+        z-index: 1;
+    }
+    @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 100%;
+        background: $color_4; /* Transparent black background */
+        z-index: 1;
+    }
+    #cross-mark {
+        margin-left: 90%;
+        display: none;
+        font-size: 1.5rem;
+        padding-top: 1rem;
+        color: $color_1;
+        cursor: pointer;
+        @media (max-width: $tablet-breakpoint) {
+            display: block;
+        }
+    }
     .heading {
         @include flexing;
         width: 80%;
@@ -193,6 +290,7 @@
         font-size: 18px;
         color: $color_1;
         margin-bottom: 1rem;
+        padding-top: 2rem;
         p {
             margin-left: 0.5rem;
             width: 80%;

@@ -25,8 +25,8 @@
     </section>
 
     <p id="content-heading">Badges</p>
-    <div class="grid-quiz-today">
-        <div class="quiz" id="quiz">
+    <div class="grid-quiz-badge">
+        <div class="badge-design" id="badge-design">
             <div class="first-row">
                 <img src="{{ asset('images/badge1.svg') }}" alt="">
                 <p class="tittle">
@@ -38,7 +38,7 @@
                 Unlock at 10 points 
             </div>
         </div>
-        <div class="quiz" id="quiz">
+        <div class="badge-design" id="badge-design">
             <div class="first-row">
                <img src="{{ asset('images/badge2.svg') }}" alt="">
                 <p class="tittle">
@@ -50,7 +50,7 @@
                 Unlock at 50 points 
             </div>
         </div>
-        <div class="quiz" id="quiz">
+        <div class="badge-design" id="badge-design">
             <div class="first-row">
                <img src="{{ asset('images/badge3.svg') }}" alt="">
                 <p class="tittle">
@@ -61,7 +61,7 @@
                 Unlock at 100 points 
             </div>
         </div>
-        <div class="quiz" id="quiz">
+        <div class="badge-design" id="badge-design">
             <div class="first-row">
                 <img src="{{ asset('images/badge4.svg') }}" alt="">
                 <p class="tittle">
@@ -72,7 +72,7 @@
                 Unlock at 160 points 
             </div>
         </div>
-        <div class="quiz" id="quiz">
+        <div class="badge-design" id="badge-design">
             <div class="first-row">
                <img src="{{ asset('images/badge5.svg') }}" alt="">
                 <p class="tittle">
@@ -83,7 +83,7 @@
                 Unlock at 240 points 
             </div>
         </div>
-        <div class="quiz" id="quiz">
+        <div class="badge-design" id="badge-design">
             <div class="first-row">
                <img src="{{ asset('images/badge6.svg') }}" alt="">
                 <p class="tittle">
@@ -94,7 +94,7 @@
                 Unlock at 320 points 
             </div>
         </div>
-        <div class="quiz" id="quiz">
+        <div class="badge-design" id="badge-design">
             <div class="first-row">
                <img src="{{ asset('images/badge7.svg') }}" alt="">
                 <p class="tittle">
@@ -105,7 +105,7 @@
                 Unlock at 410 points 
             </div>
         </div>
-        <div class="quiz" id="quiz">
+        <div class="badge-design" id="badge-design">
             <div class="first-row">
                <img src="{{ asset('images/badge8.svg') }}" alt="">
                 <p class="tittle">
@@ -116,7 +116,7 @@
                 Unlock at 500 points 
             </div>
         </div>
-        <div class="quiz" id="quiz">
+        <div class="badge-design" id="badge-design">
             <div class="first-row">
                <img src="{{ asset('images/badge9.svg') }}" alt="">
                 <p class="tittle">
@@ -127,7 +127,7 @@
                 Unlock at 650 points 
             </div>
         </div>
-        <div class="quiz" id="quiz">
+        <div class="badge-design" id="badge-design">
             <div class="first-row">
                <img src="{{ asset('images/badge10.svg') }}" alt="">
                 <p class="tittle">

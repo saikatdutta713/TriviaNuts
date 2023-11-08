@@ -30,6 +30,11 @@ use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\AnnouncementController;
 use App\Http\Controllers\Auth\SocialLoginController;
 use App\Http\Controllers\PlayQuizController;
+
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\PrivacyPolicyController;
+use App\Http\Controllers\TermsController;
 use App\Http\Controllers\QuizResultController;
 use Illuminate\Support\Facades\Route;
 
@@ -81,6 +86,10 @@ Route::middleware('auth.check')->group(function () {
     Route::get('/community', [CommunityController::class, 'index'])->name('community');
     Route::get('/community/post', [CommunityPostController::class, 'index'])->name('community_post');
     Route::get('/trends', [TrendsController::class, 'index'])->name('trends');
+    Route::get('/aboutus', [AboutUsController::class, 'index'])->name('aboutUs');
+    Route::get('/contactus', [ContactUsController::class, 'index'])->name('contactUs');
+    Route::get('/privacy', [PrivacyPolicyController::class, 'index'])->name('privacy');
+    Route::get('/terms', [TermsController::class, 'index'])->name('terms');
 
     Route::prefix('/quiz')->group(function () {
         Route::get('/', [QuizPlayController::class, 'index'])->name('quiz');

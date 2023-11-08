@@ -89,15 +89,19 @@
             </div>
 
             <div class="sidebar__menu">
-                <div class="sidebar__link active_menu_link">
-                    <i class="fa fa-home"></i>
-                    <a href="{{ route('admin.home') }}">Dashboard</a>
-                </div>
+                <a href="{{ route('admin.home') }}">
+                    <div class="sidebar__link active_menu_link">
+                        <i class="fa fa-home"></i>
+                        Dashboard
+                    </div>
+                </a>
                 <h2>Quizzes</h2>
-                <div class="sidebar__link">
-                    <i class="fas fa-file-alt" aria-hidden="true"></i>
-                    <a href="{{ route('admin.quiz') }}">All Quizzes</a>
-                </div>
+                <a href="{{ route('admin.quiz') }}">
+                    <div class="sidebar__link">
+                        <i class="fas fa-file-alt" aria-hidden="true"></i>
+                        All Quizzes
+                    </div>
+                </a>
                 @if (auth()->user()->isSuperAdmin())
                 <div class="sidebar__link">
                     <i class="fas fa-file-alt" aria-hidden="true"></i>
@@ -109,10 +113,12 @@
                     <a href="#">Add New</a>
                 </div>
                 <h2>Questions</h2>
-                <div class="sidebar__link">
-                    <i class="fa fa-question"></i>
-                    <a href="{{ route('admin.question') }}">All Questions</a>
-                </div>
+                <a href="{{ route('admin.question') }}">
+                    <div class="sidebar__link">
+                        <i class="fa fa-question"></i>
+                        All Questions
+                    </div>
+                </a>
                 @if (auth()->user()->isSuperAdmin())
                 <div class="sidebar__link">
                     <i class="fa fa-question"></i>
@@ -124,10 +130,12 @@
                     <a href="#">All Questions</a>
                 </div>
                 <h2>Users</h2>
-                <div class="sidebar__link">
-                    <i class="fa fa-users"></i>
-                    <a href="{{ route('admin.user') }}">All Users</a>
-                </div>
+                <a href="{{ route('admin.user') }}">
+                    <div class="sidebar__link">
+                        <i class="fa fa-users"></i>
+                        All Users
+                    </div>
+                </a>
                 <div class="sidebar__link">
                     <i class="fa fa-user"></i>
                     <a href="#">Add User</a>
@@ -156,19 +164,23 @@
                 </form>
                 @endif --}}
                 <h2>Announcements</h2>
-                <div class="sidebar__link">
-                    <i class="fa fa-bullhorn"></i>
-                    <a href="{{ route('admin.announcement') }}">Create Announcements</a>
-                </div>
+                <a href="{{ route('admin.announcement') }}">
+                    <div class="sidebar__link">
+                        <i class="fa fa-bullhorn"></i>
+                        Create Announcements
+                    </div>
+                </a>
                 <h2>Analytics & Reports</h2>
                 <div class="sidebar__link">
                     <i class="fa fa-chart-bar"></i>
                     <a href="#">Analytics & Reports</a>
                 </div>
-                <div class="sidebar__logout">
-                    <i class="fa fa-sign-out-alt"></i>
-                    <a href="{{ route('admin.logout') }}">Log out</a>
-                </div>
+                <a href="{{ route('admin.logout') }}">
+                    <div class="sidebar__logout">
+                        <i class="fa fa-sign-out-alt"></i>
+                        Sign Out
+                    </div>
+                </a>
             </div>
         </div>
     </div>

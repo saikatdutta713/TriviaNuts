@@ -22,4 +22,8 @@ mix.setPublicPath("public")
     .sass("resources/scss/quiz.scss", "public/css")
     .sass("resources/scss/profile.scss", "public/css/app.css")
     .sass("resources/scss/home_page.scss", "public/css/app.css")
-    .sass("resources/scss/trends.scss", "public/css/app.css");
+    .sass("resources/scss/trends.scss", "public/css/app.css")
+    .sass("resources/scss/contactUs.scss", "public/css/app.css")
+    .sass("resources/scss/aboutUs.scss", "public/css/app.css")
+    .sass("resources/scss/terms.scss", "public/css/app.css")
+    .sass("resources/scss/privacy.scss", "public/css/app.css");
