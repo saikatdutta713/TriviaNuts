@@ -1,11 +1,11 @@
 @extends('layouts.master')
 @section('title')
-    {{ isset($title) ? $title : env('APP_NAME')." Home Page" }}
+{{ isset($title) ? $title : env('APP_NAME')." Home Page" }}
 @endsection
 
 @section('content')
 <div class="profilePage">
-    
+
     <div class="profileEdit">
         <i class="fa-solid fa-square-xmark" id="cross-mark"></i>
         <div class="heading">
@@ -18,11 +18,11 @@
         </button>
         <button id="editEducationButton" class="editButton">
             <i class="fa-solid fa-school"></i>
-            <p>Education</p> 
+            <p>Education</p>
         </button>
         <button id="editBioButton" class="editButton">
             <i class="fa-solid fa-file"></i>
-            <p>About Me</p> 
+            <p>About Me</p>
         </button>
         <button id="editSocialButton" class="editButton">
             <i class="fa-solid fa-share-from-square"></i>
@@ -47,7 +47,7 @@
                 <div class="contactDetails">
                     <h4>Social Handle</h4>
                     <p>
-                        <i class="fa-solid fa-envelope" id="userSocial"></i> 
+                        <i class="fa-solid fa-envelope" id="userSocial"></i>
                         {{ $user->email }}
                     </p>
                     <p>
@@ -63,8 +63,8 @@
                 </div>
             </div>
             <div class="personalDetails2">
-                
-                
+
+
                 <div class="education">
                     <p class="detailsHeading">Last Course</p>
                     @if ($user->course_name)
@@ -88,30 +88,30 @@
                 <div class="avatar-container">
                     @if (auth()->user()->picture)
                     <img src="{{ Storage::url('avatars/').auth()->user()->picture }}"
-                            alt="{{ env('APP_NAME').' '.ucwords(auth()->user()->name) }}" class="avatar"/>
-                    
+                        alt="{{ env('APP_NAME').' '.ucwords(auth()->user()->name) }}" class="avatar" />
+
                     @else
                     <img src="{{ asset('images/avatar-blue.png') }}" alt="User Avatar" class="avatar">
                     @endif
-                    
+
                 </div>
-                <i class="fa-solid fa-gem" id="userBadge"></i>
+                <img src="{{ $badge }}" id="userBadge">
                 <div class="profileName">
                     <p>{{ $user->name }}</p>
                 </div>
                 <div class="profilePoints">
-                    <p>Points : 765</p>
+                    <p>Points : {{ $userScore }}</p>
                 </div>
             </div>
         </div>
-        
+
     </div>
     <div class="button-update">
         <button id="toggleProfileEditButton" class="mobileToggleButton">
             Update
         </button>
     </div>
-    
+
 
 </div>
 
@@ -152,10 +152,12 @@
             </div>
             <div class="modal-body">
                 <label for="courseName">Course Name:</label>
-                <input type="text" id="courseName" name="courseName" placeholder="Course Name" value="{{ $user->course_name }}">
+                <input type="text" id="courseName" name="courseName" placeholder="Course Name"
+                    value="{{ $user->course_name }}">
 
                 <label for="institutionName">Institution Name:</label>
-                <input type="text" id="institutionName" name="institutionName" placeholder="Institution Name" value="{{ $user->institution_name }}">
+                <input type="text" id="institutionName" name="institutionName" placeholder="Institution Name"
+                    value="{{ $user->institution_name }}">
             </div>
             <div class="modal-footer">
                 <button type="submit" id="submitEditModalBtn">Add</button>
@@ -175,7 +177,8 @@
             </div>
             <div class="modal-body">
                 <label for="profileBio">About Me:</label>
-                <textarea id="profileBio" name="profileBio" rows="15" placeholder="Tell us about yourself" value="{{ $user->bio }}"></textarea>
+                <textarea id="profileBio" name="profileBio" rows="15" placeholder="Tell us about yourself"
+                    value="{{ $user->bio }}"></textarea>
             </div>
             <div class="modal-footer">
                 <button type="submit" id="submitEditModalBtn">Update</button>
@@ -194,10 +197,12 @@
             </div>
             <div class="modal-body">
                 <label for="facebookProfile">Facebook Profile:</label>
-                <input type="text" id="facebookProfile" name="facebookProfile" placeholder="Facebook Profile URL" value="{{ $user->facebook }}">
+                <input type="text" id="facebookProfile" name="facebookProfile" placeholder="Facebook Profile URL"
+                    value="{{ $user->facebook }}">
 
                 <label for="linkedinProfile">LinkedIn Profile:</label>
-                <input type="text" id="linkedinProfile" name="linkedinProfile" placeholder="LinkedIn Profile URL" value="{{ $user->linkedin }}">
+                <input type="text" id="linkedinProfile" name="linkedinProfile" placeholder="LinkedIn Profile URL"
+                    value="{{ $user->linkedin }}">
             </div>
             <div class="modal-footer">
                 <button type="submit" id="submitEditModalBtn">Add</button>
@@ -233,7 +238,7 @@
     </div>
 </div>
 <script>
-$(document).ready(function () {
+    $(document).ready(function () {
     $("#toggleProfileEditButton").click(function () {
         $(".profileEdit").slideToggle(); // Toggle the visibility of profileEdit
     });
@@ -246,6 +251,7 @@ $(document).ready(function () {
 </script>
 @if (session()->has('notification_type'))
 
-<x-notification type="{{ session()->get('notification_type') }}" message="{{ session()->get('notification_message') }}" />
+<x-notification type="{{ session()->get('notification_type') }}"
+    message="{{ session()->get('notification_message') }}" />
 @endif
 @endsection

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Score;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,8 +14,33 @@ class ProfileController extends Controller
     public function showProfile()
     {
         $user = auth()->user();
+        $userScore = Score::where('user_id', Auth::user()->user_id)->first()->score_value;
         $title = "Profile Page";
-        return view('profile', compact('title', 'user'));
+
+        $badge = null;
+        if ($userScore >= 10 && $userScore < 50) {
+            $badge = asset('images/badge1.svg');
+        } elseif ($userScore >= 50 && $userScore < 100) {
+            $badge = asset('images/badge2.svg');
+        } elseif ($userScore >= 100 && $userScore < 160) {
+            $badge = asset('images/badge3.svg');
+        } elseif ($userScore >= 160 && $userScore < 240) {
+            $badge = asset('images/badge4.svg');
+        } elseif ($userScore >= 240 && $userScore < 320) {
+            $badge = asset('images/badge5.svg');
+        } elseif ($userScore >= 320 && $userScore < 410) {
+            $badge = asset('images/badge6.svg');
+        } elseif ($userScore >= 410 && $userScore < 500) {
+            $badge = asset('images/badge7.svg');
+        } elseif ($userScore >= 500 && $userScore < 650) {
+            $badge = asset('images/badge8.svg');
+        } elseif ($userScore >= 650 && $userScore < 800) {
+            $badge = asset('images/badge9.svg');
+        } elseif ($userScore >= 800) {
+            $badge = asset('images/badge10.svg');
+        }
+
+        return view('profile', compact('title', 'user', 'userScore','badge'));
     }
 
     public function updateProfile(Request $request)

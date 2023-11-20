@@ -203,11 +203,13 @@
                 }
             }
             #userBadge {
+                height: 32px;
                 font-size: 30px;
                 margin-left: 40%;
                 position: relative;
                 top: -2rem;
-                color: $color_2;
+                background: white;
+                border-radius: 50%;
             }
             .profileName {
                 @include flexing;
