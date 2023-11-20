@@ -192,7 +192,7 @@ class QuizPlayController extends Controller
         $participant = Participant::where('user_id', Auth::user()->user_id)->where('quiz_id', $id)->first();
         $answers = Session::get('quiz')['answers'];
         $userScore = Score::where('user_id', Auth::user()->user_id)->first();
-        $score = 0;
+        // dd($userScore);
 
         foreach ($answers as $question => $answer) {
             Answer::updateOrCreate([
@@ -207,32 +207,36 @@ class QuizPlayController extends Controller
                 'question_id' => $question,
                 'chosen_option' => $answer,
             ]);
-
-            $question = Question::find($id);
-            if ($question->correct_option == $answer) {
-                $score++;
-            }
         }
 
-            Score::updateOrCreate([
-                'user_id' => Auth::user()->user_id,
-            ], [
-                'user_id' => Auth::user()->user_id,
-                'participant_id' => $participant->participant_id,
-                'right_answer' => $score,
-                'wrong_answer' => count($questions) - $score,
-                'score_value' => ($userScore != null ? $userScore->score_value : 0) + $score,
-                'time_consumed'=>$timeConsumed,
-                'badge_id' => 1,
-            ]);
+        $score = count(Answer::join('questions', 'user_answers.question_id', '=', 'questions.question_id')
+            ->where('quiz_id', $id)->where('user_id', Auth::user()->user_id)
+            ->whereColumn('questions.correct_option', '=', 'user_answers.chosen_option')->get());
+
+        Score::updateOrCreate([
+            'user_id' => Auth::user()->user_id,
+        ], [
+            'user_id' => Auth::user()->user_id,
+            'participant_id' => $participant->participant_id,
+            'right_answer' => $score,
+            'wrong_answer' => count($questions) - $score,
+            'score_value' => $userScore->score_value + $score,
+            'time_consumed' => $timeConsumed,
+            'badge_id' => 1,
+        ]);
+
+        if (Session::has('quiz')) {
+            Session::remove('quiz');
+        }
 
         return redirect()->route('quiz.result', ['id' => $id]);
     }
 
-    public function quizReattempt($id){
+    public function quizReattempt($id)
+    {
 
         Session::remove('quiz');
 
-        return redirect()->route('quiz.play',['id'=>$id]);
+        return redirect()->route('quiz.play', ['id' => $id]);
     }
 }

@@ -18,5 +18,6 @@ class Score extends Model
         'right_answer',
         'wrong_answer',
         'score_value',
+        'time_consumed',
     ];
 }
