@@ -7,11 +7,12 @@ use Illuminate\Support\Facades\Http;
 
 class QuoteController extends Controller
 {
-    function index()
+    public static function getQuote()
     {
-        $quote = Http::get(env('QUOTE_API_URL'));
+
+        $quote = Http::get('https://zenquotes.io/api/today');
         $quote = $quote->json();
-        
-        return view('home', ['quote' => $quote]);
+
+        return $quote;
     }
 }
