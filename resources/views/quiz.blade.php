@@ -166,7 +166,7 @@
             @endif
             @if ($activeQuestion!=count($questions)-1)
             <a href="{{ route('quiz.jump.quesion',['id'=>$thisQuiz->quiz_id,'question'=>$activeQuestion+1]) }}"
-                class="tabbutton">
+                class="tabbutton" id="nextButton">
                 Next
                 <i class="fa-solid fa-angle-right"></i>
             </a>
@@ -203,67 +203,68 @@
 
 
         
-        let currentQuestionNo = 1;
-        let reverseTimerInterval;
-        let manualNextClicked = false;
-        let manualPreviousClicked = false;
-        let timerInterval;
+        // let currentQuestionNo = 1;
+        // let reverseTimerInterval;
+        // let manualNextClicked = false;
+        // let manualPreviousClicked = false;
+        // let timerInterval;
 
-        function simulateNextQuestion() {
-            const quizQuestionNo = document.getElementById("quizQuestionNo");
-            const nextButton = document.getElementById("nextButton");
-            const previousDiv = document.getElementById("previousButton");
-            const reverseTimer = document.getElementById("reverse-timer");
+        // function simulateNextQuestion() {
+        //     const quizQuestionNo = document.getElementById("quizQuestionNo");
+        //     const nextButton = document.getElementById("nextButton");
+        //     const previousDiv = document.getElementById("previousButton");
+        //     const reverseTimer = document.getElementById("reverse-timer");
 
-            if (!manualPreviousClicked) {
-                // currentQuestionNo++;
-            }else{
-                // currentQuestionNo--;
-                if (currentQuestionNo ==1) {
-                    previousDiv.style.display = "none";
-                }
-            }
+            
+        //     // if (!manualPreviousClicked) {
+        //     //     // currentQuestionNo++;
+        //     // }else{
+        //     //     // currentQuestionNo--;
+        //     //     if (currentQuestionNo ==1) {
+        //     //         previousDiv.style.display = "none";
+        //     //     }
+        //     // }
 
-            manualPreviousClicked = false;
+        //     // manualPreviousClicked = false;
 
-            if (currentQuestionNo >= 11) {
-                clearInterval(reverseTimerInterval);
-                clearInterval(timerInterval);
-                return;
-            }
+        //     // if (currentQuestionNo >= 11) {
+        //     //     clearInterval(reverseTimerInterval);
+        //     //     clearInterval(timerInterval);
+        //     //     return;
+        //     // }
 
-            if (currentQuestionNo >= 10) {
-                nextButton.textContent = "Submit";
-                nextButton.style.backgroundColor = "green";
-            }
+        //     if (currentQuestionNo >= 10) {
+        //         nextButton.textContent = "Submit";
+        //         nextButton.style.backgroundColor = "green";
+        //     }
 
-            quizQuestionNo.textContent = currentQuestionNo + ".";
+        //     // quizQuestionNo.textContent = currentQuestionNo + ".";
+        //     // if (currentQuestionNo >=2) {
+        //     //     previousDiv.style.display = "block";
+        //     // }
+        //     // if (currentQuestionNo ==1) {
+        //     //     previousDiv.style.display = "none";
+        //     // }
 
-            if (currentQuestionNo >=2) {
-                previousDiv.style.display = "block";
-            }
-            if (currentQuestionNo ==1) {
-                previousDiv.style.display = "none";
-            }
-
-
-            reverseTimer.textContent = "01:00";
-        }
+        //     reverseTimer.textContent = "01:00";
+        // }
 
         function updateReverseTimer() {
             const reverseTimer = document.getElementById("reverse-timer");
             let [minutes, seconds] = reverseTimer.textContent.split(":").map(Number);
 
             if (minutes === 0 && seconds === 0) {
-                simulateNextQuestion();
+                if(document.body.contains(document.getElementById("nextButton")))
+                    document.getElementById("nextButton").click();
             } else {
                 if (seconds === 0) {
                     seconds = 59;
                     minutes--;
+                    
                 } else {
                     seconds--;
                 }
-
+                
                 reverseTimer.textContent = `${minutes
                     .toString()
                     .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
@@ -271,25 +272,43 @@
         }
 
         function initTimer() {
-            let seconds = 0;
-            let minutes = 0;
+            let seconds = {{session()->get("quiz")['timerStartSeconds']}};
+            let minutes = {{session()->get("quiz")['timerStartMinutes']}};
             const timerDisplay = document.getElementById("timer");
 
             function updateTimer() {
+                @php
+                    $quiz = array();
+                    if(session()->has("quiz")){
+                      $quiz = session()->get("quiz");  
+                    }
+                @endphp
                 if (minutes === 10 && seconds === 0) {
                     clearInterval(timerInterval);
                 } else {
                     if (seconds === 59) {
                         seconds = 0;
                         minutes++;
+                        @php
+                            if(array_key_exists("timerStartMinutes", $quiz)){
+                                $quiz['timerStartMinutes'] = intval("<script>document.write(minutes)</script>");
+                            }
+                        @endphp
                     } else if (minutes === 10 && seconds === 0) {
                         clearInterval(timerInterval); // Stop the timer at 10 minutes
                     } else {
                         seconds++;
+                        @php
+                            if(array_key_exists("timerStartSeconds", $quiz)){
+                                $quiz['timerStartSeconds'] = intval("<script>document.write(seconds)</script>");
+                                // dd(intval("<script>document.write(minutes)</script>"));
+                            }
+                        @endphp
+                        console.log({{session()->get('quiz')}});
                     }
-
-                    
-
+                    @php
+                        session()->put('quiz',$quiz);
+                    @endphp
                     const timeString = `${minutes.toString().padStart(2, "0")}:${seconds
                         .toString()
                         .padStart(2, "0")}`;
@@ -302,17 +321,17 @@
 
         reverseTimerInterval = setInterval(updateReverseTimer, 1000);
 
-        const manualNextButton = document.getElementById("nextButton");
-        manualNextButton.addEventListener("click", function () {
-            manualNextClicked = true;
-            simulateNextQuestion();
-        });
+        // const manualNextButton = document.getElementById("nextButton");
+        // manualNextButton.addEventListener("click", function () {
+        //     manualNextClicked = true;
+        //     simulateNextQuestion();
+        // });
 
-        const manualPreviousButton = document.getElementById("previousButton");
-        manualPreviousButton.addEventListener("click", function () {
-            manualPreviousClicked = true;
-            simulateNextQuestion();
-        });
+        // const manualPreviousButton = document.getElementById("previousButton");
+        // manualPreviousButton.addEventListener("click", function () {
+        //     manualPreviousClicked = true;
+        //     simulateNextQuestion();
+        // });
 
         initTimer();
     </script>

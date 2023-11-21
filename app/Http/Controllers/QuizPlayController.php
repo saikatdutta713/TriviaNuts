@@ -96,7 +96,8 @@ class QuizPlayController extends Controller
         $thisQuiz = Quiz::find($quiz_id);
         $questions = $thisQuiz->getQuestions();
         $quizCategory = category::where('category_id', $thisQuiz->category_id)->first();
-
+        
+        
         if (Participant::where('user_id', $user_id)->where('quiz_id', $quiz_id)->first()) {
             $reattempt = true;
         }
@@ -117,7 +118,9 @@ class QuizPlayController extends Controller
         }
 
         $quiz['timeStart'] = Carbon::now();
-
+        $quiz['timerStartMinutes'] = 0;
+        $quiz['timerStartSeconds'] = 0;
+        
         Session::put('quiz', $quiz);
 
         $quiz = session()->get('quiz');
