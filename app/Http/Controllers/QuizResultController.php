@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Answer;
 use App\Models\Quiz;
+use App\Models\User;
 use App\Models\Score;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,10 @@ class QuizResultController extends Controller
         $answerModel = new Answer();
         $quiz = Quiz::find($id);
         $questions = $quiz->getQuestions();
-        $score = Score::where('user_id',Auth::user()->user_id)->first();
+        $score = Score::where('user_id', Auth::user()->user_id)->first();
+        $userScore = User::find(Auth::user()->user_id)->score;
+
+        // dd($answers->answerIscorrect(4));
 
         $qountCurrectAnswers = count(Answer::join('questions', 'user_answers.question_id', '=', 'questions.question_id')
             ->where('quiz_id', $id)->where('user_id', Auth::user()->user_id)
@@ -26,6 +30,6 @@ class QuizResultController extends Controller
 
         // dd($answerModel->getUserAnswer(1));
 
-        return view('quiz_result', compact('title', 'quiz', 'answers', 'answerModel', 'questions', 'qountCurrectAnswers','score'));
+        return view('quiz_result', compact('title', 'quiz', 'answers', 'answerModel', 'questions', 'qountCurrectAnswers', 'score', 'userScore'));
     }
 }

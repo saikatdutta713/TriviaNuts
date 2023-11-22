@@ -19,6 +19,7 @@ class Answer extends Model
         'quiz_id',
         'question_id',
         'chosen_option',
+        'is_correct',
         'participant_id',
     ];
 
@@ -31,5 +32,14 @@ class Answer extends Model
         }
 
         return null;
+    }
+    public function answerIscorrect($question)
+    {
+        $answer = $this->where('question_id', $question)->first();
+
+        if ($answer != null && $answer->is_correct) {
+            return $answer->is_correct;
+        }
+        return false;
     }
 }

@@ -14,13 +14,14 @@ return new class extends Migration
         Schema::create('scores', function (Blueprint $table) {
 
             $table->bigInteger('score_id')->unsigned()->autoIncrement();
+            $table->unsignedBigInteger('quiz_id');
             $table->unsignedBigInteger('participant_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('badge_id');
             $table->string('right_answer')->default(0);
             $table->string('wrong_answer')->default(0);
             $table->integer('score_value')->default(0);
-            $table->integer('time_consumed')->nullable();
+            $table->string('time_consumed')->nullable();
 
             $table->timestamps();
         });

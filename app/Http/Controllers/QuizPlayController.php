@@ -9,6 +9,7 @@ use App\Models\Participant;
 use App\Models\Question;
 use App\Models\Quiz;
 use App\Models\Score;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -98,8 +99,8 @@ class QuizPlayController extends Controller
         $lastQuestion = $questions->last();
         // dd($lastQuestion);
         $quizCategory = category::where('category_id', $thisQuiz->category_id)->first();
-        
-        
+
+
         if (Participant::where('user_id', $user_id)->where('quiz_id', $quiz_id)->first()) {
             $reattempt = true;
         }
@@ -120,7 +121,9 @@ class QuizPlayController extends Controller
         }
 
         $quiz['timeStart'] = Carbon::now();
-        $quiz['timerStart'] = array('minutes' => 0, 'seconds' => 0);
+        if (!array_key_exists('timerStart', $quiz)) {
+            $quiz['timerStart'] = array('minutes' => 0, 'seconds' => 0);
+        }
 
         Session::put('quiz', $quiz);
 
@@ -147,8 +150,7 @@ class QuizPlayController extends Controller
 
         // Update session values or perform any other necessary actions
         $quiz = session()->get('quiz');
-        $quiz['timerStartSeconds'] = intval($seconds);
-        $quiz['timerStartMinutes'] = intval($minutes);
+        $quiz['timerStart'] = array('minutes' => intval($minutes), 'seconds' => intval($seconds));
         session(['quiz' => $quiz]);
 
         return response()->json(
@@ -209,50 +211,69 @@ class QuizPlayController extends Controller
         }
         Session::put('quiz', $quiz);
         $interval = $quiz['timeStart']->diff(Carbon::now());
-        $timeConsumed = $interval->days * 24 * 60 + $interval->h * 60 + $interval->i;
+        $timeConsumed = $interval->i . ':' . $interval->s;
         // dd($timeConsumed);
 
         $thisQuiz = Quiz::find($id);
         $questions = $thisQuiz->getQuestions();
         $participant = Participant::where('user_id', Auth::user()->user_id)->where('quiz_id', $id)->first();
-        $answers = Session::get('quiz')['answers'];
-        $userScore = Score::where('user_id', Auth::user()->user_id)->first();
+        $userScore = User::find(Auth::user()->user_id)->score;
         // dd($userScore);
 
-        foreach ($answers as $question => $answer) {
-            Answer::updateOrCreate([
-                'user_id' => Auth::user()->user_id,
-                'quiz_id' => $id,
-                'participant_id' => $participant->participant_id,
-                'question_id' => $question,
-            ], [
-                'user_id' => Auth::user()->user_id,
-                'quiz_id' => $id,
-                'participant_id' => $participant->participant_id,
-                'question_id' => $question,
-                'chosen_option' => $answer,
-            ]);
+        $answerRecords = Answer::where('quiz_id', $id);
+        if ($answerRecords->count() > 0) {
+            $answerRecords->delete();
         }
+
+        if (array_key_exists('answers', $quiz)) {
+            $answers = Session::get('quiz')['answers'];
+            foreach ($answers as $question => $answer) {
+                $answer_iscorrect = Question::find($question)->correct_option == $answer ? true : false;
+                // dd($answer_iscorrect);
+                Answer::updateOrCreate([
+                    'user_id' => Auth::user()->user_id,
+                    'quiz_id' => $id,
+                    'participant_id' => $participant->participant_id,
+                    'question_id' => $question,
+                ], [
+                    'user_id' => Auth::user()->user_id,
+                    'quiz_id' => $id,
+                    'participant_id' => $participant->participant_id,
+                    'question_id' => $question,
+                    'chosen_option' => $answer,
+                    'is_correct' => $answer_iscorrect,
+                ]);
+            }
+        }
+        // dd(Answer::where('quiz_id', 3)->where('user_id', Auth::user()->user_id)->getUserAnswer(4));
 
         $score = count(Answer::join('questions', 'user_answers.question_id', '=', 'questions.question_id')
             ->where('quiz_id', $id)->where('user_id', Auth::user()->user_id)
             ->whereColumn('questions.correct_option', '=', 'user_answers.chosen_option')->get());
 
-        Score::updateOrCreate([
-            'user_id' => Auth::user()->user_id,
-        ], [
-            'user_id' => Auth::user()->user_id,
-            'participant_id' => $participant->participant_id,
-            'right_answer' => $score,
-            'wrong_answer' => count($questions) - $score,
-            'score_value' => $userScore->score_value + $score,
-            'time_consumed' => $timeConsumed,
-            'badge_id' => 1,
-        ]);
+        if ($score > Score::where('quiz_id', $id)->first()->score_value) {
+            User::find(Auth::user()->user_id)->update([
+                'score' => $userScore + $score,
+            ]);
 
-        if (Session::has('quiz')) {
-            Session::remove('quiz');
+            Score::updateOrCreate([
+                'user_id' => Auth::user()->user_id,
+                'quiz_id' => $id,
+            ], [
+                'user_id' => Auth::user()->user_id,
+                'quiz_id' => $id,
+                'participant_id' => $participant->participant_id,
+                'right_answer' => $score,
+                'wrong_answer' => count($questions) - $score,
+                'score_value' => $score,
+                'time_consumed' => $timeConsumed,
+                'badge_id' => 1,
+            ]);
         }
+
+        // if (Session::has('quiz')) {
+        //     Session::remove('quiz');
+        // }
 
         return redirect()->route('quiz.result', ['id' => $id]);
     }

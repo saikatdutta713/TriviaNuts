@@ -14,7 +14,7 @@ class ProfileController extends Controller
     public function showProfile()
     {
         $user = auth()->user();
-        $userScore = Score::where('user_id', Auth::user()->user_id)->first()->score_value;
+        $userScore = User::find(Auth::user()->user_id)->score;
         $title = "Profile Page";
 
         $badge = null;
@@ -40,7 +40,7 @@ class ProfileController extends Controller
             $badge = asset('images/badge10.svg');
         }
 
-        return view('profile', compact('title', 'user', 'userScore','badge'));
+        return view('profile', compact('title', 'user', 'userScore', 'badge'));
     }
 
     public function updateProfile(Request $request)

@@ -12,6 +12,7 @@ class Score extends Model
     protected $primaryKey = 'score_id';
 
     protected $fillable = [
+        'quiz_id',
         'participant_id',
         'user_id',
         'badge_id',

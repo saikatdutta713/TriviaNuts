@@ -32,6 +32,7 @@ class User extends Authenticatable
         'bio',
         'dob',
         'contribution_no',
+        'score',
         'last_login',
         'last_login_location',
         'badge_id',

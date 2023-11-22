@@ -13,45 +13,60 @@
 <div class="row-container">
     <div class="total-score">
         <p class="score">Score - {{ $qountCurrectAnswers }}/{{ count($questions) }}</p>
-        <p class="point">Total Points - {{ $score->score_value }}</p>
+        <p class="point">Total Points - {{ $userScore }}</p>
     </div>
     <div class="container">
         <div class="question-answer">
             @foreach ($questions as $question)
+            @php
+            $userAnswer = $answerModel->getUserAnswer($question->question_id);
+            // dd($question,$userAnswer);
+            @endphp
             <div class="question-answer-container">
                 <div class="question">
                     <p>{{ $loop->index+1 }}.</p>
                     <p> {{ $question->question_text }}</p>
                 </div>
                 <div class="answer-options">
-                    <p @if($question->correct_option == 'a' && $answerModel->getUserAnswer($question->question_id)=='a')
-                        @if($question->correct_option==$answerModel->getUserAnswer($question->question_id))
+                    <p @if($userAnswer=='a' && $answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
                         style="color:blue;"
-                        @else
-                        style="color:red;"
                         @endif
-                        @endif>A. {{ $question->answer_option_a }}</p>
-                    <p @if($question->correct_option == 'b' && $answerModel->getUserAnswer($question->question_id)=='b')
-                        @if($question->correct_option==$answerModel->getUserAnswer($question->question_id))
+
+                        @if ($userAnswer=='a' && !$answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
+                        style="color:red;"
+                        @endif>
+                        A. {{ $question->answer_option_a }}
+                    </p>
+
+                    <p @if($userAnswer=='b' && $answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
                         style="color:blue;"
-                        @else
-                        style="color:red;"
                         @endif
-                        @endif>B. {{ $question->answer_option_b }}</p>
-                    <p @if($question->correct_option == 'c' && $answerModel->getUserAnswer($question->question_id)=='c')
-                        @if($question->correct_option==$answerModel->getUserAnswer($question->question_id))
+
+                        @if ($userAnswer=='b' && !$answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
+                        style="color:red;"
+                        @endif>
+                        B. {{ $question->answer_option_b }}
+                    </p>
+
+                    <p @if($userAnswer=='c' && $answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
                         style="color:blue;"
-                        @else
-                        style="color:red;"
                         @endif
-                        @endif>C. {{ $question->answer_option_c }}</p>
-                    <p @if($question->correct_option == 'd' && $answerModel->getUserAnswer($question->question_id)=='d')
-                        @if($question->correct_option==$answerModel->getUserAnswer($question->question_id))
+
+                        @if ($userAnswer=='c' && !$answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
+                        style="color:red;"
+                        @endif>
+                        C. {{ $question->answer_option_c }}
+                    </p>
+
+                    <p @if($userAnswer=='d' && $answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
                         style="color:blue;"
-                        @else
-                        style="color:red;"
                         @endif
-                        @endif>D. {{ $question->answer_option_d }}</p>
+
+                        @if ($userAnswer=='d' && !$answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
+                        style="color:red;"
+                        @endif>
+                        D. {{ $question->answer_option_d }}
+                    </p>
                     <p class="answer">Answer -- {{ $question->correct_option }}. {{ $question["answer_option_" .
                         $question->correct_option] }}</p>
                 </div>
