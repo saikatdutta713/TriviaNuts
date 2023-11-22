@@ -6853,19 +6853,25 @@ __webpack_require__.r(__webpack_exports__);
 
 // Function to change the background color of clicked element and remove "selected" class from other elements
 function changeBackgroundColor(clickedDiv) {
-  var childDivs = document.querySelectorAll(".options");
-  childDivs.forEach(function (div) {
-    return div.classList.remove("selected");
-  });
-  clickedDiv.classList.add("selected");
   var optionValue = clickedDiv.dataset.option;
   var quiz = clickedDiv.dataset.quiz;
   var question = clickedDiv.dataset.question;
-  console.log(optionValue, quiz, question);
+  var lastQuestionNumber = clickedDiv.dataset.lastquestion;
+  console.log(optionValue, quiz, question, lastQuestionNumber);
   fetch("/quiz/" + quiz + "/play/" + question + "/answer/" + optionValue).then(function (response) {
     return response.json();
   }).then(function (data) {
     console.log("Success: ", data);
+    if (data.status == 200) {
+      var childDivs = document.querySelectorAll(".options");
+      childDivs.forEach(function (div) {
+        return div.classList.remove("selected");
+      });
+      clickedDiv.classList.add("selected");
+      if (question == lastQuestionNumber) {
+        document.getElementById("quiz__submit").classList.remove("disabled");
+      }
+    } else {}
   })["catch"](function (error) {
     console.error("Error:", error);
   });

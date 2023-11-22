@@ -11,19 +11,27 @@
 
 // Function to change the background color of clicked element and remove "selected" class from other elements
 function changeBackgroundColor(clickedDiv) {
-    const childDivs = document.querySelectorAll(".options");
-    childDivs.forEach((div) => div.classList.remove("selected"));
-    clickedDiv.classList.add("selected");
-
     const optionValue = clickedDiv.dataset.option;
     const quiz = clickedDiv.dataset.quiz;
     const question = clickedDiv.dataset.question;
-    console.log(optionValue, quiz, question);
+    const lastQuestionNumber = clickedDiv.dataset.lastquestion;
+    console.log(optionValue, quiz, question, lastQuestionNumber);
 
     fetch("/quiz/" + quiz + "/play/" + question + "/answer/" + optionValue)
         .then((response) => response.json())
         .then((data) => {
             console.log("Success: ", data);
+            if (data.status == 200) {
+                const childDivs = document.querySelectorAll(".options");
+                childDivs.forEach((div) => div.classList.remove("selected"));
+                clickedDiv.classList.add("selected");
+                if (question == lastQuestionNumber) {
+                    document
+                        .getElementById("quiz__submit")
+                        .classList.remove("disabled");
+                }
+            } else {
+            }
         })
         .catch((error) => {
             console.error("Error:", error);

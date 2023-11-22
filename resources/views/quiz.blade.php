@@ -89,7 +89,8 @@
                                 selected
                             @endif
                         @endif" data-option='a' data-quiz="{{ $thisQuiz->quiz_id }}"
-                            data-question="{{ $questions[$activeQuestion]->question_id }}">
+                            data-question="{{ $questions[$activeQuestion]->question_id }}"
+                            data-lastQuestion="{{ $lastQuestion->question_id }}">
                             {{ $questions[$activeQuestion]->answer_option_a }}
                         </div>
                         <div class="options @if($answers!=null)
@@ -97,7 +98,8 @@
                                 selected
                             @endif
                         @endif" data-option='b' data-quiz="{{ $thisQuiz->quiz_id }}"
-                            data-question="{{ $questions[$activeQuestion]->question_id }}">
+                            data-question="{{ $questions[$activeQuestion]->question_id }}"
+                            data-lastQuestion="{{ $lastQuestion->question_id }}">
                             {{ $questions[$activeQuestion]->answer_option_b }}
                         </div>
                         <div class="options @if($answers!=null)
@@ -105,7 +107,8 @@
                                 selected
                             @endif
                         @endif" data-option='c' data-quiz="{{ $thisQuiz->quiz_id }}"
-                            data-question="{{ $questions[$activeQuestion]->question_id }}">
+                            data-question="{{ $questions[$activeQuestion]->question_id }}"
+                            data-lastQuestion="{{ $lastQuestion->question_id }}">
                             {{ $questions[$activeQuestion]->answer_option_c }}
                         </div>
                         <div class="options @if($answers!=null)
@@ -113,7 +116,8 @@
                                 selected
                             @endif
                         @endif" data-option='d' data-quiz="{{ $thisQuiz->quiz_id }}"
-                            data-question="{{ $questions[$activeQuestion]->question_id }}">
+                            data-question="{{ $questions[$activeQuestion]->question_id }}"
+                            data-lastQuestion="{{ $lastQuestion->question_id }}">
                             {{ $questions[$activeQuestion]->answer_option_d }}
                         </div>
                     </div>
@@ -174,7 +178,7 @@
             @if ($activeQuestion==count($questions)-1)
             <a href="{{ route('quiz.submit',['id'=>$thisQuiz->quiz_id]) }}" class="tabbutton @if (!array_key_exists('answers',$quiz)) 
                 disabled
-            @endif">
+            @endif" id="quiz__submit">
                 Submit
             </a>
             @endif
@@ -272,43 +276,38 @@
         }
 
         function initTimer() {
-            let seconds = {{session()->get("quiz")['timerStartSeconds']}};
-            let minutes = {{session()->get("quiz")['timerStartMinutes']}};
+            let seconds = {{ session()->get('quiz')['timerStart']['seconds'] }};
+            let minutes = {{ session()->get('quiz')['timerStart']['minutes'] }};
             const timerDisplay = document.getElementById("timer");
 
             function updateTimer() {
-                @php
-                    $quiz = array();
-                    if(session()->has("quiz")){
-                      $quiz = session()->get("quiz");  
-                    }
-                @endphp
+                
                 if (minutes === 10 && seconds === 0) {
                     clearInterval(timerInterval);
                 } else {
                     if (seconds === 59) {
                         seconds = 0;
                         minutes++;
-                        @php
-                            if(array_key_exists("timerStartMinutes", $quiz)){
-                                $quiz['timerStartMinutes'] = intval("<script>document.write(minutes)</script>");
-                            }
-                        @endphp
                     } else if (minutes === 10 && seconds === 0) {
                         clearInterval(timerInterval); // Stop the timer at 10 minutes
                     } else {
                         seconds++;
-                        @php
-                            if(array_key_exists("timerStartSeconds", $quiz)){
-                                $quiz['timerStartSeconds'] = intval("<script>document.write(seconds)</script>");
-                                // dd(intval("<script>document.write(minutes)</script>"));
-                            }
-                        @endphp
-                        console.log({{session()->get('quiz')}});
                     }
-                    @php
-                        session()->put('quiz',$quiz);
-                    @endphp
+
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', '/quiz/set/timer', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    
+                    xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Callback function after successful response (if needed)
+                    console.log('Timer values sent successfully');
+                    }
+                    };
+                    
+                    const data = JSON.stringify({ seconds, minutes });
+                    xhr.send(data);
+
                     const timeString = `${minutes.toString().padStart(2, "0")}:${seconds
                         .toString()
                         .padStart(2, "0")}`;
@@ -334,6 +333,7 @@
         // });
 
         initTimer();
+        
     </script>
 
     <script src="{{ asset('js/quiz.js') }}"></script>

@@ -95,6 +95,8 @@ class QuizPlayController extends Controller
         $quiz_id = $id;
         $thisQuiz = Quiz::find($quiz_id);
         $questions = $thisQuiz->getQuestions();
+        $lastQuestion = $questions->last();
+        // dd($lastQuestion);
         $quizCategory = category::where('category_id', $thisQuiz->category_id)->first();
         
         
@@ -118,9 +120,8 @@ class QuizPlayController extends Controller
         }
 
         $quiz['timeStart'] = Carbon::now();
-        $quiz['timerStartMinutes'] = 0;
-        $quiz['timerStartSeconds'] = 0;
-        
+        $quiz['timerStart'] = array('minutes' => 0, 'seconds' => 0);
+
         Session::put('quiz', $quiz);
 
         $quiz = session()->get('quiz');
@@ -131,11 +132,32 @@ class QuizPlayController extends Controller
             $answers = null;
         }
 
-        // dd((session()->get('quiz')));
+        // dd($activeQuestion);
 
         // dd(Participant::where('user_id', $user_id)->where('quiz_id', $quiz_id)->first());
 
-        return view('quiz', compact('quiz', 'questions', 'activeQuestion', 'thisQuiz', 'quizCategory', 'answers'));
+        return view('quiz', compact('quiz', 'questions', 'activeQuestion', 'thisQuiz', 'quizCategory', 'answers', 'lastQuestion'));
+    }
+
+    public function setTimer(Request $request)
+    {
+        $request = request()->json();
+        $seconds = $request->get('seconds');
+        $minutes = $request->get('minutes');
+
+        // Update session values or perform any other necessary actions
+        $quiz = session()->get('quiz');
+        $quiz['timerStartSeconds'] = intval($seconds);
+        $quiz['timerStartMinutes'] = intval($minutes);
+        session(['quiz' => $quiz]);
+
+        return response()->json(
+            [
+                'success' => true,
+                'status' => 200,
+                'quiz' => $quiz,
+            ]
+        );
     }
 
     public function quizPlayJumpQuestion($id, $question)

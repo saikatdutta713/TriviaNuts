@@ -30,7 +30,6 @@ use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\AnnouncementController;
 use App\Http\Controllers\Auth\SocialLoginController;
 use App\Http\Controllers\PlayQuizController;
-
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\PrivacyPolicyController;
@@ -102,8 +101,8 @@ Route::middleware('auth.check')->group(function () {
         Route::get('/{id}/submit', [QuizPlayController::class, 'quizSubmit'])->name('quiz.submit');
         Route::get('/{id}/reatempt', [QuizPlayController::class, 'quizReattempt'])->name('quiz.reattempt');
         Route::get('/{id}/exit', [QuizPlayController::class, 'quizExit'])->name('quiz.exit');
+        Route::post('/set/timer', [QuizPlayController::class, 'setTimer'])->name('quiz.set.timer');
         Route::get('/{id}/result', [QuizResultController::class, 'show'])->name('quiz.result');
-        // Route::get('/{id}/pla/exit', [QuizPlayController::class, 'quizExit'])->name('quiz.exit');
     });
 });
 
