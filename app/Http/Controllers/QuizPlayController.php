@@ -124,7 +124,8 @@ class QuizPlayController extends Controller
         if (!array_key_exists('timerStart', $quiz)) {
             $quiz['timerStart'] = array('minutes' => 0, 'seconds' => 0);
         }
-
+        
+        $quiz['reattempt'] = $reattempt;
         Session::put('quiz', $quiz);
 
         $quiz = session()->get('quiz');
@@ -196,13 +197,22 @@ class QuizPlayController extends Controller
     public function quizExit($id)
     {
         // dd($id);
+        // if (Session::has('quiz')) {
+        //     Session::remove('quiz');
+        // }
+        return redirect()->route('quiz.play', ['id' => $id])->with('warning', 'Are you sure, you want to exit quiz?')->with('buttonText', 'Yes')
+            ->with('closeButtonText', 'No')->with('redirect_link', route('quiz.back',['id'=>$id]));
+    }
+    
+    public function quizBack($id)
+    {
+        // dd($id);
         if (Session::has('quiz')) {
             Session::remove('quiz');
         }
-        return redirect()->route('quiz.play', ['id' => $id])->with('warning', 'Are you sure, you want to exit quiz?')->with('buttonText', 'Yes')
-            ->with('closeButtonText', 'No')->with('redirect_link', route('quiz'));
+        return redirect()->route('quiz.result', ['id' => $id]);
     }
-
+    
     public function quizSubmit($id)
     {
         $quiz = array();
@@ -250,8 +260,8 @@ class QuizPlayController extends Controller
         $score = count(Answer::join('questions', 'user_answers.question_id', '=', 'questions.question_id')
             ->where('quiz_id', $id)->where('user_id', Auth::user()->user_id)
             ->whereColumn('questions.correct_option', '=', 'user_answers.chosen_option')->get());
-
-        if ($score > Score::where('quiz_id', $id)->first()->score_value) {
+        // dd(session('quiz'));
+        if (!$quiz['reattempt']) {
             User::find(Auth::user()->user_id)->update([
                 'score' => $userScore + $score,
             ]);
@@ -271,9 +281,9 @@ class QuizPlayController extends Controller
             ]);
         }
 
-        // if (Session::has('quiz')) {
-        //     Session::remove('quiz');
-        // }
+        if (Session::has('quiz')) {
+            Session::remove('quiz');
+        }
 
         return redirect()->route('quiz.result', ['id' => $id]);
     }

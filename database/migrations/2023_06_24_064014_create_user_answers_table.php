@@ -15,6 +15,7 @@ return new class extends Migration
             
             $table->bigInteger('answer_id')->unsigned()->autoIncrement();
             $table->string('chosen_option');
+            $table->boolean('is_correct')->nullable();
             $table->unsignedBigInteger('question_id');
             $table->unsignedBigInteger('participant_id');
             $table->unsignedBigInteger('user_id');

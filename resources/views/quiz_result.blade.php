@@ -19,7 +19,8 @@
         <div class="question-answer">
             @foreach ($questions as $question)
             @php
-            $userAnswer = $answerModel->getUserAnswer($question->question_id);
+            
+            $answerIsCorrect = $answerModel->answerIscorrect($question->question_id);
             // dd($question,$userAnswer);
             @endphp
             <div class="question-answer-container">
@@ -28,44 +29,53 @@
                     <p> {{ $question->question_text }}</p>
                 </div>
                 <div class="answer-options">
-                    <p @if($userAnswer=='a' && $answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
-                        style="color:blue;"
+                    <p
+                        @if ($answerIsCorrect != null && $answerModel->getUserAnswer($question->question_id) == 'a')
+                            @if ($answerIsCorrect == 1)
+                                style="color:green; font-weight:bold;"
+                            @else
+                                style="color:red;"
+                            @endif
                         @endif
-
-                        @if ($userAnswer=='a' && !$answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
-                        style="color:red;"
-                        @endif>
+                    >
                         A. {{ $question->answer_option_a }}
                     </p>
 
-                    <p @if($userAnswer=='b' && $answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
-                        style="color:blue;"
+                    <p
+                        @if ($answerIsCorrect != null && $answerModel->getUserAnswer($question->question_id) == 'b')
+                            @if ($answerIsCorrect == 1)
+                                style="color:green; font-weight:bold;"
+                            @else
+                                style="color:red;"
+                            @endif
                         @endif
-
-                        @if ($userAnswer=='b' && !$answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
-                        style="color:red;"
-                        @endif>
+                    >
                         B. {{ $question->answer_option_b }}
                     </p>
 
-                    <p @if($userAnswer=='c' && $answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
-                        style="color:blue;"
+                    <p
+                        @if ($answerIsCorrect != null && $answerModel->getUserAnswer($question->question_id) == 'c')
+                            @if ($answerIsCorrect == 1)
+                                style="color:green; font-weight:bold;"
+                            @else
+                                style="color:red;"
+                            @endif
                         @endif
-
-                        @if ($userAnswer=='c' && !$answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
-                        style="color:red;"
-                        @endif>
-                        C. {{ $question->answer_option_c }}
+                    >
+                        C. {{ $question->answer_option_c }} 
+                        
                     </p>
 
-                    <p @if($userAnswer=='d' && $answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
-                        style="color:blue;"
+                    <p
+                        @if ($answerIsCorrect != null && $answerModel->getUserAnswer($question->question_id) == 'd')
+                            @if ($answerIsCorrect == 1)
+                                style="color:green; font-weight:bold;"
+                            @else
+                                style="color:red;"
+                            @endif
                         @endif
-
-                        @if ($userAnswer=='d' && !$answerModel->answerIsCorrect($quiz->quiz_id, $question->question_id))
-                        style="color:red;"
-                        @endif>
-                        D. {{ $question->answer_option_d }}
+                    >
+                        D. {{ $question->answer_option_d }} 
                     </p>
                     <p class="answer">Answer -- {{ $question->correct_option }}. {{ $question["answer_option_" .
                         $question->correct_option] }}</p>

@@ -97,7 +97,7 @@ Route::middleware('auth.check')->group(function () {
         Route::get('/{id}/play', [QuizPlayController::class, 'quizPlay'])->name('quiz.play');
         Route::get('/{id}/play/{question}', [QuizPlayController::class, 'quizPlayJumpQuestion'])->name('quiz.jump.quesion');
         Route::get('/{id}/play/{question}/answer/{option}', [QuizPlayController::class, 'saveAnswer'])->name('quiz.answer.save');
-        // Route::get('/{id}/play/submit', [QuizPlayController::class, 'quizSubmit'])->name('quiz.submit');
+        Route::get('/{id}/back', [QuizPlayController::class, 'quizBack'])->name('quiz.back');
         Route::get('/{id}/submit', [QuizPlayController::class, 'quizSubmit'])->name('quiz.submit');
         Route::get('/{id}/reatempt', [QuizPlayController::class, 'quizReattempt'])->name('quiz.reattempt');
         Route::get('/{id}/exit', [QuizPlayController::class, 'quizExit'])->name('quiz.exit');

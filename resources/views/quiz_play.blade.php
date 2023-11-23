@@ -14,8 +14,9 @@
             <input type="hidden" name="category"
                 value="{{ $category->category_id }},{{ strtolower($category->category_title) }}">
             <button type="submit" class="subject"
-                style="font-size: medium;width:100%;@if(session()->has('selectedCategory'))@if(strtolower($category->category_title) == session()->get('selectedCategory'))background:#149d9b;color: #fff; @endif @endif">{{
+                style="font-size: medium;width:100%;@if(session()->has('selectedCategory'))@if(strtolower($category->category_title) == session()->get('selectedCategory')['title']) background: #149D9B;color: #fff;border:none; @endif @endif">{{
                 $category->category_title}}
+                
             </button>
         </form>
         @endforeach

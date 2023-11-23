@@ -37,9 +37,13 @@ class Answer extends Model
     {
         $answer = $this->where('question_id', $question)->first();
 
-        if ($answer != null && $answer->is_correct) {
-            return $answer->is_correct;
+        if ($answer != null ) {
+            if($answer->is_correct){
+                return $answer->is_correct;
+            }else{
+                return 2;
+            }
         }
-        return false;
+        return null;
     }
 }
