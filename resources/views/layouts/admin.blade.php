@@ -21,9 +21,9 @@
                 @yield('admin__pageHeading')
             </div>
             <div class="navbar__right">
-                <a href="#">
+                {{-- <a href="#">
                     <i class="fa fa-clock-o" aria-hidden="true"></i>
-                </a>
+                </a> --}}
                 <a href="#">
                     @if (auth()->user()->picture)
                     <div class="rounded-wrapper">
@@ -102,16 +102,18 @@
                         All Quizzes
                     </div>
                 </a>
-                @if (auth()->user()->isSuperAdmin())
+                {{-- @if (auth()->user()->isSuperAdmin())
                 <div class="sidebar__link">
                     <i class="fas fa-file-alt" aria-hidden="true"></i>
                     <a href="#">Approve Quizzes</a>
                 </div>
-                @endif
+                @endif --}}
+                <a href="{{ route('admin.quiz.add.view') }}">
                 <div class="sidebar__link">
                     <i class="fas fa-file-alt"></i>
-                    <a href="#">Add New</a>
+                    Add New
                 </div>
+                </a>
                 <h2>Questions</h2>
                 <a href="{{ route('admin.question') }}">
                     <div class="sidebar__link">
@@ -119,16 +121,18 @@
                         All Questions
                     </div>
                 </a>
-                @if (auth()->user()->isSuperAdmin())
+                {{-- @if (auth()->user()->isSuperAdmin())
                 <div class="sidebar__link">
                     <i class="fa fa-question"></i>
                     <a href="#">Approve Questions</a>
                 </div>
-                @endif
+                @endif --}}
+                <a href="{{ route('admin.question.add.view') }}">
                 <div class="sidebar__link">
                     <i class="fa fa-question"></i>
-                    <a href="#">All Questions</a>
+                    Add Questions
                 </div>
+                </a>
                 <h2>Users</h2>
                 <a href="{{ route('admin.user') }}">
                     <div class="sidebar__link">
@@ -136,41 +140,32 @@
                         All Users
                     </div>
                 </a>
+                <a href="{{ route('admin.user.add.view') }}">
                 <div class="sidebar__link">
                     <i class="fa fa-user"></i>
-                    <a href="#">Add User</a>
+                    Add User
                 </div>
-                <div class="sidebar__link">
+                </a>
+                {{-- <div class="sidebar__link">
                     <i class="fa fa-user"></i>
                     <a href="#">Profile</a>
-                </div>
+                </div> --}}
                 <h2>Setting</h2>
+                <a href="{{ route('admin.settings') }}">
                 <div class="sidebar__link">
                     <i class="fa-solid fa-gear"></i>
-                    <a href="#">Settings</a>
+                    Settings
                 </div>
-                {{-- @if (auth()->user()->isSuperAdmin())
-                <form method="GET" action="{{ route('maintenance.toggle') }}">
-                    @csrf
-                    <div class="sidebar__link">
-                        <i class="fa-solid fa-gears"></i>
-                        <a href="#">Maintenance Mode</a>
-                        <label class="maintenance_mode_switch">
-                            <button type="submit" class="{{ app()->isDownForMaintenance() ? 'red' : '' }}">
-                                {{ app()->isDownForMaintenance() ? 'Off' : 'On' }}
-                            </button>
-                        </label>
-                    </div>
-                </form>
-                @endif --}}
-                <h2>Announcements</h2>
+                </a>
+                
+                {{-- <h2>Announcements</h2>
                 <a href="{{ route('admin.announcement') }}">
                     <div class="sidebar__link">
                         <i class="fa fa-bullhorn"></i>
                         Create Announcements
                     </div>
-                </a>
-                <h2>Analytics & Reports</h2>
+                </a> --}}
+                {{-- <h2>Analytics & Reports</h2>
                 <div class="sidebar__link">
                     <i class="fa fa-chart-bar"></i>
                     <a href="#">Analytics & Reports</a>
@@ -180,7 +175,7 @@
                         <i class="fa fa-sign-out-alt"></i>
                         Sign Out
                     </div>
-                </a>
+                </a> --}}
             </div>
         </div>
     </div>

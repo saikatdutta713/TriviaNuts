@@ -120,7 +120,7 @@
             </form>
         </div>
         <div class="modal-footer">
-            <button id="submitAddNewModalBtn">Add User</button>
+            <button id="submitAddNewModalBtn">Add Quiz</button>
             <button id="closeAddNewModalBtn"><a href="{{ route('admin.quiz') }}">Cancel</a></button>
         </div>
     </div>

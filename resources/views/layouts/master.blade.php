@@ -24,6 +24,11 @@
                     Home
                 </div>
             </a>
+            <a href="{{ route('quiz') }}">
+                <div class="navbutton">
+                    Quiz
+                </div>
+            </a>
             <a href="{{ route('community') }}">
                 <div class="navbutton">
                     Community
@@ -34,14 +39,10 @@
                     Trends
                 </div>
             </a>
-            <a href="{{ route('quiz') }}">
-                <div class="navbutton">
-                    Quiz
-                </div>
-            </a>
+            
         </div>
         
-        <div class="notifications-container" id="notifications-container">
+        {{-- <div class="notifications-container" id="notifications-container">
             <div class="notifications-header">
                 <h3>Notifications</h3>
                 <button class="close-button">
@@ -143,7 +144,7 @@
         
         <div class="notificationIcon">
             <i class="fa-solid fa-bell" id="Icon"></i>
-        </div>  
+        </div>   --}}
 
         <div class="login__container">
             @auth
@@ -254,7 +255,7 @@
         </div>
         <div class="row2">
             <p class="copyright">
-                Copyright
+                Copyright © 2023 Trivianuts.
             </p>
         </div>
     </footer>

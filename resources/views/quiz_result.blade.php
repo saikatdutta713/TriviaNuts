@@ -94,7 +94,7 @@
             {{ $score->time_consumed }}
         </p>
         <p class="footer-heading">
-            Minutes
+            Minutes : Seconds
         </p>
     </div>
 </div>
