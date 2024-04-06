@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/ jobquer1/bytelure.in
+    # Sync repository files to the deploy target path, excluding .git folder
+    - /bin/rsync -aP --exclude '.git' --exclude '.well-known' ${REPOPATH}/ ${DEPLOYPATH} --delete-after
+    # Set correct permissions
+    - /bin/chmod 755 ${DEPLOYPATH}
+    - /bin/find ${DEPLOYPATH} -type d -exec /bin/chmod 755 '{}' \;
+    - /bin/find ${DEPLOYPATH} -type f -exec /bin/chmod 644 '{}' \;
