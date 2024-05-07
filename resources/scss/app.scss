@@ -22,6 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
     transition: bottom 0.3s ease-in-out;
     animation: fadeIn 2s ease-in-out;
     .close {
@@ -213,7 +214,6 @@
     }
 
     .notificationIcon {
-        
         margin-left: auto;
         #Icon {
             font-size: 1.5em;
@@ -579,7 +579,7 @@
     &.active {
         top: 0;
     }
-    #close-toggle-menu{
+    #close-toggle-menu {
         font-size: 2rem;
         // text-align: right;
         margin-left: 90%;

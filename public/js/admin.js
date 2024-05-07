@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         enabled: true // make this true
       }
     },
-
     plotOptions: {
       bar: {
         horizontal: false,
@@ -107,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault(); // Prevent the default form submission
     form.submit(); // Submit the form
   });
-
   var formUpdate = document.querySelector(".update");
   var submitButtonUpdate = document.getElementById("submitEditModalBtn");
   console.log(submitButtonUpdate);
