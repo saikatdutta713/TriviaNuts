@@ -2,9 +2,10 @@
 
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Admin\QuestionController;
-use App\Http\Controllers\Admin\QuizController;
 use App\Http\Controllers\QuizPlayController;
+use App\Http\Controllers\Api\QuizController;
+use App\Http\Controllers\Api\QuestionController;
+use App\Http\Controllers\Api\CategoryController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,27 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/get/users/{tableLength?}/{searchCriteria?}', [UserController::class, 'getAllUser'])->name('get.all.users');
-Route::get('/get/questions/{tableLength?}/{searchCriteria?}', [QuestionController::class, 'getAllQuestions'])->name('get.all.questions');
-Route::get('/get/quizzes/{tableLength?}/{searchCriteria?}', [QuizController::class, 'getAllQuizzes'])->name('get.all.quizzes');
+Route::prefix('quizzes')->group(function () {
+    Route::get('/', [QuizController::class, 'index']);
+    Route::get('/{id}', [QuizController::class, 'show']);
+    Route::post('/', [QuizController::class, 'store']);
+    Route::put('/{id}', [QuizController::class, 'update']);
+    Route::delete('/{id}', [QuizController::class, 'destroy']);
+    Route::post('/{id}/play', [QuizController::class, 'play']);
+});
+
+Route::prefix('questions')->group(function () {
+    Route::get('/', [QuestionController::class, 'index']);
+    Route::get('/{id}', [QuestionController::class, 'show']);
+    Route::post('/', [QuestionController::class, 'store']);
+    Route::put('/{id}', [QuestionController::class, 'update']);
+    Route::delete('/{id}', [QuestionController::class, 'destroy']);
+});
+
+Route::prefix('categories')->group(function () {
+    Route::get('/', [CategoryController::class, 'index']);
+    Route::get('/{id}', [CategoryController::class, 'show']);
+    Route::post('/', [CategoryController::class, 'store']);
+    Route::put('/{id}', [CategoryController::class, 'update']);
+    Route::delete('/{id}', [CategoryController::class, 'destroy']);
+});

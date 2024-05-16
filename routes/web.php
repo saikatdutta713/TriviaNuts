@@ -172,3 +172,7 @@ Route::get('send/back', function () {
 })->name('back');
 
 Route::get('/test', [Controller::class, 'test']);
+
+Route::get('/get/users/{tableLength?}/{searchCriteria?}', [UserController::class, 'getAllUser'])->name('get.all.users');
+Route::get('/get/questions/{tableLength?}/{searchCriteria?}', [QuestionController::class, 'getAllQuestions'])->name('get.all.questions');
+Route::get('/get/quizzes/{tableLength?}/{searchCriteria?}', [QuizController::class, 'getAllQuizzes'])->name('get.all.quizzes');
