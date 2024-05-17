@@ -20,6 +20,11 @@ class Quiz extends Model
         'status',
     ];
 
+    public function questions()
+    {
+        return $this->hasMany(Question::class, 'quiz_id');
+    }
+
     public function participants()
     {
         return $this->hasMany(Participant::class, 'quiz_id');

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Quiz;
 use App\Models\Question;
+use Carbon\Carbon;
 
 class QuizController extends Controller
 {
@@ -17,7 +18,7 @@ class QuizController extends Controller
 
     public function show($id)
     {
-        $quiz = Quiz::with('questions')->find($id);
+        $quiz = Quiz::find($id);
 
         if (!$quiz) {
             return response()->json(['message' => 'Quiz not found'], 404);
@@ -30,6 +31,31 @@ class QuizController extends Controller
     {
         $quiz = Quiz::create($request->all());
         return response()->json($quiz, 201);
+    }
+
+    public function getQuizzesByCategoryAndToday($categoryId)
+    {
+        $today = Carbon::today()->toDateString();
+
+        $quizzes = Quiz::where('category_id', $categoryId)
+            ->whereDate('time', $today)
+            ->get();
+
+        if ($quizzes->isEmpty()) {
+            return response()->json(['message' => 'No quizzes found for today in this category'], 404);
+        }
+
+        // $todayQuizQuestions = $quizzes->map(function ($quiz) {
+        //     $questionIds = explode(',', $quiz->questions);
+        //     $questions = Question::whereIn('question_id', $questionIds)->get();
+        //     $quiz->questions = $questions;
+        //     return $questions;
+        // });
+
+        $questionIds = explode(',', $quizzes[0]->questions);
+        $questions = Question::whereIn('question_id', $questionIds)->get();
+
+        return response()->json($questions);
     }
 
     public function update(Request $request, $id)

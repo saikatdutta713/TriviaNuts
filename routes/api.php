@@ -32,6 +32,8 @@ Route::prefix('quizzes')->group(function () {
     Route::put('/{id}', [QuizController::class, 'update']);
     Route::delete('/{id}', [QuizController::class, 'destroy']);
     Route::post('/{id}/play', [QuizController::class, 'play']);
+    Route::get('/category/{categoryId}/today', [QuizController::class, 'getQuizzesByCategoryAndToday']);
+
 });
 
 Route::prefix('questions')->group(function () {
